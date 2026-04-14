@@ -8,17 +8,17 @@
 
 ## Table of Contents
 
-1. Introduction  
-2. Purpose  
-3. Prerequisites  
-4. Step 1: Check Cron Service  
-5. Step 2: Create a Cron Job  
-6. Step 3: Manage Cron Jobs  
-7. Step 4: Verify and Logs  
-8. Troubleshooting  
-9. FAQs  
-10. Contact Information  
-11. References  
+- [Introduction](#introduction)
+- [Purpose](#purpose)
+- [Prerequisites](#prerequisites)
+- [Step 1 Check Cron Service](#step-1-check-cron-service)
+- [Step 2 Create a Cron Job](#step-2-create-a-cron-job)
+- [Step 3 Manage Cron Jobs](#step-3-manage-cron-jobs)
+- [Step 4 Verify and Logs](#step-4-verify-and-logs)
+- [Troubleshooting](#troubleshooting)
+- [FAQs](#faqs)
+- [Contact Information](#contact-information)
+- [References](#references)
 
 ---
 
