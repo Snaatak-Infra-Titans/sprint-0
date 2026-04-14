@@ -1,4 +1,4 @@
-# SOP: Common Stack | Operating System | Ubuntu | Sysctl
+# SOP: Common Stack | Operating System | Ubuntu | Systemctl
 
 ---
 
@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Level**       | **Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | --------------- | ------------ |
-| Ankita     | 2026-04-14     | 1.0         | Ankita              | 2026-04-14         | Internal Review | Team         |
+| Ankita     | 2026-04-15     | 1.0         | Ankita              | 2026-04-15         | Internal Review | Team         |
 
 ---
 
@@ -15,14 +15,14 @@
 * [Overview](#overview)
 * [Purpose](#purpose)
 * [Prerequisites](#prerequisites)
-* [What is Sysctl?](#what-is-sysctl)
+* [What is systemctl?](#what-is-systemctl)
 * [Step-by-Step Implementation](#step-by-step-implementation)
 
-  * [Step 1: View Kernel Parameters](#step-1-view-kernel-parameters)
-  * [Step 2: Modify Parameters Temporarily](#step-2-modify-parameters-temporarily)
-  * [Step 3: Make Changes Permanent](#step-3-make-changes-permanent)
-  * [Step 4: Apply Changes](#step-4-apply-changes)
-* [Common Use Cases](#common-use-cases)
+  * [Step 1: Check Service Status](#step-1-check-service-status)
+  * [Step 2: Start and Stop Services](#step-2-start-and-stop-services)
+  * [Step 3: Enable and Disable Services](#step-3-enable-and-disable-services)
+  * [Step 4: Restart and Reload Services](#step-4-restart-and-reload-services)
+* [Common Commands](#common-commands)
 * [Troubleshooting](#troubleshooting)
 * [Best Practices](#best-practices)
 * [Contact Information](#contact-information)
@@ -32,13 +32,15 @@
 
 ## Overview
 
-This SOP explains **how to manage Linux kernel parameters using `sysctl` in Ubuntu** in a simple and beginner-friendly way.
+This SOP explains how to use **systemctl** in Ubuntu in a simple and beginner-friendly way.
 
-Think of `sysctl` as a tool that helps you **control how your system behaves internally**, like:
+`systemctl` is used to manage **services (background processes)** in Linux.
 
-* How networking works 🌐
-* How memory is used 💾
-* Security settings 🔐
+Examples of services:
+
+* nginx (web server)
+* mysql (database)
+* ssh (remote access)
 
 ---
 
@@ -46,245 +48,155 @@ Think of `sysctl` as a tool that helps you **control how your system behaves int
 
 By following this SOP, you will learn:
 
-* How to view system settings
-* How to change them safely
-* How to make changes permanent
-* How to verify your changes
+* How to check service status
+* How to start/stop services
+* How to enable services on boot
+* How to troubleshoot services
 
 ---
 
 ## Prerequisites
 
-Before starting, make sure:
-
-* You are using Ubuntu (20.04 / 22.04 / 24.04)
-* You have **sudo access**
-* You can run basic Linux commands
+* Ubuntu 20.04 / 22.04 / 24.04
+* Sudo privileges
+* Basic Linux command knowledge
 
 ---
 
-## What is Sysctl?
+## What is systemctl?
 
-In Linux, many system settings are controlled by the **kernel (core of OS)**.
+`systemctl` is a command used to interact with **systemd**, which manages services in Linux.
 
-These settings are stored in:
+👉 In simple terms:
 
-```bash
-/proc/sys/
-```
-
-Instead of editing files manually, we use:
-
-```bash
-sysctl
-```
-
-👉 It allows you to:
-
-* View settings
-* Change settings
-* Apply changes instantly
-
-Configuration files:
-
-```bash
-/etc/sysctl.conf
-/etc/sysctl.d/*.conf
-```
+* It controls background services
+* Helps start, stop, restart applications
+* Manages services during system boot
 
 ---
 
 ## Step-by-Step Implementation
 
-### Step 1: View Kernel Parameters
-
-👉 First, let’s see current system settings
-
-View all parameters:
+### Step 1: Check Service Status
 
 ```bash
-sysctl -a
+systemctl status nginx
 ```
 
-📸 Screenshot Placeholder:
+📸 Screenshot
 
-```
-(Add screenshot of sysctl -a output here)
-```
-
-View a specific parameter:
-
-```bash
-sysctl net.ipv4.ip_forward
-```
-
-📸 Screenshot Placeholder:
-
-```
-(Add screenshot showing parameter value)
-```
-
-Directly from system file:
-
-```bash
-cat /proc/sys/net/ipv4/ip_forward
-```
+<img width="1106" height="783" alt="image" src="https://github.com/user-attachments/assets/2e48382d-6c84-40d8-9f9f-29678de90b88" />
 
 ---
 
-### Step 2: Modify Parameters Temporarily
+### Step 2: Start and Stop Services
 
-👉 These changes work immediately but reset after reboot
-
-```bash
-sudo sysctl -w <parameter>=<value>
-```
-
-Example:
+Start a service:
 
 ```bash
-sudo sysctl -w net.ipv4.ip_forward=1
+sudo systemctl start nginx
 ```
 
-📸 Screenshot Placeholder:
-
-```
-(Add screenshot showing successful change)
-```
-
-Another example:
+Stop a service:
 
 ```bash
-sudo sysctl -w vm.swappiness=10
+sudo systemctl stop nginx
 ```
+
+📸 Screenshot
+
+<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/2715a30e-4cfb-43a5-827c-7d2f26bbf59e" />
 
 ---
 
-### Step 3: Make Changes Permanent
+### Step 3: Enable and Disable Services
 
-👉 To keep changes after reboot, we save them in config files
-
-#### Option 1: Global config file
+Enable service at boot:
 
 ```bash
-sudo vi /etc/sysctl.conf
+sudo systemctl enable nginx
 ```
 
-Add:
+Disable service:
 
 ```bash
-net.ipv4.ip_forward=1
-vm.swappiness=10
+sudo systemctl disable nginx
 ```
 
-📸 Screenshot Placeholder:
+📸 Screenshot
 
-```
-(Add screenshot of sysctl.conf file)
-```
+<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/ef6daa05-93a1-4fb4-8950-061b10743a2f" />
 
 ---
 
-#### Option 2: Recommended method (modular config)
+### Step 4: Restart and Reload Services
+
+Restart service:
 
 ```bash
-sudo vi /etc/sysctl.d/99-custom.conf
+sudo systemctl restart nginx
 ```
 
-Add:
+Reload configuration:
 
 ```bash
-net.ipv4.tcp_syncookies=1
-net.ipv4.conf.all.rp_filter=1
+sudo systemctl reload nginx
 ```
 
-📸 Screenshot Placeholder:
+📸 Screenshot
 
-```
-(Add screenshot of custom config file)
-```
+<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/dd58e8e5-4143-49ef-b6f5-84fb150bc1b2" />
+<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/4d2c5ba7-a8cf-41cd-b841-83f9f741cd05" />
 
 ---
 
-### Step 4: Apply Changes
+## Common Commands
 
-👉 Apply changes without restarting system
-
-```bash
-sudo sysctl --system
-```
-
-📸 Screenshot Placeholder:
-
-```
-(Add screenshot of apply output)
-```
-
-Verify changes:
-
-```bash
-sysctl -a | grep ip_forward
-```
-
----
-
-## Common Use Cases
-
-### Networking
-
-Enable IP forwarding:
-
-```bash
-net.ipv4.ip_forward=1
-```
-
-### Security Hardening
-
-```bash
-net.ipv4.conf.all.rp_filter=1
-net.ipv4.tcp_syncookies=1
-```
-
-### Performance Tuning
-
-```bash
-vm.swappiness=10
-fs.file-max=100000
-```
+| Command                     | Description     |
+| --------------------------- | --------------- |
+| systemctl status <service>  | Check status    |
+| systemctl start <service>   | Start service   |
+| systemctl stop <service>    | Stop service    |
+| systemctl restart <service> | Restart service |
+| systemctl enable <service>  | Enable at boot  |
+| systemctl disable <service> | Disable at boot |
 
 ---
 
 ## Troubleshooting
 
-| **Issue**                 | **Cause**           | **Solution**            |
-| ------------------------- | ------------------- | ----------------------- |
-| Permission denied         | Not using sudo      | Use `sudo`              |
-| Changes not applied       | Config not reloaded | Run `sysctl --system`   |
-| Parameter not found       | Wrong name          | Check using `sysctl -a` |
-| Changes lost after reboot | Not saved           | Add in config file      |
+| Issue                | Cause            | Solution                    |
+| -------------------- | ---------------- | --------------------------- |
+| Service not starting | Config issue     | Check logs using journalctl |
+| Permission denied    | Not using sudo   | Use sudo                    |
+| Service failed       | Dependency issue | Check service status output |
 
 ---
 
 ## Best Practices
 
-* Always take backup before changes
-* Use `/etc/sysctl.d/` instead of editing main file
-* Test changes before production use
-* Keep documentation of changes
-* Avoid unnecessary tuning
+* Always check status before troubleshooting
+* Use restart only when needed
+* Enable only required services
+* Monitor logs using journalctl
 
 ---
 
 ## Contact Information
 
-| **Name** | **Email Address**                                                                 |
-| -------- | --------------------------------------------------------------------------------- |
-| Ankita   | [ankita.singh.snaatak@mygurukulam.co](mailto:ankita.singh.snaatak@mygurukulam.co) |
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Ankita | [ankita.singh.snaatak@mygurukulam.co](mailto:ankita.singh.snaatak@mygurukulam.co) |
 
 ---
 
 ## References
 
-* Ubuntu Sysctl Man Page
-* Linux Kernel Documentation
-* Internal SOP Template
+* Ubuntu systemctl Documentation
+* systemd Official Docs
+
+---
+
+## Notes
+
+This SOP is designed for beginners and follows standard internal documentation format.
