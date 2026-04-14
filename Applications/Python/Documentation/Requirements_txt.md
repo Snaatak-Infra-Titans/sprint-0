@@ -1,4 +1,4 @@
-# README: requirements.txt Documentation (Python)
+# Documentation: Requirements.txt (Python)
 
 ---
 
@@ -18,7 +18,7 @@
 * Versioning Strategies (Best Practices)
 * File Structure & Syntax
 * Installation Workflow
-* Best Practices (Instructor Criteria)
+* Best Practices
 * Common Commands
 * Troubleshooting
 * Contact Information
