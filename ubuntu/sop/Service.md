@@ -85,7 +85,6 @@ Use this to immediately start a service that is currently stopped. This does **n
 # Start a service
 sudo systemctl start nginx
 
-![alt text](screenshot/start-nginx.png)
 
 # Start other common services
 sudo systemctl start postgresql
@@ -106,7 +105,6 @@ Use this to immediately stop a running service. This does **not** prevent it fro
 # Stop a service
 sudo systemctl stop nginx
 
-![alt text](screenshot/stop-nginx.png)
 
 # If a service does not stop cleanly, force it
 sudo systemctl kill nginx
@@ -120,7 +118,6 @@ Restart stops and then starts a service in one step. Use this after changing a c
 # Restart a service (stop + start)
 sudo systemctl restart nginx
 
-![alt text](screenshot/restart-nginx.png)
 
 # Reload config without downtime (if service supports it)
 sudo systemctl reload nginx
@@ -141,8 +138,6 @@ sudo systemctl enable nginx
 sudo systemctl enable --now nginx
 ```
 
-![alt text](screenshot/enable.png)
-
 ---
 
 ### 3.5 Disable a Service
@@ -157,7 +152,6 @@ sudo systemctl disable nginx
 sudo systemctl disable --now nginx
 ```
 
-![![alt text](image.png)](screenshot/disable.png)
 
 ---
 
@@ -168,10 +162,6 @@ The `status` command is the single most useful `systemctl` command. It tells you
 ```bash
 sudo systemctl status nginx
 ```
-
-![alt text](screenshot/status.png)
-
-![alt text](screenshot/status-2.png)
 
 **Example output:**
 
@@ -203,22 +193,18 @@ When a service fails or behaves unexpectedly, `journalctl` lets you read its det
 # Show last 50 lines of logs for a service
 journalctl -u nginx -n 50
 
-![alt text](screenshot/journalctl.png)
 
 # Watch logs live as they appear
 journalctl -u nginx -f
 
-![alt text](screenshot/live-logs.png)
 
 # Logs from the last hour only
 journalctl -u nginx --since '1 hour ago'
 
-![alt text](screenshot/1-hour-logs.png)
 
 # Show only error messages
 journalctl -u nginx -p err
 
-![alt text](screenshot/error-msg.png)
 
 ---
 
