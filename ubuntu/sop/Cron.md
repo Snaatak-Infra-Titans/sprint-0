@@ -70,7 +70,7 @@ Enable cron at boot:
 ```bash
 sudo systemctl enable cron
 ```
-
+<img width="1232" height="508" alt="Screenshot 2026-04-14 at 11 08 34 PM" src="https://github.com/user-attachments/assets/ff0ec827-1810-4e86-8354-8540cde13635" />
 ---
 
 ## 5. Step 2: Create a Cron Job
@@ -98,8 +98,9 @@ crontab -e
 Run a command every minute:
 
 ```bash
-* * * * * echo "Hello Cron" >> /home/$USER/cron.log
+* * * * * echo "Hello Cron" >> /home/shivam/cron.log
 ```
+<img width="1232" height="646" alt="Screenshot 2026-04-14 at 11 17 47 PM" src="https://github.com/user-attachments/assets/90963e31-1721-42cc-b53f-59424d767940" />
 
 ---
 
@@ -116,12 +117,14 @@ Edit cron jobs:
 ```bash
 crontab -e
 ```
+<img width="1232" height="677" alt="Screenshot 2026-04-14 at 11 18 06 PM" src="https://github.com/user-attachments/assets/14b926e6-c9d4-4e85-a185-4742b528d993" />
 
 Remove all cron jobs:
 
 ```bash
 crontab -r
 ```
+<img width="779" height="272" alt="Screenshot 2026-04-14 at 11 22 59 PM" src="https://github.com/user-attachments/assets/28e19248-1fcb-44b2-b73b-337b4b797871" />
 
 ---
 
@@ -136,8 +139,9 @@ grep CRON /var/log/syslog
 Check output file:
 
 ```bash
-cat /home/$USER/cron.log
+cat /home/shivam/cron.log
 ```
+<img width="779" height="272" alt="Screenshot 2026-04-14 at 11 21 51 PM" src="https://github.com/user-attachments/assets/bb8cf79c-1169-4375-9d9b-17c1be926d2d" />
 
 ---
 
