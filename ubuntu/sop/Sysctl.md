@@ -1,4 +1,4 @@
-# SOP: Common Stack | Operating System | Ubuntu | Systemctl
+# SOP: Common Stack | Operating System | Ubuntu | sysctl
 
 ---
 
@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Level**       | **Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | --------------- | ------------ |
-| Ankita     | 2026-04-15     | 1.0         | Ankita              | 2026-04-15         | Internal Review | Team         |
+| Ankita     | 2026-04-15     | 1.3         | Ankita              | 2026-04-15         | Internal Review | Team         |
 
 ---
 
@@ -15,14 +15,16 @@
 * [Overview](#overview)
 * [Purpose](#purpose)
 * [Prerequisites](#prerequisites)
-* [What is systemctl?](#what-is-systemctl)
+* [What is sysctl?](#what-is-sysctl)
+* [Where are these settings stored?](#where-are-these-settings-stored)
 * [Step-by-Step Implementation](#step-by-step-implementation)
 
-  * [Step 1: Check Service Status](#step-1-check-service-status)
-  * [Step 2: Start and Stop Services](#step-2-start-and-stop-services)
-  * [Step 3: Enable and Disable Services](#step-3-enable-and-disable-services)
-  * [Step 4: Restart and Reload Services](#step-4-restart-and-reload-services)
-* [Common Commands](#common-commands)
+  * [Step 1: See Current Settings](#step-1-see-current-settings)
+  * [Step 2: Change a Setting](#step-2-change-a-setting)
+  * [Step 3: Make Change Permanent](#step-3-make-change-permanent)
+  * [Step 4: Apply & Verify](#step-4-apply--verify)
+* [Easy Examples](#easy-examples)
+* [Common Mistakes](#common-mistakes)
 * [Troubleshooting](#troubleshooting)
 * [Best Practices](#best-practices)
 * [Contact Information](#contact-information)
@@ -32,153 +34,170 @@
 
 ## Overview
 
-This SOP explains how to use **systemctl** in Ubuntu in a simple and beginner-friendly way.
+This SOP explains **sysctl** in the simplest way possible.
 
-`systemctl` is used to manage **services (background processes)** in Linux.
+Think of `sysctl` like **settings in your phone** — it changes how your system behaves internally.
 
-Examples of services:
+You can control:
 
-* nginx (web server)
-* mysql (database)
-* ssh (remote access)
+* Networking behavior
+* Memory usage
+* Security rules
 
 ---
 
 ## Purpose
 
-By following this SOP, you will learn:
+After this guide, you will be able to:
 
-* How to check service status
-* How to start/stop services
-* How to enable services on boot
-* How to troubleshoot services
+* Understand what sysctl does
+* Change system settings safely
+* Make changes permanent
+* Verify if changes worked
 
 ---
 
 ## Prerequisites
 
-* Ubuntu 20.04 / 22.04 / 24.04
-* Sudo privileges
-* Basic Linux command knowledge
+* Ubuntu (20.04 / 22.04 / 24.04)
+* Sudo access
+* Basic terminal usage
 
 ---
 
-## What is systemctl?
+## What is sysctl?
 
-`systemctl` is a command used to interact with **systemd**, which manages services in Linux.
+* **Kernel** = Brain of the OS
+* **sysctl** = Settings panel for the brain
 
-👉 In simple terms:
+It lets you change system behavior **without rebooting**.
 
-* It controls background services
-* Helps start, stop, restart applications
-* Manages services during system boot
+---
+
+## Where are these settings stored?
+
+Runtime (live values):
+
+```bash
+/proc/sys/
+```
+
+Permanent config files:
+
+```bash
+/etc/sysctl.conf
+/etc/sysctl.d/*.conf
+```
 
 ---
 
 ## Step-by-Step Implementation
 
-### Step 1: Check Service Status
+### Step 1: See Current Settings
+
+Show all settings:
 
 ```bash
-systemctl status nginx
+sysctl -a
 ```
 
-📸 Screenshot
+Check one setting:
 
-<img width="1106" height="783" alt="image" src="https://github.com/user-attachments/assets/2e48382d-6c84-40d8-9f9f-29678de90b88" />
+```bash
+sysctl net.ipv4.ip_forward
+```
 
 ---
 
-### Step 2: Start and Stop Services
+### Step 2: Change a Setting
 
-Start a service:
-
-```bash
-sudo systemctl start nginx
-```
-
-Stop a service:
+Works instantly, but resets after reboot
 
 ```bash
-sudo systemctl stop nginx
+sudo sysctl -w net.ipv4.ip_forward=1
 ```
-
-📸 Screenshot
-
-<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/2715a30e-4cfb-43a5-827c-7d2f26bbf59e" />
 
 ---
 
-### Step 3: Enable and Disable Services
+### Step 3: Make Change Permanent
 
-Enable service at boot:
-
-```bash
-sudo systemctl enable nginx
-```
-
-Disable service:
+Open config file:
 
 ```bash
-sudo systemctl disable nginx
+sudo vi /etc/sysctl.conf
 ```
 
-📸 Screenshot
+Add:
 
-<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/ef6daa05-93a1-4fb4-8950-061b10743a2f" />
+```bash
+net.ipv4.ip_forward=1
+```
 
 ---
 
-### Step 4: Restart and Reload Services
+### Step 4: Apply & Verify
 
-Restart service:
-
-```bash
-sudo systemctl restart nginx
-```
-
-Reload configuration:
+Apply changes:
 
 ```bash
-sudo systemctl reload nginx
+sudo sysctl --system
 ```
 
-📸 Screenshot
+Verify:
 
-<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/dd58e8e5-4143-49ef-b6f5-84fb150bc1b2" />
-<img width="1106" height="673" alt="image" src="https://github.com/user-attachments/assets/4d2c5ba7-a8cf-41cd-b841-83f9f741cd05" />
+```bash
+sysctl net.ipv4.ip_forward
+```
 
 ---
 
-## Common Commands
+## Easy Examples
 
-| Command                     | Description     |
-| --------------------------- | --------------- |
-| systemctl status <service>  | Check status    |
-| systemctl start <service>   | Start service   |
-| systemctl stop <service>    | Stop service    |
-| systemctl restart <service> | Restart service |
-| systemctl enable <service>  | Enable at boot  |
-| systemctl disable <service> | Disable at boot |
+### Enable IP Forwarding (for networking)
+
+```bash
+net.ipv4.ip_forward=1
+```
+
+### Reduce Memory Swapping (performance)
+
+```bash
+vm.swappiness=10
+```
+
+### Enable Security Feature
+
+```bash
+net.ipv4.tcp_syncookies=1
+```
+
+---
+
+## Common Mistakes
+
+* Forgetting sudo
+* Not applying changes
+* Editing wrong parameter
+* Not saving file properly
 
 ---
 
 ## Troubleshooting
 
-| Issue                | Cause            | Solution                    |
-| -------------------- | ---------------- | --------------------------- |
-| Service not starting | Config issue     | Check logs using journalctl |
-| Permission denied    | Not using sudo   | Use sudo                    |
-| Service failed       | Dependency issue | Check service status output |
+| Problem            | Reason      | Fix                   |
+| ------------------ | ----------- | --------------------- |
+| Change not working | Not applied | Run `sysctl --system` |
+| Permission denied  | No sudo     | Use sudo              |
+| Value resets       | Not saved   | Add to config file    |
 
 ---
 
 ## Best Practices
 
-* Always check status before troubleshooting
-* Use restart only when needed
-* Enable only required services
-* Monitor logs using journalctl
+* Take backup before changes
+* Use `/etc/sysctl.d/` for better organization
+* Test changes first
+* Avoid random tuning from internet
 
 ---
 
@@ -192,11 +211,11 @@ sudo systemctl reload nginx
 
 ## References
 
-* Ubuntu systemctl Documentation
-* systemd Official Docs
+* Ubuntu sysctl Documentation
+* Linux Kernel Docs
 
 ---
 
 ## Notes
 
-This SOP is designed for beginners and follows standard internal documentation format.
+This version is **super beginner-friendly** with simple explanations and real examples.
