@@ -6,25 +6,25 @@
 
 | Author        | Created On   | Version | Last Updated By | Last Edited On | Reviewer        |
 | ------------- | ------------ | ------- | --------------- | -------------- | --------------- |
-| Saransh Rai | 14-04-2026 | 1.0     | Saransh         | 14-042026  |  |
+| Saransh Rai | 14-04-2026 | 1.0     | Saransh Rai         | 14-04-2026   |  |
 
 ---
 
 ## Table of Contents
 
-* Introduction
-* Purpose
-* Scope
-* Prerequisites
-* Disk Usage Monitoring
-* Mount Points Verification
-* Ulimit (Resource Limits)
-* Validation
-* Use Cases
-* Troubleshooting
-* Best Practices
-* Contact Information
-* References
+* [Introduction](#introduction)
+* [Purpose](#purpose)
+* [Scope](#scope)
+* [Prerequisites](#prerequisites)
+* [Disk Usage Monitoring](#disk-usage-monitoring)
+* [Mount Points Verification](#mount-points-verification)
+* [Ulimit (Resource Limits)](#ulimit-resource-limits)
+* [Validation](#validation)
+* [Use Cases](#use-cases)
+* [Troubleshooting](#troubleshooting)
+* [Best Practices](#best-practices)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
 
@@ -261,6 +261,15 @@ ulimit -n 65535
 
 ## Contact Information
 
-| Name | Email |
-| ---- | ----- |
-| Saransh |  saransh.rai.snaatak@mygurukulam.co     |
+| Name        | Email                                                   |
+| ----------- | ------------------------------------------------------- |
+| Saransh Rai | saransh.rai.snaatak@mygurukulam.co |
+
+---
+
+## References
+
+* Ubuntu Documentation
+* Linux Man Pages
+
+---
