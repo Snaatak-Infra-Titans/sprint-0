@@ -90,7 +90,6 @@ sudo systemctl start nginx
 sudo systemctl start postgresql
 sudo systemctl start redis
 
-![alt text](image.png)
 
 
 > ** Note:** If no output is returned, the command executed successfully. Use "systemctl status" to verify the service state.
