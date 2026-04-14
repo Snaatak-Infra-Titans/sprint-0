@@ -71,7 +71,8 @@ df -h
 
 ### Screenshot Placeholder
 
-📸 *Insert Screenshot: df -h output here*
+<img width="1212" height="608" alt="image" src="https://github.com/user-attachments/assets/ca4746d0-ed63-46ad-80ec-3ad0c4716c74" />
+
 
 ---
 
@@ -81,7 +82,8 @@ df -h
 du -sh /var/*
 ```
 
-📸 *Insert Screenshot: du -sh /var/* output here*
+<img width="681" height="348" alt="image" src="https://github.com/user-attachments/assets/2c52a486-8b92-4bd1-8cb7-5b16cc85b992" />
+
 
 ---
 
@@ -91,7 +93,8 @@ du -sh /var/*
 du -sh /*
 ```
 
-📸 *Insert Screenshot: du -sh /* output here*
+<img width="496" height="150" alt="image" src="https://github.com/user-attachments/assets/e8d61bb8-305b-480f-8874-c5da2bccce45" />
+
 
 ---
 
@@ -103,7 +106,8 @@ du -sh /*
 lsblk
 ```
 
-📸 *Insert Screenshot: lsblk output here*
+<img width="787" height="287" alt="image" src="https://github.com/user-attachments/assets/3f7d62ad-d96f-4c9a-aef3-3b67cf05a1ed" />
+
 
 ---
 
@@ -113,7 +117,7 @@ lsblk
 mount | grep "^/dev"
 ```
 
-📸 *Insert Screenshot: mount output here*
+<img width="1167" height="242" alt="image" src="https://github.com/user-attachments/assets/86e96122-b793-4458-a74d-0692d381b8f3" />
 
 ---
 
@@ -123,7 +127,8 @@ mount | grep "^/dev"
 fdisk -l
 ```
 
-📸 *Insert Screenshot: fdisk -l output here*
+<img width="621" height="916" alt="image" src="https://github.com/user-attachments/assets/ca8adfb9-1fc3-4a20-ac30-b6b00eeb4f25" />
+
 
 ---
 
@@ -135,7 +140,8 @@ fdisk -l
 ulimit -a
 ```
 
-📸 *Insert Screenshot: ulimit -a output here*
+<img width="952" height="477" alt="image" src="https://github.com/user-attachments/assets/2e586ae9-4553-42de-b320-b48552cabddd" />
+
 
 ---
 
@@ -145,7 +151,8 @@ ulimit -a
 ulimit -n
 ```
 
-📸 *Insert Screenshot: ulimit -n output here*
+<img width="546" height="108" alt="image" src="https://github.com/user-attachments/assets/6add0ae4-2cc1-4692-9197-a1be29f6de8c" />
+
 
 ---
 
@@ -155,7 +162,8 @@ ulimit -n
 ulimit -n 65535
 ```
 
-📸 *Insert Screenshot: temporary ulimit change here*
+<img width="522" height="66" alt="image" src="https://github.com/user-attachments/assets/e5cdf5c9-35c4-4b60-849d-2d5823cd2f25" />
+
 
 ---
 
@@ -172,16 +180,12 @@ sudo nano /etc/security/limits.conf
 * hard nofile 65535
 ```
 
-📸 *Insert Screenshot: limits.conf configuration here*
-
 ---
 
 ### Step 5: Apply Changes
 
 * Logout and login again
 * Or restart the system
-
-📸 *Insert Screenshot: post-login validation*
 
 ---
 
@@ -193,7 +197,6 @@ sudo nano /etc/security/limits.conf
 df -h
 ```
 
-📸 *Insert Screenshot: validation df output*
 
 ---
 
@@ -209,7 +212,7 @@ Expected:
 65535
 ```
 
-📸 *Insert Screenshot: ulimit validation output*
+
 
 ---
 
@@ -223,7 +226,8 @@ du -sh /*
 sudo apt-get clean
 ```
 
-📸 *Insert Screenshot: disk cleanup process*
+<img width="921" height="722" alt="image" src="https://github.com/user-attachments/assets/fe792bd9-80cd-46fb-9561-22947c488624" />
+
 
 ---
 
@@ -233,8 +237,6 @@ sudo apt-get clean
 ulimit -n
 ulimit -n 65535
 ```
-
-📸 *Insert Screenshot: ulimit issue fix*
 
 ---
 
