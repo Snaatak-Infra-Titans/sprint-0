@@ -1,10 +1,10 @@
-# 🎼 Poetry — Python Dependency Management & Packaging
+#  Poetry — Python Dependency Management & Packaging
 
 > **"Poetry helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere."**
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
 - [What is Poetry?](#what-is-poetry)
 - [Why Use Poetry?](#why-use-poetry)
@@ -55,23 +55,23 @@ Before Poetry, a typical Python project required juggling multiple tools and fil
 
 ## Key Features
 
-### 1. 🔒 Deterministic Dependency Resolution
+### 1.  Deterministic Dependency Resolution
 Poetry uses a **dependency resolver** that ensures all packages are compatible with each other before installing. It prevents the classic "works on my machine" problem.
 
 ```bash
 poetry add requests          # Resolves and locks the entire dependency graph
 ```
 
-### 2. 📦 Unified `pyproject.toml`
+### 2.  Unified `pyproject.toml`
 Everything lives in one file — metadata, dependencies, scripts, build config — following the PEP 517/518 standard.
 
-### 3. 🌐 Automatic Virtual Environment Management
+### 3.  Automatic Virtual Environment Management
 Poetry creates and manages a dedicated virtual environment per project automatically. No more `python -m venv .venv && source .venv/bin/activate`.
 
-### 4. 🔁 Reproducible Builds with `poetry.lock`
+### 4.  Reproducible Builds with `poetry.lock`
 The lock file captures the exact version of every package (including transitive dependencies), guaranteeing identical installs across all machines and CI environments.
 
-### 5. 📂 Dependency Groups
+### 5.  Dependency Groups
 Cleanly separate production, development, test, and documentation dependencies:
 
 ```toml
@@ -83,7 +83,7 @@ pytest = "^7.4"
 black = "^23.0"
 ```
 
-### 6. 🚀 Built-in Publishing
+### 6.  Built-in Publishing
 Build and publish packages to PyPI (or a private registry) without needing `twine` or `setuptools`:
 
 ```bash
@@ -91,7 +91,7 @@ poetry build
 poetry publish
 ```
 
-### 7. 🐍 Python Version Management
+### 7.  Python Version Management
 Specify which Python versions your project supports and Poetry will enforce it:
 
 ```toml
@@ -99,7 +99,7 @@ Specify which Python versions your project supports and Poetry will enforce it:
 python = "^3.9"
 ```
 
-### 8. 🔧 Script Entrypoints
+### 8.  Script Entrypoints
 Define CLI scripts directly in `pyproject.toml`:
 
 ```toml
@@ -128,7 +128,7 @@ poetry --version
 # Poetry (version 1.8.x)
 ```
 
-> ⚠️ **Do not install Poetry via `pip install poetry`** inside a project's virtualenv. It should be a globally available tool.
+>  **Do not install Poetry via `pip install poetry`** inside a project's virtualenv. It should be a globally available tool.
 
 ---
 
@@ -422,7 +422,7 @@ idna = ">=2.5,<4"
 urllib3 = ">=1.21.1,<3"
 ```
 
-> 📌 **Rule of thumb:** Commit `poetry.lock` for **applications** (ensures reproducibility). For **libraries**, you may optionally omit it so users get the freshest compatible versions.
+>  **Rule of thumb:** Commit `poetry.lock` for **applications** (ensures reproducibility). For **libraries**, you may optionally omit it so users get the freshest compatible versions.
 
 ---
 
@@ -484,28 +484,28 @@ poetry publish --dry-run    # Test without actually publishing
 ## Best Practices
 
 ```bash
-# ✅ Always commit poetry.lock (for apps)
+#  Always commit poetry.lock (for apps)
 git add pyproject.toml poetry.lock
 
-# ✅ Store virtualenv inside the project for Docker/CI clarity
+#  Store virtualenv inside the project for Docker/CI clarity
 poetry config virtualenvs.in-project true
 
-# ✅ Use dependency groups to keep production installs lean
+#  Use dependency groups to keep production installs lean
 poetry add pytest --group dev
 
-# ✅ Use `poetry run` in scripts instead of activating manually
+#  Use `poetry run` in scripts instead of activating manually
 poetry run pytest
 poetry run python manage.py migrate
 
-# ✅ Pin Python version explicitly
+#  Pin Python version explicitly
 # In pyproject.toml:
 # python = "^3.11"
 
-# ✅ Regularly update dependencies
+#  Regularly update dependencies
 poetry update
 poetry show --outdated
 
-# ✅ Use `poetry check` to validate pyproject.toml
+#  Use `poetry check` to validate pyproject.toml
 poetry check
 ```
 
@@ -547,11 +547,11 @@ poetry version <rule>         # Bump version (patch/minor/major)
 
 ## Further Reading
 
-- 📘 [Official Poetry Documentation](https://python-poetry.org/docs/)
-- 🐙 [Poetry GitHub Repository](https://github.com/python-poetry/poetry)
-- 📄 [PEP 517 — Build System Interface](https://peps.python.org/pep-0517/)
-- 📄 [PEP 518 — pyproject.toml](https://peps.python.org/pep-0518/)
-- ⚡ [uv — Ultra-fast Python package manager](https://github.com/astral-sh/uv) *(modern alternative)*
+-  [Official Poetry Documentation](https://python-poetry.org/docs/)
+-  [Poetry GitHub Repository](https://github.com/python-poetry/poetry)
+-  [PEP 517 — Build System Interface](https://peps.python.org/pep-0517/)
+-  [PEP 518 — pyproject.toml](https://peps.python.org/pep-0518/)
+-  [uv — Ultra-fast Python package manager](https://github.com/astral-sh/uv) *(modern alternative)*
 
 ---
 
