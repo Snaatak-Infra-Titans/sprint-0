@@ -85,11 +85,14 @@ Use this to immediately start a service that is currently stopped. This does **n
 # Start a service
 sudo systemctl start nginx
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/29695397-6046-436a-b4e6-e2d4e4aad648" />
+
 
 # Start other common services
 sudo systemctl start postgresql
 sudo systemctl start redis
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/12f02063-13d6-492b-8733-da3cf1c1a91d" />
 
 
 > ** Note:** If no output is returned, the command executed successfully. Use "systemctl status" to verify the service state.
@@ -104,6 +107,8 @@ Use this to immediately stop a running service. This does **not** prevent it fro
 # Stop a service
 sudo systemctl stop nginx
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/d92f6c0d-de51-425b-b46b-19b3c5bfd79e" />
+
 
 # If a service does not stop cleanly, force it
 sudo systemctl kill nginx
@@ -117,6 +122,8 @@ Restart stops and then starts a service in one step. Use this after changing a c
 # Restart a service (stop + start)
 sudo systemctl restart nginx
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/0b0c4d17-145b-4cd3-82b4-2894a148fcc2" />
+
 
 # Reload config without downtime (if service supports it)
 sudo systemctl reload nginx
@@ -129,13 +136,14 @@ sudo systemctl reload nginx
 
 Enabling a service creates a symlink so that systemd starts it automatically the next time the server boots. It does **not** start the service right now.
 
-```bash
 # Enable a service to start at boot
 sudo systemctl enable nginx
 
 # Enable AND start in one command
 sudo systemctl enable --now nginx
-```
+
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/839e620f-1170-4507-ba06-46612ceebf19" />
+
 
 ---
 
@@ -143,14 +151,13 @@ sudo systemctl enable --now nginx
 
 Disabling removes the boot-time symlink, so the service will **not** start automatically on reboot. It does not stop the currently running service.
 
-```bash
 # Disable a service from starting at boot
 sudo systemctl disable nginx
 
 # Disable AND stop in one command
 sudo systemctl disable --now nginx
-```
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/c8895531-1deb-4a56-8c45-d28c20d55d12" />
 
 ---
 
@@ -158,9 +165,11 @@ sudo systemctl disable --now nginx
 
 The `status` command is the single most useful `systemctl` command. It tells you whether a service is running, how long it has been running, and shows its recent log output all at once.
 
-```bash
 sudo systemctl status nginx
-```
+
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/43328b24-1bca-47d7-b8c6-ade70cc7bafb" />
+
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/48b0fa62-37e3-46bb-ab3b-d8cbd99f9056" />
 
 **Example output:**
 
@@ -192,18 +201,24 @@ When a service fails or behaves unexpectedly, `journalctl` lets you read its det
 # Show last 50 lines of logs for a service
 journalctl -u nginx -n 50
 
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/7518eb94-6b51-464d-9299-8ef358048b69" />
+
 
 # Watch logs live as they appear
 journalctl -u nginx -f
+
+<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/52020805-51ce-4061-8b41-30b99f394edb" />
 
 
 # Logs from the last hour only
 journalctl -u nginx --since '1 hour ago'
 
+<img width="1370" height="232" alt="Screenshot 2026-04-14 221812" src="https://github.com/user-attachments/assets/60efc65b-08a2-49e5-a56c-321af0e9a523" />
 
 # Show only error messages
 journalctl -u nginx -p err
 
+<img width="1370" height="232" alt="Screenshot 2026-04-14 221812" src="https://github.com/user-attachments/assets/665a84bb-6978-44d6-9cf1-0ea3d9db6709" />
 
 ---
 
