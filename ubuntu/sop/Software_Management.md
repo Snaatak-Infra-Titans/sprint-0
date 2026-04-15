@@ -2,39 +2,51 @@
 
 ---
 
-| **Author**   | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Level**       | **Reviewer** |
-| ------------ | -------------- | ----------- | ------------------- | ------------------ | --------------- | ------------ |
-| Mukesh Kharb | 2026-04-14     | 1.0         | Mukesh Kharb        | 2026-04-14         | Internal Review | Team         |
+## Document Control
+
+| Author       | Created on | Version | Last updated by | Last Edited On | Level           | Reviewer |
+| ------------ | ---------- | ------- | --------------- | -------------- | --------------- | -------- |
+| Mukesh Kharb | 2026-04-14 | 1.0     | Mukesh Kharb    | 2026-04-14     | Internal Review | Team     |
 
 ---
 
 ## Table of Contents
 
-* Introduction
-* Purpose
-* Prerequisites
-* Package Management Concepts
-* Update Packages
-* Install Software
-* Remove Software
-* Upgrade System
-* Advanced Package Management
-* Troubleshooting
-* Best Practices
-* Contact Information
-* References
+* [Introduction](#introduction)
+* [Purpose](#purpose)
+* [Prerequisites](#prerequisites)
+* [Package Management Concepts](#package-management-concepts)
+* [Update Packages](#update-packages)
+* [Install Software](#install-software)
+* [Remove Software](#remove-software)
+* [Upgrade System](#upgrade-system)
+* [Advanced Package Management](#advanced-package-management)
+* [Repository Management](#repository-management)
+* [Snap Package Management](#snap-package-management)
+* [Troubleshooting](#troubleshooting)
+* [Best Practices](#best-practices)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
+
+<a id="introduction"></a>
 
 ## Introduction
 
-Software management in Ubuntu is handled using package management tools such as **APT (Advanced Package Tool)**, **dpkg**, and **snap**. These tools allow administrators to install, update, remove, and manage software efficiently while maintaining dependency integrity.
+> [!NOTE]
+> Software management in Ubuntu is handled using package management tools such as APT (Advanced Package Tool), dpkg, and snap.
+
+These tools allow administrators to install, update, remove, and manage software efficiently while maintaining dependency integrity.
 
 ---
 
+<a id="purpose"></a>
+
 ## Purpose
 
-This SOP provides step-by-step procedures to:
+> [!IMPORTANT]
+> This SOP provides step-by-step procedures for managing software in Ubuntu environments.
 
 * Install software
 * Update package repositories
@@ -44,186 +56,218 @@ This SOP provides step-by-step procedures to:
 
 ---
 
+<a id="prerequisites"></a>
+
 ## Prerequisites
 
+> [!WARNING]
+> Ensure prerequisites are met before executing package management commands.
+
 * Ubuntu 20.04 / 22.04 / 24.04
-* User with **sudo privileges**
+* User with sudo privileges
 * Internet connectivity
 
 ---
 
+<a id="package-management-concepts"></a>
+
 ## Package Management Concepts
 
-| Tool    | Description                              |
-| ------- | ---------------------------------------- |
-| apt     | High-level package manager |
-| apt-get | Low-level backend tool                   |
-| dpkg    | Handles .deb packages                    |
-| snap    | Containerized package system             |
+| Tool    | Description                  |
+| ------- | ---------------------------- |
+| apt     | High-level package manager   |
+| apt-get | Low-level backend tool       |
+| dpkg    | Handles .deb packages        |
+| snap    | Containerized package system |
 
 ---
 
+<a id="update-packages"></a>
+
 ## Update Packages
+
+> [!TIP]
+> Always refresh package index before installation.
 
 ### Refresh Package Index
 
-```bash
+```
 sudo apt update
 ```
 
 ### Upgrade Installed Packages
 
-```bash
+```
 sudo apt upgrade -y
 ```
 
 ### Full Upgrade (Handles dependencies)
 
-```bash
+```
 sudo apt full-upgrade -y
 ```
 
 ---
 
+<a id="install-software"></a>
+
 ## Install Software
+
+> [!TIP]
+> Use -y flag for non-interactive installations in automation scripts.
 
 ### Install a Package
 
-```bash
+```
 sudo apt install nginx -y
 ```
 
 ### Install Multiple Packages
 
-```bash
+```
 sudo apt install git curl wget -y
 ```
 
 ### Install Specific Version
 
-```bash
+```
 sudo apt install nginx=1.18.0
 ```
 
 ---
 
+<a id="remove-software"></a>
+
 ## Remove Software
 
 ### Remove Package
 
-```bash
+```
 sudo apt remove nginx -y
 ```
 
 ### Remove with Configuration
 
-```bash
+```
 sudo apt purge nginx -y
 ```
 
 ### Remove Unused Dependencies
 
-```bash
+```
 sudo apt autoremove -y
 ```
 
 ---
 
+<a id="upgrade-system"></a>
+
 ## Upgrade System
 
 ### Check Upgradable Packages
 
-```bash
+```
 apt list --upgradable
 ```
 
 ### Distribution Upgrade
 
-```bash
+```
 sudo apt dist-upgrade -y
 ```
 
 ---
 
+<a id="advanced-package-management"></a>
+
 ## Advanced Package Management
 
 ### Search for Package
 
-```bash
+```
 apt search nginx
 ```
 
 ### Show Package Details
 
-```bash
+```
 apt show nginx
 ```
 
 ### List Installed Packages
 
-```bash
+```
 dpkg -l
 ```
 
 ### Install .deb Package
 
-```bash
+```
 sudo dpkg -i package.deb
 ```
 
 ### Fix Broken Packages
 
-```bash
+```
 sudo apt --fix-broken install
 ```
 
 ---
 
+<a id="repository-management"></a>
+
 ## Repository Management
 
 ### View Sources
 
-```bash
+```
 cat /etc/apt/sources.list
 ```
 
 ### Add Repository
 
-```bash
+```
 sudo add-apt-repository ppa:deadsnakes/ppa
 ```
 
 ### Update After Adding Repo
 
-```bash
+```
 sudo apt update
 ```
 
 ---
 
+<a id="snap-package-management"></a>
+
 ## Snap Package Management
 
 ### Install Snap Package
 
-```bash
+```
 sudo snap install docker
 ```
 
 ### List Snap Packages
 
-```bash
+```
 snap list
 ```
 
 ### Remove Snap Package
 
-```bash
+```
 sudo snap remove docker
 ```
 
 ---
 
+<a id="troubleshooting"></a>
+
 ## Troubleshooting
+
+> [!WARNING]
+> Most APT issues are related to repositories, locks, or broken dependencies.
 
 | Issue                    | Cause                       | Solution                            |
 | ------------------------ | --------------------------- | ----------------------------------- |
@@ -234,7 +278,12 @@ sudo snap remove docker
 
 ---
 
+<a id="best-practices"></a>
+
 ## Best Practices
+
+> [!IMPORTANT]
+> Follow these practices for stable and secure package management.
 
 * Always run `apt update` before installing packages
 * Use `apt upgrade` regularly for security patches
@@ -244,18 +293,22 @@ sudo snap remove docker
 
 ---
 
+<a id="contact-information"></a>
+
 ## Contact Information
 
-| Name         | Email                                           |
-| ------------ | ----------------------------------------------- |
+| Name         | Email                                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
 | Mukesh Kharb | [mukesh.Kharb.snaatak@mygurukulam.co](mailto:mukesh.Kharb.snaatak@mygurukulam.co) |
 
 ---
 
+<a id="references"></a>
+
 ## References
 
-* Ubuntu APT Documentation
-* Debian Package Management Guide
+* [https://docs.ubuntu.com/](https://docs.ubuntu.com/)
+* [https://manpages.ubuntu.com/](https://manpages.ubuntu.com/)
 
 ---
 
