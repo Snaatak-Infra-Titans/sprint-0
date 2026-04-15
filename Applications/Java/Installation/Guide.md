@@ -1,10 +1,10 @@
-# ☕ Java — Complete Installation Guide
+#  Java — Complete Installation Guide
 
 > **"Write Once, Run Anywhere."** — Java's core philosophy since 1995.
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
 - [What is Java?](#what-is-java)
 - [JDK vs JRE vs JVM — Know Before You Install](#jdk-vs-jre-vs-jvm--know-before-you-install)
@@ -66,7 +66,7 @@ Understanding these three terms will save you confusion:
 | **JRE** | Java Runtime Environment | Runs Java applications | End users running Java apps |
 | **JDK** | Java Development Kit | Compiles + runs Java code | **Developers** ← install this |
 
-> ✅ **Rule:** Always install the **JDK**. It includes everything in the JRE and JVM, plus the tools you need to write, compile, and debug Java programs.
+>  **Rule:** Always install the **JDK**. It includes everything in the JRE and JVM, plus the tools you need to write, compile, and debug Java programs.
 
 ---
 
@@ -76,13 +76,13 @@ Java releases a new version every 6 months, but only certain versions are **Long
 
 | Version | Type | Status | Recommendation |
 |---|---|---|---|
-| Java 8 | LTS | End of free support (Oracle) | ⚠️ Legacy only |
-| Java 11 | LTS | Active support | ✅ Good for enterprise |
-| Java 17 | LTS | Active support | ✅ Stable, widely used |
-| **Java 21** | **LTS** | **Active support** | ✅✅ **Recommended (latest LTS)** |
-| Java 22/23 | Non-LTS | Short-term support | ⚠️ Cutting edge, not for production |
+| Java 8 | LTS | End of free support (Oracle) |  Legacy only |
+| Java 11 | LTS | Active support |  Good for enterprise |
+| Java 17 | LTS | Active support |  Stable, widely used |
+| **Java 21** | **LTS** | **Active support** |  **Recommended (latest LTS)** |
+| Java 22/23 | Non-LTS | Short-term support |  Cutting edge, not for production |
 
-> 🎯 **Recommendation for most users:** Install **Java 21 (LTS)**. It's the latest long-term support version with modern features like virtual threads, pattern matching, and record types.
+>  **Recommendation for most users:** Install **Java 21 (LTS)**. It's the latest long-term support version with modern features like virtual threads, pattern matching, and record types.
 
 ---
 
@@ -99,7 +99,7 @@ Since Java 17, Oracle's JDK requires a commercial license for production use. Se
 | **[GraalVM](https://www.graalvm.org/)** | Oracle | Free / Open Source | Native image compilation |
 | **[Microsoft OpenJDK](https://www.microsoft.com/openjdk)** | Microsoft | Free / Open Source | Azure deployments |
 
-> ✅ **Recommended:** **Eclipse Temurin (Adoptium)** — free, well-maintained, community-backed, and the most common choice for open-source projects.
+>  **Recommended:** **Eclipse Temurin (Adoptium)** — free, well-maintained, community-backed, and the most common choice for open-source projects.
 
 ---
 
@@ -122,9 +122,9 @@ Since Java 17, Oracle's JDK requires a commercial license for production use. Se
 2. Click **Next** on the welcome screen
 3. Accept the license agreement
 4. On the **Custom Setup** screen, enable:
-   - ✅ **Add to PATH** (critical!)
-   - ✅ **Set JAVA_HOME variable**
-   - ✅ **JavaSoft registry keys**
+   -  **Add to PATH** (critical!)
+   -  **Set JAVA_HOME variable**
+   -  **JavaSoft registry keys**
 5. Choose install location (default: `C:\Program Files\Eclipse Adoptium\jdk-21\`)
 6. Click **Install** → **Finish**
 
@@ -529,7 +529,7 @@ public class HelloWorld {
 }
 ```
 
-> ⚠️ The filename **must exactly match** the class name: `HelloWorld.java`
+>  The filename **must exactly match** the class name: `HelloWorld.java`
 
 **Step 2 — Compile**
 
@@ -615,7 +615,7 @@ Configure JDK in `settings.json`:
 
 ## Common Issues & Fixes
 
-### ❌ `java: command not found` / `'java' is not recognized`
+###  `java: command not found` / `'java' is not recognized`
 
 **Cause:** Java is not in your PATH.
 
@@ -631,7 +631,7 @@ dir "C:\Program Files\Eclipse Adoptium\"  # Windows
 
 ---
 
-### ❌ `javac: command not found`
+###  `javac: command not found`
 
 **Cause:** Only the JRE is installed, not the JDK.
 
@@ -642,7 +642,7 @@ sudo apt install -y openjdk-21-jdk        # Ubuntu — note: -jdk not -jre
 
 ---
 
-### ❌ Wrong Java version showing after install
+###  Wrong Java version showing after install
 
 **Cause:** Old Java is still first in PATH, or JAVA_HOME points to an old version.
 
@@ -661,7 +661,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 ---
 
-### ❌ `Error: A JNI error has occurred` / `UnsupportedClassVersionError`
+###  `Error: A JNI error has occurred` / `UnsupportedClassVersionError`
 
 **Cause:** Code was compiled with a newer Java version than the one running it.
 
@@ -674,7 +674,7 @@ javac -version    # Compiler
 
 ---
 
-### ❌ `JAVA_HOME` is set but Maven/Gradle still fails
+###  `JAVA_HOME` is set but Maven/Gradle still fails
 
 **Cause:** Tool is picking up system Java, not JAVA_HOME.
 
@@ -690,7 +690,7 @@ mvn --version     # Should now reflect the correct version
 
 ---
 
-### ❌ macOS — `xcrun: error` when installing Homebrew
+###  macOS — `xcrun: error` when installing Homebrew
 
 **Cause:** Xcode Command Line Tools not installed.
 
@@ -798,13 +798,13 @@ java MyProgram.java    # Compile + run in one step (Java 11+)
 
 ## Further Reading
 
-- 📘 [Eclipse Adoptium (Temurin) — Official Site](https://adoptium.net)
-- 📘 [OpenJDK — Reference Implementation](https://openjdk.org)
-- 📘 [Oracle Java Downloads](https://www.oracle.com/java/technologies/downloads/)
-- 📘 [SDKMAN — Multi-version Manager](https://sdkman.io)
-- 📄 [Java Version History](https://en.wikipedia.org/wiki/Java_version_history)
-- 🛠 [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
-- 🛠 [VS Code Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+-  [Eclipse Adoptium (Temurin) — Official Site](https://adoptium.net)
+-  [OpenJDK — Reference Implementation](https://openjdk.org)
+-  [Oracle Java Downloads](https://www.oracle.com/java/technologies/downloads/)
+-  [SDKMAN — Multi-version Manager](https://sdkman.io)
+-  [Java Version History](https://en.wikipedia.org/wiki/Java_version_history)
+-  [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
+-  [VS Code Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
 ---
 
