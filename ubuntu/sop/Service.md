@@ -92,7 +92,7 @@ sudo systemctl start nginx
 sudo systemctl start postgresql
 sudo systemctl start redis
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/12f02063-13d6-492b-8733-da3cf1c1a91d" />
+<img width="1645" height="450" alt="Screenshot 2026-04-14 220751" src="https://github.com/user-attachments/assets/ea34ba2e-1562-4bb1-ab26-a54cae644d00" />
 
 
 > ** Note:** If no output is returned, the command executed successfully. Use "systemctl status" to verify the service state.
@@ -107,7 +107,8 @@ Use this to immediately stop a running service. This does **not** prevent it fro
 # Stop a service
 sudo systemctl stop nginx
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/d92f6c0d-de51-425b-b46b-19b3c5bfd79e" />
+<img width="1828" height="740" alt="Screenshot 2026-04-14 214245" src="https://github.com/user-attachments/assets/bdbd1d42-ac05-462f-a833-7b26d6d86468" />
+
 
 
 # If a service does not stop cleanly, force it
@@ -121,9 +122,7 @@ Restart stops and then starts a service in one step. Use this after changing a c
 
 # Restart a service (stop + start)
 sudo systemctl restart nginx
-
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/0b0c4d17-145b-4cd3-82b4-2894a148fcc2" />
-
+<img width="1916" height="900" alt="Screenshot 2026-04-14 214530" src="https://github.com/user-attachments/assets/986a3e2f-356a-4198-ac00-8d3d13e377bd" />
 
 # Reload config without downtime (if service supports it)
 sudo systemctl reload nginx
@@ -142,8 +141,7 @@ sudo systemctl enable nginx
 # Enable AND start in one command
 sudo systemctl enable --now nginx
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/839e620f-1170-4507-ba06-46612ceebf19" />
-
+<img width="1752" height="277" alt="Screenshot 2026-04-14 215825" src="https://github.com/user-attachments/assets/1d94d037-8a31-4776-8736-b22125f438e0" />
 
 ---
 
@@ -157,7 +155,7 @@ sudo systemctl disable nginx
 # Disable AND stop in one command
 sudo systemctl disable --now nginx
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/c8895531-1deb-4a56-8c45-d28c20d55d12" />
+<img width="1726" height="402" alt="Screenshot 2026-04-14 220050" src="https://github.com/user-attachments/assets/9defbeaa-cb92-4b3d-b9f9-616ae9ef22f6" />
 
 ---
 
@@ -167,9 +165,9 @@ The `status` command is the single most useful `systemctl` command. It tells you
 
 sudo systemctl status nginx
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/43328b24-1bca-47d7-b8c6-ade70cc7bafb" />
+<img width="1792" height="631" alt="Screenshot 2026-04-14 220211" src="https://github.com/user-attachments/assets/975826bc-be8e-4d95-9f36-ef9d8012f798" />
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/48b0fa62-37e3-46bb-ab3b-d8cbd99f9056" />
+<img width="1792" height="631" alt="Screenshot 2026-04-14 220211" src="https://github.com/user-attachments/assets/d856c174-3417-473c-bfbe-b98aa0889562" />
 
 **Example output:**
 
@@ -201,24 +199,22 @@ When a service fails or behaves unexpectedly, `journalctl` lets you read its det
 # Show last 50 lines of logs for a service
 journalctl -u nginx -n 50
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/7518eb94-6b51-464d-9299-8ef358048b69" />
-
+<img width="1334" height="207" alt="Screenshot 2026-04-14 221137" src="https://github.com/user-attachments/assets/985b45a3-efb6-4f42-a57d-3be6386e20fd" />
 
 # Watch logs live as they appear
 journalctl -u nginx -f
 
-<img width="1801" height="877" alt="Screenshot 2026-04-14 213741" src="https://github.com/user-attachments/assets/52020805-51ce-4061-8b41-30b99f394edb" />
-
+<img width="1256" height="207" alt="Screenshot 2026-04-14 221313" src="https://github.com/user-attachments/assets/2c766541-1188-4060-bf9c-0ec406248451" />
 
 # Logs from the last hour only
 journalctl -u nginx --since '1 hour ago'
 
-<img width="1370" height="232" alt="Screenshot 2026-04-14 221812" src="https://github.com/user-attachments/assets/60efc65b-08a2-49e5-a56c-321af0e9a523" />
+<img width="1532" height="589" alt="Screenshot 2026-04-14 221657" src="https://github.com/user-attachments/assets/2dcf8b70-88d2-4870-854a-f9f440d7757f" />
 
 # Show only error messages
 journalctl -u nginx -p err
 
-<img width="1370" height="232" alt="Screenshot 2026-04-14 221812" src="https://github.com/user-attachments/assets/665a84bb-6978-44d6-9cf1-0ea3d9db6709" />
+<img width="1370" height="232" alt="Screenshot 2026-04-14 221812" src="https://github.com/user-attachments/assets/5841b8a9-7c90-4250-8b4c-06e034debd2e" />
 
 ---
 
