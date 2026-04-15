@@ -109,7 +109,9 @@ Java follows a multi-step execution model:
    - Provides libraries and runtime support  
 
 6. **JDK (Java Development Kit)**  
-   - Includes compiler, debugger, and tools for development  
+   - Includes compiler, debugger, and tools for development
+  
+<img width="632" height="502" alt="image" src="https://github.com/user-attachments/assets/d7017a4e-0b36-4901-9c18-72c17ee91809" />
 
 This architecture is the reason behind Java’s portability and flexibility.
 
