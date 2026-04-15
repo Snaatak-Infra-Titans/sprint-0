@@ -269,9 +269,10 @@ ulimit -n 65535
 
 ---
 
-## References
-
-* Ubuntu Documentation
-* Linux Man Pages
-
+9. References
+Topic	Link
+Ubuntu Documentation	https://help.ubuntu.com/
+Linux Man Pages	https://man7.org/linux/man-pages/
+Ulimit Documentation	https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/
+Disk Usage (df, du)	https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/
 ---
