@@ -1,143 +1,160 @@
-# SOP: Common Stack | Operating System | Ubuntu | sysctl
+# SOP: Common Stack | Operating System | Ubuntu | Sysctl
 
 ---
 
 ## Author Table
 
-| **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Level**       | **Reviewer** |
-| ---------- | -------------- | ----------- | ------------------- | ------------------ | --------------- | ------------ |
-| Ankita     | 2026-04-15     | 1.3         | Ankita              | 2026-04-15         | Internal Review | Team         |
+| **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
+| ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
+| Ankita     | 15-04-2026     | v1.0        | Ankita              | 15-04-2026         | Team             |                 |                 |                 |
 
 ---
 
 ## Table of Contents
 
-* [Overview](#overview)
-* [Purpose](#purpose)
-* [Prerequisites](#prerequisites)
-* [What is sysctl?](#what-is-sysctl)
-* [Where are these settings stored?](#where-are-these-settings-stored)
-* [Step-by-Step Implementation](#step-by-step-implementation)
-
-  * [Step 1: See Current Settings](#step-1-see-current-settings)
-  * [Step 2: Change a Setting](#step-2-change-a-setting)
-  * [Step 3: Make Change Permanent](#step-3-make-change-permanent)
-  * [Step 4: Apply & Verify](#step-4-apply--verify)
-* [Easy Examples](#easy-examples)
-* [Common Mistakes](#common-mistakes)
-* [Troubleshooting](#troubleshooting)
-* [Best Practices](#best-practices)
-* [Contact Information](#contact-information)
-* [References](#references)
+1. [Overview](#overview)
+2. [Purpose](#purpose)
+3. [Prerequisites](#prerequisites)
+4. [What is Sysctl?](#what-is-sysctl)
+5. [Step-by-Step Implementation](#step-by-step-implementation)
+6. [Common Use Cases](#common-use-cases)
+7. [Troubleshooting](#troubleshooting)
+8. [Best Practices](#best-practices)
+9. [FAQs](#faqs)
+10. [Contact Information](#contact-information)
+11. [References](#references)
 
 ---
 
 ## Overview
 
-This SOP explains **sysctl** in the simplest way possible.
+This document provides a beginner-friendly Standard Operating Procedure (SOP) for using the `sysctl` command in Ubuntu.
 
-Think of `sysctl` like **settings in your phone** — it changes how your system behaves internally.
+The `sysctl` command is used to view and modify Linux kernel parameters such as networking, memory management, and security settings.
 
-You can control:
-
-* Networking behavior
-* Memory usage
-* Security rules
+It is widely used in DevOps and system administration for performance tuning and system configuration.
 
 ---
 
 ## Purpose
 
-After this guide, you will be able to:
+The purpose of this SOP is to:
 
-* Understand what sysctl does
-* Change system settings safely
-* Make changes permanent
-* Verify if changes worked
+* Explain what `sysctl` is
+* Help users view kernel parameters
+* Guide users to modify parameters safely
+* Show how to make changes temporary or permanent
+* Apply changes without reboot
 
 ---
 
 ## Prerequisites
 
-* Ubuntu (20.04 / 22.04 / 24.04)
-* Sudo access
-* Basic terminal usage
+* Ubuntu 20.04 / 22.04 / 24.04
+* Basic Linux command knowledge
+* sudo or root access
+
+(Optional but recommended)
+
+```bash
+sudo cp /etc/sysctl.conf /etc/sysctl.conf.backup
+```
 
 ---
 
-## What is sysctl?
+## What is Sysctl?
 
-* **Kernel** = Brain of the OS
-* **sysctl** = Settings panel for the brain
+`sysctl` is a Linux utility used to interact with kernel parameters at runtime.
 
-It lets you change system behavior **without rebooting**.
-
----
-
-## Where are these settings stored?
-
-Runtime (live values):
+These parameters are stored in:
 
 ```bash
 /proc/sys/
 ```
 
-Permanent config files:
+Example:
 
 ```bash
-/etc/sysctl.conf
-/etc/sysctl.d/*.conf
+cat /proc/sys/net/ipv4/ip_forward
 ```
+
+It allows administrators to control system behavior without modifying kernel code.
 
 ---
 
 ## Step-by-Step Implementation
 
-### Step 1: See Current Settings
-
-Show all settings:
+### Step 1: View All Kernel Parameters
 
 ```bash
 sysctl -a
 ```
 
-Check one setting:
+---
+
+### Step 2: Check Specific Parameter
 
 ```bash
 sysctl net.ipv4.ip_forward
 ```
 
+Example output:
+
+```
+net.ipv4.ip_forward = 0
+```
+
 ---
 
-### Step 2: Change a Setting
+### Step 3: Temporary Changes (Runtime Only)
 
-Works instantly, but resets after reboot
+Apply changes immediately (not persistent after reboot):
 
 ```bash
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
 
----
-
-### Step 3: Make Change Permanent
-
-Open config file:
+Example:
 
 ```bash
-sudo vi /etc/sysctl.conf
+sudo sysctl -w vm.swappiness=10
+```
+
+---
+
+### Step 4: Permanent Changes
+
+#### Option 1: Edit global configuration
+
+```bash
+sudo nano /etc/sysctl.conf
 ```
 
 Add:
 
 ```bash
-net.ipv4.ip_forward=1
+net.ipv4.ip_forward = 1
+vm.swappiness = 10
 ```
 
 ---
 
-### Step 4: Apply & Verify
+#### Option 2: Use sysctl.d directory (Recommended)
 
-Apply changes:
+```bash
+sudo nano /etc/sysctl.d/99-custom.conf
+```
+
+Add:
+
+```bash
+net.ipv4.ip_forward = 1
+vm.swappiness = 10
+```
+
+---
+
+### Step 5: Apply Changes
 
 ```bash
 sudo sysctl --system
@@ -151,53 +168,51 @@ sysctl net.ipv4.ip_forward
 
 ---
 
-## Easy Examples
+## Common Use Cases
 
-### Enable IP Forwarding (for networking)
-
-```bash
-net.ipv4.ip_forward=1
-```
-
-### Reduce Memory Swapping (performance)
-
-```bash
-vm.swappiness=10
-```
-
-### Enable Security Feature
-
-```bash
-net.ipv4.tcp_syncookies=1
-```
-
----
-
-## Common Mistakes
-
-* Forgetting sudo
-* Not applying changes
-* Editing wrong parameter
-* Not saving file properly
+| Use Case               | Command                       |
+| ---------------------- | ----------------------------- |
+| Enable IP forwarding   | net.ipv4.ip_forward=1         |
+| Improve memory usage   | vm.swappiness=10              |
+| Enable SYN cookies     | net.ipv4.tcp_syncookies=1     |
+| Reverse path filtering | net.ipv4.conf.all.rp_filter=1 |
 
 ---
 
 ## Troubleshooting
 
-| Problem            | Reason      | Fix                   |
-| ------------------ | ----------- | --------------------- |
-| Change not working | Not applied | Run `sysctl --system` |
-| Permission denied  | No sudo     | Use sudo              |
-| Value resets       | Not saved   | Add to config file    |
+| Issue                  | Cause               | Solution            |
+| ---------------------- | ------------------- | ------------------- |
+| Permission denied      | Not using sudo      | Use sudo            |
+| Changes not persistent | Not saved in config | Add to sysctl.conf  |
+| Parameter not found    | Wrong parameter     | Use sysctl -a       |
+| Changes not applied    | Not reloaded        | Run sysctl --system |
 
 ---
 
 ## Best Practices
 
-* Take backup before changes
-* Use `/etc/sysctl.d/` for better organization
-* Test changes first
-* Avoid random tuning from internet
+* Take backup before making changes
+* Use `/etc/sysctl.d/` for modular configuration
+* Test changes before applying in production
+* Avoid unnecessary kernel tuning
+* Document all changes
+
+---
+
+## FAQs
+
+**Q1: What is sysctl used for?**
+It is used to modify Linux kernel parameters.
+
+**Q2: Are changes permanent?**
+Only if saved in configuration files.
+
+**Q3: Where are sysctl settings stored?**
+`/etc/sysctl.conf` and `/etc/sysctl.d/`
+
+**Q4: Is reboot required?**
+No, changes can be applied using `sysctl --system`.
 
 ---
 
@@ -211,11 +226,7 @@ net.ipv4.tcp_syncookies=1
 
 ## References
 
-* Ubuntu sysctl Documentation
-* Linux Kernel Docs
-
----
-
-## Notes
-
-This version is **super beginner-friendly** with simple explanations and real examples.
+| Topic                      | Link                                                                                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Ubuntu Sysctl Man Page     | [https://manpages.ubuntu.com/manpages/jammy/en/man8/sysctl.8.html](https://manpages.ubuntu.com/manpages/jammy/en/man8/sysctl.8.html) |
+| Linux Kernel Documentation | [https://www.kernel.org/doc/](https://www.kernel.org/doc/)                                                                           |
