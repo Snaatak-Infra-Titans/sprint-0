@@ -1,7 +1,3 @@
-Your SOP is already very well structured 👍 — I’ll simplify the language and make it more beginner-friendly **without changing the structure**.
-
----
-
 # 🐍 Python 3.12 Installation Guide (Ubuntu 24.04)
 
 Install Python 3.12 (Latest Stable) on Ubuntu 24.04 in a simple and beginner-friendly way
