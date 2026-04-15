@@ -358,15 +358,5 @@ javac --release 17 HelloWorld.java
 | Run           | `java file`                       |
 | Set JAVA_HOME | `export JAVA_HOME=...`            |
 
----
 
-##  Done!
-
-You have successfully:
-
-* Installed Java 21
-* Configured environment
-* Run your first program
-
----
 
