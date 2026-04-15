@@ -6,7 +6,7 @@ Install Java JDK 21 (LTS) on Ubuntu 24.04 in a simple and beginner-friendly way
 
 | Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 |------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
-| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | -           | -          | -          | -          |
+| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
 ---
 
 ##  Overview
@@ -201,7 +201,7 @@ source ~/.bashrc
 echo $JAVA_HOME
 ```
 
- *Add screenshot here*
+ 
 
 ---
 
@@ -222,7 +222,8 @@ sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
 
- *Add screenshot here*
+ <img width="1185" height="670" alt="image" src="https://github.com/user-attachments/assets/f7b2c4e6-4519-4d3c-a5f6-3e4f977fdf6f" />
+
 
 ---
 
@@ -235,7 +236,8 @@ which java
 echo $JAVA_HOME
 ```
 
- *Add screenshot here*
+ <img width="880" height="233" alt="image" src="https://github.com/user-attachments/assets/f516f2a3-6712-41fb-8c13-f50b58117b52" />
+
 
 ---
 
@@ -254,8 +256,8 @@ public class HelloWorld {
     }
 }
 ```
+<img width="542" height="159" alt="image" src="https://github.com/user-attachments/assets/23b04bc7-2df9-412f-a3a1-1b371517662c" />
 
- *Add screenshot here*
 
 ---
 
@@ -266,7 +268,8 @@ javac HelloWorld.java
 ls
 ```
 
- *Add screenshot here*
+<img width="1497" height="98" alt="image" src="https://github.com/user-attachments/assets/2a8eeca2-f0d6-417c-b182-f160da9c2bf2" />
+
 
 ---
 
@@ -276,7 +279,8 @@ ls
 java HelloWorld
 ```
 
- *Add screenshot here*
+ <img width="515" height="58" alt="image" src="https://github.com/user-attachments/assets/6f45b451-0717-44d9-b349-d2b29d88e249" />
+
 
 ---
 
@@ -296,7 +300,8 @@ java HelloWorld.java
 sudo snap install intellij-idea-community --classic
 ```
 
- *Add screenshot here*
+ <img width="838" height="58" alt="image" src="https://github.com/user-attachments/assets/0e4d6972-f694-40c9-913c-52e5258650d5" />
+
 
 ---
 
@@ -306,8 +311,6 @@ sudo snap install intellij-idea-community --classic
 sudo snap install code --classic
 code --install-extension vscjava.vscode-java-pack
 ```
-
- *Add screenshot here*
 
 ---
 
