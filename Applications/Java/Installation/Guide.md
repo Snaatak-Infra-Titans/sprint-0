@@ -51,7 +51,9 @@ This guide covers installing Java using:
 lsb_release -a
 ```
 
- *Add screenshot here*
+
+ <img width="459" height="133" alt="image" src="https://github.com/user-attachments/assets/d76366d6-8193-45b8-b2aa-1e82c048c8e5" />
+
 
 ---
 
@@ -63,7 +65,8 @@ df -h /
 free -h
 ```
 
- *Add screenshot here*
+ <img width="819" height="278" alt="image" src="https://github.com/user-attachments/assets/2efe7b3c-fa8c-4dd0-a5f6-0e1ca1997b67" />
+
 
 ---
 
@@ -73,7 +76,8 @@ free -h
 sudo apt update && sudo apt upgrade -y
 ```
 
- *Add screenshot here*
+ <img width="1064" height="703" alt="image" src="https://github.com/user-attachments/assets/aad5ca98-e87e-46e7-b23d-8c19d9de2ad4" />
+
 
 ---
 
@@ -85,7 +89,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y openjdk-21-jdk
 ```
 
- *Add screenshot here*
+ <img width="1322" height="698" alt="image" src="https://github.com/user-attachments/assets/cf41b783-4498-48df-a97f-36d1bd7a1db7" />
+
 
 ---
 
@@ -96,7 +101,8 @@ java -version
 javac -version
 ```
 
- *Add screenshot here*
+ <img width="806" height="146" alt="image" src="https://github.com/user-attachments/assets/ebdf5ad9-9400-4072-b823-4d1e969c2b20" />
+
 
 ---
 
@@ -114,7 +120,8 @@ wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public \
 | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
 ```
 
- *Add screenshot here*
+ <img width="1089" height="473" alt="image" src="https://github.com/user-attachments/assets/99c803eb-d0e9-4878-a66c-e898488d76c5" />
+
 
 ---
 
@@ -134,7 +141,8 @@ sudo apt update
 sudo apt install -y temurin-21-jdk
 ```
 
- *Add screenshot here*
+ <img width="1849" height="887" alt="image" src="https://github.com/user-attachments/assets/368d5308-bd04-4264-a16e-e090b1992161" />
+
 
 ---
 
@@ -145,7 +153,8 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 
- *Add screenshot here*
+ <img width="1071" height="887" alt="image" src="https://github.com/user-attachments/assets/330bd90e-5b0e-469e-b1c4-9863a8e9fcff" />
+
 
 ---
 
@@ -157,7 +166,8 @@ sdk install java 21.0.3-tem
 sdk default java 21.0.3-tem
 ```
 
- *Add screenshot here*
+ <img width="1845" height="435" alt="image" src="https://github.com/user-attachments/assets/9d3eee21-7706-4bf8-a57d-67d5dbbdab54" />
+
 
 ---
 
