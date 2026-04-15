@@ -1,40 +1,52 @@
-# Documentation: Requirements.txt (Python)
+# Documentation: requirements.txt (Python)
 
 ---
 
-| **Author**   | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Level**       | **Reviewer** |
-| ------------ | -------------- | ----------- | ------------------- | ------------------ | --------------- | ------------ |
-| Mukesh Kharb | 2026-04-14     | 3.0         | Mukesh Kharb        | 2026-04-14         | Internal Review | Team         |
+## Document Control
+
+| Author       | Created on | Version | Last updated by | Last Edited On | Level           | Reviewer |
+| ------------ | ---------- | ------- | --------------- | -------------- | --------------- | -------- |
+| Mukesh Kharb | 2026-04-14 | 3.0     | Mukesh Kharb    | 2026-04-14     | Internal Review | Team     |
 
 ---
 
 ## Table of Contents
 
-* Introduction
-* Why requirements.txt (Problem Statement)
-* Use Cases
-* What is requirements.txt
-* Dependency Versioning (Core Concept)
-* Versioning Strategies (Best Practices)
-* File Structure & Syntax
-* Installation Workflow
-* Best Practices
-* Common Commands
-* Troubleshooting
-* Contact Information
-* References
+* [Introduction](#introduction)
+* [Why requirements.txt (Problem Statement)](#why-requirementstxt-problem-statement)
+* [Use Cases](#use-cases)
+* [What is requirements.txt](#what-is-requirementstxt)
+* [Dependency Versioning (Core Concept)](#dependency-versioning-core-concept)
+* [Versioning Strategies (Best Practices)](#versioning-strategies-best-practices)
+* [File Structure & Syntax](#file-structure--syntax)
+* [Installation Workflow](#installation-workflow)
+* [Best Practices (Instructor Criteria Focus)](#best-practices-instructor-criteria-focus)
+* [Common Commands](#common-commands)
+* [Troubleshooting](#troubleshooting)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
+
+<a id="introduction"></a>
 
 ## Introduction
 
-In Python projects, applications depend on multiple external libraries. Managing these dependencies without a structured approach leads to **inconsistent environments**, **deployment failures**, and **version conflicts**.
+> [!NOTE]
+> This section explains the purpose and importance of dependency management in Python projects.
 
-The `requirements.txt` file provides a **standardized and reproducible way** to define and manage these dependencies.
+In Python projects, applications depend on multiple external libraries. Managing these dependencies without a structured approach leads to inconsistent environments, deployment failures, and version conflicts.
+
+The `requirements.txt` file provides a standardized and reproducible way to define and manage these dependencies.
 
 ---
 
+<a id="why-requirementstxt-problem-statement"></a>
+
 ## Why requirements.txt (Problem Statement)
+
+> [!WARNING]
+> Lack of dependency control can lead to inconsistent environments and deployment failures.
 
 Without `requirements.txt`:
 
@@ -69,13 +81,16 @@ Application may break due to API changes.
 
 ---
 
+<a id="use-cases"></a>
+
 ## Use Cases
+
+> [!TIP]
+> This section highlights practical scenarios where requirements.txt is used.
 
 ### 1. Developer Onboarding
 
-New developer can install all dependencies using:
-
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -93,13 +108,15 @@ Each service maintains its own dependency file for isolation.
 
 ---
 
+<a id="what-is-requirementstxt"></a>
+
 ## What is requirements.txt
 
-`requirements.txt` is a **dependency declaration file** containing a list of Python packages with optional version constraints.
+`requirements.txt` is a dependency declaration file containing a list of Python packages with optional version constraints.
 
 Example:
 
-```txt
+```
 flask==2.3.2
 requests>=2.28.0
 psycopg2-binary==2.9.9
@@ -112,9 +129,14 @@ Each entry defines:
 
 ---
 
+<a id="dependency-versioning-core-concept"></a>
+
 ## Dependency Versioning (Core Concept)
 
-Dependency versioning controls **which version of a package is installed**.
+> [!IMPORTANT]
+> Incorrect versioning can break applications or introduce security risks.
+
+Dependency versioning controls which version of a package is installed.
 
 It is critical because:
 
@@ -130,58 +152,55 @@ Improper versioning leads to:
 
 ---
 
+<a id="versioning-strategies-best-practices"></a>
+
 ## Versioning Strategies (Best Practices)
 
-### 1. Exact Version (==) → **Recommended for Production**
+> [!TIP]
+> Follow these strategies to ensure stability and maintainability.
 
-```txt
+### 1. Exact Version (==) → Recommended for Production
+
+```
 flask==2.3.2
 ```
 
-**Why:**
-
-* Ensures reproducibility
-* Prevents unexpected updates
+Ensures reproducibility and prevents unexpected updates.
 
 ---
 
-### 2. Minimum Version (>=) → **Flexible but Risky**
+### 2. Minimum Version (>=) → Flexible but Risky
 
-```txt
+```
 flask>=2.0
 ```
 
-**Use Case:** Development environments
-
-**Risk:** New versions may introduce breaking changes
+Use case: Development
+Risk: Breaking changes
 
 ---
 
-### 3. Version Range → **Balanced Approach**
+### 3. Version Range → Balanced Approach
 
-```txt
+```
 flask>=2.0,<3.0
 ```
 
-**Why:**
-
-* Allows updates within safe boundary
-* Prevents major version breaks
+Allows updates within a safe boundary and prevents major version breaks.
 
 ---
 
-### 4. No Version → **Not Recommended**
+### 4. No Version → Not Recommended
 
-```txt
+```
 flask
 ```
 
-**Problem:**
-
-* Installs latest version
-* Completely non-deterministic
+Installs latest version and is non-deterministic.
 
 ---
+
+<a id="file-structure--syntax"></a>
 
 ## File Structure & Syntax
 
@@ -203,40 +222,50 @@ package==version
 
 ### Comments
 
-```txt
+```
 # Core dependencies
 flask==2.3.2
 ```
 
 ---
 
+<a id="installation-workflow"></a>
+
 ## Installation Workflow
 
-### Step 1: (Optional but Recommended) Activate virtual environment
+> [!NOTE]
+> Follow these steps sequentially to install dependencies correctly.
 
-```bash
+### Step 1: Activate virtual environment (optional)
+
+```
 source venv/bin/activate
 ```
 
 ### Step 2: Install dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
 ### Step 3: Verify installation
 
-```bash
+```
 pip list
 ```
 
 ---
 
+<a id="best-practices-instructor-criteria-focus"></a>
+
 ## Best Practices (Instructor Criteria Focus)
+
+> [!IMPORTANT]
+> These guidelines align with production-grade DevOps standards.
 
 ### Why-focused Practices
 
-* Always define versions to avoid ambiguity
+* Always define versions
 * Avoid floating dependencies
 
 ### Use Case-driven Practices
@@ -258,6 +287,8 @@ pip list
 
 ---
 
+<a id="common-commands"></a>
+
 ## Common Commands
 
 | Command                         | Description             |
@@ -269,7 +300,12 @@ pip list
 
 ---
 
+<a id="troubleshooting"></a>
+
 ## Troubleshooting
+
+> [!NOTE]
+> Use this section to identify and resolve common issues.
 
 | Issue                       | Cause                 | Solution                       |
 | --------------------------- | --------------------- | ------------------------------ |
@@ -279,6 +315,8 @@ pip list
 
 ---
 
+<a id="contact-information"></a>
+
 ## Contact Information
 
 | Name         | Email                                                                             |
@@ -287,13 +325,15 @@ pip list
 
 ---
 
+<a id="references"></a>
+
 ## References
 
-* Python Official Documentation
-* pip Documentation
+* [https://docs.python.org/3/](https://docs.python.org/3/)
+* [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/)
 
 ---
 
 ## Notes
 
-This document strictly focuses on `requirements.txt` aligned with instructor evaluation criteria: **Why, Use Case, and Dependency Versioning Best Practices**.
+This document strictly focuses on `requirements.txt` aligned with instructor evaluation criteria: Why, Use Case, and Dependency Versioning Best Practices.
