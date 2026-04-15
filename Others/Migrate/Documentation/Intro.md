@@ -252,3 +252,19 @@ liquibase update
 * It is essential for real-world applications
 
 ---
+
+## References
+
+* Liquibase Official Documentation
+  [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)
+
+* Alembic Documentation
+  [https://alembic.sqlalchemy.org/en/latest/](https://alembic.sqlalchemy.org/en/latest/)
+
+* Flask-Migrate Documentation
+  [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)
+
+* Database Migration Concepts (General Guide)
+  [https://martinfowler.com/articles/evodb.html](https://martinfowler.com/articles/evodb.html)
+
+---
