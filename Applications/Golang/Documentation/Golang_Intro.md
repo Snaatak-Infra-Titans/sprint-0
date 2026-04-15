@@ -8,18 +8,18 @@
 
 ## Table of Contents
 
-1. Introduction  
-2. What is Golang?  
-3. Why Golang?  
-4. Key Features of Golang  
-5. Golang Execution Model  
-6. Concurrency in Golang (Goroutines & Channels)  
-7. Use Cases of Golang  
-8. Advantages of Golang  
-9. Limitations of Golang  
-10. Conclusion  
-11. FAQs  
-12. References  
+1. [Introduction](#1-introduction)  
+2. [What is Golang?](#2-what-is-golang)  
+3. [Why Golang?](#3-why-golang)  
+4. [Key Features of Golang](#4-key-features-of-golang)  
+5. [Golang Execution Model](#5-golang-execution-model)  
+6. [Concurrency in Golang (Goroutines & Channels)](#6-concurrency-in-golang-goroutines--channels)  
+7. [Use Cases of Golang](#7-use-cases-of-golang)  
+8. [Advantages of Golang](#8-advantages-of-golang)  
+9. [Limitations of Golang](#9-limitations-of-golang)  
+10. [Conclusion](#10-conclusion)  
+11. [FAQs](#11-faqs)  
+12. [References](#12-references)  
 
 ---
 
@@ -40,6 +40,8 @@ It combines:
 - The simplicity of high-level languages  
 
 Go is designed specifically for modern applications such as cloud-native systems, distributed services, and scalable APIs.
+
+### Architecture:
 
 ---
 
@@ -91,6 +93,7 @@ Go applications can run on multiple operating systems like Linux, Windows, and m
 ## 5. Golang Execution Model
 
 Golang follows a simple compilation and execution process:
+<img width="1420" height="708" alt="image" src="https://github.com/user-attachments/assets/48496e1a-c501-4d29-ac6d-01d8f4cf299c" />
 
 1. **Source Code (.go file)**  
    - Written by the developer  
