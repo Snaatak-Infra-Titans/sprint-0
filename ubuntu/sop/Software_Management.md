@@ -94,6 +94,7 @@ These tools allow administrators to install, update, remove, and manage software
 ```
 sudo apt update
 ```
+><img width="1377" height="889" alt="image" src="https://github.com/user-attachments/assets/71508a7d-4083-41cb-bcdb-4817f29dec16" />
 
 ### Upgrade Installed Packages
 
@@ -106,6 +107,7 @@ sudo apt upgrade -y
 ```
 sudo apt full-upgrade -y
 ```
+><img width="1441" height="855" alt="image" src="https://github.com/user-attachments/assets/6e5fd144-1d88-4203-bb07-7662df85a650" />
 
 ---
 
@@ -121,6 +123,7 @@ sudo apt full-upgrade -y
 ```
 sudo apt install nginx -y
 ```
+><img width="1435" height="786" alt="image" src="https://github.com/user-attachments/assets/57ff783e-c6f1-41d2-b06c-775d705efd20" />
 
 ### Install Multiple Packages
 
@@ -169,6 +172,7 @@ sudo apt autoremove -y
 ```
 apt list --upgradable
 ```
+><img width="1219" height="338" alt="image" src="https://github.com/user-attachments/assets/2be4850d-bd9f-4ba5-a3bb-66d9e9dff35d" />
 
 ### Distribution Upgrade
 
