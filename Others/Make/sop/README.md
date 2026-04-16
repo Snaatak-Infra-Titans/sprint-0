@@ -3,12 +3,9 @@
 Automate build and task execution using Make (GNU Make)
 
 ---
-
-##  Document Information
-
 | Author | Created on | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Gourav | 15-04-2026 | v1.0    | Gourav          | 15-04-2026     | -            | -           | -           | -           |
+| Gourav | 15-04-2026 | v1.0    | Gourav          | 16-04-2026     | -            | -           | -           | -           |
 
 ---
 
@@ -16,10 +13,10 @@ Automate build and task execution using Make (GNU Make)
 
 This guide explains:
 
-* ✅ Make Installation (APT)
-* ✅ Makefile Basics
-* ✅ Common Commands
-* ✅ Practical Examples
+*  Make Installation (APT)
+*  Makefile Basics
+*  Common Commands
+*  Practical Examples
 
 ---
 
@@ -90,7 +87,7 @@ make --version
 sudo apt install -y build-essential
 ```
 
-👉 Includes:
+ Includes:
 
 * make
 * gcc (compiler)
@@ -99,7 +96,7 @@ sudo apt install -y build-essential
 
 ---
 
-## 📂 Makefile Structure
+##  Makefile Structure
 
 Basic syntax:
 
@@ -139,7 +136,7 @@ make hello
 
 ---
 
-## 🔄 Multiple Targets Example
+##  Multiple Targets Example
 
 ```make
 install:
@@ -164,7 +161,7 @@ make run
 
 ---
 
-## ⚙️ Variables in Makefile
+##  Variables in Makefile
 
 ```make
 NAME=Gourav
@@ -175,7 +172,7 @@ greet:
 
 ---
 
-## 🔗 Dependency Example
+##  Dependency Example
 
 ```make
 app: build
@@ -193,7 +190,7 @@ Run:
 make app
 ```
 
-👉 First runs `build`, then `app`
+ First runs `build`, then `app`
 
 ---
 
@@ -205,7 +202,7 @@ make app
 make
 ```
 
-👉 Runs first target in Makefile
+ Runs first target in Makefile
 
 ---
 
@@ -304,49 +301,10 @@ make VERBOSE=1
 ```
 
 ---
-
-## ❗ Common Issues
-
-### make: command not found
-
-```bash
-sudo apt install -y make
-```
-
----
-
-### Missing TAB Error
-
-❌ Wrong:
-
-```make
-echo "Hello"
-```
-
-✅ Correct:
+** Correct:
 
 ```make
 	echo "Hello"
-```
-
----
-
-### Target Not Found
-
-Check:
-
-```bash
-make <target-name>
-```
-
----
-
-### File Not Updating
-
-Force rebuild:
-
-```bash
-make -B
 ```
 
 ---
@@ -365,15 +323,4 @@ make -B
 
 ---
 
-## 🎉 Done!
-
-You have successfully:
-
-* Installed Make
-* Created your first Makefile
-* Used targets and dependencies
-* Learned debugging techniques
-
----
-
-**Author:** Gourav Sharma | Sprint 0 | OT-Microservices 
+**Author:** Gourav Sharma | Sprint 0 | Infra Titans | April 2026
