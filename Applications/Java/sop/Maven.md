@@ -1,174 +1,205 @@
+# SOP: Managing Java Projects with Maven (mvn)
 
-
-#  Maven Installation & Usage Guide (Ubuntu 24.04)
-
-Build, manage, and debug Java projects using Apache Maven
+> A step-by-step guide to build, test, package, and debug Java applications using Maven (`mvn`), including commonly used and troubleshooting commands.
 
 ---
-
-##  Document Information
 
 | Author | Created on | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Gourav | 15-04-2026 | v1.0    | Gourav          | 15-04-2026     | -            | -           | -           | -           |
+| Gourav | 16-04-2026 | v1.0    | Gourav          | 16-04-2026     | -            | -           | -           | -           |
 
 ---
 
-##  Overview
+## Table of Contents
 
-This guide explains:
+1. Purpose
+2. What is Maven?
+3. Maven Project Structure
+4. Core Maven Commands
 
-* ✅ Maven Installation (APT)
-* ✅ Project Build Lifecycle
-* ✅ Commonly Used Commands
-* ✅ Debugging Commands
-
----
-
-##  What is Maven?
-
-Apache Maven is a:
-
-* Build automation tool
-* Dependency manager
-* Project structure standardizer
-
----
-
-##  Maven Basics
-
-| Component    | Purpose                              |
-| ------------ | ------------------------------------ |
-| `pom.xml`    | Project configuration file           |
-| Dependencies | External libraries                   |
-| Plugins      | Extend Maven functionality           |
-| Repository   | Stores dependencies (local + remote) |
-
->  Everything in Maven is controlled via `pom.xml`
+   * 4.1 Clean Project
+   * 4.2 Compile Code
+   * 4.3 Run Tests
+   * 4.4 Package Application
+   * 4.5 Install to Local Repository
+   * 4.6 Run Application
+5. Debugging & Troubleshooting Commands
+6. Maven Lifecycle Explained
+7. Maven in OT-Microservices
+8. Troubleshooting Common Issues
+9. Quick Reference
+10. Conclusion
 
 ---
 
-##  Prerequisites
+## 1. Purpose
 
-### Check Java Installed
+This SOP explains how to manage Java applications using **Maven (`mvn`)**.
 
-```bash
-java -version
+By the end of this document, you will be able to:
+
+* Build Java applications using Maven
+* Run tests and debug failures
+* Package applications into `.jar` files
+* Install dependencies locally
+* Troubleshoot build failures
+
+---
+
+## 2. What is Maven?
+
+Maven is a **build automation and dependency management tool** for Java projects.
+
+It helps you:
+
+* Download required libraries automatically
+* Compile code
+* Run tests
+* Package applications
+* Maintain a standard project structure
+
+> **Tip:** Think of Maven as a “project manager” for Java applications.
+
+---
+
+## 3. Maven Project Structure
+
+From your OT-Microservices project, the **salary-api** service is a Maven project 
+
+### Key files:
+
+```
+salary-api/
+├── pom.xml        ← Main configuration file
+├── src/
+│   ├── main/java  ← Application code
+│   ├── main/resources
+│   └── test/java  ← Test code
 ```
 
->  Maven requires Java (JDK 8 or above)
+### Important:
+
+* `pom.xml` → defines dependencies, plugins, build config
+* `src/main/java` → main code
+* `src/test/java` → test cases
 
 ---
 
-### Install Java (if not installed)
+## 4. Core Maven Commands
+
+Basic syntax:
 
 ```bash
-sudo apt install -y openjdk-17-jdk
-```
-
----
-
-### Update System
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-> 📸 *Add screenshot here*
-
----
-
-##  Installation
-
-### Method A: Install via APT (Recommended)
-
-```bash
-sudo apt install -y maven
-```
-
----
-
-### Verify Installation
-
-```bash
-mvn -version
-```
-
-> 📸 *Add screenshot here*
-
----
-
-## 📂 Maven Project Structure
-
-```bash
-project/
-├── pom.xml
-└── src/
-    ├── main/java
-    └── test/java
+mvn <goal>
 ```
 
 ---
 
-## 🔄 Maven Build Lifecycle
+### 4.1 Clean Project
 
-| Phase    | Purpose                   |
-| -------- | ------------------------- |
-| validate | Check project correctness |
-| compile  | Compile source code       |
-| test     | Run unit tests            |
-| package  | Create JAR/WAR            |
-| verify   | Run checks                |
-| install  | Install to local repo     |
-| deploy   | Upload to remote repo     |
-
----
-
-##  Commonly Used Commands
-
-### Clean Project
+Removes old build files.
 
 ```bash
 mvn clean
 ```
 
+> Deletes the `target/` directory.
+
 ---
 
-### Compile Code
+### 4.2 Compile Code
+
+Compiles Java source code.
 
 ```bash
 mvn compile
 ```
 
+> Converts `.java` → `.class`
+
 ---
 
-### Run Tests
+### 4.3 Run Tests
+
+Executes all test cases.
 
 ```bash
 mvn test
 ```
 
+> Runs tests from `src/test/java`
+
 ---
 
-### Package Application
+### 4.4 Package Application
+
+Creates a `.jar` file.
 
 ```bash
 mvn package
 ```
 
-👉 Output: `.jar` or `.war` file in `target/`
+Output:
+
+```
+target/salary-api.jar
+```
 
 ---
 
-### Install to Local Repository
+### 4.5 Install to Local Repository
+
+Installs package into local Maven repo (`~/.m2`)
 
 ```bash
 mvn install
 ```
 
+> Used when other projects depend on this project.
+
 ---
 
-### Skip Tests
+### 4.6 Run Application
+
+For Spring Boot apps (like your salary-api):
+
+```bash
+mvn spring-boot:run
+```
+
+OR run jar:
+
+```bash
+java -jar target/salary-api.jar
+```
+
+---
+
+## 5. Debugging & Troubleshooting Commands
+
+These are VERY important in real DevOps work 
+
+---
+
+### Show Full Error Logs
+
+```bash
+mvn clean install -e
+```
+
+---
+
+### Enable Debug Mode
+
+```bash
+mvn clean install -X
+```
+
+> Shows detailed logs (very verbose)
+
+---
+
+### Skip Tests (when tests are failing)
 
 ```bash
 mvn clean install -DskipTests
@@ -176,19 +207,13 @@ mvn clean install -DskipTests
 
 ---
 
-### Run Specific Test
-
-```bash
-mvn -Dtest=TestClassName test
-```
-
----
-
-### Check Dependencies
+### Check Dependency Tree
 
 ```bash
 mvn dependency:tree
 ```
+
+> Helps find dependency conflicts
 
 ---
 
@@ -200,158 +225,108 @@ mvn dependency:resolve
 
 ---
 
-##  Running a Spring Boot App (Example)
-
-```bash
-mvn spring-boot:run
-```
-
----
-
-##  Useful Maven Options
-
-| Option | Meaning         |
-| ------ | --------------- |
-| `-X`   | Debug mode      |
-| `-q`   | Quiet mode      |
-| `-e`   | Show errors     |
-| `-D`   | Define property |
-| `-o`   | Offline mode    |
-
----
-
-##  Debugging Commands
-
-### Enable Debug Logs
-
-```bash
-mvn clean install -X
-```
-
----
-
-### Show Full Error Stack
-
-```bash
-mvn clean install -e
-```
-
----
-
-### Check Dependency Conflicts
-
-```bash
-mvn dependency:tree
-```
-
----
-
 ### Force Update Dependencies
 
 ```bash
 mvn clean install -U
 ```
 
+> Useful when dependencies are corrupted
+
 ---
 
-### Check Effective POM
+## 6. Maven Lifecycle Explained
+
+Maven works in phases:
+
+| Phase      | What it Does            |
+| ---------- | ----------------------- |
+| `validate` | Check project structure |
+| `compile`  | Compile code            |
+| `test`     | Run tests               |
+| `package`  | Create jar/war          |
+| `install`  | Save to local repo      |
+| `deploy`   | Upload to remote repo   |
+
+ When you run:
 
 ```bash
-mvn help:effective-pom
+mvn install
+```
+
+It automatically runs:
+
+```
+validate → compile → test → package → install
 ```
 
 ---
 
-### Check Environment Info
+## 7. Maven in OT-Microservices
+
+In your project, only **salary-api** uses Maven 
+
+### Steps to run it:
 
 ```bash
-mvn help:system
+cd salary-api
+mvn clean install
+mvn spring-boot:run
 ```
 
 ---
 
-## 🔄 Local Repository
+## 8. Troubleshooting — Common Issues
 
-Default location:
-
-```bash
-~/.m2/repository
-```
-
----
-
-### Clear Local Cache
-
-```bash
-rm -rf ~/.m2/repository
-```
+| Problem              | Cause                 | Solution                    |
+| -------------------- | --------------------- | --------------------------- |
+| Build failed         | Code error            | Check logs with `-e`        |
+| Dependency not found | Internet/repo issue   | Run `mvn clean install -U`  |
+| Tests failing        | Bug in test or code   | Skip using `-DskipTests`    |
+| Port already in use  | App already running   | Kill process or change port |
+| Slow build           | Too many dependencies | Check `dependency:tree`     |
 
 ---
 
-##  Common Issues
+## 9. Quick Reference
 
-### mvn: command not found
-
-```bash
-sudo apt install -y maven
-```
-
----
-
-### JAVA_HOME not set
-
-```bash
-echo $JAVA_HOME
-```
-
-Set it:
-
-```bash
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-```
+| Command                         | What it Does              |
+| ------------------------------- | ------------------------- |
+| `mvn clean`                     | Remove old builds         |
+| `mvn compile`                   | Compile code              |
+| `mvn test`                      | Run tests                 |
+| `mvn package`                   | Create jar                |
+| `mvn install`                   | Install to local repo     |
+| `mvn spring-boot:run`           | Run app                   |
+| `mvn clean install -DskipTests` | Build without tests       |
+| `mvn clean install -X`          | Debug mode                |
+| `mvn dependency:tree`           | Show dependencies         |
+| `mvn clean install -U`          | Force update dependencies |
 
 ---
 
-### Dependency Not Downloading
+## 10. Conclusion
 
-```bash
-mvn clean install -U
-```
+Maven is essential for managing Java-based microservices.
 
----
+**Key Takeaways:**
 
-### Build Failure
-
-```bash
-mvn clean install -e -X
-```
+* `mvn clean install` is the most commonly used command
+* Use `-X` and `-e` for debugging
+* Use `dependency:tree` to debug conflicts
+* Use `spring-boot:run` to start applications quickly
 
 ---
 
-##  Quick Commands
+## 11. References
 
-| Task            | Command                  |
-| --------------- | ------------------------ |
-| Install Maven   | `sudo apt install maven` |
-| Check version   | `mvn -version`           |
-| Build project   | `mvn clean install`      |
-| Skip tests      | `-DskipTests`            |
-| Debug mode      | `-X`                     |
-| Show errors     | `-e`                     |
-| Dependency tree | `mvn dependency:tree`    |
+| Resource                 | Link                                                               |
+| ------------------------ | ------------------------------------------------------------------ |
+| Apache Maven Docs        | [https://maven.apache.org/guides](https://maven.apache.org/guides) |
+| Maven Central Repo       | [https://search.maven.org](https://search.maven.org)               |
+| Spring Boot Maven Plugin | [https://docs.spring.io](https://docs.spring.io)                   |
 
 ---
 
-## 🎉 Done!
-
-You have successfully:
-
-* Installed Maven
-* Understood lifecycle phases
-* Used common commands
-* Learned debugging techniques
-
----
-
-**Author:** Gourav Sharma | Sprint 0 | OT-Microservices 
+**Author: Gourav Sharma | Sprint 0 | Infra Titans | 14 April 2026
 
