@@ -12,14 +12,30 @@
 2. [What is Golang?](#2-what-is-golang)  
 3. [Why Golang?](#3-why-golang)  
 4. [Key Features of Golang](#4-key-features-of-golang)  
+   - [4.1 Simple and Clean Syntax](#41-simple-and-clean-syntax)  
+   - [4.2 Compiled Language](#42-compiled-language)  
+   - [4.3 Static Typing](#43-static-typing)  
+   - [4.4 Garbage Collection](#44-garbage-collection)  
+   - [4.5 Concurrency Support](#45-concurrency-support)  
+   - [4.6 Fast Compilation](#46-fast-compilation)  
+   - [4.7 Strong Standard Library](#47-strong-standard-library)  
+   - [4.8 Cross-Platform Support](#48-cross-platform-support)  
 5. [Golang Execution Model](#5-golang-execution-model)  
 6. [Concurrency in Golang (Goroutines & Channels)](#6-concurrency-in-golang-goroutines--channels)  
+   - [6.1 Goroutines](#61-goroutines)  
+   - [6.2 Channels](#62-channels)  
 7. [Use Cases of Golang](#7-use-cases-of-golang)  
+   - [7.1 Cloud Computing](#71-cloud-computing)  
+   - [7.2 DevOps Tools](#72-devops-tools)  
+   - [7.3 Web Servers & APIs](#73-web-servers--apis)  
+   - [7.4 Microservices](#74-microservices)  
+   - [7.5 Networking Applications](#75-networking-applications)  
 8. [Advantages of Golang](#8-advantages-of-golang)  
 9. [Limitations of Golang](#9-limitations-of-golang)  
 10. [Conclusion](#10-conclusion)  
 11. [FAQs](#11-faqs)  
-12. [References](#12-references)  
+12. [Contact Information](#12-contact-information)  
+13. [References](#13-references)  
 
 ---
 
@@ -33,7 +49,7 @@ Go was built to solve problems faced in large-scale systems such as slow compila
 
 ## 2. What is Golang?
 
-Golang is a statically typed, compiled programming language developed by :contentReference[oaicite:0]{index=0}, :contentReference[oaicite:1]{index=1}, and :contentReference[oaicite:2]{index=2} at :contentReference[oaicite:3]{index=3} in 2009.
+Golang is a statically typed, compiled programming language developed by Robert Griesemer, Rob Pike, and Ken Thompson at Google in 2009.
 
 It combines:
 - The performance of low-level languages (like C)  
@@ -92,31 +108,15 @@ Go applications can run on multiple operating systems like Linux, Windows, and m
 
 ## 5. Golang Execution Model
 
-Golang follows a simple compilation and execution process:
 <img width="1420" height="708" alt="image" src="https://github.com/user-attachments/assets/48496e1a-c501-4d29-ac6d-01d8f4cf299c" />
 
 1. **Source Code (.go file)**  
-   - Written by the developer  
-
 2. **Go Compiler**  
-   - Converts source code into machine-level binary  
-
 3. **Binary Executable**  
-   - Runs directly on the operating system  
-
-Unlike languages like Java, Go does not require a virtual machine or interpreter. It produces a standalone executable file.
-
-### Key Advantage:
-
-- No external runtime required  
-- Faster execution  
-- Easy deployment  
 
 ---
 
 ## 6. Concurrency in Golang (Goroutines & Channels)
-
-Concurrency is one of the most powerful features of Golang.
 
 ### 6.1 Goroutines
 
@@ -137,13 +137,9 @@ Concurrency is one of the most powerful features of Golang.
 
 > "Do not communicate by sharing memory; instead, share memory by communicating."
 
-This model avoids common problems like race conditions and makes concurrent programming easier and safer.
-
 ---
 
 ## 7. Use Cases of Golang
-
-Golang is widely used in modern application development:
 
 ### 7.1 Cloud Computing
 Used in cloud platforms and infrastructure tools.
@@ -209,7 +205,15 @@ It is used in cloud platforms, DevOps tools, APIs, and distributed systems.
 
 ---
 
-## 12. References
+## 12. Contact Information
+
+| Name           | Email ID |
+|----------------|----------|
+| Shivam Uniyal  | shivam.uniyal.snaatak@mygurukulam.co |
+
+---
+
+## 13. References
 
 | Link | Description |
 |------|------------|
