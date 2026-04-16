@@ -3,9 +3,6 @@
 > A step-by-step guide to manage Linux services using "systemctl", including starting, stopping, enabling, disabling, and checking service status.
 
 ---
-
-##  Document Information
-
 | Author | Created on | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
 | Gourav | 14-04-2026 | v1.0    | Gourav          | 14-04-2026     | -            | -           | -           | -           |
@@ -324,12 +321,16 @@ Most `systemctl` problems come down to one of a few causes. Here is a quick refe
 
 ---
 
-| Resource | Where to Find It |
-|----------|-----------------|
-| systemd Documentation | `man systemctl` (run in terminal) |
-| OT-Microservices Repository | https://github.com/OT-MICROSERVICES |
-| Cron Jobs SOP | SOP_Cron_Jobs.docx |
-| Common Linux Commands SOP | SOP_Common_Commands.md |
+## 11 References
+
+| Resource | Link |
+|----------|------|
+|OT-Microservices Repository | https://github.com/OT-MICROSERVICES|
+|Ubuntu Man Pages | https://manpages.ubuntu.com|
+|Linux Command Library | https://linuxcommandlibrary.com|
+|Explain Shell (breaks down any command) | https://explainshell.com|
+|systemctl Official Documentation | https://www.freedesktop.org/software/systemd/man/systemctl.html|
+|systemd Man Pages | https://www.freedesktop.org/software/systemd/man/|
 
 ---
 
