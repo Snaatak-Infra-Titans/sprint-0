@@ -4,7 +4,7 @@ Run Python applications in production using Gunicorn (WSGI HTTP Server)
 
 ---
 
-##  Document Information
+##  
 
 | Author | Created on | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
@@ -16,9 +16,9 @@ Run Python applications in production using Gunicorn (WSGI HTTP Server)
 
 This guide explains how to install and run Gunicorn using:
 
-* ✅ pip (Recommended)
-* ✅ Virtual Environment (Best Practice)
-* ✅ Systemd (Production Setup)
+*  pip (Recommended)
+*  Virtual Environment (Best Practice)
+*  Systemd (Production Setup)
 
 ---
 
@@ -52,6 +52,7 @@ Gunicorn (**Green Unicorn**) is a:
 ```bash
 python3 --version
 ```
+<img width="1171" height="202" alt="image" src="https://github.com/user-attachments/assets/ddfe3fd8-8c90-48f9-a353-6235d014323d" />
 
 ---
 
@@ -60,8 +61,8 @@ python3 --version
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+<img width="1171" height="202" alt="image" src="https://github.com/user-attachments/assets/8f3562e9-7594-4f94-9217-f6e6699229aa" />
 
-> 📸 *Add screenshot here*
 
 ---
 
@@ -88,8 +89,8 @@ pip3 install gunicorn
 ```bash
 gunicorn --version
 ```
+<img width="1282" height="379" alt="image" src="https://github.com/user-attachments/assets/10b14d4a-ea29-41b3-8bf2-f7cae9e0bdb7" />
 
-> 📸 *Add screenshot here*
 
 ---
 
@@ -125,13 +126,13 @@ if __name__ == "__main__":
 
 ---
 
-## ▶️ Run Application with Gunicorn
+##  Run Application with Gunicorn
 
 ```bash
 gunicorn app:app
 ```
 
-👉 Format:
+ Format:
 
 ```
 gunicorn <filename>:<app_variable>
@@ -263,19 +264,6 @@ sudo systemctl restart gunicorn
 
 ```bash
 journalctl -u gunicorn -f
-```
-
----
-
-## (Optional) Use with NGINX
-
-Gunicorn runs on port 8000 → NGINX handles public traffic
-
-Flow:
-
-```
-User → NGINX → Gunicorn → App
-```
 
 ---
 
@@ -334,14 +322,5 @@ Make sure:
 
 ---
 
-## 🎉 Done!
+## Author: Gourav Sharma | Sprint 0 | Opstree Solutions | 14 April 2026
 
-You have successfully:
-
-* Installed Gunicorn
-* Run a Python app using Gunicorn
-* Configured production service using systemd
-
----
-
-**Author:** Gourav Sharma | Sprint 0 | OT-Microservices 
