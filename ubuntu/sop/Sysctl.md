@@ -20,9 +20,8 @@
 6. [Common Use Cases](#common-use-cases)
 7. [Troubleshooting](#troubleshooting)
 8. [Best Practices](#best-practices)
-9. [FAQs](#faqs)
-10. [Contact Information](#contact-information)
-11. [References](#references)
+9. [Contact Information](#contact-information)
+10. [References](#references)
 
 ---
 
@@ -197,22 +196,6 @@ sysctl net.ipv4.ip_forward
 * Test changes before applying in production
 * Avoid unnecessary kernel tuning
 * Document all changes
-
----
-
-## FAQs
-
-**Q1: What is sysctl used for?**
-It is used to modify Linux kernel parameters.
-
-**Q2: Are changes permanent?**
-Only if saved in configuration files.
-
-**Q3: Where are sysctl settings stored?**
-`/etc/sysctl.conf` and `/etc/sysctl.d/`
-
-**Q4: Is reboot required?**
-No, changes can be applied using `sysctl --system`.
 
 ---
 
