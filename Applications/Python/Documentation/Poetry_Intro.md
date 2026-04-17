@@ -1,5 +1,12 @@
 #  Poetry — Python Dependency Management & Packaging
+---
 
+##  Document Information
+
+| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
+| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
+---
 > **"Poetry helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere."**
 
 ---
@@ -544,8 +551,15 @@ poetry version <rule>         # Bump version (patch/minor/major)
 ```
 
 ---
+## Contact Information
 
-## Further Reading
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
+
+---
+
+## References
 
 -  [Official Poetry Documentation](https://python-poetry.org/docs/)
 -  [Poetry GitHub Repository](https://github.com/python-poetry/poetry)
@@ -555,4 +569,4 @@ poetry version <rule>         # Bump version (patch/minor/major)
 
 ---
 
-*Documentation generated for Poetry v1.8.x | Python 3.9+*
+
