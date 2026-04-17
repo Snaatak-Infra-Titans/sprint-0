@@ -266,10 +266,13 @@ cat /var/lib/logrotate/status
 
 
 
-##  Final Note
+## Contact Information
 
-Using logrotate properly helps keep your system:
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
 
-* Clean
-* Efficient
-* Production-ready
+---
+
+## References
+
