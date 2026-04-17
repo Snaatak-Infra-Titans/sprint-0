@@ -1,15 +1,14 @@
 # Standard Operating Procedure — Ansible Playbook Execution
+---
 
-| Field             | Details                                      |
-|-------------------|----------------------------------------------|
-| **Document ID**   | CS-ANS-PB-SOP-001                            |
-| **Stack**         | Common Stack                                 |
-| **Domain**        | Infrastructure Automation — Ansible          |
-| **Version**       | 1.0.0                                        |
-| **Status**        | Active                                       |
-| **Last Reviewed** | 2025-01-01                                   |
-| **Owner**         | Platform / Infrastructure Engineering Team  |
+##  Document Information
 
+| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
+| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
+
+
+---
 ---
 
 ## Table of Contents
@@ -704,4 +703,12 @@ ansible-playbook <playbook>.yml -i inventory/<env>/ --check --vault-password-fil
 
 ---
 
-*This document is version-controlled in the Common Stack repository. Raise a PR against `docs/sop/` to propose changes. All modifications require peer review and Platform Engineering team approval.*
+## Contact Information
+
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
+
+---
+
+## References
