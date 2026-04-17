@@ -30,9 +30,8 @@
 6. [Common Commands](#common-commands)
 7. [Troubleshooting](#troubleshooting)
 8. [Best Practices](#best-practices)
-9. [FAQs](#faqs)
-10. [Contact Information](#contact-information)
-11. [References](#references)
+9. [Contact Information](#contact-information)
+10. [References](#references)
 
 ---
 
@@ -230,22 +229,6 @@ Workflow:
 * Avoid global installations
 * Separate dev and production dependencies
 * Keep dependencies updated
-
----
-
-## FAQs
-
-**Q1: What is Poetry used for?**
-Dependency management and packaging.
-
-**Q2: Does Poetry replace pip?**
-Yes, it manages dependencies and environments.
-
-**Q3: What is pyproject.toml?**
-Configuration file for project dependencies.
-
-**Q4: Is Poetry production-ready?**
-Yes, widely used in modern Python workflows.
 
 ---
 
