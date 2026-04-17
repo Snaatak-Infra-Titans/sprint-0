@@ -132,7 +132,7 @@ echo "▶ Updating system"
 sudo apt update && sudo apt upgrade -y
 
 echo "▶ Installing Node.js"
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 
 echo "▶ Verifying installation"
@@ -140,7 +140,7 @@ node -v
 npm -v
 
 echo "▶ Navigating to project"
-cd frontend || exit
+cd OT-Micro/frontend || exit
 
 echo "▶ Installing dependencies"
 npm install
@@ -164,7 +164,7 @@ echo "▶ Pulling latest code"
 git pull origin main
 
 echo "▶ Navigating to project"
-cd frontend || exit
+cd OT-Micro/frontend || exit
 
 echo "▶ Installing updated dependencies"
 npm install
