@@ -334,4 +334,4 @@ Most `systemctl` problems come down to one of a few causes. Here is a quick refe
 
 ---
 
-*Author: Gourav Sharma | Sprint 0 | Opstree Solutions | 14 April 2026*
+*Author: Gourav Sharma | Sprint 0 | Infra Titans | 14 April 2026*
