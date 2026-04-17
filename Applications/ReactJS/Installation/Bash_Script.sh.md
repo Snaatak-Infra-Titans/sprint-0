@@ -1,4 +1,4 @@
-# ReactJS Documentation
+# ReactJS Bash Script
 
 <p align="center">
   <img width="120" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
