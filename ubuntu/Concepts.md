@@ -36,39 +36,35 @@
 
 12. [Best Practices](#best-practices)
 
-13. [FAQs](#faqs)
+13. [Contact Information](#contact-information)
 
-14. [Contact Information](#contact-information)
+14. [References](#references)
 
-15. [References](#references)
+15. [Introduction](#introduction)
 
-16. [Introduction](#introduction)
+16. [Why Ubuntu in DevOps](#why-ubuntu-in-devops)
 
-17. [Why Ubuntu in DevOps](#why-ubuntu-in-devops)
+17. [Core Concepts of Ubuntu](#core-concepts-of-ubuntu)
 
-18. [Core Concepts of Ubuntu](#core-concepts-of-ubuntu)
+18. [Software Management](#software-management)
 
-19. [Software Management](#software-management)
+19. [Services & Process Management](#services--process-management)
 
-20. [Services & Process Management](#services--process-management)
+20. [File System Structure](#file-system-structure)
 
-21. [File System Structure](#file-system-structure)
+21. [User & Permission Management](#user--permission-management)
 
-22. [User & Permission Management](#user--permission-management)
+22. [Networking Basics](#networking-basics)
 
-23. [Networking Basics](#networking-basics)
+23. [Logs & Monitoring](#logs--monitoring)
 
-24. [Logs & Monitoring](#logs--monitoring)
+24. [Troubleshooting](#troubleshooting)
 
-25. [Troubleshooting](#troubleshooting)
+25. [Best Practices](#best-practices)
 
-26. [Best Practices](#best-practices)
+26. [Contact Information](#contact-information)
 
-27. [FAQs](#faqs)
-
-28. [Contact Information](#contact-information)
-
-29. [References](#references)
+27. [References](#references)
 
 ---
 
@@ -299,22 +295,6 @@ Application logs are usually stored in:
 * Monitor logs frequently
 * Use LTS versions for stability
 * Automate repetitive tasks using scripts
-
----
-
-## FAQs
-
-**Q1: What is Ubuntu?**
-Ubuntu is a Linux-based operating system used for servers and development.
-
-**Q2: What is APT?**
-APT is a package manager used to install and manage software.
-
-**Q3: What is systemd?**
-systemd is a service manager used to control system services.
-
-**Q4: Where are logs stored?**
-Logs are stored in `/var/log/`.
 
 ---
 
