@@ -201,6 +201,6 @@ echo '{"a":{"b":{"c": 42}}}' | jq '.. | numbers'
 
 <div align="center">
 
-*Documentation maintained by the Common Stack Team · v1.0 · 13-04-2026*
+
 
 </div>
