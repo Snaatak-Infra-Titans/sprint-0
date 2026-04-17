@@ -6,73 +6,36 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 15-04-2026     | v1.0        | Ankita              | 15-04-2026         | Team             |                 |                 |                 |
+| Ankita     | 15-04-2026     | v1.1        | Ankita              | 17-04-2026         | Team             |                 |                 |                 |
 
 ---
 
 ## Table of Contents
 
-1. [Overview](#overview)
-
-2. [Purpose](#purpose)
-
-3. [Prerequisites](#prerequisites)
-
-4. [What is JQ?](#what-is-jq)
-
-5. [Step-by-Step Implementation](#step-by-step-implementation)
-
-6. [Common Operations](#common-operations)
-
-7. [Working with Files](#working-with-files)
-
-8. [Troubleshooting](#troubleshooting)
-
-9. [Best Practices](#best-practices)
-
-10. [FAQs](#faqs)
-
-11. [Contact Information](#contact-information)
-
-12. [References](#references)
-
-13. [Introduction](#introduction)
-
-14. [Purpose](#purpose)
-
-15. [What is JQ?](#what-is-jq)
-
-16. [Why JQ is Used](#why-jq-is-used)
-
-17. [Basic Syntax](#basic-syntax)
-
-18. [Core Concepts](#core-concepts)
-
-19. [Common Operations](#common-operations)
-
-20. [Working with Files](#working-with-files)
-
-21. [Pipelines and Filters](#pipelines-and-filters)
-
-22. [Troubleshooting](#troubleshooting)
-
-23. [Best Practices](#best-practices)
-
-24. [FAQs](#faqs)
-
-25. [Contact Information](#contact-information)
-
-26. [References](#references)
+1. Overview
+2. Purpose
+3. Prerequisites
+4. Step-by-Step Implementation
+5. Common Operations
+6. Validation
+7. Troubleshooting
+8. Best Practices
+9. Contact Information
+10. References
 
 ---
 
 ## Overview
 
-JQ is a lightweight and powerful command-line tool used to process and manipulate JSON data.
+JQ is a lightweight command-line tool used to process and manipulate JSON data.
 
-It is commonly used in DevOps, automation scripts, and API handling where JSON is the standard data format.
+It is widely used in DevOps workflows for handling API responses, configuration files, and automation scripts.
 
-JQ allows users to parse, filter, transform, and extract data from JSON files efficiently.
+---
+
+## Purpose
+
+This SOP provides a step-by-step procedure to use JQ for reading, filtering, and transforming JSON data.
 
 ---
 
@@ -80,74 +43,26 @@ JQ allows users to parse, filter, transform, and extract data from JSON files ef
 
 * Linux/Ubuntu system
 * Basic command-line knowledge
-* JQ installed on system
+* JQ installed
 
 Install JQ:
 
 ```bash
-sudo apt install jq
-```
-
----
-
-## What is JQ?
-
-JQ is a lightweight and powerful command-line tool used to process and manipulate JSON data.
-
-It is commonly used in DevOps, automation scripts, and API handling where JSON is the standard data format.
-
-JQ allows users to parse, filter, transform, and extract data from JSON files efficiently.
-
----
-
-## Purpose
-
-This SOP provides a step-by-step guide to using JQ for processing JSON data.
-
-It helps users understand how to extract, filter, and manipulate JSON efficiently in DevOps and automation workflows.
-
----
-
-## What is JQ?
-
-JQ is a JSON processor that works like `sed` or `awk`, but specifically for JSON data.
-
-It allows users to:
-
-* Extract specific fields from JSON
-* Transform JSON structure
-* Filter and query JSON data
-
----
-
-## Why JQ is Used
-
-JQ is widely used because:
-
-* JSON is the standard format for APIs
-* Easy to integrate in shell scripts
-* Fast and lightweight
-* Powerful filtering capabilities
-
----
-
-## Basic Syntax
-
-General format:
-
-```bash
-jq 'filter' file.json
-```
-
-Example:
-
-```bash
-jq '.name' file.json
+sudo apt update
+sudo apt install jq -y
 ```
 
 ---
 
 ## Step-by-Step Implementation
+
+### Step 0: Verify Installation
+
+```bash
+jq --version
+```
+
+---
 
 ### Step 1: Read JSON File
 
@@ -191,22 +106,10 @@ jq '.users[] | select(.age > 25)' file.json
 
 ## Common Operations
 
-### Extract Field
-
-```bash
-jq '.name' file.json
-```
-
 ### Pretty Print JSON
 
 ```bash
 jq '.' file.json
-```
-
-### Filter Data
-
-```bash
-jq '.users[] | select(.age > 25)' file.json
 ```
 
 ### Count Elements
@@ -215,69 +118,45 @@ jq '.users[] | select(.age > 25)' file.json
 jq '.users | length' file.json
 ```
 
----
-
-## Working with Files
-
-Read JSON file:
+### Extract Multiple Fields
 
 ```bash
-jq '.' data.json
-```
-
-Write output to file:
-
-```bash
-jq '.name' data.json > output.txt
+jq '.users[] | {name, age}' file.json
 ```
 
 ---
 
-## Pipelines and Filters
+## Validation
 
-JQ supports chaining operations:
+Verify output correctness:
 
 ```bash
-jq '.users[] | .name' file.json
+jq '.name' file.json
 ```
 
-This allows step-by-step transformation of JSON data.
+Expected Result:
+
+* Correct field value should be displayed
+* No syntax errors
 
 ---
 
 ## Troubleshooting
 
-| Issue              | Cause                 | Solution         |
-| ------------------ | --------------------- | ---------------- |
-| Invalid JSON error | Incorrect JSON format | Validate JSON    |
-| No output          | Wrong filter          | Check query path |
-| Command not found  | JQ not installed      | Install jq       |
+| Issue              | Cause                 | Solution      |
+| ------------------ | --------------------- | ------------- |
+| Invalid JSON error | Incorrect JSON format | Validate JSON |
+| No output          | Wrong filter          | Check query   |
+| Command not found  | JQ not installed      | Install jq    |
 
 ---
 
 ## Best Practices
 
-* Always validate JSON before processing
-* Use quotes properly in filters
-* Test queries on small data first
-* Use JQ in scripts for automation
-* Keep commands readable and simple
-
----
-
-## FAQs
-
-**Q1: What is JQ used for?**
-It is used to process and manipulate JSON data.
-
-**Q2: Is JQ only for files?**
-No, it can also process API responses.
-
-**Q3: Is JQ fast?**
-Yes, it is lightweight and efficient.
-
-**Q4: Can JQ modify JSON?**
-Yes, it can transform JSON structures.
+* Validate JSON before processing
+* Keep filters simple and readable
+* Test commands on sample data
+* Use JQ in automation scripts
 
 ---
 
@@ -291,7 +170,7 @@ Yes, it can transform JSON structures.
 
 ## References
 
-| Topic              | Link                                                                   |
-| ------------------ | ---------------------------------------------------------------------- |
-| JQ Official Docs   | [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)       |
-| JSON Documentation | [https://www.json.org/json-en.html](https://www.json.org/json-en.html) |
+| Topic            | Link                                                                   |
+| ---------------- | ---------------------------------------------------------------------- |
+| JQ Official Docs | [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)       |
+| JSON Docs        | [https://www.json.org/json-en.html](https://www.json.org/json-en.html) |
