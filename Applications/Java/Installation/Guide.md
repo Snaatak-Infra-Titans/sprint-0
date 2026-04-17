@@ -1,254 +1,167 @@
-#  Java JDK 21 Installation Guide (Ubuntu 24.04)
+# Java JDK 21 Installation Guide (Ubuntu 24.04)
 
-Install Java JDK 21 (LTS) on Ubuntu 24.04 in a simple and beginner-friendly way 
-
-##  Document Information
-
-| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
-| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
----
-
-##  Overview
-
-This guide covers installing Java using:
-
-*  APT (Recommended)
-*  Eclipse Temurin (Official Build)
-*  SDKMAN (Multiple Versions)
+> Install Java JDK 21 (LTS) on Ubuntu 24.04 in a simple and beginner-friendly way.
 
 ---
 
-##  Why Java 21?
+## Document Information
 
-* Long-Term Support (LTS)
-* Security updates till **2031**
-* Features:
-
-  * Virtual Threads
-  * Pattern Matching
-  * Records
+| Author | Created On | Version | Last Updated By | Last Edited On | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|---|---|---|---|---|---|---|---|---|
+| Versha Tripathi | 13-04-2026 | v1.0 | Versha Tripathi | 13-04-2026 | Team | - | - | - |
 
 ---
 
-##  Java Basics
+## Table of Contents
 
-| Component | Purpose                |
-| --------- | ---------------------- |
-| JVM       | Runs Java programs     |
-| JRE       | JVM + libraries        |
-| JDK       | JRE + compiler + tools |
-
- Always install **JDK**
-
----
-
-##  Prerequisites
-
-### Check Ubuntu Version
-
-```bash
-lsb_release -a
-```
-
-
- <img width="459" height="133" alt="image" src="https://github.com/user-attachments/assets/d76366d6-8193-45b8-b2aa-1e82c048c8e5" />
-
+- [Overview](#overview)
+- [Why Java 21?](#why-java-21)
+- [Java Basics](#java-basics)
+- [Prerequisites](#prerequisites)
+- [Installation Methods](#installation-methods)
+  - [Method A: APT (Recommended)](#method-a-apt-recommended)
+  - [Method B: Eclipse Temurin](#method-b-eclipse-temurin)
+  - [Method C: SDKMAN](#method-c-sdkman)
+- [Set JAVA_HOME](#set-java_home)
+- [Managing Multiple Java Versions](#managing-multiple-java-versions)
+- [Verify Setup](#verify-setup)
+- [First Java Program](#first-java-program)
+- [IDE Setup](#ide-setup)
+- [Common Issues & Fixes](#common-issues--fixes)
+- [Quick Command Reference](#quick-command-reference)
+- [Contact Information](#contact-information)
+- [References](#references)
 
 ---
 
-### Check System Info
+## Overview
 
-```bash
-uname -m
-df -h /
-free -h
-```
-
- <img width="819" height="278" alt="image" src="https://github.com/user-attachments/assets/2efe7b3c-fa8c-4dd0-a5f6-0e1ca1997b67" />
-
+| Installation Method | Description | Recommended For |
+|---|---|---|
+| APT | Ubuntu's built-in package manager | Beginners, quick setup |
+| Eclipse Temurin | Official OpenJDK build by Adoptium | Production environments |
+| SDKMAN | Version manager for multiple SDKs | Managing multiple Java versions |
 
 ---
 
-### Update System
+## Why Java 21?
 
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
- <img width="1064" height="703" alt="image" src="https://github.com/user-attachments/assets/aad5ca98-e87e-46e7-b23d-8c19d9de2ad4" />
-
-
----
-
-##  Installation
-
-###  Method A: APT (Recommended)
-
-```bash
-sudo apt install -y openjdk-21-jdk
-```
-
- <img width="1322" height="698" alt="image" src="https://github.com/user-attachments/assets/cf41b783-4498-48df-a97f-36d1bd7a1db7" />
-
+| Reason | Detail |
+|---|---|
+| LTS Release | Long-Term Support — stable and production-ready |
+| Security Support | Updates guaranteed until **2031** |
+| Virtual Threads | Lightweight concurrency (Project Loom) |
+| Pattern Matching | Cleaner `instanceof` and `switch` expressions |
+| Records | Concise immutable data classes |
 
 ---
 
-### Verify Installation
+## Java Basics
 
-```bash
-java -version
-javac -version
-```
+| Component | Purpose |
+|---|---|
+| JVM | Runs compiled Java programs |
+| JRE | JVM + standard libraries |
+| JDK | JRE + compiler + development tools |
 
- <img width="806" height="146" alt="image" src="https://github.com/user-attachments/assets/ebdf5ad9-9400-4072-b823-4d1e969c2b20" />
-
-
----
-
-###  Method B: Eclipse Temurin
-
-```bash
-sudo apt install -y wget apt-transport-https gpg
-```
-
-#### Add GPG Key
-
-```bash
-wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public \
-| gpg --dearmor \
-| sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
-```
-
- <img width="1089" height="473" alt="image" src="https://github.com/user-attachments/assets/99c803eb-d0e9-4878-a66c-e898488d76c5" />
-
+> Always install the **JDK** for development.
 
 ---
 
-#### Add Repository
+## Prerequisites
 
-```bash
-echo "deb https://packages.adoptium.net/artifactory/deb noble main" \
-| sudo tee /etc/apt/sources.list.d/adoptium.list
-```
-
----
-
-#### Install
-
-```bash
-sudo apt update
-sudo apt install -y temurin-21-jdk
-```
-
- <img width="1849" height="887" alt="image" src="https://github.com/user-attachments/assets/368d5308-bd04-4264-a16e-e090b1992161" />
-
+| Step | Command |
+|---|---|
+| Check Ubuntu version | `lsb_release -a` |
+| Check system architecture | `uname -m` |
+| Check disk space | `df -h /` |
+| Check available memory | `free -h` |
+| Update system packages | `sudo apt update && sudo apt upgrade -y` |
 
 ---
 
-###  Method C: SDKMAN
+## Installation Methods
 
-```bash
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-```
+### Method A: APT (Recommended)
 
- <img width="1071" height="887" alt="image" src="https://github.com/user-attachments/assets/330bd90e-5b0e-469e-b1c4-9863a8e9fcff" />
-
-
----
-
-#### Install Java
-
-```bash
-sdk list java
-sdk install java 21.0.3-tem
-sdk default java 21.0.3-tem
-```
-
- <img width="1845" height="435" alt="image" src="https://github.com/user-attachments/assets/9d3eee21-7706-4bf8-a57d-67d5dbbdab54" />
-
+| Step | Command |
+|---|---|
+| Install JDK 21 | `sudo apt install -y openjdk-21-jdk` |
+| Verify Java | `java -version` |
+| Verify compiler | `javac -version` |
 
 ---
 
-##  Set JAVA_HOME
+### Method B: Eclipse Temurin
 
-### Find Path
-
-```bash
-readlink -f $(which java)
-```
-
----
-
-### Set Variable
-
-```bash
-nano ~/.bashrc
-```
-
-Add:
-
-```bash
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
-```
-
-Apply:
-
-```bash
-source ~/.bashrc
-echo $JAVA_HOME
-```
-
- 
+| Step | Command |
+|---|---|
+| Install dependencies | `sudo apt install -y wget apt-transport-https gpg` |
+| Add GPG key | `wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public \| gpg --dearmor \| sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null` |
+| Add repository | `echo "deb https://packages.adoptium.net/artifactory/deb noble main" \| sudo tee /etc/apt/sources.list.d/adoptium.list` |
+| Update package list | `sudo apt update` |
+| Install Temurin 21 | `sudo apt install -y temurin-21-jdk` |
+| Verify | `java -version` |
 
 ---
 
-##  Multiple Java Versions
+### Method C: SDKMAN
 
-### Install Java 17
-
-```bash
-sudo apt install -y openjdk-17-jdk
-```
-
----
-
-### Switch Version
-
-```bash
-sudo update-alternatives --config java
-sudo update-alternatives --config javac
-```
-
- <img width="1185" height="670" alt="image" src="https://github.com/user-attachments/assets/f7b2c4e6-4519-4d3c-a5f6-3e4f977fdf6f" />
-
+| Step | Command |
+|---|---|
+| Install SDKMAN | `curl -s "https://get.sdkman.io" \| bash` |
+| Initialise SDKMAN | `source "$HOME/.sdkman/bin/sdkman-init.sh"` |
+| List available Java versions | `sdk list java` |
+| Install Java 21 | `sdk install java 21.0.3-tem` |
+| Set as default | `sdk default java 21.0.3-tem` |
+| Verify | `java -version` |
 
 ---
 
-##  Verify Setup
+## Set JAVA_HOME
 
-```bash
-java -version
-javac -version
-which java
-echo $JAVA_HOME
-```
-
- <img width="880" height="233" alt="image" src="https://github.com/user-attachments/assets/f516f2a3-6712-41fb-8c13-f50b58117b52" />
-
+| Step | Command |
+|---|---|
+| Find Java path | `readlink -f $(which java)` |
+| Open bashrc | `nano ~/.bashrc` |
+| Add JAVA_HOME (append to file) | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
+| Add to PATH (append to file) | `export PATH=$JAVA_HOME/bin:$PATH` |
+| Apply changes | `source ~/.bashrc` |
+| Verify | `echo $JAVA_HOME` |
 
 ---
 
-##  First Java Program
+## Managing Multiple Java Versions
 
-### Create File
+| Step | Command |
+|---|---|
+| Install Java 17 | `sudo apt install -y openjdk-17-jdk` |
+| Switch Java version | `sudo update-alternatives --config java` |
+| Switch compiler version | `sudo update-alternatives --config javac` |
 
-```bash
-nano HelloWorld.java
-```
+---
 
+## Verify Setup
+
+| Check | Command |
+|---|---|
+| Java runtime version | `java -version` |
+| Java compiler version | `javac -version` |
+| Java binary location | `which java` |
+| JAVA_HOME value | `echo $JAVA_HOME` |
+
+---
+
+## First Java Program
+
+| Step | Command / Code |
+|---|---|
+| Create file | `nano HelloWorld.java` |
+| Compile | `javac HelloWorld.java` |
+| Run (standard) | `java HelloWorld` |
+| Run (shortcut, Java 11+) | `java HelloWorld.java` |
+
+**HelloWorld.java:**
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -256,119 +169,59 @@ public class HelloWorld {
     }
 }
 ```
-<img width="542" height="159" alt="image" src="https://github.com/user-attachments/assets/23b04bc7-2df9-412f-a3a1-1b371517662c" />
-
 
 ---
 
-### Compile
+## IDE Setup
 
-```bash
-javac HelloWorld.java
-ls
-```
-
-<img width="1497" height="98" alt="image" src="https://github.com/user-attachments/assets/2a8eeca2-f0d6-417c-b182-f160da9c2bf2" />
-
+| IDE | Install Command |
+|---|---|
+| IntelliJ IDEA Community | `sudo snap install intellij-idea-community --classic` |
+| VS Code | `sudo snap install code --classic` |
+| VS Code Java Extension Pack | `code --install-extension vscjava.vscode-java-pack` |
 
 ---
 
-### Run
+## Common Issues & Fixes
 
-```bash
-java HelloWorld
-```
-
- <img width="515" height="58" alt="image" src="https://github.com/user-attachments/assets/6f45b451-0717-44d9-b349-d2b29d88e249" />
-
-
----
-
-##  Shortcut (Java 11+)
-
-```bash
-java HelloWorld.java
-```
+| Issue | Fix |
+|---|---|
+| `java: command not found` | `export PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH` |
+| `javac: command not found` | `sudo apt install -y openjdk-21-jdk` |
+| Wrong Java version active | `sudo update-alternatives --config java` |
+| `UnsupportedClassVersionError` | `javac --release 17 HelloWorld.java` |
 
 ---
 
-##  IDE Setup
+## Quick Command Reference
 
-### IntelliJ IDEA
-
-```bash
-sudo snap install intellij-idea-community --classic
-```
-
- <img width="838" height="58" alt="image" src="https://github.com/user-attachments/assets/0e4d6972-f694-40c9-913c-52e5258650d5" />
-
-
----
-
-### VS Code
-
-```bash
-sudo snap install code --classic
-code --install-extension vscjava.vscode-java-pack
-```
+| Task | Command |
+|---|---|
+| Install Java 21 | `sudo apt install -y openjdk-21-jdk` |
+| Check Java version | `java -version` |
+| Check compiler version | `javac -version` |
+| Compile a file | `javac HelloWorld.java` |
+| Run a program | `java HelloWorld` |
+| Set JAVA_HOME | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
+| Switch Java version | `sudo update-alternatives --config java` |
 
 ---
-
-##  Common Issues
-
-### java: command not found
-
-```bash
-export PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH
-```
-
----
-
-### javac not found
-
-```bash
-sudo apt install -y openjdk-21-jdk
-```
-
----
-
-### Wrong Java Version
-
-```bash
-sudo update-alternatives --config java
-```
-
----
-
-### UnsupportedClassVersionError
-
-```bash
-javac --release 17 HelloWorld.java
-```
-
----
-
-##  Quick Commands
-
-| Task          | Command                           |
-| ------------- | --------------------------------- |
-| Install Java  | `sudo apt install openjdk-21-jdk` |
-| Check version | `java -version`                   |
-| Compile       | `javac file.java`                 |
-| Run           | `java file`                       |
-| Set JAVA_HOME | `export JAVA_HOME=...`            |
-
-
 
 ## Contact Information
 
-| Name   | Email                                                                             |
-| ------ | --------------------------------------------------------------------------------- |
+| Name | Email |
+|---|---|
 | Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
 
 ---
 
 ## References
 
-
-
+| # | Resource | Link |
+|---|---|---|
+| 1 | Ubuntu 24.04 LTS Release Notes | [ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released](https://ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released) |
+| 2 | OpenJDK 21 Official Site | [openjdk.org/projects/jdk/21](https://openjdk.org/projects/jdk/21) |
+| 3 | Eclipse Temurin (Adoptium) | [adoptium.net](https://adoptium.net/) |
+| 4 | SDKMAN Official Documentation | [sdkman.io](https://sdkman.io/) |
+| 5 | Java 21 New Features | [openjdk.org/jeps](https://openjdk.org/jeps/0) |
+| 6 | Ubuntu APT Package Manager Docs | [manpages.ubuntu.com/apt](https://manpages.ubuntu.com/manpages/noble/man8/apt.8.html) |
