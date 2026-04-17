@@ -1,5 +1,17 @@
 # Ansible Role Directory Structure
 
+---
+
+##  Document Information
+
+| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
+| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
+
+
+---
+
+
 > A complete reference guide explaining the purpose of every directory and file in a standard Ansible role, following the [Common Stack](https://galaxy.ansible.com/) convention.
 
 ---
@@ -306,7 +318,19 @@ Each role directory follows the structure documented above. The `common` role ty
 
 ---
 
-## Further Reading
+
+
+## Contact Information
+
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
+
+---
+
+
+
+## References
 
 - [Ansible Roles Documentation](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html)
 - [Ansible Galaxy — Publishing Roles](https://galaxy.ansible.com/docs/contributing/creating_role.html)
