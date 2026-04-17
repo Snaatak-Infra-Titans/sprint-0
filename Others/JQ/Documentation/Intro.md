@@ -1,4 +1,12 @@
 # Common Stack | Others | JQ | JQ Intro Documentation
+---
+##  Document Information
+
+| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
+| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
+
+---
 
 > A lightweight, command-line JSON processor — slice it, filter it, map it, transform it.
 
@@ -190,6 +198,14 @@ echo '{"a":{"b":{"c": 42}}}' | jq '.. | numbers'
 ```
 
 ---
+## Contact Information
+
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
+
+---
+
 
 ## References
 
@@ -200,4 +216,4 @@ echo '{"a":{"b":{"c": 42}}}' | jq '.. | numbers'
 
 ---
 
-*Last updated: April 2026*
+
