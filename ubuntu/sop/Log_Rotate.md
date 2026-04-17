@@ -12,19 +12,20 @@
 
 ---
 
-##  Table of Contents
+## Table of Contents
 
-1. Purpose
-2. Scope
-3. Prerequisites
-4. Configuration Structure
-5. Key Parameters
-6. Configuration Steps
-7. Testing
-8. Automation
-9. Troubleshooting
-10. Best Practices
-11. Example
+1. [Purpose](#1-purpose)
+2. [Scope](#2-scope)
+3. [Prerequisites](#3-prerequisites)
+4. [Configuration Structure](#4-logrotate-configuration-structure)
+5. [Key Parameters](#5-key-configuration-parameters)
+6. [Configuration Steps](#6-configuration-steps)
+7. [Testing](#11-testing-configuration)
+8. [Automation](#12-automation)
+9. [Troubleshooting](#13-monitoring--troubleshooting)
+10. [Best Practices](#14-best-practices)
+11. [Example](#15-production-example)
+
 
 ---
 
