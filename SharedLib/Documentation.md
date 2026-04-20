@@ -246,15 +246,5 @@ When logic is complex and requires structure.
 
 ---
 
-##  **Quick Understanding (Important for Interview)**
-
-| Feature   | vars             | src             |
-| --------- | ---------------- | --------------- |
-| Usage     | Simple functions | Complex logic   |
-| Import    | Not required     | Required        |
-| Structure | Flat             | Package-based   |
-| Best For  | Quick tasks      | Scalable design |
-
----
 
 
