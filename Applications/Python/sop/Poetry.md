@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 17-04-2026     | v1.1        | Ankita              | 17-04-2026         | Team             |                 |                 |                 |
+| Ankita     | 17-04-2026     | v1.1        | Ankita              | 21-04-2026         |    Team          |  Komal Jaiswal  |  Akshit Kapil   |   Mahesh Kumar  |
 
 ---
 
@@ -75,6 +75,8 @@ python3 --version
 curl --version
 ```
 
+<img width="866" height="692" alt="image" src="https://github.com/user-attachments/assets/83367a67-9b9a-4410-b2d6-131a6991d518" />
+
 ---
 
 ### Step 1: Install Poetry
@@ -82,6 +84,8 @@ curl --version
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
 ```
+
+<img width="866" height="651" alt="image" src="https://github.com/user-attachments/assets/4e221e7b-b7d6-4ff7-9200-dc84ea678813" />
 
 ---
 
