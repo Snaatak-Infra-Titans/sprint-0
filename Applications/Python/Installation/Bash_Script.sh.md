@@ -4,7 +4,7 @@
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Mukesh Kharb | 2026-04-15 | 1.0     | Mukesh Kharb    | 2026-04-15     | Team         |             |             |             |
+| Mukesh Kharb | 2026-04-15 | 1.0     | Mukesh Kharb    | 2026-04-15     | Team         | Mohit Kumar |Faisal Khan  | Mahesh Kumar   |             |
 
 ---
 
@@ -87,10 +87,8 @@ Using multiple methods ensures compatibility and control.
 sudo apt update
 sudo apt install python3 python3-pip -y
 ```
-
-* Simple and fast installation
-* Managed by OS repositories
-* Limited control over versions
+><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/569ab1a6-54f1-4c2b-8be2-774d26a94261" />
+><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/284f197a-82ff-491c-9a37-29ea0edb0244" />
 
 ---
 
@@ -106,6 +104,9 @@ cd Python-3.12.0
 make
 sudo make install
 ```
+><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/e483c17e-4018-4883-873c-943d59fbb406" />
+><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/74b514cd-10c5-4104-93fa-b3a46bcbea56" />
+
 
 * Provides full control over version
 * Useful for custom builds
@@ -122,25 +123,9 @@ sudo make install
 
 ### Example Script
 
-```bash
-#!/bin/bash
+><img width="900" height="auto" alt="image" src="https://github.com/user-attachments/assets/2f25c616-5e56-4b68-a495-4698b5a68081" />
 
-set -e
-
-PYTHON_VERSION=3.12.0
-
-sudo apt update
-sudo apt install -y build-essential wget libssl-dev zlib1g-dev
-
-wget https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz
-
-tar -xvf Python-$PYTHON_VERSION.tgz
-cd Python-$PYTHON_VERSION
-
-./configure --enable-optimizations
-make -j$(nproc)
-sudo make altinstall
-```
+><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/9388f109-3726-4f62-b542-d86d9d6d88b2" />
 
 ### Script Explanation
 
