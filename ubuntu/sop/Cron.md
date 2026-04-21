@@ -1,8 +1,8 @@
 # SOP for Cron in Ubuntu
 
-| Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|-------------|
-| Shivam Uniyal    | 14-04-2026 | v1.0    | Shivam Uniyal   | 14-04-2026     |              |             |             |             |
+| Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
+|------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
+| Shivam Uniyal    | 14-04-2026 | v1.0    | Shivam Uniyal   | 21-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
 
 ---
 
