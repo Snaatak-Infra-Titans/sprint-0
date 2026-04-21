@@ -4,7 +4,7 @@
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Mukesh Kharb | 2026-04-15 | 1.0     | Mukesh Kharb    | 2026-04-15     | Team         |             |             |             |
+| Mukesh Kharb | 17/04/2026 | 1.0     | Mukesh Kharb    | 17/04/2026     | Team         | Mohit Kumar |Faisal Khan  | Mahesh Kumar| 
 
 ---
 
@@ -209,40 +209,28 @@ System Configured
 ## Common Playbook Commands
 
 ```bash
-ansible-playbook playbook.yml
-```
-
-Runs playbook on target hosts.
-
-```bash
 ansible-playbook -i inventory.ini playbook.yml
 ```
-
 Uses custom inventory file.
+><img width="1407" height="676" alt="image" src="https://github.com/user-attachments/assets/38f22f6a-5189-4f03-9e73-6aa3e9a8c42b" />
 
 ```bash
 ansible-playbook playbook.yml --check
 ```
-
 Performs dry run.
+><img width="1400" height="525" alt="image" src="https://github.com/user-attachments/assets/535e0417-af3f-4dee-9aff-ba3ced2684a4" />
 
 ```bash
-ansible-playbook playbook.yml --syntax-check
+ansible-playbook -i inventory.ini playbook.yml --syntax-check
 ```
-
 Checks YAML syntax.
+><img width="1335" height="213" alt="image" src="https://github.com/user-attachments/assets/d63f216e-ea62-4947-b720-19322ae3f300" />
 
 ```bash
-ansible-playbook playbook.yml --limit web
+ansible-playbook -i inventory.ini playbook.yml -vv
 ```
-
-Runs only on specific hosts.
-
-```bash
-ansible-playbook playbook.yml -vvv
-```
-
 Shows detailed logs.
+><img width="1371" height="874" alt="image" src="https://github.com/user-attachments/assets/297e5972-8bce-4519-9a9f-2ddfa5d32cdb" />
 
 ---
 
