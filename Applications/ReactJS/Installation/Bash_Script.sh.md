@@ -13,7 +13,7 @@
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Mukesh Kharb | 2026-04-16 | 1.0     | Mukesh Kharb    | 2026-04-16     | Team         |             |             |             |
+| Mukesh Kharb | 16/04/2026 | 1.0     | Mukesh Kharb    | 16/04/2026     | Team         | Mohit Kumar| Faisal Khan |  Mahesh Kumar     |
 
 ---
 
@@ -148,6 +148,7 @@ npm install
 echo "▶ Starting React app"
 npm start
 ```
+><img width="1000" height="auto" alt="image" src="https://github.com/user-attachments/assets/7cb097a2-4714-4cd7-a595-073888f0dc5b" />
 
 ---
 
@@ -180,6 +181,8 @@ sudo systemctl reload nginx
 
 echo "✅ Upgrade completed"
 ```
+><img width="1397" height="auto" alt="image" src="https://github.com/user-attachments/assets/5b33ebc1-c27e-4a58-8dcc-bd9a12a25c04" />
+><img width="1407" height="676" alt="image" src="https://github.com/user-attachments/assets/cf7fecee-b497-4a3d-b4a4-737fb71c929e" />
 
 ---
 
