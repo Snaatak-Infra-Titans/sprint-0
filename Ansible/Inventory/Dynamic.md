@@ -5,7 +5,7 @@
 
 | Author  | Created On     | Version | Last Updated By | Last Edited On | L0 Reviewer  | L1 Reviewer  | L2 Reviewer   |
 |---------|----------------|---------|------------------|----------------|--------------|--------------|---------------|
-| Deepak  | 14 April 2026     | v1.1    | Deepak           | 22 April 2026     | Mohit Kumar         | Faisal Khan       | Mahesh Kumar            |
+| Deepak  | 14 April 2026  | v1.1    | Deepak           | 22 April 2026  | Mohit Kumar  | Faisal Khan  | Mahesh Kumar  |
 
 
 
@@ -180,13 +180,16 @@ Dynamic inventory makes Ansible scalable and reliable.
 
 ## 11. References
 
-| Resource | Link |
-|----------|------|
-| Ansible Inventory Guide | https://docs.ansible.com/ansible/latest/inventory_guide/ |
-| AWS EC2 Plugin | https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html |
+| Description | Link |
+|-------------|------|
+| Official guide for managing Ansible inventory | [Ansible Inventory Guide](https://docs.ansible.com/ansible/latest/inventory_guide/) |
+| AWS EC2 dynamic inventory plugin documentation | [AWS EC2 Plugin](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html) |
+
+
+---
 
 ## Author
 
-| Name   |  | Contact                                  |
+| Name   | Role              | Contact                                  |
 |--------|-------------------|------------------------------------------|
-| Deepak |   | deepak.nagar.snaatak@mygurukulam.co      |
+| Deepak | DevOps Engineer   | deepak.nagar.snaatak@mygurukulam.co      |
