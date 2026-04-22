@@ -44,24 +44,6 @@ This SOP provides a structured guide to monitor disk usage, verify mount points,
 
 ---
 
-## Scope
-
-This SOP applies to:
-
-* Linux / Ubuntu servers
-* DevOps engineers and system administrators
-* Production and staging environments
-
----
-
-## Prerequisites
-
-* Ubuntu 20.04 / 22.04
-* Root or sudo access
-* Basic knowledge of Linux commands
-
----
-
 # Disk Usage Monitoring
 
 ### Step 1: Check Disk Usage (Filesystem Level)
@@ -267,6 +249,12 @@ ulimit -n 65535
 
 ---
 
+# Conclusion
+
+This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems. Regular monitoring, proper configuration, and adherence to best practices will help maintain a healthy and efficient system.
+
+---
+
 # References
 
 | **Topic**            | **Link**                                                                                                                                                                       |
@@ -275,9 +263,3 @@ ulimit -n 65535
 | Linux Man Pages      | [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)                                                                                                         |
 | Ulimit Documentation | [https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/](https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/) |
 | Disk Usage (df, du)  | [https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/](https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/)                     |
-
-
-
-
-
----
