@@ -14,18 +14,16 @@
 
 1. [Introduction](#1-introduction)
 2. [Purpose](#2-purpose)
-3. [Scope](#3-scope)
-4. [Prerequisites](#4-prerequisites)
-5. [Disk Usage Monitoring](#5-disk-usage-monitoring)
-6. [Mount Points Verification](#6-mount-points-verification)
-7. [Ulimit (Resource Limits)](#7-ulimit-resource-limits)
-8. [Validation](#8-validation)
-9. [Use Cases](#9-use-cases)
-10. [Troubleshooting](#10-troubleshooting)
-11. [Best Practices](#11-best-practices)
-12. [Contact Information](#12-contact-information)
-13. [Conclusion](#13-conclusion)
-14. [References](#14-references)
+3. [Disk Usage Monitoring](#3-disk-usage-monitoring)
+4. [Mount Points Verification](#4-mount-points-verification)
+5. [Ulimit (Resource Limits)](#5-ulimit-resource-limits)
+6. [Validation](#6-validation)
+7. [Use Cases](#7-use-cases)
+8. [Troubleshooting](#8-troubleshooting)
+9. [Best Practices](#9-best-practices)
+10. [Contact Information](#10-contact-information)
+11. [Conclusion](#11-conclusion)
+12. [References](#12-references)
 
 ---
 
@@ -44,31 +42,15 @@ This SOP provides a structured guide to monitor disk usage, verify mount points,
 
 ---
 
-## 3. Scope
-
-This SOP applies to:
-
-* Linux / Ubuntu servers
-* DevOps engineers and system administrators
-* Production and staging environments
-
----
-
-## 4. Prerequisites
-
-* Ubuntu 20.04 / 22.04
-* Root or sudo access
-* Basic knowledge of Linux commands
-
----
-
-## 5. Disk Usage Monitoring
+## 3. Disk Usage Monitoring
 
 ### Step 1: Check Disk Usage (Filesystem Level)
 
 ```bash
 df -h
 ```
+
+<img width="1212" height="608" alt="image" src="https://github.com/user-attachments/assets/ca4746d0-ed63-46ad-80ec-3ad0c4716c74" />
 
 ---
 
@@ -78,6 +60,8 @@ df -h
 du -sh /var/*
 ```
 
+<img width="681" height="348" alt="image" src="https://github.com/user-attachments/assets/2c52a486-8b92-4bd1-8cb7-5b16cc85b992" />
+
 ---
 
 ### Step 3: Check Overall Disk Consumption
@@ -86,15 +70,19 @@ du -sh /var/*
 du -sh /*
 ```
 
+<img width="496" height="150" alt="image" src="https://github.com/user-attachments/assets/e8d61bb8-305b-480f-8874-c5da2bccce45" />
+
 ---
 
-## 6. Mount Points Verification
+## 4. Mount Points Verification
 
 ### Step 1: List Block Devices
 
 ```bash
 lsblk
 ```
+
+<img width="787" height="287" alt="image" src="https://github.com/user-attachments/assets/3f7d62ad-d96f-4c9a-aef3-3b67cf05a1ed" />
 
 ---
 
@@ -104,6 +92,8 @@ lsblk
 mount | grep "^/dev"
 ```
 
+<img width="1167" height="242" alt="image" src="https://github.com/user-attachments/assets/86e96122-b793-4458-a74d-0692d381b8f3" />
+
 ---
 
 ### Step 3: View Detailed Disk Info
@@ -112,15 +102,19 @@ mount | grep "^/dev"
 fdisk -l
 ```
 
+<img width="621" height="916" alt="image" src="https://github.com/user-attachments/assets/ca8adfb9-1fc3-4a20-ac30-b6b00eeb4f25" />
+
 ---
 
-## 7. Ulimit (Resource Limits)
+## 5. Ulimit (Resource Limits)
 
 ### Step 1: Check Current Limits
 
 ```bash
 ulimit -a
 ```
+
+<img width="952" height="477" alt="image" src="https://github.com/user-attachments/assets/2e586ae9-4553-42de-b320-b48552cabddd" />
 
 ---
 
@@ -130,6 +124,8 @@ ulimit -a
 ulimit -n
 ```
 
+<img width="546" height="108" alt="image" src="https://github.com/user-attachments/assets/6add0ae4-2cc1-4692-9197-a1be29f6de8c" />
+
 ---
 
 ### Step 3: Temporarily Increase Limit
@@ -138,17 +134,19 @@ ulimit -n
 ulimit -n 65535
 ```
 
+<img width="522" height="66" alt="image" src="https://github.com/user-attachments/assets/e5cdf5c9-35c4-4b60-849d-2d5823cd2f25" />
+
 ---
 
 ### Step 4: Permanent Configuration
-
-Edit file:
 
 ```bash
 sudo nano /etc/security/limits.conf
 ```
 
-Add:
+image
+
+Add Below Lines:
 
 ```bash
 * soft nofile 65535
@@ -160,12 +158,11 @@ Add:
 ### Step 5: Apply Changes
 
 * Logout and login again
-  OR
-* Restart the system
+* Or restart the system
 
 ---
 
-## 8. Validation
+## 6. Validation
 
 ### Verify Disk Usage
 
@@ -181,7 +178,7 @@ df -h
 ulimit -n
 ```
 
-**Expected Output:**
+**Expected:**
 
 ```
 65535
@@ -189,15 +186,12 @@ ulimit -n
 
 ---
 
-## 9. Use Cases
+## 7. Use Cases
 
-### Scenario 1: Disk Full
-
-```bash
-df -h
-du -sh /*
-sudo apt-get clean
-```
+| **Scenario**        | **Commands / Actions**                                  |
+| ------------------- | ------------------------------------------------------- |
+| Disk Full           | `df -h`<br>`du -sh /*`<br>`sudo apt-get clean`<br>image |
+| Too Many Open Files | `ulimit -n`<br>`ulimit -n 65535`                        |
 
 ---
 
@@ -210,7 +204,7 @@ ulimit -n 65535
 
 ---
 
-## 10. Troubleshooting
+## 8. Troubleshooting
 
 | **Issue**           | **Cause**             | **Solution**                     |
 | ------------------- | --------------------- | -------------------------------- |
@@ -221,11 +215,11 @@ ulimit -n 65535
 
 ---
 
-## 11. Best Practices
+## 9. Best Practices
 
 | # | Best Practice                           | Description                          |
 | - | --------------------------------------- | ------------------------------------ |
-| 1 | Monitor disk usage regularly            | Use `df` / `du` or monitoring tools  |
+| 1 | Monitor disk usage regularly            | Use df/du or monitoring tools        |
 | 2 | Clean logs and temporary files          | Prevent unnecessary disk consumption |
 | 3 | Avoid setting unlimited resource values | Reduces risk of system exhaustion    |
 | 4 | Apply ulimit changes carefully          | Test before applying in production   |
@@ -233,7 +227,7 @@ ulimit -n 65535
 
 ---
 
-## 12. Contact Information
+## 10. Contact Information
 
 | **Name**    | **Email**                                                                       |
 | ----------- | ------------------------------------------------------------------------------- |
@@ -241,21 +235,20 @@ ulimit -n 65535
 
 ---
 
-## 13. Conclusion
+## 11. Conclusion
 
-This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems. Regular monitoring, proper configuration, and adherence to best practices will help maintain a healthy and efficient system.
+This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems.
 
 ---
 
-## 14. References
+## 12. References
 
-| **Topic**            | **Link**                                                                                                                                                                       |
+| Topic                | Link                                                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Ubuntu Documentation | [https://help.ubuntu.com/](https://help.ubuntu.com/)                                                                                                                           |
 | Linux Man Pages      | [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)                                                                                                         |
 | Ulimit Documentation | [https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/](https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/) |
 | Disk Usage (df, du)  | [https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/](https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/)                     |
-
 
 
 
