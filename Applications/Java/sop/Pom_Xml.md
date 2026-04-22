@@ -118,14 +118,8 @@ Run the following command to verify Maven installation:
 mvn -version
 ```
 
-Expected result:
+<img width="1178" height="172" alt="image" src="https://github.com/user-attachments/assets/261c4a40-efe0-492d-bc05-1f9505a1b1d5" />
 
-* Maven version
-* Java version
-* Maven home path
-* Java home path
-
-**Image Placeholder:** Add screenshot of `mvn -version` output here.
 
 ---
 
@@ -141,12 +135,9 @@ mvn archetype:generate \
 -DinteractiveMode=false
 ```
 
-Expected result:
+<img width="1917" height="671" alt="image" src="https://github.com/user-attachments/assets/bc5e9a34-a511-4bc0-9e5a-9b328ab719b1" />
 
-* A new project folder named `demo-app` will be created.
-* A default `pom.xml` file will be generated automatically.
-
-**Image Placeholder:** Add screenshot of Maven project generation output here.
+<img width="1917" height="690" alt="image" src="https://github.com/user-attachments/assets/d1415e99-fbef-40e9-a31d-9ebd1455817c" />
 
 ---
 
@@ -157,12 +148,8 @@ Move into the generated project directory:
 ```bash
 cd demo-app
 ```
+<img width="676" height="102" alt="image" src="https://github.com/user-attachments/assets/76da63a3-48ea-4717-b175-e8eeb321d0c3" />
 
-Expected result:
-
-* Terminal should now point to the `demo-app` directory.
-
-**Image Placeholder:** Add screenshot showing terminal inside `demo-app` directory here.
 
 ---
 
@@ -171,7 +158,7 @@ Expected result:
 Open the `pom.xml` file using any text editor:
 
 ```bash
-nano pom.xml
+cat pom.xml
 ```
 
 Important sections in `pom.xml`:
@@ -184,7 +171,8 @@ Important sections in `pom.xml`:
 | `dependencies` | Defines external libraries required by the project |
 | `build`        | Used for build-related configurations and plugins  |
 
-**Image Placeholder:** Add screenshot of the `pom.xml` file here.
+<img width="1352" height="438" alt="image" src="https://github.com/user-attachments/assets/55709cb9-6a42-4c67-b0f9-66b6654e166c" />
+
 
 ---
 
@@ -207,7 +195,9 @@ Purpose:
 
 * This adds JUnit as a testing dependency for the project.
 
-**Image Placeholder:** Add screenshot of updated `pom.xml` with dependency here.
+<img width="1387" height="642" alt="image" src="https://github.com/user-attachments/assets/4dbc3f88-afdb-49ea-af7f-d5e1f995ff01" />
+
+
 
 ---
 
@@ -224,7 +214,8 @@ Expected result:
 * Source files should compile successfully.
 * Maven should show `BUILD SUCCESS` if compilation completes correctly.
 
-**Image Placeholder:** Add screenshot of `mvn compile` output here.
+<img width="1112" height="518" alt="image" src="https://github.com/user-attachments/assets/66a477f0-03f8-45ad-b9e2-ad2a965e805b" />
+
 
 ---
 
@@ -241,7 +232,8 @@ Expected result:
 * Maven should create a packaged `.jar` file inside the `target/` directory.
 * Example output file: `target/demo-app-1.0-SNAPSHOT.jar`
 
-**Image Placeholder:** Add screenshot of `mvn package` output here.
+<img width="1913" height="777" alt="image" src="https://github.com/user-attachments/assets/7ab49583-04cd-4369-af5a-823feb4f9eb5" />
+
 
 ---
 
@@ -265,7 +257,8 @@ Expected result:
 | Build completed   | `BUILD SUCCESS` displayed        |
 | Package generated | `.jar` file present in `target/` |
 
-**Image Placeholder:** Add screenshot of `ls target/` output here.
+<img width="1866" height="448" alt="image" src="https://github.com/user-attachments/assets/b950f5f6-6182-4d3e-bd6b-a1bba7f5a3ec" />
+
 
 ---
 
