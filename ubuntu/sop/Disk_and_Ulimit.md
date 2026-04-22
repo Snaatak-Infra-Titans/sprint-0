@@ -10,7 +10,7 @@
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 1. [Introduction](#1-introduction)
 2. [Purpose](#2-purpose)
@@ -35,10 +35,10 @@ This SOP provides a structured guide to monitor disk usage, verify mount points,
 
 ## 2. Purpose
 
-* Monitor disk utilization and prevent disk overflow
-* Identify mounted file systems and storage allocation
-* Configure resource limits (ulimit) for users and processes
-* Ensure system stability and performance
+I. Monitor disk utilization and prevent disk overflow
+II. Identify mounted file systems and storage allocation
+III. Configure resource limits (ulimit) for users and processes
+IV. Ensure system stability and performance
 
 ---
 
@@ -240,5 +240,4 @@ This SOP provides a comprehensive approach to monitoring disk usage, verifying m
 | Linux Man Pages      | [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)                                                                                                         |
 | Ulimit Documentation | [https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/](https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/) |
 | Disk Usage (df, du)  | [https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/](https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/)                     |
-
 
