@@ -23,25 +23,27 @@
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [Purpose](#2-purpose)
-3. [Prerequisites](#3-prerequisites)
-4. [Installation Steps](#4-installation-steps)
-   4.1 [Step 1: Install Java](#41-step-1-install-java)
-   4.2 [Step 2: Install Maven](#42-step-2-install-maven)
-   4.3 [Step 3: Verify Installation](#43-step-3-verify-installation)
-   4.4 [Step 4: Create Maven Project](#44-step-4-create-maven-project)
-   4.5 [Step 5: Navigate to Project Directory](#45-step-5-navigate-to-project-directory)
-   4.6 [Step 6: Understand `pom.xml`](#46-step-6-understand-pomxml)
-   4.7 [Step 7: Add Dependencies](#47-step-7-add-dependencies)
-   4.8 [Step 8: Build the Project](#48-step-8-build-the-project)
-   4.9 [Step 9: Package the Application](#49-step-9-package-the-application)
-5. [Validation](#5-validation)
-6. [Troubleshooting](#6-troubleshooting)
-7. [Best Practices](#7-best-practices)
-8. [Conclusion](#8-conclusion)
-9. [Contact Information](#9-contact-information)
+1. [Introduction](#1-introduction)  
+2. [Purpose](#2-purpose)  
+3. [Prerequisites](#3-prerequisites)  
+4. [Installation Steps](#4-installation-steps)  
+   - 4.1 [Step 1: Install Java](#41-step-1-install-java)  
+   - 4.2 [Step 2: Install Maven](#42-step-2-install-maven)  
+   - 4.3 [Step 3: Verify Installation](#43-step-3-verify-installation)  
+   - 4.4 [Step 4: Create Maven Project](#44-step-4-create-maven-project)  
+   - 4.5 [Step 5: Navigate to Project Directory](#45-step-5-navigate-to-project-directory)  
+   - 4.6 [Step 6: Understand `pom.xml`](#46-step-6-understand-pomxml)  
+   - 4.7 [Step 7: Add Dependencies](#47-step-7-add-dependencies)  
+   - 4.8 [Step 8: Build the Project](#48-step-8-build-the-project)  
+   - 4.9 [Step 9: Package the Application](#49-step-9-package-the-application)  
+5. [Validation](#5-validation)  
+6. [Troubleshooting](#6-troubleshooting)  
+7. [Best Practices](#7-best-practices)  
+8. [Conclusion](#8-conclusion)  
+9. [Contact Information](#9-contact-information)  
 10. [References](#10-references)
+
+---
 
 ---
 
