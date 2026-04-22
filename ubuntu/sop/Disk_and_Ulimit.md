@@ -1,3 +1,7 @@
+<img width="480" height="360" alt="image" src="https://github.com/user-attachments/assets/e8d4a2fc-ac40-4650-a6c6-bf0cd48763ac" />
+
+
+
 # SOP: Common Stack | Operating System | Ubuntu | Disk Usage & Ulimit Management
 
 ---
