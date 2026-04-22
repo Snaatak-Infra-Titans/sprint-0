@@ -1,16 +1,14 @@
 # Common Stack | Others | Migrate | SOP for Migrate
 
-## Description
-
 Step by step installation guide
 
 ---
 
 ## Author Table
 
-| Author      | Created on | Version | Last updated by | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-| ----------- | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | -            | -           | -           | -           |
+| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer  | L1 Reviewer     | L2 Reviewer     |
+| ----------- | ---------- | ------- | --------------- | -------------- | ------------ | ----------------| --------------- |
+| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain    | Prashant Sharma | Piyush Upadhyay |
 
 ---
 
