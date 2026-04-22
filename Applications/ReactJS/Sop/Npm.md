@@ -95,6 +95,7 @@ sudo apt install nodejs npm -y
 ```bash
 node -v
 ```
+![Uploading Screenshot.png…]()
 
 ---
 
@@ -103,6 +104,7 @@ node -v
 ```bash
 npm -v
 ```
+![Uploading Screenshot 2026-04-22 at 8.07.40 PM.png…]()
 
 ---
 
