@@ -1,4 +1,4 @@
-# Python — Introduction <img width="400" height="420" alt="kisspng-programming-language-python-github-inc-czech-repu-5aee3f20ce7531 9814193215255631688457" src="https://github.com/user-attachments/assets/88ec4e99-40c6-4cd4-ab2b-4f5fa3c0236e" />
+# Python — Introduction <img width="200" height="220" alt="kisspng-programming-language-python-github-inc-czech-repu-5aee3f20ce7531 9814193215255631688457" src="https://github.com/user-attachments/assets/88ec4e99-40c6-4cd4-ab2b-4f5fa3c0236e" />
 
 
 ## Document Details
