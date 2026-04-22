@@ -20,8 +20,7 @@
 8. [Best Practices](#8-best-practices)  
 9. [FAQs](#9-faqs)  
 10. [Conclusion](#10-conclusion)  
-11. [Contact Information](#11-contact-information)  
-12. [References](#12-references)  
+11. [References](#12-references)  
 
 
 ## 1. Introduction
@@ -173,17 +172,20 @@ Always test and validate before merging changes.
 
 
 
-## 11. Contact Information
-
-| Name   | Contact |
-|--------|---------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
 
-## 12. References
+
+## 11. References
 
 | Description | Link |
 |-------------|------|
 | Official Ansible documentation for automation and playbooks | [Ansible Documentation](https://docs.ansible.com) |
 | Guide for linting Ansible roles and playbooks | [Ansible Lint](https://ansible.readthedocs.io/projects/lint/) |
 | Documentation for Jenkins CI/CD pipelines | [Jenkins Pipeline](https://www.jenkins.io/doc/book/pipeline/) |
+
+
+##  Contact Information
+
+| Name   | Contact |
+|--------|---------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co |
