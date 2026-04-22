@@ -1,0 +1,192 @@
+# SOP for Python Virtual Environment (venv)
+
+| Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
+|------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
+| Shivam Uniyal    | 15-04-2026 | v1.0    | Shivam Uniyal   | 22-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
+
+---
+
+## Table of Contents
+
+1. [Introduction](#1-introduction)  
+2. [Purpose](#2-purpose)  
+3. [Prerequisites](#3-prerequisites)  
+4. [System Requirements](#4-system-requirements)  
+5. [Step-by-Step Procedure](#5-step-by-step-procedure)  
+6. [Troubleshooting](#6-troubleshooting)  
+7. [FAQs](#7-faqs)  
+8. [Contact Information](#8-contact-information)  
+9. [References](#9-references)  
+10. [Conclusion](#10-conclusion)
+
+---
+
+## 1. Introduction
+
+A Python Virtual Environment (venv) is an isolated workspace that allows separate environments for different projects. Each environment has its own Python interpreter and packages, preventing dependency conflicts. It helps manage different library versions, improves reproducibility, and keeps the system environment clean.
+
+---
+
+## 2. Purpose
+
+The purpose of this SOP is to provide a structured and easy-to-follow guide for managing Python virtual environments in Ubuntu.
+
+This document helps users to:
+
+- Create and configure a virtual environment  
+- Activate and work inside the environment  
+- Install and manage Python packages  
+- Export dependencies for reuse  
+- Deactivate and delete environments  
+- Troubleshoot common issues  
+
+---
+
+## 3. Prerequisites
+
+Before proceeding, ensure the following:
+
+- Ubuntu 24.04 installed  
+- Python3 installed  
+- Terminal access  
+- Basic knowledge of Linux commands  
+- Internet connectivity  
+
+---
+
+## 4. System Requirements
+
+| Component | Minimum Requirement |
+|----------|-------------------|
+| CPU      | Dual Core          |
+| RAM      | 4 GB               |
+| Disk     | 10 GB free space   |
+| OS       | Ubuntu 24.04       |
+
+---
+
+## 5. Step-by-Step Procedure
+
+### Step 1: Install venv package
+```bash
+sudo apt update
+sudo apt install python3-venv -y
+```
+<img width="1240" height="470" src="https://github.com/user-attachments/assets/8c34422e-3671-433c-a5e6-9c718682afee" />
+--
+<img width="693" height="129" src="https://github.com/user-attachments/assets/baa332d8-db91-465b-8b6a-aa75ac81dd53" />
+
+---
+
+### Step 2: Create Virtual Environment
+```bash
+python3 -m venv myenv
+```
+
+Verify:
+```bash
+ls -d myenv
+```
+<img width="693" height="95" src="https://github.com/user-attachments/assets/da3176d0-945a-47d4-9659-765ae096e4f9" />
+
+---
+
+### Step 3: Activate Virtual Environment
+```bash
+source myenv/bin/activate
+```
+<img width="693" height="76" src="https://github.com/user-attachments/assets/fcc054d7-9964-4581-955c-e1f1b7c28c79" />
+
+---
+
+### Step 4: Install Python Packages
+```bash
+pip install requests
+```
+<img width="1403" height="465" src="https://github.com/user-attachments/assets/b6817c11-53a2-459f-82be-bf9e099e964d" />
+
+Verify:
+```bash
+pip list
+```
+<img width="1335" height="241" src="https://github.com/user-attachments/assets/d2a5bc31-7470-4efb-9d91-8b21cd1becdb" />
+
+---
+
+### Step 5: Freeze Dependencies
+```bash
+pip freeze > requirements.txt
+```
+<img width="1335" height="210" src="https://github.com/user-attachments/assets/92b6f104-6648-41ef-9ea0-e5735d0a4658" />
+
+---
+
+### Step 6: Deactivate Virtual Environment
+```bash
+deactivate
+```
+<img width="831" height="75" src="https://github.com/user-attachments/assets/c340e57d-2166-4ccb-842a-1598436a43d3" />
+
+---
+
+### Step 7: Delete Virtual Environment
+```bash
+rm -rf myenv
+```
+<img width="901" height="143" src="https://github.com/user-attachments/assets/20862ff7-b19c-4deb-a2c8-7ac1017fd077" />
+
+---
+
+## 6. Troubleshooting
+
+| Issue | Possible Cause | Solution |
+|------|---------------|----------|
+| Activation not working | Incorrect command | Use `source myenv/bin/activate` |
+| Permission denied | Missing execution rights | Run `chmod +x myenv/bin/activate` |
+| pip not found | pip not installed | Run `python3 -m ensurepip --upgrade` |
+| Wrong Python version | Multiple Python versions installed | Verify using `python3 --version` |
+| Environment not activating | Wrong directory | Navigate to correct folder before activating |
+| Packages not installing | Network issue or pip outdated | Run `pip install --upgrade pip` |
+
+---
+
+## 7. FAQs
+
+**Q1. What is a virtual environment?**  
+It is an isolated Python environment used to manage dependencies separately.
+
+**Q2. Why use virtual environments?**  
+To avoid conflicts between different projects.
+
+**Q3. How do I activate the environment?**  
+```
+source myenv/bin/activate
+```
+
+**Q4. How do I install dependencies from a file?**  
+```
+pip install -r requirements.txt
+```
+
+---
+
+## 8. Contact Information
+
+| Name           | Email ID |
+|----------------|----------|
+| Shivam Uniyal  | shivam.uniyal.snaatak@mygurukulam.co |
+
+---
+
+## 9. References
+
+| Link | Description |
+|------|------------|
+| https://docs.python.org/3/library/venv.html | Official Python venv documentation |
+| https://ubuntu.com | Ubuntu documentation |
+
+---
+
+## 10. Conclusion
+
+This SOP provides a simple and structured approach to managing Python virtual environments. It helps avoid dependency conflicts and ensures a clean and efficient development setup. Following these steps improves consistency and reliability in DevOps workflows.
