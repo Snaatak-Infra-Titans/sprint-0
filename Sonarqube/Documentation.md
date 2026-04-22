@@ -25,15 +25,12 @@
 * [Understanding SonarQube](#understanding-sonarqube)
 * [Why Teams Rely on SonarQube](#why-teams-rely-on-sonarqube)
 * [How SonarQube Actually Works](#how-sonarqube-actually-works)
-* [Architecture](#architecture)
 * [Workflow](#workflow)
 * [Commands](#commands)
 * [Comparison with Other Tools](#comparison-with-other-tools)
-* [Advantages](#advantages)
-* [Disadvantages](#disadvantages)
 * [Best Practices](#best-practices)
 * [FAQs](#faqs)
-* [Conclusion](#conclusion)
+* [Summary](#summary)
 * [Contact Information](#contact-information)
 * [References](#references)
 
@@ -70,24 +67,13 @@ Key capabilities:
 
 ## Why Teams Rely on SonarQube
 
-In real-world projects, inconsistent coding practices and unnoticed bugs can lead to failures in production. SonarQube acts as a quality checkpoint.
-
-### Key Reasons
-
-* **Continuous Code Inspection**
-  >Automatically analyzes code on every commit or build.
-
-* **Early Bug Detection**
-  >Identifies issues during development instead of production.
-
-* **Security Analysis**
-  >Detects vulnerabilities like injection flaws and misconfigurations.
-
-* **Standardization**
-  >Enforces coding standards across teams.
-
-* **CI/CD Integration**
-  >Works seamlessly with pipelines to automate quality checks.
+| Feature                   | Description                                                   |
+|---------------------------|---------------------------------------------------------------|
+| Continuous Code Inspection | Automatically analyzes code on every commit or build         |
+| Early Bug Detection        | Identifies issues during development instead of production    |
+| Security Analysis          | Detects vulnerabilities and misconfigurations                |
+| Standardization            | Enforces coding standards across teams                       |
+| CI/CD Integration          | Integrates with pipelines for automated quality checks       |
 
 ---
 
@@ -102,26 +88,6 @@ In real-world projects, inconsistent coding practices and unnoticed bugs can lea
 
 
 ---
-<a id="architecture"></a>
-
-## Architecture
-
-SonarQube follows a modular architecture:
-
-* **SonarQube Server**
-  >Central component that processes analysis and provides UI.
-
-* **SonarQube Scanner**
-  >Tool that runs analysis on source code.
-
-* **Database**
-  >Stores metrics, issues, and analysis history.
-
-* **Web Interface**
-  >Dashboard for visualizing reports.
-
----
-
 <a id="commands"></a>
 
 ## Commands
@@ -175,65 +141,13 @@ Starts SonarQube server.
 
 ## Common Vulnerabilities Detected by SonarQube
 
-### Examples
-
-* **SQL Injection**
-  >Occurs when user input is directly used in database queries without sanitization.
-
-```python
-query = "SELECT * FROM users WHERE id = " + user_input
-```
-
-* **Hardcoded Credentials**
-  >Sensitive information like passwords or API keys stored directly in code.
-
-```python
-password = "admin123"
-```
-
-* **Cross-Site Scripting (XSS)**
-  >Unsanitized user input rendered in web pages.
-
-```javascript
-document.write(userInput)
-```
-
-* **Command Injection**
-  >Executing system commands using unsafe input.
-
-```bash
-os.system("rm -rf " + user_input)
-```
-
-* **Insecure Randomness**
-  >Using weak random generators for security-sensitive operations.
-
-```java
-Random rand = new Random();
-```
-
-* **Sensitive Data Exposure**
-  >Logging or exposing confidential data in logs or responses.
-
----
-
-## Advantages
-
-* Continuous inspection of code quality
-* Supports multiple languages
-* Integration with CI/CD pipelines
-* Provides detailed dashboards and reports
-
----
-
-<a id="disadvantages"></a>
-
-## Disadvantages
-
-* Initial setup complexity
-* Requires dedicated resources
-* Database dependency
-
+| Vulnerability            | Description                                                   | Example |
+|--------------------------|---------------------------------------------------------------|---------|
+| SQL Injection            | User input used directly in queries without sanitization      | ```python\nquery = \"SELECT * FROM users WHERE id = \" + user_input\n``` |
+| Hardcoded Credentials    | Sensitive data stored directly in code                        | ```python\npassword = \"admin123\"\n``` |
+| Cross-Site Scripting (XSS)| Unsanitized input rendered in web pages                      | ```javascript\ndocument.write(userInput)\n``` |
+| Command Injection        | Executing system commands using unsafe input                  | ```bash\nos.system(\"rm -rf \" + user_input)\n``` |
+| Insecure Randomness      | Weak random generators used for sensitive operations          | ```java\nRandom rand = new Random();\n``` |
 ---
 
 <a id="best-practices"></a>
@@ -274,19 +188,11 @@ Random rand = new Random();
 
 <a id="conclusion"></a>
 
-## Conclusion
+## Summary
 
-SonarQube is an essential tool for maintaining code quality and security in modern applications. It enables teams to catch issues early, enforce standards, and ensure reliable deployments.
-
----
-
-<a id="contact-information"></a>
-
-## Contact Information
-
-| Name         | Email                                                                             |
-| ------------ | --------------------------------------------------------------------------------- |
-| Mukesh Kharb | [mukesh.Kharb.snaatak@mygurukulam.co](mailto:mukesh.Kharb.snaatak@mygurukulam.co) |
+- SonarQube helps detect code quality issues and security vulnerabilities early in the development cycle  
+- It enforces coding standards and improves consistency across teams  
+- It supports reliable and secure deployments through continuous code analysis  
 
 ---
 
@@ -294,8 +200,18 @@ SonarQube is an essential tool for maintaining code quality and security in mode
 
 ## References
 
-* [https://docs.sonarsource.com/sonarqube-server](https://docs.sonarsource.com/sonarqube-server)
-* [https://medium.com/@piyushkashyap045/comprehensive-guide-to-sonarqube-understanding-benefits-setup-and-code-quality-analysis-with-caffbc8afa0f](https://medium.com/@piyushkashyap045/comprehensive-guide-to-sonarqube-understanding-benefits-setup-and-code-quality-analysis-with-caffbc8afa0f)
-* [https://www.geeksforgeeks.org/devops/sonarqube/](https://www.geeksforgeeks.org/devops/sonarqube/)
+| Resource        | Link                                                                 |
+|----------------|----------------------------------------------------------------------|
+| SonarQube Docs | https://docs.sonarsource.com/sonarqube-server                         |
+| Medium Guide   | https://medium.com/@piyushkashyap045/comprehensive-guide-to-sonarqube-understanding-benefits-setup-and-code-quality-analysis-with-caffbc8afa0f |
+| GeeksforGeeks  | https://www.geeksforgeeks.org/devops/sonarqube/                       |
+---
+<a id="contact-information"></a>
+
+## Contact Information
+
+| Name         | Email                                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
+| Mukesh Kharb | [mukesh.Kharb.snaatak@mygurukulam.co](mailto:mukesh.Kharb.snaatak@mygurukulam.co) |
 
 ---
