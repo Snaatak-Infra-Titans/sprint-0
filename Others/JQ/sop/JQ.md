@@ -12,16 +12,16 @@
 
 ## Table of Contents
 
-1. Overview
-2. Purpose
-3. Prerequisites
-4. Step-by-Step Implementation
-5. Common Operations
-6. Validation
-7. Troubleshooting
-8. Best Practices
-9. Contact Information
-10. References
+1. [Overview](#overview)
+2. [Purpose](#purpose)
+3. [Prerequisites](#prerequisites)
+4. [Step-by-Step Implementation](#step-by-step-implementation)
+5. [Common Operations](#common-operations)
+6. [Validation](#validation)
+7. [Troubleshooting](#troubleshooting)
+8. [Best Practices](#best-practices)
+9. [Contact Information](#contact-information)
+10. [References](#references)
 
 ---
 
@@ -51,7 +51,8 @@ Install JQ:
 sudo apt update
 sudo apt install jq -y
 ```
-
+<img width="866" height="497" alt="image" src="https://github.com/user-attachments/assets/e5619fbb-720a-4648-bda3-036528f61ba9" />
+<img width="866" height="497" alt="image" src="https://github.com/user-attachments/assets/370079b9-5d43-438d-9975-c17a5dbe8aca" />
 ---
 
 ## Step-by-Step Implementation
@@ -61,6 +62,7 @@ sudo apt install jq -y
 ```bash
 jq --version
 ```
+<img width="866" height="167" alt="image" src="https://github.com/user-attachments/assets/d022c0b3-65ef-4d5b-a78c-baeb78843f9e" />
 
 ---
 
@@ -69,6 +71,7 @@ jq --version
 ```bash
 jq '.' file.json
 ```
+<img width="866" height="563" alt="image" src="https://github.com/user-attachments/assets/53e9ec00-9592-4cc3-beb1-9cfb5fe1535d" />
 
 ---
 
@@ -101,6 +104,7 @@ jq '.skills[]' file.json
 ```bash
 jq '.users[] | select(.age > 25)' file.json
 ```
+<img width="866" height="409" alt="image" src="https://github.com/user-attachments/assets/37cf796d-3ca2-431d-9dc8-4e01db868fff" />
 
 ---
 
@@ -111,6 +115,7 @@ jq '.users[] | select(.age > 25)' file.json
 ```bash
 jq '.' file.json
 ```
+<img width="866" height="563" alt="image" src="https://github.com/user-attachments/assets/d653578c-c257-4537-a101-ac5aa3564eec" />
 
 ### Count Elements
 
@@ -123,6 +128,7 @@ jq '.users | length' file.json
 ```bash
 jq '.users[] | {name, age}' file.json
 ```
+<img width="866" height="387" alt="image" src="https://github.com/user-attachments/assets/53f3827d-aabd-49eb-9693-88fac0b0f74b" />
 
 ---
 
@@ -133,6 +139,7 @@ Verify output correctness:
 ```bash
 jq '.name' file.json
 ```
+<img width="866" height="167" alt="image" src="https://github.com/user-attachments/assets/a4a57761-d2a3-4ad5-a820-44e9659d9747" />
 
 Expected Result:
 
