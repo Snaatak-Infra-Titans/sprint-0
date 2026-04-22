@@ -55,10 +55,10 @@ This SOP explains how to install Java and Maven, create a Maven-based Java proje
 
 The purpose of this SOP is to provide a clear step-by-step installation guide to:
 
-I. Install the required tools such as Java and Maven
-II. Create a Maven-based Java project
-III. Understand and configure the `pom.xml` file
-IV. Build and package the Java application successfully
+1. Install the required tools such as Java and Maven  
+2. Create a Maven-based Java project  
+3. Understand and configure the `pom.xml` file  
+4. Build and package the Java application successfully  
 
 ---
 
