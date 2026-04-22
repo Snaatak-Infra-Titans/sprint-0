@@ -338,5 +338,5 @@ Most `systemctl` problems come down to one of a few causes. Here is a quick refe
 
 | Name   | Email                                                                             |
 | ------ | --------------------------------------------------------------------------------- |
-| Versha Tripathi | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
+| gourav sharma | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
 
