@@ -78,7 +78,6 @@ Before proceeding, ensure the following:
 sudo apt update
 ```
 
-
 ---
 
 ### Step 2: Install Node.js and npm
@@ -86,7 +85,7 @@ sudo apt update
 ```bash
 sudo apt install nodejs npm -y
 ```
-<img width="1114" height="266" alt="Screenshot 2026-04-22 at 8 01 31 PM" src="https://github.com/user-attachments/assets/95b1d137-ce73-48d3-a832-f8ac3a2daea9" />
+<img width="1114" height="266" src="https://github.com/user-attachments/assets/95b1d137-ce73-48d3-a832-f8ac3a2daea9" />
 
 ---
 
@@ -95,7 +94,7 @@ sudo apt install nodejs npm -y
 ```bash
 node -v
 ```
-<img width="912" height="96" alt="Screenshot" src="https://github.com/user-attachments/assets/cfa243e2-03ec-4884-a590-d17eca5b4ffe" />
+<img width="912" height="96" src="https://github.com/user-attachments/assets/cfa243e2-03ec-4884-a590-d17eca5b4ffe" />
 
 ---
 
@@ -104,19 +103,11 @@ node -v
 ```bash
 npm -v
 ```
-<img width="912" height="96" alt="Screenshot 2026-04-22 at 8 07 40 PM" src="https://github.com/user-attachments/assets/28f78ee4-e209-47c3-abad-16fa617d226a" />
+<img width="912" height="96" src="https://github.com/user-attachments/assets/28f78ee4-e209-47c3-abad-16fa617d226a" />
 
 ---
 
-### Step 5: Upgrade npm (Recommended)
-
-```bash
-sudo npm install -g npm@latest
-```
-
----
-
-### Step 6: Initialize a Project (Optional)
+### Step 5: Initialize a Project (Optional)
 
 ```bash
 mkdir my-react-app
