@@ -2,7 +2,6 @@
 
 # JQ — Command-Line JSON Processor
 
-### *Common Stack · Others · JQ · Intro Documentation*
 
 > *A lightweight, zero-dependency tool to slice, filter, map and transform JSON — right from your terminal.*
 
