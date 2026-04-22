@@ -22,7 +22,6 @@
 * [Introduction](#introduction)
 * [Understanding React Setup](#understanding-react-setup)
 * [Architecture](#architecture)
-* [Workflow](#workflow)
 * [React Installation Script](#react-installation-script)
 * [React Upgrade Script](#react-upgrade-script)
 * [How to Run Scripts](#how-to-run-scripts)
@@ -56,12 +55,12 @@ In this document, we will focus on **React setup, execution, and upgrade lifecyc
 
 ## Understanding React Setup
 
-A React application requires the following components:
-
-* **Node.js** → Runtime environment to execute JavaScript outside browser
-* **npm (Node Package Manager)** → Used to install and manage dependencies
-* **package.json** → Contains project metadata and dependency definitions
-* **node_modules/** → Stores installed dependencies
+| Component      | Description                                                  |
+|----------------|--------------------------------------------------------------|
+| Node.js        | Runtime environment to execute JavaScript outside the browser |
+| npm            | Package manager used to install and manage dependencies      |
+| package.json   | Contains project metadata and dependency definitions         |
+| node_modules/  | Directory that stores all installed dependencies             |
 
 When you run a React project, npm installs all required libraries defined in `package.json`.
 
@@ -73,14 +72,8 @@ When you run a React project, npm installs all required libraries defined in `pa
 
 A generic React project structure looks like this:
 
-```
-frontend/
- ├── package.json
- ├── node_modules/
- ├── public/
- ├── src/
- └── build/   (generated)
-```
+><img width="500" height="auto" alt="ChatGPT Image Apr 22, 2026, 10_21_14 PM" src="https://github.com/user-attachments/assets/687167b7-f1f6-4dda-9e17-07d77c0e669c" />
+
 
 ### Key Concepts
 
@@ -88,34 +81,6 @@ frontend/
 * UI is divided into reusable components
 * Data flows using props and state
 * Build process converts source code into optimized static files
-
-### Example (OT-Micro Reference)
-
-In OT-Microservices:
-
-* React frontend communicates with multiple APIs
-* Uses relative paths like `/api/v1/...`
-* Nginx routes requests to backend services
-
----
-
-<a id="workflow"></a>
-
-## Workflow
-
-### Development Workflow
-
-1. Install Node.js and npm
-2. Run `npm install`
-3. Start development server using `npm start`
-4. Access application in browser
-
-### Production Workflow
-
-1. Install dependencies
-2. Build application using `npm run build`
-3. Deploy static files
-4. Serve using Nginx or similar web server
 
 ---
 
@@ -199,13 +164,11 @@ chmod +x script.sh
 
 <a id="important-notes"></a>
 
-## Important Notes
-
-* Always run scripts from project root
-* Ensure Node.js is installed before execution
-* Do not manually modify node_modules
-* Always test after build or upgrade
-
+> [!IMPORTANT]
+> - Always run scripts from project root  
+> - Ensure Node.js is installed before execution  
+> - Do not manually modify node_modules  
+> - Always test after build or upgrade  
 ---
 
 <a id="best-practices"></a>
