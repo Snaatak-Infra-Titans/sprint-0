@@ -10,32 +10,33 @@
 
 1. [Introduction](#1-introduction)
 2. [Purpose](#2-purpose)
-3. [Check Cron Service](#3-check-cron-service)
-   - 3.1 [Check Status](#31-check-status)
-   - 3.2 [Start Service](#32-start-service)
-   - 3.3 [Enable at Boot](#33-enable-at-boot)
-4. [Create a Cron Job](#4-create-a-cron-job)
-   - 4.1 [Open Crontab](#41-open-crontab)
-   - 4.2 [Cron Syntax](#42-cron-syntax)
-   - 4.3 [Example](#43-example)
-5. [Manage Cron Jobs](#5-manage-cron-jobs)
-   - 5.1 [List Jobs](#51-list-jobs)
-   - 5.2 [Edit Jobs](#52-edit-jobs)
-   - 5.3 [Remove Jobs](#53-remove-jobs)
-6. [Verify and Logs](#6-verify-and-logs)
-   - 6.1 [Check Cron Logs](#61-check-cron-logs)
-   - 6.2 [Check Output File](#62-check-output-file)
-7. [Troubleshooting](#7-troubleshooting)
-8. [FAQs](#8-faqs)
-9. [Contact Information](#9-contact-information)
-10. [References](#10-references)
-11. [Conclusion](#11-conclusion)
+3. [Prerequisites](#3-prerequisites)
+4. [Check Cron Service](#4-check-cron-service)
+   - 4.1 [Check Status](#41-check-status)
+   - 4.2 [Start Service](#42-start-service)
+   - 4.3 [Enable at Boot](#43-enable-at-boot)
+5. [Create a Cron Job](#5-create-a-cron-job)
+   - 5.1 [Open Crontab](#51-open-crontab)
+   - 5.2 [Cron Syntax](#52-cron-syntax)
+   - 5.3 [Example](#53-example)
+6. [Manage Cron Jobs](#6-manage-cron-jobs)
+   - 6.1 [List Jobs](#61-list-jobs)
+   - 6.2 [Edit Jobs](#62-edit-jobs)
+   - 6.3 [Remove Jobs](#63-remove-jobs)
+7. [Verify and Logs](#7-verify-and-logs)
+   - 7.1 [Check Cron Logs](#71-check-cron-logs)
+   - 7.2 [Check Output File](#72-check-output-file)
+8. [Troubleshooting](#8-troubleshooting)
+9. [FAQs](#9-faqs)
+10. [Contact Information](#10-contact-information)
+11. [References](#11-references)
+12. [Conclusion](#12-conclusion)
 
 ---
 
 ## 1. Introduction
 
-Cron is a time-based job scheduler in Linux that allows users to automate repetitive and routine tasks such as running scripts, taking backups, clearing logs, and performing system maintenance activities at predefined intervals.
+Cron is a time-based job scheduler in Linux that allows users to automate repetitive and routine tasks such as running scripts, taking backups, clearing logs, and performing system maintenance activities at predefined intervals.  
 It runs in the background and executes commands based on defined time patterns (minute, hour, day, etc.), ensuring consistency, saving time, and reducing manual effort.
 
 ---
@@ -51,19 +52,29 @@ This SOP provides a step-by-step guide to:
 
 ---
 
-## 3. Check Cron Service
+## 3. Prerequisites
 
-### 3.1 Check Status
+Before proceeding, ensure the following:
+
+- Ubuntu system installed  
+- Basic knowledge of Linux commands  
+- Terminal access 
+
+---
+
+## 4. Check Cron Service
+
+### 4.1 Check Status
 ```bash
 systemctl status cron
 ```
 
-### 3.2 Start Service
+### 4.2 Start Service
 ```bash
 sudo systemctl start cron
 ```
 
-### 3.3 Enable at Boot
+### 4.3 Enable at Boot
 ```bash
 sudo systemctl enable cron
 ```
@@ -72,14 +83,14 @@ sudo systemctl enable cron
 
 ---
 
-## 4. Create a Cron Job
+## 5. Create a Cron Job
 
-### 4.1 Open Crontab
+### 5.1 Open Crontab
 ```bash
 crontab -e
 ```
 
-### 4.2 Cron Syntax
+### 5.2 Cron Syntax
 ```bash
 * * * * * command
 | | | | |
@@ -90,7 +101,7 @@ crontab -e
 └────────── Minute (0-59)
 ```
 
-### 4.3 Example
+### 5.3 Example
 ```bash
 * * * * * echo "Hello Cron" >> /home/shivam/cron.log
 ```
@@ -99,21 +110,21 @@ crontab -e
 
 ---
 
-## 5. Manage Cron Jobs
+## 6. Manage Cron Jobs
 
-### 5.1 List Jobs
+### 6.1 List Jobs
 ```bash
 crontab -l
 ```
 
-### 5.2 Edit Jobs
+### 6.2 Edit Jobs
 ```bash
 crontab -e
 ```
 
 <img width="1232" height="677" src="https://github.com/user-attachments/assets/14b926e6-c9d4-4e85-a185-4742b528d993" />
 
-### 5.3 Remove Jobs
+### 6.3 Remove Jobs
 ```bash
 crontab -r
 ```
@@ -122,15 +133,16 @@ crontab -r
 
 ---
 
-## 6. Verify and Logs
+## 7. Verify and Logs
 
-### 6.1 Check Cron Logs
+### 7.1 Check Cron Logs
 ```bash
 grep CRON /var/log/syslog
 ```
-<img width="1436" height="776" alt="Screenshot 2026-04-22 at 5 02 03 PM" src="https://github.com/user-attachments/assets/ffb21fa7-200f-48fb-a380-f6c133b599bb" />
 
-### 6.2 Check Output File
+<img width="1436" height="776" src="https://github.com/user-attachments/assets/ffb21fa7-200f-48fb-a380-f6c133b599bb" />
+
+### 7.2 Check Output File
 ```bash
 cat /home/shivam/cron.log
 ```
@@ -139,7 +151,7 @@ cat /home/shivam/cron.log
 
 ---
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 | Issue                 | Possible Cause      | Solution                          |
 |----------------------|-------------------|-----------------------------------|
@@ -150,7 +162,7 @@ cat /home/shivam/cron.log
 
 ---
 
-## 8. FAQs
+## 9. FAQs
 
 **Q1. What is cron used for?**  
 Cron is used to automate repetitive tasks like backups, scripts, and system maintenance.
@@ -170,7 +182,7 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 9. Contact Information
+## 10. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -178,7 +190,7 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 10. References
+## 11. References
 
 | Link | Description |
 |------|------------|
@@ -187,7 +199,7 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 11. Conclusion
+## 12. Conclusion
 
 This SOP provides a clear and structured approach to managing cron jobs in Ubuntu. It enables automation of repetitive tasks, reducing manual effort and improving overall efficiency. By following the defined steps for creation, management, and monitoring, users can ensure reliable execution of scheduled jobs.
 
