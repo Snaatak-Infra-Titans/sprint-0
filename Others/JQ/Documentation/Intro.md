@@ -1,4 +1,4 @@
-<div align="center">
+
 
 # JQ — Command-Line JSON Processor
 
