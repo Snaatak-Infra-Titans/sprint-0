@@ -77,7 +77,7 @@ Before proceeding, ensure the following:
 ```bash
 sudo apt update
 ```
-![Uploading Screenshot 2026-04-22 at 8.00.21 PM.png…]()
+
 
 ---
 
@@ -86,7 +86,6 @@ sudo apt update
 ```bash
 sudo apt install nodejs npm -y
 ```
-![Uploading Screenshot 2026-04-22 at 8.01.31 PM.png…]()
 
 ---
 
@@ -95,7 +94,7 @@ sudo apt install nodejs npm -y
 ```bash
 node -v
 ```
-![Uploading Screenshot.png…]()
+<img width="912" height="96" alt="Screenshot" src="https://github.com/user-attachments/assets/cfa243e2-03ec-4884-a590-d17eca5b4ffe" />
 
 ---
 
@@ -104,7 +103,6 @@ node -v
 ```bash
 npm -v
 ```
-![Uploading Screenshot 2026-04-22 at 8.07.40 PM.png…]()
 
 ---
 
