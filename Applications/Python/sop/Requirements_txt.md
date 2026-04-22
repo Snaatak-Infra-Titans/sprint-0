@@ -1,12 +1,21 @@
-
 <p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" width="120"/>
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" width="100" />
 </p>
 
-<h1 align="center">SOP: requirements.txt</h1>
-<p align="center">Python Dependency Management Guide</p>
+<h1 align="center">📄 SOP: requirements.txt</h1>
 
-# SOP: requirements.txt
+<p align="center">
+  <b>Python Dependency Management Guide</b><br>
+  <sub>Best Practices • Installation • Version Control • Optimization</sub>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
+  <img src="https://img.shields.io/badge/Dependencies-Managed-success">
+  <img src="https://img.shields.io/badge/Platform-Ubuntu-orange?logo=ubuntu">
+</p>
+
+---
 
 ## Document Details
 
