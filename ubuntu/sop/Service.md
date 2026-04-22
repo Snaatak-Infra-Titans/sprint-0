@@ -334,4 +334,9 @@ Most `systemctl` problems come down to one of a few causes. Here is a quick refe
 
 ---
 
-*Author: Gourav Sharma | Sprint 0 | Infra Titans | 14 April 2026*
+## Contact Information
+
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| Versha Tripathi | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
+
