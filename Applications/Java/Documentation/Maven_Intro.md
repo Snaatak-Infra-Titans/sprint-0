@@ -112,7 +112,7 @@ Maven simplifies Java builds by automating dependencies and standardizing projec
 
 
 ## Contact Information
-<img width="1663" height="946" alt="ChatGPT Image Apr 22, 2026, 11_17_12 PM" src="https://github.com/user-attachments/assets/d9d54abf-d2cb-4317-b004-4bddcaeee8f7" />
+
 
 | Name   | Contact                                  |
 |--------|------------------------------------------|
