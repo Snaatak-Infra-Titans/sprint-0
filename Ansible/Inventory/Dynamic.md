@@ -188,8 +188,8 @@ Dynamic inventory makes Ansible scalable and reliable.
 
 ---
 
-## Author
+## Contact Information
 
-| Name   | Role              | Contact                                  |
+| Name   |             | Contact                                  |
 |--------|-------------------|------------------------------------------|
-| Deepak | DevOps Engineer   | deepak.nagar.snaatak@mygurukulam.co      |
+| Deepak |   | deepak.nagar.snaatak@mygurukulam.co      |
