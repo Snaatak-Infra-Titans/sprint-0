@@ -8,18 +8,18 @@
 
 ## Table of Contents
 
-1. Introduction  
-2. Purpose  
-3. Prerequisites  
-4. System Requirements  
-5. Software Overview  
-6. Step-by-Step Installation  
-7. Configuration  
-8. Verification & Monitoring  
-9. Troubleshooting  
-10. FAQs  
-11. Contact Information  
-12. References  
+1. [Introduction](#1-introduction)  
+2. [Purpose](#2-purpose)  
+3. [Prerequisites](#3-prerequisites)  
+4. [System Requirements](#4-system-requirements)  
+5. [Software Overview](#5-software-overview)  
+6. [Step-by-Step Installation](#6-step-by-step-installation)  
+7. [Verification & Monitoring](#7-verification--monitoring)  
+8. [Troubleshooting](#8-troubleshooting)  
+9. [FAQs](#9-faqs)  
+10. [Conclusion](#10-conclusion)  
+11. [Contact Information](#11-contact-information)  
+12. [References](#12-references)
 
 ---
 
@@ -77,6 +77,7 @@ Before proceeding, ensure the following:
 ```bash
 sudo apt update
 ```
+![Uploading Screenshot 2026-04-22 at 8.00.21 PM.png…]()
 
 ---
 
@@ -85,6 +86,7 @@ sudo apt update
 ```bash
 sudo apt install nodejs npm -y
 ```
+
 
 ---
 
@@ -122,25 +124,7 @@ npm init -y
 
 ---
 
-## 7. Configuration
-
-No additional configuration is required for basic npm setup.
-
-However, npm uses a `package.json` file to manage project dependencies. This file is created using:
-
-```bash
-npm init -y
-```
-
-It stores:
-- Project name  
-- Version  
-- Dependencies  
-- Scripts  
-
----
-
-## 8. Verification & Monitoring
+## 7. Verification & Monitoring
 
 To verify npm is working correctly:
 
@@ -164,7 +148,7 @@ Successful installation confirms npm is working correctly.
 
 ---
 
-## 9. Troubleshooting
+## 8. Troubleshooting
 
 | Issue | Possible Cause | Solution |
 |------|---------------|----------|
@@ -175,7 +159,7 @@ Successful installation confirms npm is working correctly.
 
 ---
 
-## 10. FAQs
+## 9. FAQs
 
 **Q1. What is npm?**  
 npm is a package manager used to install and manage JavaScript libraries.
@@ -190,6 +174,12 @@ npm -v
 
 **Q4. What is package.json?**  
 It is a file that stores project metadata and dependencies.
+
+---
+
+## 10. Conclusion
+
+This SOP provides a clear and structured approach to installing and using npm for React JS development. Following these steps ensures a smooth setup and helps manage project dependencies efficiently.
 
 ---
 
