@@ -15,9 +15,9 @@
 
 ## Author Table
 
-| Author      | Created On | Version | Last Updated By | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer     |
-| ----------- | ---------- | ------: | --------------- | -------------- | ------------ | ----------- | --------------- |
-| Saransh Rai | 15-04-2026 |     2.0 | Saransh Rai     | 22-04-2026     | Team         | Anuj Jain   | Prashant Sharma |
+| Author      | Created On | Version | Last Updated By | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer     | L2 Reviewer     |
+| ----------- | ---------- | ------: | --------------- | -------------- | ------------ | ----------- | --------------- | --------------- |
+| Saransh Rai | 15-04-2026 |     2.0 | Saransh Rai     | 22-04-2026     | Team         | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
 
 ---
 
