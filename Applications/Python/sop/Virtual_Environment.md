@@ -10,13 +10,14 @@
 
 1. [Introduction](#1-introduction)  
 2. [Purpose](#2-purpose)  
-3. [System Requirements](#3-system-requirements)  
-4. [Step-by-Step Procedure](#4-step-by-step-procedure)  
-5. [Troubleshooting](#5-troubleshooting)  
-6. [FAQs](#6-faqs)  
-7. [Contact Information](#7-contact-information)  
-8. [References](#8-references)  
-9. [Conclusion](#9-conclusion)
+3. [Prerequisites](#3-prerequisites)  
+4. [System Requirements](#4-system-requirements)  
+5. [Step-by-Step Procedure](#5-step-by-step-procedure)  
+6. [Troubleshooting](#6-troubleshooting)  
+7. [FAQs](#7-faqs)  
+8. [Contact Information](#8-contact-information)  
+9. [References](#9-references)  
+10. [Conclusion](#10-conclusion)
 
 ---
 
@@ -41,7 +42,19 @@ This document helps users to:
 
 ---
 
-## 3. System Requirements
+## 3. Prerequisites
+
+Before proceeding, ensure the following:
+
+- Ubuntu 24.04 installed  
+- Python3 installed  
+- Terminal access  
+- Basic knowledge of Linux commands  
+- Internet connectivity  
+
+---
+
+## 4. System Requirements
 
 | Component | Minimum Requirement |
 |----------|-------------------|
@@ -52,16 +65,16 @@ This document helps users to:
 
 ---
 
-## 4. Step-by-Step Procedure
+## 5. Step-by-Step Procedure
 
 ### Step 1: Install venv package
 ```bash
 sudo apt update
 sudo apt install python3-venv -y
 ```
-<img width="1240" height="470" alt="Screenshot 2026-04-22 at 5 41 19 PM" src="https://github.com/user-attachments/assets/8c34422e-3671-433c-a5e6-9c718682afee" />
+<img width="1240" height="470" src="https://github.com/user-attachments/assets/8c34422e-3671-433c-a5e6-9c718682afee" />
 --
-<img width="693" height="129" alt="Screenshot 2026-04-22 at 5 42 28 PM" src="https://github.com/user-attachments/assets/baa332d8-db91-465b-8b6a-aa75ac81dd53" />
+<img width="693" height="129" src="https://github.com/user-attachments/assets/baa332d8-db91-465b-8b6a-aa75ac81dd53" />
 
 ---
 
@@ -74,7 +87,7 @@ Verify:
 ```bash
 ls -d myenv
 ```
-<img width="693" height="95" alt="Screenshot 2026-04-22 at 5 47 50 PM" src="https://github.com/user-attachments/assets/da3176d0-945a-47d4-9659-765ae096e4f9" />
+<img width="693" height="95" src="https://github.com/user-attachments/assets/da3176d0-945a-47d4-9659-765ae096e4f9" />
 
 ---
 
@@ -82,7 +95,7 @@ ls -d myenv
 ```bash
 source myenv/bin/activate
 ```
-<img width="693" height="76" alt="Screenshot 2026-04-22 at 5 49 09 PM" src="https://github.com/user-attachments/assets/fcc054d7-9964-4581-955c-e1f1b7c28c79" />
+<img width="693" height="76" src="https://github.com/user-attachments/assets/fcc054d7-9964-4581-955c-e1f1b7c28c79" />
 
 ---
 
@@ -90,13 +103,13 @@ source myenv/bin/activate
 ```bash
 pip install requests
 ```
-<img width="1403" height="465" alt="Screenshot 2026-04-22 at 5 53 16 PM" src="https://github.com/user-attachments/assets/b6817c11-53a2-459f-82be-bf9e099e964d" />
+<img width="1403" height="465" src="https://github.com/user-attachments/assets/b6817c11-53a2-459f-82be-bf9e099e964d" />
 
 Verify:
 ```bash
 pip list
 ```
-<img width="1335" height="241" alt="Screenshot 2026-04-22 at 5 54 08 PM" src="https://github.com/user-attachments/assets/d2a5bc31-7470-4efb-9d91-8b21cd1becdb" />
+<img width="1335" height="241" src="https://github.com/user-attachments/assets/d2a5bc31-7470-4efb-9d91-8b21cd1becdb" />
 
 ---
 
@@ -104,7 +117,7 @@ pip list
 ```bash
 pip freeze > requirements.txt
 ```
-<img width="1335" height="210" alt="Screenshot 2026-04-22 at 5 55 14 PM" src="https://github.com/user-attachments/assets/92b6f104-6648-41ef-9ea0-e5735d0a4658" />
+<img width="1335" height="210" src="https://github.com/user-attachments/assets/92b6f104-6648-41ef-9ea0-e5735d0a4658" />
 
 ---
 
@@ -112,7 +125,7 @@ pip freeze > requirements.txt
 ```bash
 deactivate
 ```
-<img width="831" height="75" alt="Screenshot 2026-04-22 at 5 56 11 PM" src="https://github.com/user-attachments/assets/c340e57d-2166-4ccb-842a-1598436a43d3" />
+<img width="831" height="75" src="https://github.com/user-attachments/assets/c340e57d-2166-4ccb-842a-1598436a43d3" />
 
 ---
 
@@ -120,11 +133,11 @@ deactivate
 ```bash
 rm -rf myenv
 ```
-<img width="901" height="143" alt="Screenshot 2026-04-22 at 5 57 33 PM" src="https://github.com/user-attachments/assets/20862ff7-b19c-4deb-a2c8-7ac1017fd077" />
+<img width="901" height="143" src="https://github.com/user-attachments/assets/20862ff7-b19c-4deb-a2c8-7ac1017fd077" />
 
 ---
 
-## 5. Troubleshooting
+## 6. Troubleshooting
 
 | Issue | Possible Cause | Solution |
 |------|---------------|----------|
@@ -137,7 +150,7 @@ rm -rf myenv
 
 ---
 
-## 6. FAQs
+## 7. FAQs
 
 **Q1. What is a virtual environment?**  
 It is an isolated Python environment used to manage dependencies separately.
@@ -157,7 +170,7 @@ pip install -r requirements.txt
 
 ---
 
-## 7. Contact Information
+## 8. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -165,7 +178,7 @@ pip install -r requirements.txt
 
 ---
 
-## 8. References
+## 9. References
 
 | Link | Description |
 |------|------------|
@@ -174,6 +187,6 @@ pip install -r requirements.txt
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
 This SOP provides a simple and structured approach to managing Python virtual environments. It helps avoid dependency conflicts and ensures a clean and efficient development setup. Following these steps improves consistency and reliability in DevOps workflows.
