@@ -11,18 +11,18 @@
 
 ## Table of Contents
 
-1. Introduction  
-2. What is Golang?  
-3. Why Golang?  
-4. Key Features of Golang  
-5. Golang Execution Model  
-6. Use Cases of Golang  
-7. Advantages of Golang  
-8. Disadvantages of Golang  
-9. Conclusion  
-10. FAQs  
-11. Contact Information  
-12. References  
+1. [Introduction](#1-introduction)  
+2. [What is Golang?](#2-what-is-golang)  
+3. [Why Golang?](#3-why-golang)  
+4. [Key Features of Golang](#4-key-features-of-golang)  
+5. [Golang Execution Model](#5-golang-execution-model)  
+6. [Use Cases of Golang](#6-use-cases-of-golang)  
+7. [Advantages of Golang](#7-advantages-of-golang)  
+8. [Disadvantages of Golang](#8-disadvantages-of-golang)  
+9. [Conclusion](#9-conclusion)  
+10. [FAQs](#10-faqs)  
+11. [Contact Information](#11-contact-information)  
+12. [References](#12-references)
 
 ---
 
