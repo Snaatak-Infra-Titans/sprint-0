@@ -11,12 +11,11 @@
 
 ## Document Information
 
-| Author | Created On | Version | Last Updated By | Last Edited On | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|:---|:---|:---:|:---|:---|:---:|:---:|:---:|:---:|
-| Versha Tripathi | 13-04-2026 | v1.0 | Versha Tripathi | 13-04-2026 | Team | — | — | — |
+| Author          | Created On | Version | L0 Reviewer  | L1 Reviewer  | L2 Reviewer     |
+| --------------- | ---------- | ------- | ------------ | ------------ | --------------- |
+| Versha Tripathi | 13-04-2026 | v1.0    | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
-
 ## Table of Contents
 
 - [What is JQ?](#what-is-jq)
