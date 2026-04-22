@@ -1,6 +1,16 @@
 # Ansible Playbook SOP
 
----
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo" width="100"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/automation-ansible-red" />
+  <img src="https://img.shields.io/badge/configuration-management-blue" />
+  <img src="https://img.shields.io/badge/type-infrastructure--as--code-green" />
+  <img src="https://img.shields.io/badge/platform-linux-lightgrey" />
+  <img src="https://img.shields.io/badge/status-production--ready-brightgreen" />
+</p>
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
@@ -13,9 +23,7 @@
 * [Introduction](#introduction)
 * [What is Ansible Playbook](#what-is-ansible-playbook)
 * [Why Use Playbooks](#why-use-playbooks)
-* [How Playbooks Work](#how-playbooks-work)
 * [Core Concepts](#core-concepts)
-* [Difference: Task vs Play vs Playbook](#difference-task-vs-play-vs-playbook)
 * [Example Playbook](#example-playbook)
 * [Execution Workflow](#execution-workflow)
 * [Common Playbook Commands](#common-playbook-commands)
@@ -30,12 +38,11 @@
 
 ## Introduction
 
-> [!NOTE]
-> This section explains what playbooks are and why they are important.
+In modern infrastructure management, manual execution of repetitive tasks such as package installation, service configuration, and system setup increases the risk of human error and inconsistency.
 
-While working with infrastructure, performing tasks manually (like installing packages or configuring services) can be repetitive and error-prone.
+Ansible Playbooks provide a structured and automated approach to define these operations as code. By describing the desired state of systems, playbooks enable consistent, repeatable, and scalable execution across multiple environments.
 
-Ansible Playbooks allow us to define these steps as code so they can be executed consistently across multiple systems.
+This approach ensures reliability, reduces operational overhead, and aligns with Infrastructure as Code (IaC) practices used in DevOps workflows.
 
 ---
 
@@ -43,89 +50,40 @@ Ansible Playbooks allow us to define these steps as code so they can be executed
 
 ## What is Ansible Playbook
 
-> [!IMPORTANT]
 > An Ansible Playbook is a YAML-based automation file used to define and execute a series of tasks on managed systems in a predictable and repeatable way.
 
-Ansible Playbooks act as the **core automation engine** in Ansible. Instead of manually configuring systems, you describe the desired state of infrastructure in a playbook, and Ansible ensures that state is achieved.
+| Aspect              | Description                                                                |
+|--------------------|-----------------------------------------------------------------------------|
+| Approach           | Declarative (defines desired state, not step-by-step execution)             |
+| Purpose            | Automates system configuration and infrastructure management                |
 
-A playbook contains:
+---
 
-* **Plays** → define which hosts to target
-* **Tasks** → define what actions to perform
-* **Modules** → actual units that execute tasks
+## Key Characteristics
 
-Unlike scripts, playbooks are **declarative**, meaning you describe *what the system should look like*, not how to achieve it step by step.
-
-This makes playbooks:
-
-* Easier to understand
-* Safer to run multiple times
-* Ideal for automation at scale
-
+| Feature              | Benefit                                      |
+|---------------------|----------------------------------------------|
+| Idempotency         | Safe to run multiple times                   |
+| Readability         | Easier to understand and maintain            |
+| Scalability         | Suitable for large-scale automation          |
 ---
 
 <a id="why-use-playbooks"></a>
 
 ## Why Use Playbooks
 
-> [!TIP]
-> Playbooks are used to bring consistency, automation, and control to infrastructure management.
-
-In real-world environments, managing multiple servers manually is not practical. Even small differences in configuration can lead to failures, downtime, or inconsistent behavior.
-
-Playbooks solve this problem by providing a **single source of truth** for system configuration.
-
 ### Key Reasons
 
-* **Automation at Scale**
-  - Execute the same configuration across hundreds of servers with a single command.
-
-* **Consistency and Standardization**
-  - Ensures all systems follow the same configuration, reducing environment drift.
-
-* **Idempotency (Safe Re-runs)**
-  - Playbooks only make changes when required, avoiding unnecessary modifications.
-
-* **Version Control Friendly**
-  - Playbooks can be stored in Git, allowing tracking, auditing, and rollback of changes.
-
-* **Faster Deployment and Recovery**
-  - Entire environments can be recreated quickly using playbooks.
-
-* **Reduced Human Error**
-  - Eliminates manual mistakes in repetitive operations.
-
----
-
-<a id="how-playbooks-work"></a>
-
-## How Playbooks Work
-
-> [!IMPORTANT]
-> Ansible executes playbooks in a structured and sequential manner to achieve the desired system state.
-
-When you run a playbook, Ansible performs the following steps:
-
-1. **Reads the Playbook File**
-   - Parses the YAML file and identifies plays, hosts, and tasks.
-
-2. **Connects to Target Hosts**
-   - Uses SSH (or other protocols) to connect to systems defined in the inventory.
-
-3. **Gathers System Facts (Optional)**
-   - Collects information about the system (OS, IP, memory, etc.) for conditional logic.
-
-4. **Executes Tasks Sequentially**
-   - Tasks run in the exact order they are defined in the play.
-
-5. **Uses Modules for Execution**
-   - Each task calls a module (like apt, service, copy) to perform the action.
-
-6. **Ensures Idempotency**
-   - Before making changes, Ansible checks current state and applies changes only if needed.
-
-7. **Reports Results**
-   - Provides output showing which tasks changed, failed, or were skipped.
+| Feature                     | Reason                                                                 |
+|----------------------------|-------------------------------------------------------------------------|
+| Idempotency                | Safe to run multiple times without unintended changes                  |
+| Readability                | Easy to understand and maintain                                        |
+| Scalability                | Suitable for large-scale automation across multiple systems            |
+| Automation at Scale        | Configure hundreds of servers with a single command                    |
+| Consistency                | Ensures standardized configuration across environments                 |
+| Version Control Friendly   | Supports tracking, auditing, and rollback using Git                    |
+| Faster Deployment          | Quickly recreate environments and recover systems                      |
+| Reduced Human Error        | Minimizes manual mistakes in repetitive operations                     |
 
 ---
 
@@ -133,26 +91,15 @@ When you run a playbook, Ansible performs the following steps:
 
 ## Core Concepts
 
-* **Inventory** → List of hosts
-* **Module** → Unit of work
-* **Task** → Single action
-* **Play** → Group of tasks
-* **Playbook** → Collection of plays
+| Concept    | Description                      |
+|------------|----------------------------------|
+| Inventory  | List of hosts                    |
+| Module     | Unit of work                     |
+| Task       | Single action                    |
+| Play       | Group of tasks                   |
+| Playbook   | Collection of plays              |
 
 ---
-
-<a id="difference-task-vs-play-vs-playbook"></a>
-
-## Difference: Task vs Play vs Playbook
-
-| Component | Description         | Example          |
-| --------- | ------------------- | ---------------- |
-| Task      | Single action       | Install nginx    |
-| Play      | Group of tasks      | Configure server |
-| Playbook  | Collection of plays | Full deployment  |
-
----
-
 <a id="example-playbook"></a>
 
 ## Example Playbook
@@ -238,10 +185,12 @@ Shows detailed logs.
 
 ## Best Practices
 
-* Use roles for large setups
-* Avoid hardcoding values
-* Test before production
-* Keep playbooks modular
+| Practice                | Description                                      |
+|------------------------|--------------------------------------------------|
+| Use Roles              | Organize large setups into reusable components    |
+| Avoid Hardcoding       | Use variables instead of fixed values             |
+| Test Before Production | Validate playbooks in staging environments        |
+| Keep Modular           | Break playbooks into smaller, manageable parts    |
 
 ---
 
@@ -272,9 +221,19 @@ Shows detailed logs.
 
 ## References
 
-* [https://docs.ansible.com/ansible/latest/playbook_guide/index.html](https://docs.ansible.com/ansible/latest/playbook_guide/index.html)
-* [https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html)
-* [https://www.geeksforgeeks.org/ansible-playbooks/](https://www.geeksforgeeks.org/ansible-playbooks/)
-* [https://www.redhat.com/en/topics/automation/what-is-an-ansible-playbook](https://www.redhat.com/en/topics/automation/what-is-an-ansible-playbook)
+| Resource            | Link                                                                 |
+|---------------------|----------------------------------------------------------------------|
+| Ansible Docs        | https://docs.ansible.com/ansible/latest/playbook_guide/index.html     |
+| Playbook Intro      | https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html |
+| GeeksforGeeks       | https://www.geeksforgeeks.org/ansible-playbooks/                      |
+| Red Hat             | https://www.redhat.com/en/topics/automation/what-is-an-ansible-playbook |
+
+---
+
+## Contact Information
+
+| Name          | Email                                      |
+|--------------|--------------------------------------------|
+| Mukesh Kharb | mukesh.Kharb.snaatak@mygurukulam.co        |
 
 ---
