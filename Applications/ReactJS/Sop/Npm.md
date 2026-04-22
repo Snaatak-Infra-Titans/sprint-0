@@ -86,7 +86,7 @@ sudo apt update
 ```bash
 sudo apt install nodejs npm -y
 ```
-
+![Uploading Screenshot 2026-04-22 at 8.01.31 PM.png…]()
 
 ---
 
