@@ -44,6 +44,14 @@
 
 This Standard Operating Procedure (SOP) provides guidelines for managing Python project dependencies using the `requirements.txt` file. It ensures that all developers and environments use consistent package versions, reducing compatibility issues and improving project stability.
 
+<p align="center">
+  <b>Developer</b> → <b>requirements.txt</b> → <b>Environment</b>
+</p>
+
+<p align="center">
+  <sub>Defines dependencies → Stores versions → Installs packages</sub>
+</p>
+
 📌 **Image Placeholder:** Insert diagram showing dependency flow (Developer → requirements.txt → Environment)
 
 ---
