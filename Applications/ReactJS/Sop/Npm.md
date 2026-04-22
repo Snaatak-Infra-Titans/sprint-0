@@ -77,6 +77,7 @@ Before proceeding, ensure the following:
 ```bash
 sudo apt update
 ```
+<img width="1370" height="549" alt="Screenshot 2026-04-22 at 8 00 21 PM" src="https://github.com/user-attachments/assets/aac18ad0-89bb-499e-b31b-8f2cf00a6dcb" />
 
 ---
 
@@ -114,6 +115,7 @@ mkdir my-react-app
 cd my-react-app
 npm init -y
 ```
+<img width="1127" height="446" alt="Screenshot 2026-04-22 at 8 44 43 PM" src="https://github.com/user-attachments/assets/6c69767c-271b-4703-b449-c8d183f48056" />
 
 ---
 
@@ -124,18 +126,21 @@ To verify npm is working correctly:
 ```bash
 npm --version
 ```
+<img width="901" height="113" alt="Screenshot 2026-04-22 at 8 45 48 PM" src="https://github.com/user-attachments/assets/cdf9591d-e3ec-47da-9b43-d70f514bc46f" />
 
 Install a sample package:
 
 ```bash
 npm install lodash
 ```
+<img width="968" height="187" alt="Screenshot 2026-04-22 at 9 01 55 PM" src="https://github.com/user-attachments/assets/6e8eb4f8-f2d0-40b0-860e-1fcc9733ae63" />
 
 Check installed packages:
 
 ```bash
 npm list
 ```
+<img width="968" height="187" alt="Screenshot 2026-04-22 at 9 02 08 PM" src="https://github.com/user-attachments/assets/7c678d40-df4f-4ff3-9bdd-b6456abce194" />
 
 Successful installation confirms npm is working correctly.
 
@@ -155,15 +160,14 @@ Successful installation confirms npm is working correctly.
 ## 9. FAQs
 
 **Q1. What is npm?**  
-npm is a package manager used to install and manage JavaScript libraries.
+- npm is a package manager used to install and manage JavaScript libraries.
 
 **Q2. Is npm required for React JS?**  
-Yes, npm is required to install React and its dependencies.
+- Yes, npm is required to install React and its dependencies.
 
 **Q3. How to check npm version?**  
-```
-npm -v
-```
+- npm -v
+
 
 **Q4. What is package.json?**  
 It is a file that stores project metadata and dependencies.
