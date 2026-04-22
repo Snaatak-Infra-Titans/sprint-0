@@ -26,8 +26,8 @@
 7. [Use Cases](#7-use-cases)
 8. [Troubleshooting](#8-troubleshooting)
 9. [Best Practices](#9-best-practices)
-10. [Contact Information](#10-contact-information)
-11. [Conclusion](#11-conclusion)
+10. [Conclusion](#11-conclusion)
+11. [Contact Information](#10-contact-information)
 12. [References](#12-references)
 
 ---
@@ -223,17 +223,17 @@ ulimit -n
 
 ---
 
-# 10. Contact Information
+# 10. Conclusion
+
+This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems.
+
+---
+
+# 11. Contact Information
 
 | **Name**    | **Email**                                                                       |
 | ----------- | ------------------------------------------------------------------------------- |
 | Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
-
----
-
-# 11. Conclusion
-
-This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems.
 
 ---
 
