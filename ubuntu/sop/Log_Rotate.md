@@ -1,59 +1,42 @@
-
-#  SOP: Log Rotation Management Using Logrotate
+# SOP: Log Rotation Management Using Logrotate
 
 ---
 
-##  Document Information
+## Document Information
 
-| Author           | Created on  | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|------------------|------------|---------|-----------------|----------------|-------------|------------|------------|------------|
-| Versha Tripathi  | 13-04-2026 | v1.0    | Versha Tripathi | 13-04-2026     | Team           | -          | -          | -          |
-
+| Author | Created On | Version | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|--------|------------|---------|-------------|-------------|-------------|
+| Versha Tripathi | 13-04-2026 | v1.0 | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
 
 ## Table of Contents
 
 1. [Purpose](#1-purpose)
-2. [Scope](#2-scope)
-3. [Prerequisites](#3-prerequisites)
-4. [Configuration Structure](#4-logrotate-configuration-structure)
-5. [Key Parameters](#5-key-configuration-parameters)
-6. [Configuration Steps](#6-configuration-steps)
-7. [Testing](#11-testing-configuration)
-8. [Automation](#12-automation)
-9. [Troubleshooting](#13-monitoring--troubleshooting)
-10. [Best Practices](#14-best-practices)
-11. [Example](#15-production-example)
-
-
----
-
-##  1. Purpose
-
-This SOP explains how to manage logs using **logrotate** to:
-
-* Prevent disk space issues
-* Improve system performance
-* Maintain clean and manageable logs
+2. [Prerequisites](#2-prerequisites)
+3. [Logrotate Configuration Structure](#3-logrotate-configuration-structure)
+4. [Key Configuration Parameters](#4-key-configuration-parameters)
+5. [Configuration Steps](#5-configuration-steps)
+6. [Rotation Frequency](#6-rotation-frequency)
+7. [Retention Policy](#7-retention-policy)
+8. [Post-Rotation Actions](#8-post-rotation-actions)
+9. [Testing Configuration](#9-testing-configuration)
+10. [Automation](#10-automation)
+11. [Monitoring & Troubleshooting](#11-monitoring--troubleshooting)
 
 ---
 
-##  2. Scope
+## 1. Purpose
 
-Applicable to all Linux servers using logrotate for:
-
-* System logs
-* Application logs
+This SOP explains how to manage logs using **logrotate** to prevent disk space issues, improve system performance, and maintain clean, manageable log files.
 
 ---
 
-##  3. Prerequisites
+## 2. Prerequisites
 
-* Root / sudo access
-* logrotate installed
+- logrotate installed on the system
 
-###  Verify Installation
+### Verify Installation
 
 ```bash
 logrotate --version
@@ -66,35 +49,37 @@ logrotate --version
 
 ---
 
-##  4. Logrotate Configuration Structure
+## 3. Logrotate Configuration Structure
 
-| Path                  | Purpose                  |
-| --------------------- | ------------------------ |
-| `/etc/logrotate.conf` | Main config              |
-| `/etc/logrotate.d/`   | Service-specific configs |
+Logrotate uses two key config locations:
+
+- **`/etc/logrotate.conf`** — The main global configuration file that defines default rotation settings applied across the system.
+- **`/etc/logrotate.d/`** — A directory containing service-specific configuration files, where each application can define its own rotation rules independently.
 
 <img width="653" height="670" alt="image" src="https://github.com/user-attachments/assets/089dbf0f-99ed-4edf-8d87-cdc68a8de206" />
 
 ---
 
-##  5. Key Configuration Parameters
+---
 
-| Directive                | Description            |
-| ------------------------ | ---------------------- |
-| daily / weekly / monthly | Rotation frequency     |
-| rotate N                 | Number of logs to keep |
-| compress                 | Compress logs          |
-| delaycompress            | Delay compression      |
-| missingok                | Ignore missing logs    |
-| notifempty               | Skip empty logs        |
-| create                   | Create new log file    |
-| copytruncate             | Truncate original log  |
+## 4. Key Configuration Parameters
+
+| Directive | Parameter | Description |
+|-----------|-----------|-------------|
+| `daily` / `weekly` / `monthly` | Rotation Frequency | Defines how often log rotation runs — use `daily` for high-traffic apps, `weekly` for moderate, `monthly` for low-volume logs. |
+| `rotate N` | Number of Logs to Keep | Sets how many rotated log files are retained before older ones are deleted; e.g., `rotate 7` keeps one week of daily logs. |
+| `compress` | Compress Rotated Logs | Compresses old log files using gzip to save disk space; compressed files get a `.gz` extension automatically. |
+| `delaycompress` | Delay Compression by One Cycle | Skips compression on the most recently rotated log, allowing active processes that may still write to it to close safely first. |
+| `missingok` | Ignore Missing Log Files | Prevents logrotate from throwing an error if the specified log file does not exist; useful during early app deployment. |
+| `notifempty` | Skip Rotation of Empty Logs | Does not rotate a log file if it contains no data, avoiding unnecessary empty archived files. |
+| `create` | Create New Log File After Rotation | Automatically creates a fresh, empty log file with specified permissions after the old one is rotated away. |
+| `copytruncate` | Truncate Instead of Rename | Copies the log to a new file and then empties the original in-place, useful when an app cannot be restarted to reopen the log file. |
 
 ---
 
-##  6. Configuration Steps
+## 5. Configuration Steps
 
-### 6.1 Global Configuration
+### 5.1 Global Configuration
 
 ```bash
 sudo nano /etc/logrotate.conf
@@ -107,11 +92,12 @@ create
 compress
 include /etc/logrotate.d
 ```
+
 <img width="1090" height="642" alt="image" src="https://github.com/user-attachments/assets/009a8931-1c3c-418f-aa13-768dbb07505f" />
 
 ---
 
-### 6.2 Service-Specific Configuration
+### 5.2 Service-Specific Configuration
 
 ```bash
 sudo nano /etc/logrotate.d/myapp
@@ -134,39 +120,29 @@ sudo nano /etc/logrotate.d/myapp
 
 ---
 
-##  7. Rotation Frequency
+## 6. Rotation Frequency
 
-| Requirement | Config    |
-| ----------- | --------- |
-| Daily       | `daily`   |
-| Weekly      | `weekly`  |
-| Monthly     | `monthly` |
+| Requirement | Config Directive |
+|-------------|-----------------|
+| Daily | `daily` |
+| Weekly | `weekly` |
+| Monthly | `monthly` |
 
 ---
 
-##  8. Retention Policy
+---
+
+## 7. Retention Policy
 
 ```conf
 rotate 14
 ```
 
-➡ Keeps logs for 14 days
+Keeps logs for 14 rotation cycles (e.g., 14 days if rotating daily).
 
 ---
 
-##  9. Compression
-
-```conf
-compress
-delaycompress
-```
-
-* Saves disk space
-* Delays compression for safety
-
----
-
-##  10. Post-Rotation Actions
+## 8. Post-Rotation Actions
 
 ```conf
 postrotate
@@ -174,42 +150,35 @@ postrotate
 endscript
 ```
 
-📸 **Screenshot Placeholder:**
+Post-rotation scripts run after the log is rotated — useful for restarting services that need to reopen their log file handle.
 
-```
-![Post rotate action](screenshots/post-rotate.png)
-```
+- Use `compress` and `delaycompress` together for safer compression.
+- Saves disk space while avoiding issues with processes still writing to the last rotated log.
 
 ---
 
-##  11. Testing Configuration
+## 9. Testing Configuration
 
-### Dry Run
+### Dry Run (Simulate Without Applying)
 
 ```bash
 sudo logrotate -d /etc/logrotate.conf
 ```
 
-### Force Run
+### Force Run (Apply Immediately)
 
 ```bash
 sudo logrotate -f /etc/logrotate.conf
 ```
 
-📸 **Screenshot Placeholder:**
-
-```
-![Logrotate test](screenshots/logrotate-test.png)
-```
-
 ---
 
-##  12. Automation
+## 10. Automation
 
-* Runs automatically via:
+Logrotate runs automatically via one of the following:
 
-  * cron → `/etc/cron.daily/logrotate`
-  * systemd → `logrotate.timer`
+- **cron** → `/etc/cron.daily/logrotate`
+- **systemd** → `logrotate.timer`
 
 ```bash
 systemctl status logrotate.timer
@@ -220,9 +189,9 @@ systemctl status logrotate.timer
 
 ---
 
-##  13. Monitoring & Troubleshooting
+## 11. Monitoring & Troubleshooting
 
-### Check Status
+### Check Rotation Status
 
 ```bash
 cat /var/lib/logrotate/status
@@ -230,49 +199,25 @@ cat /var/lib/logrotate/status
 
 ### Common Issues
 
-| Issue              | Cause           | Solution           |
-| ------------------ | --------------- | ------------------ |
-| Logs not rotating  | Bad config      | Use `-d`           |
-| Permission denied  | Wrong ownership | Fix `create`       |
-| Logs still growing | No truncation   | Use `copytruncate` |
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| Logs not rotating | Bad/invalid config | Run with `-d` flag to debug and validate the configuration file. |
+| Permission denied | Wrong file ownership | Fix the `create` directive to set correct owner and permissions. |
+| Logs still growing | No truncation configured | Add `copytruncate` directive to truncate the original log in-place. |
 
 ---
-
-##  14. Best Practices
-
-* Use separate config per app
-* Enable compression
-* Avoid very high retention
-* Always test configs
-* Monitor disk usage
-
----
-
-##  15. Production Example
-
-```conf
-/var/log/myapp/*.log {
-    daily
-    rotate 30
-    compress
-    delaycompress
-    missingok
-    notifempty
-    create 0640 myapp myapp
-    copytruncate
-}
-```
-
-
-
 
 ## Contact Information
 
-| Name   | Email                                                                             |
-| ------ | --------------------------------------------------------------------------------- |
-| Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
+| Name | Email |
+|------|-------|
+| Versha Tripathi | versha.tripathi.snaatak@mygurukulam.co |
 
 ---
 
 ## References
 
+| Reference | Link |
+|-----------|------|
+| logrotate man page | `man logrotate` |
+| logrotate GitHub | https://github.com/logrotate/logrotate |
