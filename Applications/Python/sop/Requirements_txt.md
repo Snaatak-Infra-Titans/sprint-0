@@ -89,7 +89,8 @@ source venv/bin/activate      # Linux/Mac
 venv\Scripts\activate         # Windows
 ```
 
-📌 **Image Placeholder:** Screenshot of terminal showing virtual environment activation
+<img width="705" height="142" alt="image" src="https://github.com/user-attachments/assets/d0d1c021-8cb5-4509-a2fc-7b8a05ffd312" />
+
 
 ---
 
