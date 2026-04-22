@@ -8,15 +8,15 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)  
-2. [Purpose](#purpose)  
-3. [System Requirements](#system-requirements)  
-4. [Step-by-Step Procedure](#step-by-step-procedure)  
-5. [Troubleshooting](#troubleshooting)  
-6. [FAQs](#faqs)  
-7. [Contact Information](#contact-information)  
-8. [References](#references)  
-9. [Conclusion](#conclusion)
+1. [Introduction](#1-introduction)  
+2. [Purpose](#2-purpose)  
+3. [System Requirements](#3-system-requirements)  
+4. [Step-by-Step Procedure](#4-step-by-step-procedure)  
+5. [Troubleshooting](#5-troubleshooting)  
+6. [FAQs](#6-faqs)  
+7. [Contact Information](#7-contact-information)  
+8. [References](#8-references)  
+9. [Conclusion](#9-conclusion)
 
 ---
 
