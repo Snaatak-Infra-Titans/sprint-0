@@ -466,4 +466,9 @@ Combine this CD pipeline with the CI pipeline documented in the companion **Ansi
 
 ---
 
-**Document Owner:** Gourav | **Last Updated:** April 2026
+## Contact Information
+
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| gourav sharma | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
+---
