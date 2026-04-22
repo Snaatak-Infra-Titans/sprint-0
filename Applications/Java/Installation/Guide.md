@@ -1,6 +1,6 @@
 # Java JDK 21 Installation Guide (Ubuntu 24.04)
 
-> Install Java JDK 21 (LTS) on Ubuntu 24.04 in a simple and beginner-friendly way.
+
 
 ## Introduction
 
