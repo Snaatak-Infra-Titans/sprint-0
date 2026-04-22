@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 15-04-2026     | v1.0        | Ankita              | 17-04-2026         | Team             |                 |                 |                 |
+| Ankita     | 15-04-2026     | v1.0        | Ankita              | 22-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
 
 ---
 
