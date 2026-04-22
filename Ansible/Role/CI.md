@@ -92,6 +92,7 @@ CI ensures that the role is correct and safe to use.
 | Dry Run| ansible-playbook  | Simulate execution   |
 | Result | CI System         | Show pass/fail       |
 
+<img width="1774" height="887" alt="ChatGPT Image Apr 22, 2026, 09_59_49 PM" src="https://github.com/user-attachments/assets/36567682-a125-4178-a34b-8d97b26714ba" />
 
 
 
