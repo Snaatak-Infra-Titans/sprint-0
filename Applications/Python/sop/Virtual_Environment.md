@@ -8,16 +8,16 @@
 
 ## Table of Contents
 
-1. Introduction  
-2. Purpose  
-3. Prerequisites  
-4. System Requirements  
-5. Step-by-Step Procedure  
-6. Troubleshooting  
-7. Best Practices  
-8. FAQs  
-9. Contact Information  
-10. References  
+1. [Introduction](#introduction)  
+2. [Purpose](#purpose)  
+3. [Prerequisites](#prerequisites)  
+4. [System Requirements](#system-requirements)  
+5. [Step-by-Step Procedure](#step-by-step-procedure)  
+6. [Troubleshooting](#troubleshooting)  
+7. [Best Practices](#best-practices)  
+8. [FAQs](#faqs)  
+9. [Contact Information](#contact-information)  
+10. [References](#references)   
 
 ---
 
