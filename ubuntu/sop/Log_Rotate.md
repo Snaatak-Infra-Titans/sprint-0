@@ -19,10 +19,10 @@
 5. [Configuration Steps](#5-configuration-steps)
 6. [Rotation Frequency](#6-rotation-frequency)
 7. [Retention Policy](#7-retention-policy)
-8. [Post-Rotation Actions](#8-post-rotation-actions)
-9. [Testing Configuration](#9-testing-configuration)
-10. [Automation](#10-automation)
-11. [Monitoring & Troubleshooting](#11-monitoring--troubleshooting)
+8. [Testing Configuration](#8-testing-configuration)
+9. [Automation](#9-automation)
+10. [Monitoring & Troubleshooting](#10-monitoring--troubleshooting)
+11. [Conclusion](#11-conclusion)
 
 ---
 
@@ -142,22 +142,8 @@ Keeps logs for 14 rotation cycles (e.g., 14 days if rotating daily).
 
 ---
 
-## 8. Post-Rotation Actions
 
-```conf
-postrotate
-    systemctl restart myapp
-endscript
-```
-
-Post-rotation scripts run after the log is rotated — useful for restarting services that need to reopen their log file handle.
-
-- Use `compress` and `delaycompress` together for safer compression.
-- Saves disk space while avoiding issues with processes still writing to the last rotated log.
-
----
-
-## 9. Testing Configuration
+## 8. Testing Configuration
 
 ### Dry Run (Simulate Without Applying)
 
@@ -173,7 +159,7 @@ sudo logrotate -f /etc/logrotate.conf
 
 ---
 
-## 10. Automation
+## 9. Automation
 
 Logrotate runs automatically via one of the following:
 
@@ -189,7 +175,7 @@ systemctl status logrotate.timer
 
 ---
 
-## 11. Monitoring & Troubleshooting
+## 10. Monitoring & Troubleshooting
 
 ### Check Rotation Status
 
@@ -204,6 +190,12 @@ cat /var/lib/logrotate/status
 | Logs not rotating | Bad/invalid config | Run with `-d` flag to debug and validate the configuration file. |
 | Permission denied | Wrong file ownership | Fix the `create` directive to set correct owner and permissions. |
 | Logs still growing | No truncation configured | Add `copytruncate` directive to truncate the original log in-place. |
+
+---
+
+## 11. Conclusion
+
+Logrotate is a reliable and lightweight solution for automating log management on Linux systems. By defining appropriate rotation frequency, retention policies, and compression settings, teams can effectively prevent disk exhaustion, maintain system performance, and ensure logs remain accessible and well-organized. Regular testing of configurations using the dry-run mode, combined with automated scheduling via cron or systemd, ensures a robust and hands-free log management workflow across all environments.
 
 ---
 
