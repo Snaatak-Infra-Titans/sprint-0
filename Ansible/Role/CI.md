@@ -182,8 +182,8 @@ Always test and validate before merging changes.
 
 ## 12. References
 
-| Resource | Link |
-|----------|------|
-| Ansible Documentation | https://docs.ansible.com |
-| Ansible Lint | https://ansible.readthedocs.io/projects/lint/ |
-| Jenkins Pipeline | https://www.jenkins.io/doc/book/pipeline/ |
+| Description | Link |
+|-------------|------|
+| Official Ansible documentation for automation and playbooks | [Ansible Documentation](https://docs.ansible.com) |
+| Guide for linting Ansible roles and playbooks | [Ansible Lint](https://ansible.readthedocs.io/projects/lint/) |
+| Documentation for Jenkins CI/CD pipelines | [Jenkins Pipeline](https://www.jenkins.io/doc/book/pipeline/) |
