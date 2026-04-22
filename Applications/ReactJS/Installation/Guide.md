@@ -78,7 +78,7 @@ npm -v
 
 ---
 
-## ⚡ Recommended: Install Latest Node.js (Using NodeSource)
+##  Recommended: Install Latest Node.js (Using NodeSource)
 
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -160,7 +160,7 @@ Key files:
 
 ---
 
-## 🔧 Useful Commands
+##  Useful Commands
 
 | Task                 | Command                     |
 | -------------------- | --------------------------- |
@@ -235,10 +235,11 @@ kill -9 <PID>
 
 ---
 
+## Contact Information
 
-**Author:** Gourav Sharma
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| gourav sharma | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
 
-**Project:**  | Sprint 0 | Infra Titans
-**Date:** April 2026
 
 ---
