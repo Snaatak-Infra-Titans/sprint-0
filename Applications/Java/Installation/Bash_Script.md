@@ -12,17 +12,18 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Purpose](#purpose)
-3. [Why Use Bash Script for Installation](#why-use-bash-script-for-installation)
-4. [Prerequisites](#prerequisites)
-5. [Java Installation via Bash Script](#java-installation-via-bash-script)
-6. [Script Explanation](#script-explanation)
-7. [Verification](#verification)
-8. [Use Cases](#use-cases)
-9. [Best Practices](#best-practices)
-10. [Contact Information](#contact-information)
-11. [References](#references)
+1. Introduction
+2. Purpose
+3. Why Use Bash Script for Installation
+4. Prerequisites
+5. Java Installation via Bash Script
+6. Script Explanation
+7. Verification
+8. Troubleshooting (JAVA_HOME Not Set)
+9. Use Cases
+10. Best Practices
+11. Contact Information
+12. References
 
 ---
 
@@ -102,6 +103,7 @@ Run the script:
 ```bash
 ./install-java.sh
 ```
+<img width="1786" height="1179" alt="image" src="https://github.com/user-attachments/assets/935d34ed-6a26-4778-801b-f4d9f2a20c64" />
 
 ---
 
@@ -122,17 +124,58 @@ Check Java version:
 ```bash
 java -version
 ```
+<img width="936" height="189" alt="image" src="https://github.com/user-attachments/assets/daf49860-da46-4900-b00a-067b114e6dc1" />
 
 Check JAVA_HOME:
 
 ```bash
 echo $JAVA_HOME
 ```
+<img width="936" height="167" alt="image" src="https://github.com/user-attachments/assets/5cb1a3f4-a952-4404-b6fd-517ed3d66386" />
 
 Expected Result:
 
 * Java version should be displayed
 * JAVA_HOME should point to Java installation directory
+
+---
+
+## Troubleshooting (JAVA_HOME Not Set)
+
+If the expected result is NOT achieved, follow the steps below to manually find and set `JAVA_HOME`.
+<img width="936" height="167" alt="image" src="https://github.com/user-attachments/assets/010b6f65-063d-4f66-9f6e-50e59c683197" />
+
+### Step 1: Find Java Path
+
+```bash
+readlink -f $(which java)
+```
+
+### Step 2: Set JAVA_HOME Manually
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+### Step 3: Verify
+
+```bash
+echo $JAVA_HOME
+```
+<img width="876" height="255" alt="image" src="https://github.com/user-attachments/assets/bf4152f9-c357-4110-ad3f-1709a34b7c2f" />
+
+### Recommended Best Practice (Dynamic Method)
+
+Instead of hardcoding the path, use:
+
+```bash
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+echo $JAVA_HOME
+```
+<img width="876" height="189" alt="image" src="https://github.com/user-attachments/assets/ba08b18f-95a4-4ce3-85cc-54daddaff037" />
+
+This method automatically detects the correct Java installation path.
 
 ---
 
@@ -151,6 +194,7 @@ Expected Result:
 * Keep system updated before installation
 * Use scripts for repeatable setups
 * Store scripts in version control
+* Prefer dynamic JAVA_HOME detection instead of hardcoding paths
 
 ---
 
