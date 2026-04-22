@@ -23,7 +23,8 @@
 7. [Disadvantages of Java](#7-disadvantages-of-java)  
 8. [Conclusion](#8-conclusion)  
 9. [FAQs](#9-faqs)  
-10. [References](#10-references) 
+10. [Contact Information](#10-contact-information)  
+11. [References](#11-references)  
 
 ---
 
@@ -56,6 +57,7 @@ Java was developed by James Gosling and his team at Sun Microsystems in the earl
 | Multithreading | Supports parallel execution |
 | High Performance | Uses JIT compilation |
 | Distributed | Supports RMI for communication |
+
 ---
 
 ## 4. Java Architecture Overview
@@ -123,7 +125,15 @@ Yes, it is widely used in industry.
 
 ---
 
-## 10. References
+## 10. Contact Information
+
+| Name           | Email ID |
+|----------------|----------|
+| Shivam Uniyal  | shivam.uniyal.snaatak@mygurukulam.co |
+
+---
+
+## 11. References
 
 | Link | Description |
 |------|------------|
