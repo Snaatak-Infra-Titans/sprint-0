@@ -190,7 +190,7 @@ ulimit -n
 
 | **Scenario**        | **Commands / Actions**                                  |
 | ------------------- | ------------------------------------------------------- |
-| Disk Full           | `df -h`<br>`du -sh /*`<br>`sudo apt-get clean`<br>image |
+| Disk Full           | `df -h`<br>`du -sh /*`<br>`sudo apt-get clean` |
 | Too Many Open Files | `ulimit -n`<br>`ulimit -n 65535`                        |
 
 ---
