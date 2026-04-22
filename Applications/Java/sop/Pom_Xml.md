@@ -105,11 +105,8 @@ Install Maven using APT:
 sudo apt install maven -y
 ```
 
-Expected result:
+<img width="987" height="186" alt="image" src="https://github.com/user-attachments/assets/94a09e30-97fa-492e-ad95-d094c0277e0e" />
 
-* Maven should be installed successfully without errors.
-
-**Image Placeholder:** Add screenshot of Maven installation output here.
 
 ---
 
