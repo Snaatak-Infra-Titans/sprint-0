@@ -1,8 +1,8 @@
 # Ansible Role Introduction
 
-| Author           | Created on | Version   | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|------------------|------------|-----------|-----------------|----------------|--------------|-------------|-------------|-------------|
-| Shivam Uniyal    | 16-04-2026 | version 1 | Shivam Uniyal   | 16-04-2026     | Team         |             |             |             |
+| Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
+|------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
+| Shivam Uniyal    | 16-04-2026 | v1.0    | Shivam Uniyal   | 22-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
 
 ---
 
