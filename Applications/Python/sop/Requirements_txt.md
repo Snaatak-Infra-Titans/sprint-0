@@ -100,7 +100,8 @@ venv\Scripts\activate         # Windows
 pip install -r requirements.txt
 ```
 
-📌 **Image Placeholder:** Screenshot of successful dependency installation
+<img width="1788" height="693" alt="image" src="https://github.com/user-attachments/assets/dcf39748-19c3-44fe-8f8a-ae4e1924ff99" />
+
 
 ---
 
@@ -110,7 +111,8 @@ pip install -r requirements.txt
 pip list
 ```
 
-📌 **Image Placeholder:** Screenshot of installed packages list
+<img width="878" height="285" alt="image" src="https://github.com/user-attachments/assets/3c6f3ced-5efd-4b9c-a386-900c505b6a98" />
+
 
 ---
 
@@ -122,7 +124,8 @@ pip list
 pip freeze > requirements.txt
 ```
 
-📌 **Image Placeholder:** Screenshot of generated requirements.txt file
+<img width="1123" height="215" alt="image" src="https://github.com/user-attachments/assets/f0ea23e8-d32f-417a-903b-f00322d648fd" />
+
 
 ---
 
@@ -131,8 +134,6 @@ pip freeze > requirements.txt
 * Ensure only required dependencies are included
 * Remove unnecessary or unused packages
 * Confirm correct versions are captured
-
-📌 **Image Placeholder:** Example of clean vs cluttered requirements.txt
 
 ---
 
@@ -145,7 +146,6 @@ pip freeze > requirements.txt
 | Missing Dependencies         | Incomplete installation               | Re-run `pip install -r requirements.txt`                     |
 | Environment Mismatch         | Wrong or inactive virtual environment | Activate correct environment or recreate virtual environment |
 
-📌 **Image Placeholder:** Error screenshot example (e.g., pip install failure)
 
 ---
 
@@ -160,7 +160,6 @@ pip freeze > requirements.txt
 | Regular Updates            | Periodically update dependencies while checking compatibility |
 | Review Before Commit       | Validate requirements.txt before pushing to version control   |
 
-📌 **Image Placeholder:** Example of well-structured requirements.txt
 
 ---
 
