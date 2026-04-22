@@ -108,6 +108,7 @@ Verify installation:
 ```bash
 poetry --version
 ```
+<img width="866" height="629" alt="image" src="https://github.com/user-attachments/assets/0f82fa0c-d3ff-4cdb-b553-32dc1cd24e85" />
 
 ---
 
@@ -130,12 +131,14 @@ cd my-project
 ```bash
 poetry add requests
 ```
+<img width="866" height="541" alt="image" src="https://github.com/user-attachments/assets/14825ccb-1639-409d-bc27-da5ba279bc16" />
 
 Add dev dependency:
 
 ```bash
 poetry add pytest --group dev
 ```
+<img width="866" height="453" alt="image" src="https://github.com/user-attachments/assets/8b89d526-c700-4207-8cb3-a97f2bf540f1" />
 
 ---
 
@@ -144,22 +147,25 @@ poetry add pytest --group dev
 ```bash
 poetry install
 ```
+<img width="866" height="255" alt="image" src="https://github.com/user-attachments/assets/731877b1-aeaa-4b86-8661-2ca4fc085950" />
 
 ---
 
 ### Step 6: Activate Environment
 
 ```bash
-poetry shell
+poetry env activate
 ```
+<img width="866" height="189" alt="image" src="https://github.com/user-attachments/assets/fba524ab-5d40-499c-936f-e73a24a80554" />
 
 ---
 
 ### Step 7: Run Application
 
 ```bash
-poetry run python app.py
+poetry run python src/my_project/app.py
 ```
+<img width="866" height="299" alt="image" src="https://github.com/user-attachments/assets/eb290f43-c2ac-4d33-88a2-56f89b73201c" />
 
 ---
 
@@ -170,12 +176,14 @@ Check installed packages:
 ```bash
 poetry show
 ```
+<img width="866" height="365" alt="image" src="https://github.com/user-attachments/assets/148de32e-aad2-4a8d-b1c2-ea7a32821f9a" />
 
 Check virtual environment:
 
 ```bash
 poetry env info
 ```
+<img width="866" height="497" alt="image" src="https://github.com/user-attachments/assets/3b998e3b-2436-4327-b0a1-261a8dc1e505" />
 
 Expected Output:
 
@@ -209,7 +217,7 @@ Workflow:
 | poetry add     | Add dependency              |
 | poetry remove  | Remove dependency           |
 | poetry install | Install dependencies        |
-| poetry shell   | Activate environment        |
+| poetry env activate   | Activate environment        |
 | poetry run     | Run commands                |
 | poetry show    | List dependencies           |
 
