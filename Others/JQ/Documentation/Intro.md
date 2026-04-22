@@ -6,12 +6,6 @@
 
 > *A lightweight, zero-dependency tool to slice, filter, map and transform JSON — right from your terminal.*
 
-![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-blue?style=flat-square)
-![Language](https://img.shields.io/badge/Written%20in-C-lightgrey?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Version](https://img.shields.io/badge/Doc%20Version-v1.0-orange?style=flat-square)
-
-</div>
 
 ---
 
