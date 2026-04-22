@@ -45,8 +45,6 @@
 
 ---
 
----
-
 ## 1. Introduction
 
 This SOP explains how to install Java and Maven, create a Maven-based Java project, understand the role of `pom.xml`, add dependencies, and build/package the application in a standard Ubuntu/Linux environment.
