@@ -52,8 +52,6 @@ This Standard Operating Procedure (SOP) provides guidelines for managing Python 
   <sub>Defines dependencies → Stores versions → Installs packages</sub>
 </p>
 
-📌 **Image Placeholder:** Insert diagram showing dependency flow (Developer → requirements.txt → Environment)
-
 ---
 
 ## 2. Purpose
