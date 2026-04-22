@@ -19,16 +19,17 @@
 
 1. [Introduction](#1-introduction)
 2. [Purpose](#2-purpose)
-3. [Disk Usage Monitoring](#3-disk-usage-monitoring)
-4. [Mount Points Verification](#4-mount-points-verification)
-5. [Ulimit (Resource Limits)](#5-ulimit-resource-limits)
-6. [Validation](#6-validation)
-7. [Use Cases](#7-use-cases)
-8. [Troubleshooting](#8-troubleshooting)
-9. [Best Practices](#9-best-practices)
-10. [Conclusion](#11-conclusion)
-11. [Contact Information](#10-contact-information)
-12. [References](#12-references)
+3. [Prerequisites](#3-prerequisites)
+4. [Disk Usage Monitoring](#4-disk-usage-monitoring)
+5. [Mount Points Verification](#5-mount-points-verification)
+6. [Ulimit (Resource Limits)](#6-ulimit-resource-limits)
+7. [Validation](#7-validation)
+8. [Use Cases](#8-use-cases)
+9. [Troubleshooting](#9-troubleshooting)
+10. [Best Practices](#10-best-practices)
+11. [Conclusion](#11-conclusion)
+12. [Contact Information](#12-contact-information)
+13. [References](#13-references)
 
 ---
 
@@ -46,6 +47,18 @@ III. Configure resource limits (ulimit) for users and processes
 IV. Ensure system stability and performance
 
 ---
+
+## 3. Prerequisites
+
+Before proceeding, ensure the following:
+
+* Ubuntu system access (SSH or local)
+* Basic knowledge of Linux commands
+* Sudo/root privileges
+* Monitoring tools installed (optional: `htop`, `ncdu`)
+
+---
+
 
 # 3. Disk Usage Monitoring
 
@@ -245,4 +258,8 @@ This SOP provides a comprehensive approach to monitoring disk usage, verifying m
 | Linux Man Pages      | [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)                                                                                                         |
 | Ulimit Documentation | [https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/](https://www.geeksforgeeks.org/linux-unix/ulimit-soft-limits-and-hard-limits-in-linux/) |
 | Disk Usage (df, du)  | [https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/](https://www.geeksforgeeks.org/linux-unix/df-command-in-linux-with-examples/)                     |
+
+
+
+
 
