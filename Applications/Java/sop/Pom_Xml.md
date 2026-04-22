@@ -1,7 +1,8 @@
 # SOP: Common Stack | Java | Maven | `pom.xml` (Step-by-Step Installation Guide)
 
 <p align="center">
-  <strong>[LOGO PLACEHOLDER — Insert Maven / Team Logo Here]</strong>
+  <strong><img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/04741644-b17b-4486-80ad-b7f287dd6ff7" />
+</strong>
 </p>
 
 ---
