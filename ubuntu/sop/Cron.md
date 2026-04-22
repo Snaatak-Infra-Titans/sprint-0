@@ -8,24 +8,35 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Purpose](#purpose)
-- [Prerequisites](#prerequisites)
-- [Step 1 Check Cron Service](#step-1-check-cron-service)
-- [Step 2 Create a Cron Job](#step-2-create-a-cron-job)
-- [Step 3 Manage Cron Jobs](#step-3-manage-cron-jobs)
-- [Step 4 Verify and Logs](#step-4-verify-and-logs)
-- [Troubleshooting](#troubleshooting)
-- [FAQs](#faqs)
-- [Contact Information](#contact-information)
-- [References](#references)
+## Table of Contents
+
+1. [Introduction](#1-introduction)
+2. [Purpose](#2-purpose)
+3. [Check Cron Service](#3-check-cron-service)
+   - 3.1 [Check Status](#31-check-status)
+   - 3.2 [Start Service](#32-start-service)
+   - 3.3 [Enable at Boot](#33-enable-at-boot)
+4. [Create a Cron Job](#4-create-a-cron-job)
+   - 4.1 [Open Crontab](#41-open-crontab)
+   - 4.2 [Cron Syntax](#42-cron-syntax)
+   - 4.3 [Example](#43-example)
+5. [Manage Cron Jobs](#5-manage-cron-jobs)
+   - 5.1 [List Jobs](#51-list-jobs)
+   - 5.2 [Edit Jobs](#52-edit-jobs)
+   - 5.3 [Remove Jobs](#53-remove-jobs)
+6. [Verify and Logs](#6-verify-and-logs)
+   - 6.1 [Check Cron Logs](#61-check-cron-logs)
+   - 6.2 [Check Output File](#62-check-output-file)
+7. [Troubleshooting](#7-troubleshooting)
+8. [FAQs](#8-faqs)
+9. [Contact Information](#9-contact-information)
+10. [References](#10-references)
 
 ---
 
 ## 1. Introduction
 
 Cron is a time-based job scheduler in Linux that allows users to automate repetitive and routine tasks such as running scripts, taking backups, clearing logs, and performing system maintenance activities at predefined intervals.
-
 It runs in the background and executes commands based on defined time patterns (minute, hour, day, etc.), ensuring consistency, saving time, and reducing manual effort.
 
 ---
@@ -39,42 +50,37 @@ This SOP provides a step-by-step guide to:
 - Monitor execution using logs  
 - Troubleshoot common issues  
 
-It helps ensure reliable automation and follows DevOps best practices.
-
 ---
 
-## 3. Step 1: Check Cron Service
+## 3. Check Cron Service
 
-Check if cron service is running:
-
+### 3.1 Check Status
 ```bash
 systemctl status cron
 ```
 
-Start cron service if not running:
-
+### 3.2 Start Service
 ```bash
 sudo systemctl start cron
 ```
 
-Enable cron at boot:
-
+### 3.3 Enable at Boot
 ```bash
 sudo systemctl enable cron
 ```
-<img width="1232" height="508" alt="Screenshot 2026-04-14 at 11 08 34 PM" src="https://github.com/user-attachments/assets/ff0ec827-1810-4e86-8354-8540cde13635" />
+
+<img width="1232" height="508" src="https://github.com/user-attachments/assets/ff0ec827-1810-4e86-8354-8540cde13635" />
+
 ---
 
-## 4. Step 2: Create a Cron Job
+## 4. Create a Cron Job
 
-Open crontab editor:
-
+### 4.1 Open Crontab
 ```bash
 crontab -e
 ```
 
-### Cron Syntax
-
+### 4.2 Cron Syntax
 ```bash
 * * * * * command
 | | | | |
@@ -85,55 +91,52 @@ crontab -e
 └────────── Minute (0-59)
 ```
 
-### Example
-
-Run a command every minute:
-
+### 4.3 Example
 ```bash
 * * * * * echo "Hello Cron" >> /home/shivam/cron.log
 ```
-<img width="1232" height="646" alt="Screenshot 2026-04-14 at 11 17 47 PM" src="https://github.com/user-attachments/assets/90963e31-1721-42cc-b53f-59424d767940" />
+
+<img width="1232" height="646" src="https://github.com/user-attachments/assets/90963e31-1721-42cc-b53f-59424d767940" />
 
 ---
 
-## 5. Step 3: Manage Cron Jobs
+## 5. Manage Cron Jobs
 
-List cron jobs:
-
+### 5.1 List Jobs
 ```bash
 crontab -l
 ```
 
-Edit cron jobs:
-
+### 5.2 Edit Jobs
 ```bash
 crontab -e
 ```
-<img width="1232" height="677" alt="Screenshot 2026-04-14 at 11 18 06 PM" src="https://github.com/user-attachments/assets/14b926e6-c9d4-4e85-a185-4742b528d993" />
 
-Remove all cron jobs:
+<img width="1232" height="677" src="https://github.com/user-attachments/assets/14b926e6-c9d4-4e85-a185-4742b528d993" />
 
+### 5.3 Remove Jobs
 ```bash
 crontab -r
 ```
-<img width="779" height="272" alt="Screenshot 2026-04-14 at 11 22 59 PM" src="https://github.com/user-attachments/assets/28e19248-1fcb-44b2-b73b-337b4b797871" />
+
+<img width="779" height="272" src="https://github.com/user-attachments/assets/28e19248-1fcb-44b2-b73b-337b4b797871" />
 
 ---
 
-## 6. Step 4: Verify and Logs
+## 6. Verify and Logs
 
-Check cron logs:
-
+### 6.1 Check Cron Logs
 ```bash
 grep CRON /var/log/syslog
 ```
+<img width="1436" height="776" alt="Screenshot 2026-04-22 at 5 02 03 PM" src="https://github.com/user-attachments/assets/ffb21fa7-200f-48fb-a380-f6c133b599bb" />
 
-Check output file:
-
+### 6.2 Check Output File
 ```bash
 cat /home/shivam/cron.log
 ```
-<img width="779" height="272" alt="Screenshot 2026-04-14 at 11 21 51 PM" src="https://github.com/user-attachments/assets/bb8cf79c-1169-4375-9d9b-17c1be926d2d" />
+
+<img width="779" height="272" src="https://github.com/user-attachments/assets/bb8cf79c-1169-4375-9d9b-17c1be926d2d" />
 
 ---
 
@@ -154,13 +157,11 @@ cat /home/shivam/cron.log
 Cron is used to automate repetitive tasks like backups, scripts, and system maintenance.
 
 **Q2. How do I edit an existing cron job?**  
-
 ```bash
 crontab -e
 ```
 
 **Q3. How can I check if my cron job is running?**  
-
 ```bash
 grep CRON /var/log/syslog
 ```
@@ -178,7 +179,7 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 11. References
+## 10. References
 
 | Link | Description |
 |------|------------|
