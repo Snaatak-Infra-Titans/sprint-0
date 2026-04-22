@@ -107,6 +107,7 @@ Run the script:
 ```bash
 ./install-go.sh
 ```
+<img width="1226" height="1069" alt="image" src="https://github.com/user-attachments/assets/139586ce-40ee-40f2-8048-c39a9df79230" />
 
 ---
 
@@ -134,6 +135,7 @@ Check environment:
 ```bash
 echo $PATH
 ```
+<img width="956" height="189" alt="image" src="https://github.com/user-attachments/assets/d3e0c00e-c0e4-4780-98d7-0978ea88420e" />
 
 Expected Result:
 
