@@ -2,7 +2,7 @@
 
 | Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
 |------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
-| Shivam Uniyal    | 15-04-2026 | v1.0    | Shivam Uniyal   | 15-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
+| Shivam Uniyal    | 15-04-2026 | v1.0    | Shivam Uniyal   | 22-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
 
 ---
 
@@ -10,22 +10,19 @@
 
 1. [Introduction](#introduction)  
 2. [Purpose](#purpose)  
-3. [Prerequisites](#prerequisites)  
-4. [System Requirements](#system-requirements)  
-5. [Step-by-Step Procedure](#step-by-step-procedure)  
-6. [Troubleshooting](#troubleshooting)  
-7. [Best Practices](#best-practices)  
-8. [FAQs](#faqs)  
-9. [Contact Information](#contact-information)  
-10. [References](#references)   
+3. [System Requirements](#system-requirements)  
+4. [Step-by-Step Procedure](#step-by-step-procedure)  
+5. [Troubleshooting](#troubleshooting)  
+6. [FAQs](#faqs)  
+7. [Contact Information](#contact-information)  
+8. [References](#references)  
+9. [Conclusion](#conclusion)
 
 ---
 
 ## 1. Introduction
 
-A Python Virtual Environment (venv) is an isolated workspace that allows developers to create separate environments for different Python projects. Each environment contains its own Python interpreter and installed packages, ensuring that dependencies from one project do not interfere with another.
-
-In real-world DevOps and development workflows, multiple projects often require different versions of the same library. Virtual environments help manage these dependencies efficiently, improve reproducibility, and maintain a clean system environment without polluting the global Python installation.
+A Python Virtual Environment (venv) is an isolated workspace that allows separate environments for different projects. Each environment has its own Python interpreter and packages, preventing dependency conflicts. It helps manage different library versions, improves reproducibility, and keeps the system environment clean.
 
 ---
 
@@ -42,23 +39,9 @@ This document helps users to:
 - Deactivate and delete environments  
 - Troubleshoot common issues  
 
-Following this SOP ensures consistency, avoids dependency conflicts, and aligns with DevOps best practices for environment isolation.
-
 ---
 
-## 3. Prerequisites
-
-Before proceeding, ensure the following requirements are met:
-
-- Ubuntu 24.04 installed  
-- Python3 installed and configured  
-- Terminal access  
-- Basic understanding of Linux commands  
-- Internet connectivity (for installing packages)
-
----
-
-## 4. System Requirements
+## 3. System Requirements
 
 | Component | Minimum Requirement |
 |----------|-------------------|
@@ -69,114 +52,79 @@ Before proceeding, ensure the following requirements are met:
 
 ---
 
-## 5. Step-by-Step Procedure
+## 4. Step-by-Step Procedure
 
 ### Step 1: Install venv package
-
-The `python3-venv` package provides the functionality required to create virtual environments. Install it if not already available.
-
 ```bash
 sudo apt update
 sudo apt install python3-venv -y
 ```
+<img width="1240" height="470" alt="Screenshot 2026-04-22 at 5 41 19 PM" src="https://github.com/user-attachments/assets/8c34422e-3671-433c-a5e6-9c718682afee" />
+--
+<img width="693" height="129" alt="Screenshot 2026-04-22 at 5 42 28 PM" src="https://github.com/user-attachments/assets/baa332d8-db91-465b-8b6a-aa75ac81dd53" />
 
 ---
 
 ### Step 2: Create Virtual Environment
-
-Create a new virtual environment using the following command:
-
 ```bash
 python3 -m venv myenv
 ```
 
-This will create a directory named `myenv` containing the isolated Python environment.
-
-Verify creation:
-
+Verify:
 ```bash
-ls
+ls -d myenv
 ```
+<img width="693" height="95" alt="Screenshot 2026-04-22 at 5 47 50 PM" src="https://github.com/user-attachments/assets/da3176d0-945a-47d4-9659-765ae096e4f9" />
 
 ---
 
 ### Step 3: Activate Virtual Environment
-
-Activate the environment to start using it:
-
 ```bash
 source myenv/bin/activate
 ```
-
-Once activated:
-- The terminal prompt will change to show `(myenv)`
-- All Python and pip commands will now run inside this environment
+<img width="693" height="76" alt="Screenshot 2026-04-22 at 5 49 09 PM" src="https://github.com/user-attachments/assets/fcc054d7-9964-4581-955c-e1f1b7c28c79" />
 
 ---
 
 ### Step 4: Install Python Packages
-
-Install required Python packages using pip:
-
 ```bash
 pip install requests
 ```
+<img width="1403" height="465" alt="Screenshot 2026-04-22 at 5 53 16 PM" src="https://github.com/user-attachments/assets/b6817c11-53a2-459f-82be-bf9e099e964d" />
 
-You can install multiple packages as needed for your project.
-
-Verify installed packages:
-
+Verify:
 ```bash
 pip list
 ```
+<img width="1335" height="241" alt="Screenshot 2026-04-22 at 5 54 08 PM" src="https://github.com/user-attachments/assets/d2a5bc31-7470-4efb-9d91-8b21cd1becdb" />
 
 ---
 
 ### Step 5: Freeze Dependencies
-
-To save all installed dependencies into a file (useful for sharing or deployment):
-
 ```bash
 pip freeze > requirements.txt
 ```
-
-This file can later be used to recreate the environment.
-
-Check contents:
-
-```bash
-cat requirements.txt
-```
+<img width="1335" height="210" alt="Screenshot 2026-04-22 at 5 55 14 PM" src="https://github.com/user-attachments/assets/92b6f104-6648-41ef-9ea0-e5735d0a4658" />
 
 ---
 
 ### Step 6: Deactivate Virtual Environment
-
-Exit the virtual environment using:
-
 ```bash
 deactivate
 ```
-
-After deactivation:
-- The `(myenv)` prefix will disappear  
-- System Python will be used again  
+<img width="831" height="75" alt="Screenshot 2026-04-22 at 5 56 11 PM" src="https://github.com/user-attachments/assets/c340e57d-2166-4ccb-842a-1598436a43d3" />
 
 ---
 
 ### Step 7: Delete Virtual Environment
-
-To completely remove the environment:
-
 ```bash
 rm -rf myenv
 ```
-
-This deletes all installed packages and the environment directory.
+<img width="901" height="143" alt="Screenshot 2026-04-22 at 5 57 33 PM" src="https://github.com/user-attachments/assets/20862ff7-b19c-4deb-a2c8-7ac1017fd077" />
 
 ---
 
-## 6. Troubleshooting
+## 5. Troubleshooting
 
 | Issue | Possible Cause | Solution |
 |------|---------------|----------|
@@ -189,24 +137,13 @@ This deletes all installed packages and the environment directory.
 
 ---
 
-## 7. Best Practices
-
-- Always use a virtual environment for every project  
-- Do not install packages globally unless required  
-- Use `requirements.txt` to maintain dependency consistency  
-- Use meaningful environment names (e.g., project-specific)  
-- Regularly update pip and packages  
-- Avoid committing the virtual environment folder to Git (add to `.gitignore`)  
-
----
-
-## 8. FAQs
+## 6. FAQs
 
 **Q1. What is a virtual environment?**  
 It is an isolated Python environment used to manage dependencies separately.
 
 **Q2. Why use virtual environments?**  
-To avoid conflicts between different projects and maintain a clean development setup.
+To avoid conflicts between different projects.
 
 **Q3. How do I activate the environment?**  
 ```
@@ -218,12 +155,9 @@ source myenv/bin/activate
 pip install -r requirements.txt
 ```
 
-**Q5. Can I create multiple virtual environments?**  
-Yes, you can create multiple environments for different projects.
-
 ---
 
-## 9. Contact Information
+## 7. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -231,9 +165,15 @@ Yes, you can create multiple environments for different projects.
 
 ---
 
-## 10. References
+## 8. References
 
 | Link | Description |
 |------|------------|
 | https://docs.python.org/3/library/venv.html | Official Python venv documentation |
 | https://ubuntu.com | Ubuntu documentation |
+
+---
+
+## 9. Conclusion
+
+This SOP provides a simple and structured approach to managing Python virtual environments. It helps avoid dependency conflicts and ensures a clean and efficient development setup. Following these steps improves consistency and reliability in DevOps workflows.
