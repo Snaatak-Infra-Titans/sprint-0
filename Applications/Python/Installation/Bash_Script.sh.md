@@ -1,161 +1,142 @@
-# Python Installation SOP
+# Python Installation - SOP
+
+<p align="center">
+  <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt="Python Logo" width="300"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-linux-blue" />
+  <img src="https://img.shields.io/badge/automation-supported-orange" />
+  <img src="https://img.shields.io/badge/license-open--source-lightgrey" />
+</p>
 
 ---
 
-| Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-| ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Mukesh Kharb | 14/04/2026 | 1.0     | Mukesh Kharb    | 14/04/2026     | Team         | Mohit Kumar |Faisal Khan  | Mahesh Kumar|           
+| Author       | Created On | Version | Last Updated By | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer  |
+| ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ------------ |
+| Mukesh Kharb | 14/04/2026 | 1.0     | Mukesh Kharb    | 14/04/2026     | Team         | Mohit Kumar | Faisal Khan | Mahesh Kumar |
+| Mukesh Kharb | 22/04/2026 | 1.1     | Mukesh Kharb    | 22/04/2026     | Team         | Mohit Kumar | Faisal Khan | Mahesh Kumar |
 
 ---
 
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [What is Python Installation](#what-is-python-installation)
-* [Why Multiple Installation Methods](#why-multiple-installation-methods)
 * [Installation Methods Overview](#installation-methods-overview)
+* [Why Multiple Installation Methods Matter](#why-multiple-installation-methods-matter)
 * [Installation via Package Manager](#installation-via-package-manager)
-* [Installation via Tarball](#installation-via-tarball)
-* [Installation via Bash Script](#installation-via-bash-script)
+* [Installation via Source (Tarball)](#installation-via-source-tarball)
+* [Installation via Bash Automation](#installation-via-bash-automation)
 * [Version Management](#version-management)
 * [Best Practices](#best-practices)
 * [Troubleshooting](#troubleshooting)
-* [Summary](#summary)
+* [FAQs](#faqs)
 * [References](#references)
+* [Contact Information](#contact-information)
 
 ---
-
-<a id="introduction"></a>
 
 ## Introduction
 
-> [!NOTE]
-> This document explains different ways to install Python in a flexible and production-friendly manner.
+Python is an interpreted, high-level programming language known for its simplicity and wide range of use cases such as automation, backend development, and data processing. Installing Python is not just about running code—it is about setting up a reliable and consistent environment.
 
-Python can be installed using multiple approaches depending on the use case. In real environments, we often need control over versions, upgrades, and dependencies.
-
-This SOP covers practical methods including package managers, tarball builds, and automated bash scripts.
+A proper installation approach helps avoid version conflicts, ensures smooth execution across systems, and supports DevOps practices like automation and environment isolation.
 
 ---
-
-<a id="what-is-python-installation"></a>
-
-## What is Python Installation
-
-Python installation refers to setting up the Python runtime environment on a system so that scripts and applications can be executed.
-
-It may include:
-
-* Installing interpreter
-* Managing versions
-* Setting environment paths
-* Installing pip and dependencies
-
----
-
-<a id="why-multiple-installation-methods"></a>
-
-## Why Multiple Installation Methods
-
-Different environments require different installation approaches:
-
-* Development → flexible version control
-* Production → stable and reproducible builds
-* CI/CD → automated setup
-
-Using multiple methods ensures compatibility and control.
-
----
-
-<a id="installation-methods-overview"></a>
 
 ## Installation Methods Overview
 
-| Method          | Use Case                     |
-| --------------- | ---------------------------- |
-| Package Manager | Quick and easy setup         |
-| Tarball         | Custom builds and control    |
-| Bash Script     | Automation and repeatability |
+| Method           | Description                         | Best Use Case                    | Complexity |
+| ---------------- | ----------------------------------- | -------------------------------- | ---------- |
+| Package Manager  | Installs Python via OS repositories | Quick setup, system environments | Low        |
+| Tarball (Source) | Compile Python from source code     | Custom builds, version control   | Medium     |
+| Bash Automation  | Script-based automated installation | CI/CD pipelines, repeatability   | High       |
 
 ---
 
-<a id="installation-via-package-manager"></a>
+## Why Multiple Installation Methods Matter
+
+No single installation method fits all environments. Each approach serves a specific operational need:
+
+* **Flexibility**: Different environments require different Python versions
+* **Control**: Source builds enable fine-grained customization
+* **Automation**: Scripts support CI/CD and repeatable deployments
+* **Stability**: Prevents conflicts with system-level dependencies
+
+Using multiple methods ensures the right balance of speed, control, and reliability.
+
+---
 
 ## Installation via Package Manager
+
+This is the most straightforward and widely used approach, leveraging the operating system's repository.
+
+### Commands
 
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip -y
 ```
-><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/569ab1a6-54f1-4c2b-8be2-774d26a94261" />
-><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/284f197a-82ff-491c-9a37-29ea0edb0244" />
+><img width="1256" height="593" alt="Screenshot from 2026-04-21 16-31-34" src="https://github.com/user-attachments/assets/0366af2c-6e39-4dc2-8050-2e98981a853c" />
+
+
+### Characteristics
+
+| Aspect      | Details                 |
+| ----------- | ----------------------- |
+| Speed       | Fast                    |
+| Stability   | High (tested packages)  |
+| Flexibility | Limited version control |
+| Maintenance | Managed via OS updates  |
 
 ---
 
-<a id="installation-via-tarball"></a>
+## Installation via Source (Tarball)
 
-## Installation via Tarball
+This method provides full control over Python versions and build configurations.
+
+### Commands
 
 ```bash
 wget https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz
 tar -xvf Python-3.12.0.tgz
 cd Python-3.12.0
-./configure
-make
-sudo make install
+./configure --enable-optimizations
+make -j$(nproc)
+sudo make altinstall
 ```
-><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/e483c17e-4018-4883-873c-943d59fbb406" />
-><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/74b514cd-10c5-4104-93fa-b3a46bcbea56" />
+><img width="1041" height="471" alt="Screenshot from 2026-04-21 16-38-10" src="https://github.com/user-attachments/assets/b2738730-6f77-427c-9c2c-9b62b78f5a03" />
 
+### Characteristics
 
-* Provides full control over version
-* Useful for custom builds
-* Requires manual dependency handling
+| Aspect      | Details                        |
+| ----------- | ------------------------------ |
+| Control     | Full version and build control |
+| Performance | Optimized builds possible      |
+| Complexity  | Requires dependencies          |
+| Risk        | Manual handling required       |
 
 ---
 
-<a id="installation-via-bash-script"></a>
+## Installation via Bash Automation
 
-## Installation via Bash Script
-
-> [!IMPORTANT]
-> Bash scripts are used to automate Python installation across systems.
+Automation scripts are essential for scaling installations across multiple systems.
 
 ### Example Script
 
-><img width="900" height="auto" alt="image" src="https://github.com/user-attachments/assets/2f25c616-5e56-4b68-a495-4698b5a68081" />
+><img width="1218" height="958" alt="image" src="https://github.com/user-attachments/assets/c2f00369-200d-45bf-b9d0-1fab83a51130" />
 
-><img width="700" height="auto" alt="image" src="https://github.com/user-attachments/assets/9388f109-3726-4f62-b542-d86d9d6d88b2" />
 
-### Script Explanation
+### Characteristics
 
-* **set -e**
-  Stops the script immediately if any command fails, ensuring safe execution.
-
-* **PYTHON_VERSION variable**
-  Defines which Python version to install, making the script reusable and easy to update.
-
-* **Install dependencies**
-  Installs required build tools and libraries needed to compile Python from source.
-
-* **Download tarball**
-  Fetches the specified Python version directly from official source.
-
-* **Extract and navigate**
-  Unpacks the archive and moves into the source directory.
-
-* **Configure build**
-  Prepares the build environment with optimizations enabled.
-
-* **Compile using make**
-  Builds Python using all available CPU cores for faster execution.
-
-* **Install using altinstall**
-  Installs Python without overriding system default version.
+| Aspect      | Details                            |
+| ----------- | ---------------------------------- |
+| Automation  | Fully automated                    |
+| Reusability | High                               |
+| Scalability | Suitable for large environments    |
+| Consistency | Ensures identical setup everywhere |
 
 ---
-
-<a id="version-management"></a>
 
 ## Version Management
 
@@ -163,52 +144,75 @@ sudo make install
 python3 --version
 update-alternatives --config python3
 ```
+><img width="1177" height="343" alt="image" src="https://github.com/user-attachments/assets/c3f40d80-e01b-44e3-9257-c23600ac4c20" />
 
-* Helps switch between versions
-* Useful in development environments
+
+| Task                     | Command             |
+| ------------------------ | ------------------- |
+| Check version            | python3 --version   |
+| Switch versions          | update-alternatives |
+| Install alternate binary | make altinstall     |
 
 ---
-
-<a id="best-practices"></a>
 
 ## Best Practices
 
-* Use virtual environments for projects
-* Avoid system Python modification
-* Prefer scripts for automation
-* Keep dependencies isolated
+* Use virtual environments (venv) for project isolation
+* Avoid modifying system Python binaries
+* Prefer automation scripts for repeatability
+* Maintain dependency documentation
+* Validate installation in staging before production rollout
 
 ---
-
-<a id="troubleshooting"></a>
 
 ## Troubleshooting
 
-| Issue            | Cause                | Solution             |
-| ---------------- | -------------------- | -------------------- |
-| Python not found | PATH issue           | Update PATH variable |
-| pip missing      | Not installed        | Install python3-pip  |
-| Build failed     | Missing dependencies | Install build tools  |
+| Issue            | Cause                   | Resolution                   |
+| ---------------- | ----------------------- | ---------------------------- |
+| Python not found | PATH misconfiguration   | Update environment variables |
+| pip missing      | Incomplete installation | Install python3-pip          |
+| Build failure    | Missing dependencies    | Install required libraries   |
 
 ---
 
-<a id="summary"></a>
+## FAQs
 
-## Summary
+**1. Which installation method should I use in production?**
 
-* Python can be installed using multiple methods
-* Bash scripts provide automation and consistency
-* Tarball gives control, package manager gives simplicity
-* Choose method based on use case
+> Use tarball or automated scripts to ensure version control and consistency.
+
+**2. Why avoid modifying system Python?**
+
+> System tools depend on it; changes may break OS functionality.
+
+**3. What is the safest way to manage multiple versions?**
+
+> Use altinstall or version managers to avoid conflicts.
+
+**4. Is automation necessary for small environments?**
+
+> Not mandatory, but recommended for consistency and scalability.
+
+**5. How do I verify installation success?**
+
+> Run python3 --version and pip3 --version.
 
 ---
-
-<a id="references"></a>
 
 ## References
 
-* [https://www.python.org/downloads/](https://www.python.org/downloads/)
-* [https://docs.python.org/3/using/unix.html](https://docs.python.org/3/using/unix.html)
-* [https://realpython.com/installing-python/](https://realpython.com/installing-python/)
+| Resource        | Link                                                                                   |
+| --------------- | -------------------------------------------------------------------------------------- |
+| Official Python | [https://www.python.org/downloads/](https://www.python.org/downloads/)                 |
+| Documentation   | [https://docs.python.org/3/using/unix.html](https://docs.python.org/3/using/unix.html) |
+| Guide           | [https://realpython.com/installing-python/](https://realpython.com/installing-python/) |
+
+---
+
+## Contact Information
+
+| Name         | Email                                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
+| Mukesh Kharb | [mukesh.Kharb.snaatak@mygurukulam.co](mailto:mukesh.Kharb.snaatak@mygurukulam.co) |
 
 ---
