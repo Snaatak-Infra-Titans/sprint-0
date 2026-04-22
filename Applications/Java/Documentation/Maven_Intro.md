@@ -91,7 +91,7 @@ Maven stores and fetches dependencies using repositories.
 
 Local → Remote → Download → Cache → Use
 
-<img width="420" height="300" alt="ChatGPT Image Apr 22, 2026, 11_17_12 PM" src="https://github.com/user-attachments/assets/24430ef9-5bf5-4ff4-9199-f8806df06e54" />
+<img width="900" height="300" alt="ChatGPT Image Apr 22, 2026, 11_17_12 PM" src="https://github.com/user-attachments/assets/24430ef9-5bf5-4ff4-9199-f8806df06e54" />
 
 
 
