@@ -43,15 +43,7 @@ It helps ensure reliable automation and follows DevOps best practices.
 
 ---
 
-## 3. Prerequisites
-
-- Ubuntu 24.04 (Local Machine)  
-- Basic Linux command knowledge  
-- Terminal access  
-
----
-
-## 4. Step 1: Check Cron Service
+## 3. Step 1: Check Cron Service
 
 Check if cron service is running:
 
@@ -73,7 +65,7 @@ sudo systemctl enable cron
 <img width="1232" height="508" alt="Screenshot 2026-04-14 at 11 08 34 PM" src="https://github.com/user-attachments/assets/ff0ec827-1810-4e86-8354-8540cde13635" />
 ---
 
-## 5. Step 2: Create a Cron Job
+## 4. Step 2: Create a Cron Job
 
 Open crontab editor:
 
@@ -104,7 +96,7 @@ Run a command every minute:
 
 ---
 
-## 6. Step 3: Manage Cron Jobs
+## 5. Step 3: Manage Cron Jobs
 
 List cron jobs:
 
@@ -128,7 +120,7 @@ crontab -r
 
 ---
 
-## 7. Step 4: Verify and Logs
+## 6. Step 4: Verify and Logs
 
 Check cron logs:
 
@@ -145,7 +137,7 @@ cat /home/shivam/cron.log
 
 ---
 
-## 8. Troubleshooting
+## 7. Troubleshooting
 
 | Issue                 | Possible Cause      | Solution                          |
 |----------------------|-------------------|-----------------------------------|
@@ -156,7 +148,7 @@ cat /home/shivam/cron.log
 
 ---
 
-## 9. FAQs
+## 8. FAQs
 
 **Q1. What is cron used for?**  
 Cron is used to automate repetitive tasks like backups, scripts, and system maintenance.
@@ -178,7 +170,7 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 10. Contact Information
+## 9. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
