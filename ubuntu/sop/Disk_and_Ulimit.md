@@ -48,7 +48,7 @@ IV. Ensure system stability and performance
 
 ---
 
-## 3. Prerequisites
+# 3. Prerequisites
 
 Before proceeding, ensure the following:
 
