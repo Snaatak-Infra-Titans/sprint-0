@@ -2,226 +2,189 @@
 
 > Install Java JDK 21 (LTS) on Ubuntu 24.04 in a simple and beginner-friendly way.
 
+## Introduction
+
+This guide provides a step-by-step approach to installing Java JDK 21 on Ubuntu 24.04. It is designed for beginners as well as developers who want a clean and reliable setup. The document focuses on using Ubuntu’s built-in package manager (APT), which is the simplest and most recommended method for installing Java. By following this guide, you will be able to install Java, configure environment variables, verify the installation, and manage different Java versions if required.
+
 ---
 
 ## Document Information
 
-| Author | Created On | Version | Last Updated By | Last Edited On | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|---|---|---|---|---|---|---|---|---|
-| Versha Tripathi | 13-04-2026 | v1.0 | Versha Tripathi | 13-04-2026 | Team | - | - | - |
+| Author          | Created On | Version | L0 Reviewer  | L1 Reviewer  | L2 Reviewer     |
+| --------------- | ---------- | ------- | ------------ | ------------ | --------------- |
+| Versha Tripathi | 13-04-2026 | v1.0    | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Why Java 21?](#why-java-21)
-- [Java Basics](#java-basics)
-- [Prerequisites](#prerequisites)
-- [Installation Methods](#installation-methods)
-  - [Method A: APT (Recommended)](#method-a-apt-recommended)
-  - [Method B: Eclipse Temurin](#method-b-eclipse-temurin)
-  - [Method C: SDKMAN](#method-c-sdkman)
-- [Set JAVA_HOME](#set-java_home)
-- [Managing Multiple Java Versions](#managing-multiple-java-versions)
-- [Verify Setup](#verify-setup)
-- [First Java Program](#first-java-program)
-- [IDE Setup](#ide-setup)
-- [Common Issues & Fixes](#common-issues--fixes)
-- [Quick Command Reference](#quick-command-reference)
-- [Contact Information](#contact-information)
-- [References](#references)
+* [Overview](#overview)
+* [Prerequisites](#prerequisites)
+* [Installation Methods](#installation-methods)
+* [Set JAVA_HOME](#set-java_home)
+* [Managing Multiple Java Versions](#managing-multiple-java-versions)
+* [Verify Setup](#verify-setup)
+* [Common Issues & Fixes](#common-issues--fixes)
+* [Quick Command Reference](#quick-command-reference)
+* [Conclusion](#conclusion)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
 
 ## Overview
 
-| Installation Method | Description | Recommended For |
-|---|---|---|
-| APT | Ubuntu's built-in package manager | Beginners, quick setup |
-| Eclipse Temurin | Official OpenJDK build by Adoptium | Production environments |
-| SDKMAN | Version manager for multiple SDKs | Managing multiple Java versions |
+Java JDK 21 can be installed on Ubuntu 24.04 using the APT package manager, which is the most straightforward and recommended approach. APT handles dependency management automatically and ensures that you get a stable and well-tested version of OpenJDK directly from Ubuntu repositories. This method is ideal for beginners and for systems where simplicity, stability, and ease of maintenance are important.
 
----
 
-## Why Java 21?
-
-| Reason | Detail |
-|---|---|
-| LTS Release | Long-Term Support — stable and production-ready |
-| Security Support | Updates guaranteed until **2031** |
-| Virtual Threads | Lightweight concurrency (Project Loom) |
-| Pattern Matching | Cleaner `instanceof` and `switch` expressions |
-| Records | Concise immutable data classes |
-
----
-
-## Java Basics
-
-| Component | Purpose |
-|---|---|
-| JVM | Runs compiled Java programs |
-| JRE | JVM + standard libraries |
-| JDK | JRE + compiler + development tools |
-
-> Always install the **JDK** for development.
 
 ---
 
 ## Prerequisites
 
-| Step | Command |
-|---|---|
-| Check Ubuntu version | `lsb_release -a` |
-| Check system architecture | `uname -m` |
-| Check disk space | `df -h /` |
-| Check available memory | `free -h` |
-| Update system packages | `sudo apt update && sudo apt upgrade -y` |
+Before installing Java, make sure your system is ready:
+
+* Check Ubuntu version:
+
+  ```bash
+  lsb_release -a
+  ```
+* Update system packages:
+
+  ```bash
+  sudo apt update && sudo apt upgrade -y
+  ```
+
 
 ---
 
 ## Installation Methods
 
-### Method A: APT (Recommended)
 
-| Step | Command |
-|---|---|
-| Install JDK 21 | `sudo apt install -y openjdk-21-jdk` |
-| Verify Java | `java -version` |
-| Verify compiler | `javac -version` |
 
----
+Follow these steps to install Java JDK 21 using APT:
 
-### Method B: Eclipse Temurin
+```bash
+sudo apt install -y openjdk-21-jdk
+```
 
-| Step | Command |
-|---|---|
-| Install dependencies | `sudo apt install -y wget apt-transport-https gpg` |
-| Add GPG key | `wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public \| gpg --dearmor \| sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null` |
-| Add repository | `echo "deb https://packages.adoptium.net/artifactory/deb noble main" \| sudo tee /etc/apt/sources.list.d/adoptium.list` |
-| Update package list | `sudo apt update` |
-| Install Temurin 21 | `sudo apt install -y temurin-21-jdk` |
-| Verify | `java -version` |
+Verify installation:
 
----
-
-### Method C: SDKMAN
-
-| Step | Command |
-|---|---|
-| Install SDKMAN | `curl -s "https://get.sdkman.io" \| bash` |
-| Initialise SDKMAN | `source "$HOME/.sdkman/bin/sdkman-init.sh"` |
-| List available Java versions | `sdk list java` |
-| Install Java 21 | `sdk install java 21.0.3-tem` |
-| Set as default | `sdk default java 21.0.3-tem` |
-| Verify | `java -version` |
+```bash
+java -version
+javac -version
+```
 
 ---
 
 ## Set JAVA_HOME
 
-| Step | Command |
-|---|---|
-| Find Java path | `readlink -f $(which java)` |
-| Open bashrc | `nano ~/.bashrc` |
+| Step                           | Command                                               |
+| ------------------------------ | ----------------------------------------------------- |
+| Find Java path                 | `readlink -f $(which java)`                           |
+| Open bashrc                    | `nano ~/.bashrc`                                      |
 | Add JAVA_HOME (append to file) | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
-| Add to PATH (append to file) | `export PATH=$JAVA_HOME/bin:$PATH` |
-| Apply changes | `source ~/.bashrc` |
-| Verify | `echo $JAVA_HOME` |
+| Add to PATH (append to file)   | `export PATH=$JAVA_HOME/bin:$PATH`                    |
+| Apply changes                  | `source ~/.bashrc`                                    |
+| Verify                         | `echo $JAVA_HOME`                                     |
 
 ---
 
 ## Managing Multiple Java Versions
 
-| Step | Command |
-|---|---|
-| Install Java 17 | `sudo apt install -y openjdk-17-jdk` |
-| Switch Java version | `sudo update-alternatives --config java` |
-| Switch compiler version | `sudo update-alternatives --config javac` |
+If multiple Java versions are installed, you can switch between them using the alternatives system.
+
+Install another version (example Java 17):
+
+```bash
+sudo apt install -y openjdk-17-jdk
+```
+
+Switch Java version:
+
+```bash
+sudo update-alternatives --config java
+```
+
+Switch compiler version:
+
+```bash
+sudo update-alternatives --config javac
+```
 
 ---
 
 ## Verify Setup
 
-| Check | Command |
-|---|---|
-| Java runtime version | `java -version` |
-| Java compiler version | `javac -version` |
-| Java binary location | `which java` |
-| JAVA_HOME value | `echo $JAVA_HOME` |
+* Check Java runtime version:
 
----
+  ```bash
+  java -version
+  ```
+* Check Java compiler version:
 
-## First Java Program
+  ```bash
+  javac -version
+  ```
+* Check Java binary location:
 
-| Step | Command / Code |
-|---|---|
-| Create file | `nano HelloWorld.java` |
-| Compile | `javac HelloWorld.java` |
-| Run (standard) | `java HelloWorld` |
-| Run (shortcut, Java 11+) | `java HelloWorld.java` |
+  ```bash
+  which java
+  ```
+* Verify JAVA_HOME:
 
-**HelloWorld.java:**
-```java
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-
----
-
-## IDE Setup
-
-| IDE | Install Command |
-|---|---|
-| IntelliJ IDEA Community | `sudo snap install intellij-idea-community --classic` |
-| VS Code | `sudo snap install code --classic` |
-| VS Code Java Extension Pack | `code --install-extension vscjava.vscode-java-pack` |
+  ```bash
+  echo $JAVA_HOME
+  ```
 
 ---
 
 ## Common Issues & Fixes
 
-| Issue | Fix |
-|---|---|
-| `java: command not found` | `export PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH` |
-| `javac: command not found` | `sudo apt install -y openjdk-21-jdk` |
-| Wrong Java version active | `sudo update-alternatives --config java` |
-| `UnsupportedClassVersionError` | `javac --release 17 HelloWorld.java` |
+| Issue                          | Fix                                                        |
+| ------------------------------ | ---------------------------------------------------------- |
+| `java: command not found`      | `export PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH` |
+| `javac: command not found`     | `sudo apt install -y openjdk-21-jdk`                       |
+| Wrong Java version active      | `sudo update-alternatives --config java`                   |
+| `UnsupportedClassVersionError` | `javac --release 17 HelloWorld.java`                       |
 
 ---
 
 ## Quick Command Reference
 
-| Task | Command |
-|---|---|
-| Install Java 21 | `sudo apt install -y openjdk-21-jdk` |
-| Check Java version | `java -version` |
-| Check compiler version | `javac -version` |
-| Compile a file | `javac HelloWorld.java` |
-| Run a program | `java HelloWorld` |
-| Set JAVA_HOME | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
-| Switch Java version | `sudo update-alternatives --config java` |
+| Task                   | Command                                               |
+| ---------------------- | ----------------------------------------------------- |
+| Install Java 21        | `sudo apt install -y openjdk-21-jdk`                  |
+| Check Java version     | `java -version`                                       |
+| Check compiler version | `javac -version`                                      |
+| Compile a file         | `javac HelloWorld.java`                               |
+| Run a program          | `java HelloWorld`                                     |
+| Set JAVA_HOME          | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
+| Switch Java version    | `sudo update-alternatives --config java`              |
+
+---
+
+## Conclusion
+
+Installing Java JDK 21 on Ubuntu 24.04 using APT is the simplest and most efficient approach, especially for beginners. It ensures a stable setup with minimal configuration effort. By properly setting environment variables and verifying the installation, you can quickly start developing Java applications. Managing multiple Java versions is also straightforward using built-in tools, making this setup flexible for different project requirements.
 
 ---
 
 ## Contact Information
 
-| Name | Email |
-|---|---|
+| Name            | Email                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------- |
 | Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
 
 ---
 
 ## References
 
-| # | Resource | Link |
-|---|---|---|
-| 1 | Ubuntu 24.04 LTS Release Notes | [ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released](https://ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released) |
-| 2 | OpenJDK 21 Official Site | [openjdk.org/projects/jdk/21](https://openjdk.org/projects/jdk/21) |
-| 3 | Eclipse Temurin (Adoptium) | [adoptium.net](https://adoptium.net/) |
-| 4 | SDKMAN Official Documentation | [sdkman.io](https://sdkman.io/) |
-| 5 | Java 21 New Features | [openjdk.org/jeps](https://openjdk.org/jeps/0) |
-| 6 | Ubuntu APT Package Manager Docs | [manpages.ubuntu.com/apt](https://manpages.ubuntu.com/manpages/noble/man8/apt.8.html) |
+| # | Resource                        | Link                                                                                                                             |
+| - | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | Ubuntu 24.04 LTS Release Notes  | [https://ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released](https://ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat-released) |
+| 2 | OpenJDK 21 Official Site        | [https://openjdk.org/projects/jdk/21](https://openjdk.org/projects/jdk/21)                     
+| 3 | Java 21 New Features            | [https://openjdk.org/jeps/0](https://openjdk.org/jeps/0)                                                                         |
+| 4 | Ubuntu APT Package Manager Docs | [https://manpages.ubuntu.com/manpages/noble/man8/apt.8.html](https://manpages.ubuntu.com/manpages/noble/man8/apt.8.html)         |
+
+---
