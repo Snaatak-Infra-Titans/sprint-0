@@ -190,6 +190,6 @@ Dynamic inventory makes Ansible scalable and reliable.
 
 ## Contact Information
 
-| Name   |             | Contact                                  |
-|--------|-------------------|------------------------------------------|
-| Deepak |   | deepak.nagar.snaatak@mygurukulam.co      |
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
