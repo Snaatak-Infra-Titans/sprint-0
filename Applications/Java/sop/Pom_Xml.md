@@ -92,11 +92,8 @@ Verify Java installation:
 java -version
 ```
 
-Expected result:
+<img width="1580" height="815" alt="image" src="https://github.com/user-attachments/assets/ae44044c-275f-4058-b249-caee55cc2110" />
 
-* Java version details should be displayed.
-
-**Image Placeholder:** Add screenshot of Java installation command output here.
 
 ---
 
