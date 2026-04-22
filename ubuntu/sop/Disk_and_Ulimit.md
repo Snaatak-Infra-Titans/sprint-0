@@ -60,7 +60,7 @@ Before proceeding, ensure the following:
 ---
 
 
-# 3. Disk Usage Monitoring
+# 4. Disk Usage Monitoring
 
 ### Step 1: Check Disk Usage (Filesystem Level)
 
@@ -92,7 +92,7 @@ du -sh /*
 
 ---
 
-# 4. Mount Points Verification
+# 5. Mount Points Verification
 
 ### Step 1: List Block Devices
 
@@ -124,7 +124,7 @@ fdisk -l
 
 ---
 
-# 5. Ulimit (Resource Limits)
+# 6. Ulimit (Resource Limits)
 
 ### Step 1: Check Current Limits
 
@@ -180,7 +180,7 @@ Add Below Lines:
 
 ---
 
-# 6. Validation
+# 7. Validation
 
 ### Verify Disk Usage
 
@@ -204,7 +204,7 @@ ulimit -n
 
 ---
 
-# 7. Use Cases
+# 8. Use Cases
 
 | **Scenario**        | **Commands / Actions**                                  |
 | ------------------- | ------------------------------------------------------- |
@@ -213,7 +213,7 @@ ulimit -n
 
 ---
 
-# 8. Troubleshooting
+# 9. Troubleshooting
 
 | **Issue**           | **Cause**             | **Solution**                     |
 | ------------------- | --------------------- | -------------------------------- |
@@ -224,7 +224,7 @@ ulimit -n
 
 ---
 
-# 9. Best Practices
+# 10. Best Practices
 
 | # | Best Practice                           | Description                          |
 | - | --------------------------------------- | ------------------------------------ |
@@ -236,13 +236,13 @@ ulimit -n
 
 ---
 
-# 10. Conclusion
+# 11. Conclusion
 
 This SOP provides a comprehensive approach to monitoring disk usage, verifying mount points, and managing system resource limits using ulimit in Ubuntu environments. By following these steps, administrators can proactively prevent disk-related issues, optimize system performance, and ensure stability in production systems.
 
 ---
 
-# 11. Contact Information
+# 12. Contact Information
 
 | **Name**    | **Email**                                                                       |
 | ----------- | ------------------------------------------------------------------------------- |
@@ -250,7 +250,7 @@ This SOP provides a comprehensive approach to monitoring disk usage, verifying m
 
 ---
 
-# 12. References
+# 13. References
 
 | Topic                | Link                                                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
