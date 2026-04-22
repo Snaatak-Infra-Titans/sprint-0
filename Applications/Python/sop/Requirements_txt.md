@@ -74,7 +74,8 @@ Before proceeding, ensure the following prerequisites are met:
 * Basic understanding of command line/terminal usage
 * Access to project repository containing `requirements.txt`
 
-📌 **Image Placeholder:** Screenshot showing Python and pip version check (`python --version`, `pip --version`)
+<img width="832" height="195" alt="image" src="https://github.com/user-attachments/assets/0d0bb849-083d-4ca0-b9a4-20b7e2ea73c2" />
+
 
 ---
 
