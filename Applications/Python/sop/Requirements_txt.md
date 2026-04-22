@@ -1,3 +1,11 @@
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" width="120"/>
+</p>
+
+<h1 align="center">SOP: requirements.txt</h1>
+<p align="center">Python Dependency Management Guide</p>
+
 # SOP: requirements.txt
 
 ## Document Details
