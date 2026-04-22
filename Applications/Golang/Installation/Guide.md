@@ -1,121 +1,83 @@
 # Common Stack | Applications | Golang | Installation Guide
 
+## Introduction
+
+This guide provides a simple and structured approach to installing Golang on Ubuntu 24.04. It is designed for beginners and developers who want a clean and reliable setup using the system package manager. By following this guide, you will be able to install Go, configure the environment, and verify that everything is working correctly.
+
+---
+
 ## Document Information
 
-| Author | Created On | Version | Last Updated By | Last Edited On | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-|---|---|---|---|---|---|---|---|---|
-| Versha Tripathi | 13-04-2026 | v1.0 | Versha Tripathi | 13-04-2026 | Team | - | - | - |
-
-> **Platform:** Ubuntu 24.04 LTS (Noble Numbat)
-> **Scope:** Step-by-step Go installation and environment setup
+| Author          | Created On | Version | L0 Reviewer  | L1 Reviewer  | L2 Reviewer     |
+| --------------- | ---------- | ------- | ------------ | ------------ | --------------- |
+| Versha Tripathi | 13-04-2026 | v1.0    | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Step 1 — Update System Packages](#step-1--update-system-packages)
-- [Step 2 — Download the Go Tarball](#step-2--download-the-go-tarball)
-- [Step 3 — Remove Any Previous Go Installation](#step-3--remove-any-previous-go-installation)
-- [Step 4 — Extract the Tarball to /usr/local](#step-4--extract-the-tarball-to-usrlocal)
-- [Step 5 — Configure Environment Variables](#step-5--configure-environment-variables)
-- [Step 6 — Apply the Environment Changes](#step-6--apply-the-environment-changes)
-- [Step 7 — Verify the Installation](#step-7--verify-the-installation)
-- [Step 8 — Set Up Your Go Workspace](#step-8--set-up-your-go-workspace)
-- [Step 9 — Write and Run a Test Program](#step-9--write-and-run-a-test-program)
-- [Uninstallation](#uninstallation)
-- [Troubleshooting](#troubleshooting)
-- [Contact Information](#contact-information)
-- [References](#references)
+* [Prerequisites](#prerequisites)
+* [Step 1 — Update System Packages](#step-1--update-system-packages)
+* [Step 2 — Install Golang using APT](#step-2--install-golang-using-apt)
+* [Step 3 — Verify the Installation](#step-3--verify-the-installation)
+* [Step 4 — Configure Environment Variables](#step-4--configure-environment-variables)
+* [Step 5 — Apply the Environment Changes](#step-5--apply-the-environment-changes)
+* [Step 6 — Set Up Your Go Workspace](#step-6--set-up-your-go-workspace)
+* [Uninstallation](#uninstallation)
+* [Troubleshooting](#troubleshooting)
+* [Conclusion](#conclusion)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
 
 ## Prerequisites
 
-| Requirement | Detail |
-|---|---|
-| OS | Ubuntu 24.04 LTS (Noble Numbat) |
-| User privileges | `sudo` access required |
-| Network | Internet access to download Go binary |
-| Tools | `curl` or `wget` (pre-installed on Ubuntu 24.04) |
+| Requirement | Detail                          |
+| ----------- | ------------------------------- |
+| OS          | Ubuntu 24.04 LTS (Noble Numbat) |
+| Tools       | `curl` or `wget`                |
 
 ---
 
 ## Step 1 — Update System Packages
 
-Refresh the package index and upgrade existing packages to ensure your system is up to date.
-
 ```bash
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl wget
 ```
 
 ---
 
-## Step 2 — Download the Go Tarball
-
-Visit the [official Go downloads page](https://go.dev/dl/) for the latest stable release. Download the Linux AMD64 tarball:
+## Step 2 — Install Golang using APT
 
 ```bash
-wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
+sudo apt install -y golang-go
 ```
-
-> **Note:** Replace `go1.22.5` with the latest version from [https://go.dev/dl/](https://go.dev/dl/).
-
-Optionally verify the checksum:
-
-```bash
-sha256sum go1.22.5.linux-amd64.tar.gz
-```
-
-Compare the output with the value listed on the official downloads page before proceeding.
 
 ---
 
-## Step 3 — Remove Any Previous Go Installation
+## Step 3 — Verify the Installation
 
 ```bash
-sudo rm -rf /usr/local/go
+go version
 ```
-
-> **Note:** Skip this step if this is a fresh installation.
 
 ---
 
-## Step 4 — Extract the Tarball to `/usr/local`
-
-```bash
-sudo tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
-ls /usr/local/go
-```
-
-Expected directories: `bin`, `src`, `pkg`, `lib`, `doc`.
-
----
-
-## Step 5 — Configure Environment Variables
-
-Open your shell profile and append the following:
+## Step 4 — Configure Environment Variables
 
 ```bash
 nano ~/.bashrc
 ```
 
 ```bash
-# Go environment variables
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
 
-| Variable | Description |
-|---|---|
-| `PATH` | Adds Go compiler and tools to the executable path |
-| `GOPATH` | Defines your Go workspace (modules and binaries) |
-
 ---
 
-## Step 6 — Apply the Environment Changes
+## Step 5 — Apply the Environment Changes
 
 ```bash
 source ~/.bashrc
@@ -123,67 +85,10 @@ source ~/.bashrc
 
 ---
 
-## Step 7 — Verify the Installation
-
-```bash
-go version
-go env
-```
-
-Expected output: `go version go1.22.5 linux/amd64`
-
-| Variable | Expected Value |
-|---|---|
-| `GOROOT` | `/usr/local/go` |
-| `GOPATH` | `/home/<your-username>/go` |
-| `GOARCH` | `amd64` |
-| `GOOS` | `linux` |
-
----
-
-## Step 8 — Set Up Your Go Workspace
+## Step 6 — Set Up Your Go Workspace
 
 ```bash
 mkdir -p ~/go/{bin,src,pkg}
-```
-
-| Directory | Purpose |
-|---|---|
-| `~/go/bin` | Compiled binary executables |
-| `~/go/src` | Source code for your Go projects |
-| `~/go/pkg` | Compiled package objects (cache) |
-
----
-
-## Step 9 — Write and Run a Test Program
-
-```bash
-mkdir -p ~/go/src/hello && cd ~/go/src/hello
-go mod init hello
-nano main.go
-```
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, Go on Ubuntu 24.04!")
-}
-```
-
-```bash
-go run main.go
-```
-
-Expected output: `Hello, Go on Ubuntu 24.04!`
-
-Optionally build a standalone binary:
-
-```bash
-go build -o hello
-./hello
 ```
 
 ---
@@ -191,46 +96,41 @@ go build -o hello
 ## Uninstallation
 
 ```bash
-# Remove Go installation
-sudo rm -rf /usr/local/go
-
-# Remove Go workspace (optional)
+sudo apt remove -y golang-go
 rm -rf ~/go
-```
-
-Remove the environment variables added in [Step 5](#step-5--configure-environment-variables) from `~/.bashrc`, then reload:
-
-```bash
-source ~/.bashrc
 ```
 
 ---
 
 ## Troubleshooting
 
-| Issue | Cause | Fix |
-|---|---|---|
-| `go: command not found` | `PATH` not updated or reloaded | Run `source ~/.bashrc`; verify `echo $PATH` includes `/usr/local/go/bin` |
-| Wrong version shown | Old Go installation still present | Re-run [Step 3](#step-3--remove-any-previous-go-installation) |
-| Checksum mismatch | Corrupted or incomplete download | Re-download from [go.dev/dl](https://go.dev/dl/) |
-| Permission denied on `/usr/local` | Missing sudo privileges | Prefix extraction command with `sudo` |
-| `GOPATH` not set | Profile not reloaded | Run `source ~/.bashrc` or open a new terminal |
+| Issue                   | Cause              | Fix                    |
+| ----------------------- | ------------------ | ---------------------- |
+| `go: command not found` | PATH not updated   | Run `source ~/.bashrc` |
+| Wrong version shown     | Old version cached | Restart terminal       |
+
+---
+
+## Conclusion
+
+Installing Golang using APT on Ubuntu 24.04 is the simplest and most reliable approach for most users. It ensures easy installation, automatic dependency handling, and smooth updates through the package manager. After setting up environment variables and verifying the installation, you are ready to start building Go applications.
 
 ---
 
 ## Contact Information
 
-| Name | Email |
-|---|---|
+| Name            | Email                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------- |
 | Versha Tripathi | [versha.tripathi.snaatak@mygurukulam.co](mailto:versha.tripathi.snaatak@mygurukulam.co) |
 
 ---
 
 ## References
 
-| # | Resource | Link |
-|---|---|---|
-| 1 | Official Go Downloads | [go.dev/dl](https://go.dev/dl/) |
-| 2 | Go Installation Documentation | [go.dev/doc/install](https://go.dev/doc/install) |
-| 3 | Go Environment Variables | [pkg.go.dev/cmd/go](https://pkg.go.dev/cmd/go#hdr-Environment_variables) |
-| 4 | Ubuntu 24.04 LTS Release Notes | [releases.ubuntu.com/24.04](https://releases.ubuntu.com/24.04/) |
+| # | Resource                       | Link                                                                     |
+| - | ------------------------------ | ------------------------------------------------------------------------ |
+| 1 | Official Go Downloads          | [https://go.dev/dl](https://go.dev/dl)                                   |
+| 2 | Go Installation Documentation  | [https://go.dev/doc/install](https://go.dev/doc/install)                 |
+| 3 | Ubuntu 24.04 LTS Release Notes | [https://releases.ubuntu.com/24.04/](https://releases.ubuntu.com/24.04/) |
+
+---
