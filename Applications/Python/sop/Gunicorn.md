@@ -8,7 +8,7 @@ Run Python applications in production using Gunicorn (WSGI HTTP Server)
 
 | Author | Created on | Version | Last updated by | Last edited on | PRE Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Gourav | 15-04-2026 | v1.0    | Gourav          | 15-04-2026     | -            | -           | -           | -           |
+| Gourav | 15-04-2026 | v1.0    | Gourav          | 15-04-2026     | Team         | -           | -           | -           |
 
 ---
 
@@ -81,6 +81,7 @@ sudo apt install -y python3-pip python3-venv
 ```bash
 pip3 install gunicorn
 ```
+<img width="1151" height="191" alt="image" src="https://github.com/user-attachments/assets/6ddd0b48-2e26-4289-b761-d9977fc6ed04" />
 
 ---
 
@@ -101,6 +102,7 @@ python3 -m venv myenv
 source myenv/bin/activate
 pip install gunicorn
 ```
+<img width="1205" height="510" alt="image" src="https://github.com/user-attachments/assets/275e3ad8-5c90-475e-a954-4208b053867d" />
 
 ---
 
@@ -124,6 +126,8 @@ if __name__ == "__main__":
     app.run()
 ```
 
+<img width="1153" height="263" alt="image" src="https://github.com/user-attachments/assets/12dbb365-15f7-454d-a045-051bbf5e5e9a" />
+
 ---
 
 ##  Run Application with Gunicorn
@@ -131,6 +135,8 @@ if __name__ == "__main__":
 ```bash
 gunicorn app:app
 ```
+<img width="1307" height="654" alt="image" src="https://github.com/user-attachments/assets/b07a5b83-a68f-4f03-826d-b20a820981e6" />
+
 
  Format:
 
@@ -143,18 +149,18 @@ gunicorn <filename>:<app_variable>
 ### Run on Custom Port
 
 ```bash
-gunicorn -b 0.0.0.0:8000 app:app
+gunicorn -b 0.0.0.0:8000 app:app 
+
+gunicorn -b 127.0.0.1:8000 app:app 
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/539b9a07-03c9-4cab-9fb6-57ee156bca7e" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8f78a776-9760-4065-8ed9-01b8905d319b" />
 
 ---
 
-### Run with Multiple Workers
 
-```bash
-gunicorn -w 4 app:app
-```
-
----
 
 ## ⚙️ Gunicorn Important Options
 
@@ -168,19 +174,6 @@ gunicorn -w 4 app:app
 
 ---
 
-##  Worker Recommendation
-
-```bash
-workers = (2 × CPU cores) + 1
-```
-
-Example:
-
-```bash
-nproc
-```
-
----
 
 ##  Production Setup (Systemd Service)
 
@@ -189,9 +182,6 @@ nproc
 ```bash
 sudo nano /etc/systemd/system/gunicorn.service
 ```
-
----
-
 ### Add Configuration
 
 ```ini
@@ -208,6 +198,8 @@ ExecStart=/home/snaatak/myenv/bin/gunicorn -w 3 -b 0.0.0.0:8000 app:app
 [Install]
 WantedBy=multi-user.target
 ```
+<img width="1569" height="424" alt="image" src="https://github.com/user-attachments/assets/c66c2a96-3747-49e0-a09c-16f3860672aa" />
+
 
 ---
 
@@ -225,6 +217,7 @@ sudo systemctl daemon-reload
 ```bash
 sudo systemctl start gunicorn
 ```
+<img width="1693" height="708" alt="image" src="https://github.com/user-attachments/assets/f4681bd1-27df-4daf-9818-8a5b4300a690" />
 
 ---
 
@@ -241,65 +234,12 @@ sudo systemctl enable gunicorn
 ```bash
 sudo systemctl status gunicorn
 ```
+<img width="1693" height="708" alt="image" src="https://github.com/user-attachments/assets/a9c9994c-965e-44c6-97f5-9f50ad0d4df1" />
 
 ---
 
-### Stop Service
 
-```bash
-sudo systemctl stop gunicorn
-```
 
----
-
-### Restart Service
-
-```bash
-sudo systemctl restart gunicorn
-```
-
----
-
-##  Logs & Debugging
-
-```bash
-journalctl -u gunicorn -f
-
----
-
-## ❗ Common Issues
-
-### Command not found
-
-```bash
-pip3 install gunicorn
-```
-
----
-
-### Permission Denied
-
-```bash
-chmod +x myenv/bin/gunicorn
-```
-
----
-
-### Port Already in Use
-
-```bash
-sudo lsof -i :8000
-```
-
----
-
-### App Not Loading
-
-Check:
-
-```bash
-gunicorn app:app
-```
 
 Make sure:
 
@@ -322,5 +262,10 @@ Make sure:
 
 ---
 
-## Author: Gourav Sharma | Sprint 0 | Opstree Solutions | 14 April 2026
+## Contact Information
 
+| Name   | Email                                                                             |
+| ------ | --------------------------------------------------------------------------------- |
+| gourav sharma | [gourav.sharma.snaatak@mygurukulam.co](mailto:gourav.sharma.snaatak@mygurukulam.co) |
+
+---
