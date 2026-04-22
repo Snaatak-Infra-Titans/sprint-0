@@ -35,10 +35,11 @@ This SOP provides a structured guide to monitor disk usage, verify mount points,
 
 # 2. Purpose
 
-I. Monitor disk utilization and prevent disk overflow
-II. Identify mounted file systems and storage allocation
-III. Configure resource limits (ulimit) for users and processes
+I. Monitor disk utilization and prevent disk overflow 
+II. Identify mounted file systems and storage allocation 
+III. Configure resource limits (ulimit) for users and processes 
 IV. Ensure system stability and performance
+
 
 ---
 
