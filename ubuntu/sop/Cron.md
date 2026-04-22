@@ -8,8 +8,6 @@
 
 ## Table of Contents
 
-## Table of Contents
-
 1. [Introduction](#1-introduction)
 2. [Purpose](#2-purpose)
 3. [Check Cron Service](#3-check-cron-service)
