@@ -78,6 +78,7 @@ cat /proc/sys/net/ipv4/ip_forward
 ```
 
 It allows administrators to control system behavior without modifying kernel code.
+<img width="866" height="189" alt="image" src="https://github.com/user-attachments/assets/77eb71be-9b5e-43aa-8541-855d1ed1f732" />
 
 ---
 
@@ -88,6 +89,7 @@ It allows administrators to control system behavior without modifying kernel cod
 ```bash
 sysctl -a
 ```
+<img width="856" height="1157" alt="image" src="https://github.com/user-attachments/assets/b14a9869-d5d3-432f-a1aa-f39592c36d0a" />
 
 ---
 
@@ -102,6 +104,7 @@ Example output:
 ```
 net.ipv4.ip_forward = 0
 ```
+<img width="856" height="167" alt="image" src="https://github.com/user-attachments/assets/4e4be6e5-1274-4a81-a5a8-b888551b3280" />
 
 ---
 
