@@ -1,7 +1,6 @@
 <p align="center">
   <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/98f725e7-b98d-46aa-a3e4-1c344a7099d5" />
   <br/>
-  <strong>Database Migration SOP</strong>
 </p>
 
 
