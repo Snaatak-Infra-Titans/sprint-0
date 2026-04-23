@@ -71,13 +71,15 @@ Git Flow is a structured branching strategy used in large projects with defined 
 ### Diagram 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/167a0a15-4675-4458-8f15-703ac8c18960" />
 
-### Structure:
+### Structure
 
-- `main/master` → Production-ready code  
-- `develop` → Development branch  
-- `feature/*` → New features  
-- `release/*` → Release preparation  
-- `hotfix/*` → Production fixes  
+| Branch        | Purpose |
+|--------------|--------|
+| main/master  | Production-ready code |
+| develop      | Development branch |
+| feature/*    | New features |
+| release/*    | Release preparation |
+| hotfix/*     | Production fixes |
 
 ### Advantages:
 - Clear separation of branches  
@@ -122,10 +124,13 @@ GitLab Flow combines Git Flow and GitHub Flow with environment-based branching.
 ### Diagram
 <img width="800" height="420" alt="image" src="https://github.com/user-attachments/assets/12d947d2-9d59-4b75-bc9b-3192d768a495" />
 
-### Structure:
+### Structure
 
-- `main` branch  
-- Environment branches (`staging`, `production`)  
+| Branch                | Purpose |
+|----------------------|--------|
+| main                 | Primary branch containing stable code |
+| staging              | Pre-production testing environment |
+| production           | Live production environment |
 
 ### Advantages:
 - Flexible approach  
@@ -209,14 +214,11 @@ Trunk-Based Development focuses on a single main branch.
 
 ## 9. Conclusion
 
-Branching strategies are essential for managing modern software development workflows. Different strategies suit different project needs.
+Branching strategies help manage development workflows effectively. Choosing the right approach improves productivity and reduces errors.
 
 - Git Flow → Structured projects  
 - GitHub Flow → Simple & fast projects  
 - Trunk-Based → DevOps & CI/CD  
-
-Choosing the right strategy improves productivity and reduces errors.
-
 ---
 
 ## 10. FAQs
