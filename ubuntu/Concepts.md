@@ -1,69 +1,41 @@
+
 # Common Stack | Operating System | Ubuntu | Concepts
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Ubuntu_logo_orange.png" alt="Ubuntu" width="250"/>
+</p>
 
 ---
 
 ## Author Table
 
-| **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
-| ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 15-04-2026     | v1.0        | Ankita              | 22-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
+| Author  | Created on | Version | Last updated by | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+|--------|------------|---------|----------------|---------------|-------------|------------|------------|------------|
+| Ankita | 15-04-2026 | v1.1    | Ankita         | 23-04-2026    | Team        | Komal Jaiswal | Akshit Kapil | Mahesh Kumar |
+
 ---
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-
-2. [Purpose](#purpose)
-
-3. [Why Ubuntu in DevOps](#why-ubuntu-in-devops)
-
-4. [Core Concepts of Ubuntu](#core-concepts-of-ubuntu)
-
-5. [Software Management](#software-management)
-
-6. [Services & Process Management](#services--process-management)
-
-7. [File System Structure](#file-system-structure)
-
-8. [User & Permission Management](#user--permission-management)
-
-9. [Networking Basics](#networking-basics)
-
-10. [Logs & Monitoring](#logs--monitoring)
-
-11. [Troubleshooting](#troubleshooting)
-
-12. [Best Practices](#best-practices)
-
-13. [Contact Information](#contact-information)
-
-14. [References](#references)
-
-15. [Introduction](#introduction)
-
-16. [Why Ubuntu in DevOps](#why-ubuntu-in-devops)
-
-17. [Core Concepts of Ubuntu](#core-concepts-of-ubuntu)
-
-18. [Software Management](#software-management)
-
-19. [Services & Process Management](#services--process-management)
-
-20. [File System Structure](#file-system-structure)
-
-21. [User & Permission Management](#user--permission-management)
-
-22. [Networking Basics](#networking-basics)
-
-23. [Logs & Monitoring](#logs--monitoring)
-
-24. [Troubleshooting](#troubleshooting)
-
-25. [Best Practices](#best-practices)
-
-26. [Contact Information](#contact-information)
-
-27. [References](#references)
+1. [Introduction](#introduction)  
+2. [Purpose](#purpose)  
+3. [Why Ubuntu in DevOps](#why-ubuntu-in-devops)  
+4. [Core Concepts of Ubuntu](#core-concepts-of-ubuntu)  
+5. [Common Commands](#common-commands)  
+6. [Software Management](#software-management)  
+7. [Services & Process Management](#services--process-management)  
+8. [Disk & Ulimit](#disk--ulimit)  
+9. [Cron](#cron)  
+10. [Logrotate](#logrotate)  
+11. [Sysctl](#sysctl)  
+12. [File System Structure](#file-system-structure)  
+13. [User & Permission Management](#user--permission-management)  
+14. [Networking Basics](#networking-basics)  
+15. [Logs & Monitoring](#logs--monitoring)  
+16. [Troubleshooting](#troubleshooting)  
+17. [Best Practices](#best-practices)  
+18. [Contact Information](#contact-information)  
+19. [References](#references)
 
 ---
 
@@ -71,191 +43,171 @@
 
 Ubuntu is a Debian-based Linux operating system widely used in DevOps, cloud computing, and microservices environments.
 
-It is known for its stability, security, and strong package management system.
-
-Ubuntu is commonly used in servers, cloud platforms, and development environments due to its ease of use and large community support.
-
 ---
 
 ## Purpose
 
-This document provides a conceptual understanding of Ubuntu, covering key operating system components, system management, networking, and best practices.
-
-It is designed to help beginners understand how Ubuntu works in real-world DevOps and cloud environments.
-
----
-
-Ubuntu is a Debian-based Linux operating system widely used in DevOps, cloud computing, and microservices environments.
-
-It is known for its stability, security, and strong package management system.
-
-Ubuntu is commonly used in servers, cloud platforms, and development environments due to its ease of use and large community support.
+This document provides a conceptual understanding of Ubuntu and its operational components used in real-world DevOps environments.
 
 ---
 
 ## Why Ubuntu in DevOps
 
-Ubuntu is preferred in DevOps workflows because:
-
-* Open-source and free to use
-* Stable Long-Term Support (LTS) releases
-* Strong community and documentation support
-* Seamless integration with cloud platforms (AWS, Azure, GCP)
-* Rich package ecosystem using APT
+- Open-source and free  
+- Stable LTS releases  
+- Strong community support  
+- Cloud-ready (AWS, Azure, GCP)  
+- APT-based package management  
 
 ---
 
 ## Core Concepts of Ubuntu
 
-### 1. Kernel
+### Kernel
+- Core of OS managing hardware  
 
-* The core of the operating system
-* Manages hardware resources such as CPU, memory, and devices
+### Shell
+- Interface (bash, zsh)  
 
-### 2. Shell
+### Processes
+- Running programs with PID  
 
-* Interface to interact with the operating system
-* Common shells include bash and zsh
+### Packages
+- Installable software units  
 
-### 3. Processes
+---
 
-* Programs running on the system
-* Each process has a unique Process ID (PID)
+## Common Commands
 
-### 4. Packages
+Basic Linux commands used to navigate, manage files, and perform everyday system operations.
 
-* Software distributed as installable files
-* Managed using package managers like APT
+```bash
+ls
+cd
+pwd
+cp
+mv
+rm
+````
+
+**Reference:** [Common Commands SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-7-deepak/ubuntu/sop/Common_commands.md)
 
 ---
 
 ## Software Management
 
-Ubuntu uses APT (Advanced Package Tool) for managing software.
-
-Update package list:
+Handles installation, update, and removal of packages using the APT package manager.
 
 ```bash
 sudo apt update
-```
-
-Install a package:
-
-```bash
 sudo apt install nginx
-```
-
-Remove a package:
-
-```bash
 sudo apt remove nginx
 ```
 
-Key Concepts:
-
-* Repository-based installation
-* Automatic dependency resolution
-* Version management
+**Reference:** [Software Management SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-9-mukesh/ubuntu/sop/Software_Management.md)
 
 ---
 
 ## Services & Process Management
 
-Ubuntu uses systemd to manage services.
-
-Start a service:
+Used to control and monitor background services and system processes using tools like systemctl.
 
 ```bash
 systemctl start nginx
-```
-
-Stop a service:
-
-```bash
 systemctl stop nginx
-```
-
-Check status:
-
-```bash
 systemctl status nginx
 ```
 
-Key Concepts:
+**Reference:** [Services SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-8-gourav/ubuntu/sop/Service.md)
 
-* Services run in the background
-* Managed using units in systemd
+---
+
+## Disk & Ulimit
+
+Manages disk usage and system resource limits such as file descriptors and process counts.
+
+```bash
+df -h
+du -sh *
+ulimit -n
+ulimit -u
+```
+
+**Reference:** [Disk & Ulimit SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-10-saransh/ubuntu/sop/Disk_and_Ulimit.md)
+
+---
+
+## Cron
+
+Schedules and automates repetitive tasks to run at specific times or intervals.
+
+```bash
+crontab -e
+```
+
+Example:
+
+```bash
+* * * * * /path/script.sh
+```
+
+**Reference:** [Cron SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-11-shivam/ubuntu/sop/Cron.md)
+
+---
+
+## Logrotate
+
+Manages log files by rotating, compressing, and removing old logs to save disk space.
+
+```bash
+logrotate /etc/logrotate.conf
+```
+
+**Reference:** [Logrotate SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-12-versha/ubuntu/sop/Log_Rotate.md)
+
+---
+
+## Sysctl
+
+Configures and modifies Linux kernel parameters at runtime for performance and security tuning.
+
+```bash
+sysctl -a
+sysctl -w net.ipv4.ip_forward=1
+```
+
+**Reference:** [Sysctl SOP](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-13-ankita/ubuntu/sop/Sysctl.md)
 
 ---
 
 ## File System Structure
 
-| Directory | Purpose                |
-| --------- | ---------------------- |
-| /         | Root directory         |
-| /etc      | Configuration files    |
-| /var      | Logs and variable data |
-| /home     | User directories       |
-| /usr      | Installed applications |
+| Directory | Purpose |
+| --------- | ------- |
+| /         | Root    |
+| /etc      | Config  |
+| /var      | Logs    |
+| /home     | Users   |
+| /usr      | Apps    |
 
 ---
 
 ## User & Permission Management
 
-### Users
-
-Create user:
-
 ```bash
-sudo useradd user1
-```
-
-Set password:
-
-```bash
-sudo passwd user1
-```
-
----
-
-### Permissions
-
-Change permissions:
-
-```bash
+useradd user1
+passwd user1
 chmod 755 file
-```
-
-Change ownership:
-
-```bash
 chown user:group file
 ```
-
-Key Concepts:
-
-* Read (r), Write (w), Execute (x)
-* Ownership (user and group)
 
 ---
 
 ## Networking Basics
 
-Check IP address:
-
 ```bash
 ip a
-```
-
-Check connectivity:
-
-```bash
 ping google.com
-```
-
-Check open ports:
-
-```bash
 ss -tulnp
 ```
 
@@ -263,13 +215,11 @@ ss -tulnp
 
 ## Logs & Monitoring
 
-View system logs:
-
 ```bash
 journalctl
 ```
 
-Application logs are usually stored in:
+Path:
 
 ```
 /var/log/
@@ -279,21 +229,21 @@ Application logs are usually stored in:
 
 ## Troubleshooting
 
-| Issue                 | Cause               | Solution               |
-| --------------------- | ------------------- | ---------------------- |
-| Service not running   | Misconfiguration    | Check systemctl status |
-| Package install fails | Repository issue    | Run apt update         |
-| Permission denied     | Insufficient rights | Use sudo               |
+| Issue               | Solution         |
+| ------------------- | ---------------- |
+| Service not running | systemctl status |
+| Install fails       | apt update       |
+| Permission denied   | sudo             |
 
 ---
 
 ## Best Practices
 
-* Keep system updated regularly
-* Use least privilege principle
-* Monitor logs frequently
-* Use LTS versions for stability
-* Automate repetitive tasks using scripts
+* Keep system updated
+* Use least privilege
+* Monitor logs
+* Use LTS versions
+* Automate tasks
 
 ---
 
@@ -307,7 +257,5 @@ Application logs are usually stored in:
 
 ## References
 
-| Topic                | Link                                                                   |
-| -------------------- | ---------------------------------------------------------------------- |
-| Ubuntu Documentation | [https://ubuntu.com/tutorials](https://ubuntu.com/tutorials)           |
-| Linux Man Pages      | [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/) |
+* [Ubuntu Documentation](https://ubuntu.com/tutorials)
+* [Linux Man Pages](https://man7.org)
