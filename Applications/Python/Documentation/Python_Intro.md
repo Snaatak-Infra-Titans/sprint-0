@@ -74,11 +74,10 @@ It is one of the best languages for beginners and professionals.
 
 
 
-## Author
 
-| Name | Role | Contact |
-|------|------|--------|
-| Deepak | DevOps Engineer | deepak.nagar.snaatak@mygurukulam.co |
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
 
 
 
