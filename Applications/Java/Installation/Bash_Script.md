@@ -1,5 +1,9 @@
 # Common Stack | Applications | Java | Installation via Bash Script
 
+<p align="center">
+  <img src="https://brandslogos.com/wp-content/uploads/images/large/java-logo-1.png" alt="Java" width="250"/>
+</p>
+
 ---
 
 ## Author Table
