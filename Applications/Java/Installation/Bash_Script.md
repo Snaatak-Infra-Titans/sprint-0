@@ -12,18 +12,18 @@
 
 ## Table of Contents
 
-1. Introduction
-2. Purpose
-3. Why Use Bash Script for Installation
-4. Prerequisites
-5. Java Installation via Bash Script
-6. Script Explanation
-7. Verification
-8. Troubleshooting (JAVA_HOME Not Set)
-9. Use Cases
-10. Best Practices
-11. Contact Information
-12. References
+1. [Introduction](#introduction)
+2. [Purpose](#purpose)
+3. [Why Use Bash Script for Installation](#why-use-bash-script-for-installation)
+4. [Prerequisites](#prerequisites)
+5. [Java Installation via Bash Script](#java-installation-via-bash-script)
+6. [Script Explanation](#script-explanation)
+7. [Verification](#verification)
+8. [Troubleshooting (JAVA_HOME Not Set)](#troubleshooting-java_home-not-set)
+9. [Use Cases](#use-cases)
+10. [Best Practices](#best-practices)
+11. [Contact Information](#contact-information)
+12. [References](#references)
 
 ---
 
@@ -38,6 +38,9 @@ Installing Java manually on multiple systems can be repetitive and error-prone. 
 ## Purpose
 
 This document explains how to install Java on Ubuntu using a Bash script. It helps automate the installation process, ensuring consistency and reducing manual effort.
+
+Please follow the link to learn more about Java:
+[Java Documentation](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-25-shivam/Applications/Java/Documentation/Java_Intro.md)
 
 ---
 
