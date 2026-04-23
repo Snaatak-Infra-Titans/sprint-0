@@ -4,17 +4,11 @@
 </p>
 
 
-<p align="center">
-  <strong>Common Stack | Others | Migrate | SOP for Migrate</strong>
-</p>
+<h1 align="center">Common Stack | Others | Migrate | SOP for Migrate</h1>
 
 <p align="center">
   Step by step installation guide
 </p>
-
-# Common Stack | Others | Migrate | SOP for Migrate
-
-Step by step installation guide
 
 ---
 
