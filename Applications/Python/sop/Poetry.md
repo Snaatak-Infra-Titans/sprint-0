@@ -1,4 +1,7 @@
 # SOP: Common Stack | Applications | Python | Poetry
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*jnnGdcRzQRODJtaZ8zFUpw.png" alt="Poetry" width="500"/>
+</p>
 
 ---
 
@@ -6,7 +9,7 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 17-04-2026     | v1.1        | Ankita              | 21-04-2026         |    Team          |  Komal Jaiswal  |  Akshit Kapil   |   Mahesh Kumar  |
+| Ankita     | 17-04-2026     | v1.1        | Ankita              | 23-04-2026         |    Team          |  Komal Jaiswal  |  Akshit Kapil   |   Mahesh Kumar  |
 
 ---
 
@@ -15,7 +18,9 @@
 1. [Overview](#overview)
 2. [Purpose](#purpose)
 3. [Prerequisites](#prerequisites)
-4. [Step-by-Step Implementation](#step-by-step-implementation)
+4. [Architecture & Workflow](#architecture--workflow)
+5. [Common Commands](#common-commands)
+6. [Step-by-Step Implementation](#step-by-step-implementation)
 
    * Step 0: Verify System Setup
    * Step 1: Install Poetry
@@ -26,12 +31,10 @@
    * Step 6: Activate Environment
    * Step 7: Run Application
    * Step 8: Validation
-5. [Architecture & Workflow](#architecture--workflow)
-6. [Common Commands](#common-commands)
-7. [Troubleshooting](#troubleshooting)
-8. [Best Practices](#best-practices)
-9. [Contact Information](#contact-information)
-10. [References](#references)
+9. [Troubleshooting](#troubleshooting)
+10. [Best Practices](#best-practices)
+11. [Contact Information](#contact-information)
+12. [References](#references)
 
 ---
 
@@ -64,6 +67,33 @@ python3 --version
 
 ---
 
+## Architecture & Workflow
+
+Workflow:
+
+1. Developer creates project using Poetry
+2. Dependencies are added via pyproject.toml
+3. Poetry creates isolated virtual environment
+4. Application runs inside managed environment
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7610d3c0-5a5d-4b8e-9ca6-813e7d343a3b" />
+
+---
+
+## Common Commands
+
+| Command        | Description                 |
+| -------------- | --------------------------- |
+| poetry new     | Create new project          |
+| poetry init    | Initialize existing project |
+| poetry add     | Add dependency              |
+| poetry remove  | Remove dependency           |
+| poetry install | Install dependencies        |
+| poetry env activate   | Activate environment        |
+| poetry run     | Run commands                |
+| poetry show    | List dependencies           |
+
+---
 ## Step-by-Step Implementation
 
 ### Step 0: Verify System Setup
@@ -190,36 +220,6 @@ Expected Output:
 * Poetry version displayed
 * Virtual environment path available
 * Dependencies listed successfully
-
----
-
-## Architecture & Workflow
-
-```
-Developer → Poetry → Virtual Environment → Dependencies → Python Application
-```
-
-Workflow:
-
-1. Developer creates project using Poetry
-2. Dependencies are added via pyproject.toml
-3. Poetry creates isolated virtual environment
-4. Application runs inside managed environment
-
----
-
-## Common Commands
-
-| Command        | Description                 |
-| -------------- | --------------------------- |
-| poetry new     | Create new project          |
-| poetry init    | Initialize existing project |
-| poetry add     | Add dependency              |
-| poetry remove  | Remove dependency           |
-| poetry install | Install dependencies        |
-| poetry env activate   | Activate environment        |
-| poetry run     | Run commands                |
-| poetry show    | List dependencies           |
 
 ---
 
