@@ -8,12 +8,6 @@
 <h1 align="center">Common Stack | Ansible | Playbook | CI Workflow Documentation</h1>
 
 <p align="center">
-  Step by step installation guide
-</p>
-
-
-
-# Common Stack | Ansible | Playbook | CI Workflow Documentation
 
 ---
 
