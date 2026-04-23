@@ -40,6 +40,9 @@ Installing Golang using a Bash script helps automate the setup process and ensur
 
 This document explains how to install Golang on Ubuntu using a Bash script, enabling automated and repeatable setup for development or production environments.
 
+Please follow the link to learn more about Golang:  
+[Golang Documentation](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-32-shivam/Applications/Golang/Documentation/Golang_Intro.md)
+
 ---
 
 ## Why Use Bash Script for Installation
