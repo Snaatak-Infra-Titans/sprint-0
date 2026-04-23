@@ -1,30 +1,49 @@
 # Common Stack | Ansible | Playbook | CI Workflow Documentation
 
+---
+
 ## Author Table
 
-| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer | L1 Reviewer     | L2 Reviewer     |
-| ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
-| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
+| **Author**  | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
+| ----------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
+| Saransh Rai | 19-04-2026     | 1.1         | Saransh Rai         | 19-04-2026         |                  | Anuj Jain       | Prashant Sharma | Piyush Upadhyay |
+
+---
+
+## Table of Contents
+
+1. [Introduction](#1-introduction)
+2. [Purpose](#2-purpose)
+3. [What is Ansible & Playbook](#3-what-is-ansible--playbook)
+4. [Why Ansible in CI](#4-why-ansible-in-ci)
+5. [Key Features](#5-key-features)
+6. [Workflow (CI + Ansible)](#6-workflow-ci--ansible)
+7. [Workflow Diagram](#7-workflow-diagram)
+8. [Commands](#8-commands)
+9. [Use Cases](#9-use-cases)
+10. [Conclusion](#10-conclusion)
+11. [References](#11-references)
 
 ---
 
 ## 1. Introduction
 
-This document explains the workflow of using Ansible Playbooks within a CI (Continuous Integration) pipeline. It covers how automation is achieved for configuration management, deployment, and orchestration.
+This document explains the workflow of using **Ansible Playbooks** within a **CI (Continuous Integration) pipeline**. It highlights how automation is achieved for configuration management, deployment, and orchestration in modern DevOps environments.
 
 ---
 
-## 2. Why Ansible in CI?
+## 2. Purpose
 
-* Automates infrastructure and deployment tasks
-* Reduces manual errors
-* Ensures consistent environments
-* Integrates easily with CI/CD tools
-* Agentless (uses SSH, no agents required)
+The purpose of this document is to:
+
+* Explain the role of Ansible in CI pipelines
+* Provide understanding of Playbooks and automation workflows
+* Demonstrate how CI tools integrate with Ansible
+* Help teams implement consistent and automated deployments
 
 ---
 
-## 3. What is Ansible & Playbook?
+## 3. What is Ansible & Playbook
 
 ### Ansible
 
@@ -36,7 +55,7 @@ This document explains the workflow of using Ansible Playbooks within a CI (Cont
 * YAML file defining automation tasks
 * Contains roles, tasks, and configurations
 
-Example:
+### Example Playbook
 
 ```yaml
 - hosts: servers
@@ -49,7 +68,19 @@ Example:
 
 ---
 
-## 4. Key Features
+## 4. Why Ansible in CI
+
+Ansible is widely used in CI pipelines because:
+
+* Automates infrastructure and deployment tasks
+* Reduces manual errors
+* Ensures consistent environments
+* Easily integrates with CI/CD tools
+* Agentless architecture (uses SSH, no agents required)
+
+---
+
+## 5. Key Features
 
 ### 1. Agentless Architecture
 
@@ -57,7 +88,7 @@ Example:
 
 ### 2. Idempotency
 
-* Running playbook multiple times gives same result
+* Running playbook multiple times gives the same result
 
 ### 3. YAML-based Configuration
 
@@ -67,18 +98,20 @@ Example:
 
 * Roles and modules can be reused
 
-### 5. Integration with CI/CD
+### 5. CI/CD Integration
 
 * Works with Jenkins, GitHub Actions, GitLab CI
 
 ---
 
-## 5. Workflow (CI + Ansible Playbook)
+## 6. Workflow (CI + Ansible)
+
+### Step-by-Step Workflow
 
 1. Developer pushes code to repository
 2. CI tool triggers pipeline (e.g., Jenkins)
-3. Pipeline installs required dependencies
-4. Ansible Playbook is executed
+3. Environment setup and dependencies installation
+4. Ansible Playbook execution
 5. Playbook connects to target servers via SSH
 6. Tasks are executed (install, configure, deploy)
 7. Deployment result is validated
@@ -86,15 +119,17 @@ Example:
 
 ---
 
-## 6. Basic Workflow Diagram (Text)
+## 7. Workflow Diagram
 
+```
 Code Push → CI Trigger → Setup Environment → Run Ansible Playbook → Configure/Deploy → Validate → Result
+```
 
 ---
 
-## 7. Common Commands
+## 8. Commands
 
-| Command                       | Description           |
+| **Command**                   | **Description**       |
 | ----------------------------- | --------------------- |
 | ansible --version             | Check Ansible version |
 | ansible-playbook playbook.yml | Run playbook          |
@@ -103,14 +138,34 @@ Code Push → CI Trigger → Setup Environment → Run Ansible Playbook → Conf
 
 ---
 
-## 8. Use Case
+## 9. Use Cases
 
 * Automating server setup (install packages like nginx, docker)
 * Deploying applications across multiple servers
 * Managing configurations consistently
+* Infrastructure provisioning and orchestration
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
-Using Ansible Playbooks in CI pipelines enables automated, consistent, and scalable deployments, improving efficiency and reducing manual intervention.
+Using Ansible Playbooks in CI pipelines enables:
+
+* Automated deployments
+* Consistent infrastructure management
+* Scalable operations
+* Reduced manual intervention
+
+This approach significantly improves efficiency, reliability, and speed in modern DevOps workflows.
+
+---
+
+## 11. References
+
+| **Topic**                      | **Link**                                                                            |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| Ansible Official Documentation | [Ansible Docs](https://docs.ansible.com/)                                           |
+| Ansible Playbooks Guide        | [Playbook Guide](https://docs.ansible.com/ansible/latest/playbook_guide/index.html) |
+| GitHub Actions Documentation   | [GitHub Actions Docs](https://docs.github.com/en/actions)                           |
+| GitLab CI/CD Documentation     | [GitLab CI/CD Docs](https://docs.gitlab.com/ee/ci/)                                 |
+| Jenkins Documentation          | [Jenkins Docs](https://www.jenkins.io/doc/)                                         |
