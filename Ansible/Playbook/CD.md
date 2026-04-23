@@ -38,7 +38,7 @@ It is used to:
 
 ## 3. What is Continuous Delivery (CD)?
 
-Continuous Delivery (CD) is a DevOps practice where code changes are automatically built, tested, and prepared for deployment.
+Continuous Delivery (CD) is a DevOps practice where code changes are automatically built, tested, and prepared for deployment. It ensures that applications are always in a deployable state and can be released quickly with minimal manual effort.
 
 ---
 
