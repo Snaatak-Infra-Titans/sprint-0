@@ -21,7 +21,6 @@
 8. [Best Practices](#8-best-practices)  
 9. [FAQs](#9-faqs)  
 10. [Conclusion](#10-conclusion)  
-11. [References](#11-references)  
 
 
 
@@ -175,10 +174,17 @@ Dynamic inventory makes Ansible scalable and reliable.
 
 - No manual updates  
 - Always accurate  
-- Works well with cloud  
+- Works well with cloud
+
+- ## Contact Information
+
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
 
 
-## 11. References
+
+## References
 
 | Description | Link |
 |-------------|------|
@@ -186,10 +192,3 @@ Dynamic inventory makes Ansible scalable and reliable.
 | AWS EC2 dynamic inventory plugin documentation | [AWS EC2 Plugin](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html) |
 
 
----
-
-## Contact Information
-
-| Name   | Contact                                  |
-|--------|------------------------------------------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
