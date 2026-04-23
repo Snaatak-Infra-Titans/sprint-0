@@ -6,184 +6,180 @@
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 17-04-2026     | v1.0        | Ankita              | 22-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
+| Ankita     | 17-04-2026     | v1.0        | Ankita              | 23-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
 
 ---
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Purpose](#purpose)
-3. [What is Jinja Templating?](#what-is-jinja-templating)
-4. [Why Jinja in Ansible Roles](#why-jinja-in-ansible-roles)
-5. [Key Concepts](#key-concepts)
-6. [Jinja Syntax Basics](#jinja-syntax-basics)
-7. [Using Jinja in Ansible Roles](#using-jinja-in-ansible-roles)
-8. [Common Use Cases](#common-use-cases)
-9. [Best Practices](#best-practices)
-10. [Troubleshooting](#troubleshooting)
-11. [Contact Information](#contact-information)
-12. [References](#references)
+* Introduction
+* Purpose
+* Prerequisites
+* What is Static Inventory
+* Inventory File Structure
+* Step-by-Step Implementation
+* Verification
+* Best Practices
+* Troubleshooting
+* Contact Information
+* References
 
 ---
 
 ## Introduction
 
-Jinja (Jinja2) is a powerful templating engine used in Ansible to dynamically generate configuration files and scripts.
+Ansible uses an inventory file to define the list of hosts it manages. A static inventory is a manually maintained file where all target systems are explicitly defined.
 
-In Ansible roles, Jinja templating enables reusable and flexible automation by allowing variables, conditions, and loops to be embedded into templates.
+It is commonly used in small environments, testing setups, or stable infrastructures.
 
 ---
 
 ## Purpose
 
-This document provides a conceptual understanding of Jinja templating in Ansible roles, including syntax, usage, and best practices for real-world automation.
+This SOP helps you:
+
+* Understand static inventory in Ansible
+* Create and configure inventory files
+* Define hosts and groups
+* Execute Ansible commands using static inventory
 
 ---
 
-## What is Jinja Templating?
+## Prerequisites
 
-Jinja is a template engine for Python that allows dynamic content generation.
-
-In Ansible, it is primarily used with `.j2` files to render configurations using variables.
-
----
-
-## Why Jinja in Ansible Roles
-
-Jinja templating is used because:
-
-* Enables dynamic configuration generation
-* Improves reusability of roles
-* Supports conditional logic and loops
-* Reduces duplication in configuration files
+* Ubuntu 20.04 / 22.04
+* Ansible installed
+* SSH access to target machines
+* Basic Linux knowledge
+* Network connectivity between control node and targets
 
 ---
 
-## Key Concepts
+## What is Static Inventory
 
-### 1. Variables
+A static inventory is a file (INI or YAML) that contains:
 
-Variables are used to replace values dynamically.
+* Hostnames or IP addresses
+* Group definitions
+* Variables (host/group level)
 
-Example:
+Unlike dynamic inventory, it does not automatically fetch hosts.
 
-```jinja
-{{ app_port }}
+---
+
+## Inventory File Structure
+
+### INI Format
+
+```ini
+[web]
+192.168.1.10
+192.168.1.11
+
+[db]
+192.168.1.20
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_rsa
 ```
 
----
-
-### 2. Expressions
-
-Perform operations inside templates.
-
-```jinja
-{{ 10 + 5 }}
-```
-
----
-
-### 3. Filters
-
-Used to modify variables.
-
-```jinja
-{{ name | upper }}
-```
-
----
-
-### 4. Conditions
-
-```jinja
-{% if env == "prod" %}
-Production Mode
-{% endif %}
-```
-
----
-
-### 5. Loops
-
-```jinja
-{% for user in users %}
-User: {{ user }}
-{% endfor %}
-```
-
----
-
-## Jinja Syntax Basics
-
-| Syntax  | Purpose            |
-| ------- | ------------------ |
-| `{{ }}` | Output variables   |
-| `{% %}` | Control structures |
-| `{# #}` | Comments           |
-
----
-
-## Using Jinja in Ansible Roles
-
-### Template File
-
-Create template file:
-
-```
-templates/config.j2
-```
-
-Example:
-
-```jinja
-server {
-    listen {{ port }};
-    server_name {{ domain }};
-}
-```
-
----
-
-### Playbook Usage
+### YAML Format
 
 ```yaml
-- name: Deploy config
-  hosts: all
-  tasks:
-    - name: Copy template
-      template:
-        src: config.j2
-        dest: /etc/nginx/sites-enabled/default
+all:
+  children:
+    web:
+      hosts:
+        192.168.1.10:
+        192.168.1.11:
+    db:
+      hosts:
+        192.168.1.20:
+  vars:
+    ansible_user: ubuntu
 ```
 
 ---
 
-## Common Use Cases
+## Step-by-Step Implementation
 
-* Dynamic Nginx configuration
-* Environment-based configuration files
-* Generating application config files
-* Loop-based user or service creation
+### Step 1: Install Ansible
+
+```bash
+sudo apt update
+sudo apt install ansible -y
+```
+
+### Step 2: Create Inventory File
+
+```bash
+mkdir ansible-project
+cd ansible-project
+nano inventory.ini
+```
+
+### Step 3: Define Hosts and Groups
+
+```ini
+[web]
+web1 ansible_host=192.168.1.10
+web2 ansible_host=192.168.1.11
+
+[db]
+db1 ansible_host=192.168.1.20
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+```
+
+### Step 4: Test Connectivity
+
+```bash
+ansible all -i inventory.ini -m ping
+```
+
+### Step 5: Run Ad-hoc Command
+
+```bash
+ansible web -i inventory.ini -m shell -a "uptime"
+```
+
+### Step 6: Run Playbook
+
+```bash
+ansible-playbook -i inventory.ini playbook.yml
+```
+
+---
+
+## Verification
+
+```bash
+ansible-inventory -i inventory.ini --list
+```
 
 ---
 
 ## Best Practices
 
-* Keep templates simple and readable
-* Avoid complex logic in templates
-* Use variables from group_vars and host_vars
-* Validate templates before deployment
+* Use meaningful group names (web, db, app)
+* Avoid hardcoding credentials
+* Use SSH keys instead of passwords
+* Keep inventory modular
+* Store in Git repository
 
 ---
 
 ## Troubleshooting
 
-| Issue                  | Cause                | Solution             |
-| ---------------------- | -------------------- | -------------------- |
-| Template not rendering | Wrong variable       | Check variable names |
-| Syntax error           | Invalid Jinja syntax | Validate template    |
-| File not updated       | Cache issue          | Re-run playbook      |
+| Issue                  | Cause                | Solution               |
+| ---------------------- | -------------------- | ---------------------- |
+| Host unreachable       | Wrong IP / SSH issue | Verify connectivity    |
+| Permission denied      | Wrong key/user       | Check SSH key and user |
+| Inventory not detected | Wrong path           | Use -i option          |
+| Ping fails             | Firewall issue       | Allow port 22          |
 
 ---
 
@@ -197,7 +193,5 @@ server {
 
 ## References
 
-| Topic                   | Link                                                                                                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Jinja Docs              | [https://jinja.palletsprojects.com/](https://jinja.palletsprojects.com/)                                                                                                             |
-| Ansible Template Module | [https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) |
+* [https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
+* [https://docs.ansible.com/](https://docs.ansible.com/)
