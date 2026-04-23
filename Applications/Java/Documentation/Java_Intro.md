@@ -19,12 +19,11 @@
 3. [Features of Java](#3-features-of-java)  
 4. [Java Architecture Overview](#4-java-architecture-overview)  
 5. [Use Cases of Java](#5-use-cases-of-java)  
-6. [Advantages of Java](#6-advantages-of-java)  
-7. [Disadvantages of Java](#7-disadvantages-of-java)  
-8. [Conclusion](#8-conclusion)  
-9. [FAQs](#9-faqs)  
-10. [Contact Information](#10-contact-information)  
-11. [References](#11-references)  
+6. [Advantages & Disadvantages of Java](#6-advantages--disadvantages-of-java)  
+7. [Conclusion](#7-conclusion)  
+8. [FAQs](#8-faqs)  
+9. [Contact Information](#9-contact-information)  
+10. [References](#10-references)  
 
 ---
 
@@ -79,34 +78,25 @@ Java was developed by James Gosling and his team at Sun Microsystems in the earl
 
 ---
 
-## 6. Advantages of Java
+## 6. Advantages & Disadvantages of Java
 
-- Platform independence  
-- Strong community support  
-- High security and reliability  
-- Scalable for enterprise applications  
-- Extensive libraries and frameworks  
-- Supports multithreading  
-- Backward compatibility  
-
----
-
-## 7. Disadvantages of Java
-
-- Slower than low-level languages  
-- Higher memory consumption  
-- Verbose syntax  
-- Not suitable for low-level programming  
+| Advantages | Disadvantages |
+|------------|--------------|
+| Platform independence | Slower than low-level languages |
+| Strong community support | Higher memory consumption |
+| High security and reliability | Verbose syntax |
+| Scalable for enterprise applications | Not suitable for low-level programming |
+| Extensive libraries and frameworks | Requires JVM to run |
 
 ---
 
-## 8. Conclusion
+## 7. Conclusion
 
 Java is a reliable and widely used programming language known for its platform independence and strong ecosystem. It continues to be a key technology for building scalable and secure applications.
 
 ---
 
-## 9. FAQs
+## 8. FAQs
 
 **Q1. What is Java?**  
 Java is a high-level, object-oriented programming language.
@@ -125,7 +115,7 @@ Yes, it is widely used in industry.
 
 ---
 
-## 10. Contact Information
+## 9. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -133,7 +123,7 @@ Yes, it is widely used in industry.
 
 ---
 
-## 11. References
+## 10. References
 
 | Link | Description |
 |------|------------|
