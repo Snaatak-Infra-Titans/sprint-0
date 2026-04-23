@@ -71,6 +71,7 @@ Follow these steps to install Java JDK 21 using APT:
 ```bash
 sudo apt install -y openjdk-21-jdk
 ```
+<img width="852" height="140" alt="image" src="https://github.com/user-attachments/assets/a7fca427-b9bb-47e5-86a1-5cbdb112a631" />
 
 Verify installation:
 
@@ -78,6 +79,7 @@ Verify installation:
 java -version
 javac -version
 ```
+<img width="852" height="140" alt="image" src="https://github.com/user-attachments/assets/0be5fa52-a3f0-4a83-bb97-1f11450bb878" />
 
 ---
 
@@ -103,6 +105,7 @@ Install another version (example Java 17):
 ```bash
 sudo apt install -y openjdk-17-jdk
 ```
+<img width="852" height="140" alt="image" src="https://github.com/user-attachments/assets/8b4d422b-6b4f-4733-984c-58e671f9521c" />
 
 Switch Java version:
 
@@ -115,6 +118,7 @@ Switch compiler version:
 ```bash
 sudo update-alternatives --config javac
 ```
+<img width="1222" height="512" alt="image" src="https://github.com/user-attachments/assets/7b2850a6-e0da-4497-800f-626b084ae218" />
 
 ---
 
