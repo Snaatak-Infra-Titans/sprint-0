@@ -133,7 +133,7 @@ Ansible is widely used in CI pipelines because:
 Code Push → CI Trigger → Setup Environment → Run Ansible Playbook → Configure/Deploy → Validate → Result
 ```
 
-<img width="345" height="146" alt="image" src="https://github.com/user-attachments/assets/61723365-2a1b-4bc0-bc74-7160790730f6" />
+<img src="https://github.com/user-attachments/assets/61723365-2a1b-4bc0-bc74-7160790730f6" width="100%" />
 
 
 ---
