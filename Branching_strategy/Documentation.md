@@ -57,7 +57,6 @@ The main goal is to allow parallel development without affecting production code
 ---
 
 ## 4. Types of Branching Strategies
-<br>
 
 ### 4.1 Git Flow
 
