@@ -45,6 +45,7 @@ This guide provides a simple and structured approach to installing Golang on Ubu
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+<img width="1852" height="752" alt="image" src="https://github.com/user-attachments/assets/67fd540c-8f5e-4ef5-8b72-fe8ed77dc937" />
 
 ---
 
@@ -53,6 +54,7 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo apt install -y golang-go
 ```
+<img width="1176" height="988" alt="image" src="https://github.com/user-attachments/assets/2a45c81b-95b5-419e-89e5-bdc7d0392001" />
 
 ---
 
@@ -61,6 +63,7 @@ sudo apt install -y golang-go
 ```bash
 go version
 ```
+<img width="468" height="48" alt="image" src="https://github.com/user-attachments/assets/8327f7c8-aee1-4d49-8b9f-61b9729dfe3f" />
 
 ---
 
@@ -74,6 +77,7 @@ nano ~/.bashrc
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
+<img width="1210" height="832" alt="image-2" src="https://github.com/user-attachments/assets/993be0c4-92ca-409b-8ec0-7e690a9f0ac7" />
 
 ---
 
