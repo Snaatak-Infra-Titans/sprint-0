@@ -46,7 +46,7 @@ Continuous Delivery (CD) is a DevOps practice where code changes are automatical
 
 ### Workflow Diagram
 
-<img src="https://github.com/user-attachments/assets/c52776b3-df9f-4a68-b590-ccf4c1155713" />
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/52043ea4-c30e-4cde-ab15-e547aa206eb1" />
 
 <br>
 
@@ -55,13 +55,13 @@ Continuous Delivery (CD) is a DevOps practice where code changes are automatical
 ## 5. Workflow Explanation
 
 1. Developer pushes code to Git repository  
-2. CI tool (Jenkins/GitLab) triggers pipeline  
-3. Application is built and tested  
-4. Ansible Playbook is executed  
-5. Playbook connects to target servers  
-6. Tasks are executed (deployment/configuration)  
-7. Application is deployed  
-8. Deployment is verified  
+2. CI/CD pipeline is triggered (Jenkins/GitLab)  
+3. Ansible playbook is executed by pipeline  
+4. Playbook targets defined inventory hosts  
+5. Playbook invokes the Ansible Role  
+6. Role executes tasks on target servers  
+7. Application/configuration is deployed  
+8. Deployment is verified   
 
 ---
 
