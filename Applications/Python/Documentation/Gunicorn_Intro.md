@@ -16,8 +16,8 @@
 3. [Why Gunicorn?](#3-why-gunicorn)
 4. [Key Features](#4-key-features)
 5. [Conclusion](#5-conclusion)
-6. [Contact Information](#6-contact-information)
-7. [References](#7-references)
+
+
 
 
 ## 1. Introduction
@@ -68,6 +68,14 @@ Flask/Django development servers are not suitable for production.
 ## 5. Conclusion
 
 Gunicorn makes Python applications production-ready by improving performance and reliability.
+
+
+## Author
+
+
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
 
 
 
