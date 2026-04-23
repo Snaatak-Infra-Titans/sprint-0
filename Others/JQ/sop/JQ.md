@@ -37,6 +37,9 @@ It is widely used in DevOps workflows for handling API responses, configuration 
 
 This SOP provides a step-by-step procedure to use JQ for reading, filtering, and transforming JSON data.
 
+Note: Please follow the link to learn more about JQ:  
+[JQ Documentation](https://github.com/Snaatak-Infra-Titans/sprint-0/blob/SCRUM-4O-versha/Others/JQ/Documentation/Intro.md)
+
 ---
 
 ## Prerequisites
