@@ -23,7 +23,7 @@
 12. [Shortcuts](#12-shortcuts)
 13. [Ubuntu Command Best Practices](#13-ubuntu-command-best-practices)
 14. [Conclusion](#13-conclusion)
-15. [References](#14-references)
+
 
 
 ## 1. Purpose
@@ -213,7 +213,16 @@ sudo command
 Essential Linux commands for daily usage.
 
 
-## 15. References
+
+## Author
+
+
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
+
+
+## References
 
 | Description | Link |
 |-------------|------|
@@ -222,9 +231,4 @@ Essential Linux commands for daily usage.
 | Tool to understand shell commands | [Explain Shell](https://explainshell.com) |
 
 
-## Author
 
-
-| Name   | Contact                                  |
-|--------|------------------------------------------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
