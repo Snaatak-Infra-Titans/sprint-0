@@ -123,6 +123,9 @@ project/
 └── config.yaml         # Configuration file
 ```
 
+<img width="765" height="765" alt="image" src="https://github.com/user-attachments/assets/504368c0-1cb7-4fcf-9f0d-aa92d2e5346b" />
+
+
 ---
 
 ## 7. Best Practices
