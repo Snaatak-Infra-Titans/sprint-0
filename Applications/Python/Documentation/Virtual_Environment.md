@@ -1,46 +1,49 @@
-# 📘 Common Stack | Applications | Python | Virtual Environment Documentation
+<p align="center">
+  <img width="1000" height="420" alt="image" src="https://github.com/user-attachments/assets/c6234238-3dad-4597-9dcc-474ee67f07ab" />
+  <br/>
+</p>
+
+
+<h1 align="center">Common Stack | Applications | Python | Virtual Environment Documentation</h1>
+
+<p align="center">
 
 ---
 
 ## Author Table
 
-| Author  | Created on | Version | Last updated by | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer |
-| ------- | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- |
-| Saransh | 15-04-2026 | 1.0     | Saransh Rai              | -              | -            | -           | -           |
+| **Author**  | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
+| ----------- | -------------- | ----------- | ------------------- | ------------------ | --------------- | --------------- | --------------- |
+| Saransh Rai | 19-04-2026     | 1.1         | Saransh Rai         | 19-04-2026         |  Anuj Jain      | Prashant Sharma | Piyush Upadhyay |
 
 ---
 
 ## Table of Contents
 
-* [Introduction](#introduction)
-* [Purpose](#purpose)
-* [What is Virtual Environment](#what-is-virtual-environment)
-* [Why Virtual Environment](#why-virtual-environment)
-* [How to Setup Virtual Environment](#how-to-setup-virtual-environment)
-
-  * [Installation](#installation)
-  * [Create Virtual Environment](#create-virtual-environment)
-  * [Activate Virtual Environment](#activate-virtual-environment)
-  * [Install Dependencies](#install-dependencies)
-  * [Deactivate Virtual Environment](#deactivate-virtual-environment)
-* [Directory Structure](#directory-structure)
-* [Best Practices](#best-practices)
-* [Use Cases](#use-cases)
-* [Troubleshooting](#troubleshooting)
-* [Contact Information](#contact-information)
-* [References](#references)
+1. [Introduction](#1-introduction)
+2. [Purpose](#2-purpose)
+3. [What is Virtual Environment](#3-what-is-virtual-environment)
+4. [Why Virtual Environment](#4-why-virtual-environment)
+5. [Setup Virtual Environment](#5-setup-virtual-environment)
+6. [Directory Structure](#6-directory-structure)
+7. [Best Practices](#7-best-practices)
+8. [Use Cases](#8-use-cases)
+9. [Troubleshooting](#9-troubleshooting)
+10. [Conclusion](#10-conclusion)
+11. [Contact Information](#11-contact-information)
+12. [References](#12-references)
 
 ---
 
-## Introduction
+## 1. Introduction
 
-A **Python Virtual Environment (venv)** is an isolated workspace that allows developers to install and manage Python packages separately for each project.
+A Python Virtual Environment (venv) is an isolated workspace that allows developers to install and manage Python packages separately for each project.
 
 Instead of installing all libraries globally on the system, virtual environments ensure that every project has its own dependencies, avoiding conflicts and maintaining stability.
 
 ---
 
-## Purpose
+## 2. Purpose
 
 This document explains:
 
@@ -51,9 +54,9 @@ This document explains:
 
 ---
 
-## What is Virtual Environment
+## 3. What is Virtual Environment
 
-A virtual environment is a **self-contained directory** that includes:
+A virtual environment is a self-contained directory that includes:
 
 * A Python interpreter
 * Installed packages through pip
@@ -63,31 +66,17 @@ It behaves like an independent Python installation for a specific project.
 
 ---
 
-## Why Virtual Environment
+## 4. Why Virtual Environment
 
-### Dependency Isolation
-
-Different projects may require different versions of the same library. Virtual environments prevent conflicts.
-
-### Clean System Environment
-
-Avoids cluttering the global Python installation.
-
-### Version Control
-
-You can control package versions using `requirements.txt`.
-
-### Easy Collaboration
-
-Team members can recreate the same setup easily.
-
-### Safe Testing
-
-Test new libraries without affecting other projects.
+* **Dependency Isolation** – Prevents conflicts between different project dependencies
+* **Clean System Environment** – Avoids cluttering global Python installation
+* **Version Control** – Manage package versions using `requirements.txt`
+* **Easy Collaboration** – Teams can replicate the same setup easily
+* **Safe Testing** – Test libraries without impacting other projects
 
 ---
 
-## How to Setup Virtual Environment
+## 5. Setup Virtual Environment
 
 ### Installation
 
@@ -123,9 +112,9 @@ deactivate
 
 ---
 
-## Directory Structure
+## 6. Directory Structure
 
-```text
+```
 project/
 │
 ├── venv/               # Virtual environment
@@ -136,37 +125,29 @@ project/
 
 ---
 
-## Best Practices
+## 7. Best Practices
 
 * Create a separate virtual environment for each project
 * Do not commit `venv/` to Git
 * Maintain `requirements.txt`
 * Use fixed versions of packages
-* Activate environment before use
+* Always activate environment before use
 
 ---
 
-## Use Cases
+## 8. Use Cases
 
-### Multiple Projects
-
-Run multiple projects with different dependencies without conflict.
-
-### Deployment
-
-```bash
-pip install -r requirements.txt
-```
-
-### Testing
-
-Safely test different versions of libraries.
+| **Use Case**      | **Description**                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| Multiple Projects | Run multiple projects with different dependencies without conflict |
+| Deployment        | Install dependencies using `pip install -r requirements.txt`       |
+| Testing           | Safely test different versions of libraries                        |
 
 ---
 
-## Troubleshooting
+## 9. Troubleshooting
 
-| Issue             | Reason             | Solution               |
+| **Issue**         | **Reason**         | **Solution**           |
 | ----------------- | ------------------ | ---------------------- |
 | venv not found    | Missing package    | Install python3-venv   |
 | Activation issue  | Wrong path         | Use correct command    |
@@ -175,17 +156,23 @@ Safely test different versions of libraries.
 
 ---
 
-## Contact Information
+## 10. Conclusion
 
-| Name    | Email                                                   |
-| ------- | ------------------------------------------------------- |
-| Saransh | saransh.rai.snaatak@mygurukulam.co |
+Using Python virtual environments enables developers to isolate project dependencies, maintain a clean system environment, and ensure consistent application behavior across different setups. By leveraging virtual environments, teams can easily manage package versions, collaborate efficiently, and safely test new libraries without impacting other projects. This approach enhances reliability, reproducibility, and overall development efficiency, making it a fundamental practice in modern Python development.
 
 ---
 
-## References
+## 11. Contact Information
 
-* Python Documentation: [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)
-* Pip Documentation: [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/)
+| **Name**    | **Email**                                                                       |
+| ----------- | ------------------------------------------------------------------------------- |
+| Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
 
 ---
+
+## 12. References
+
+| **Topic**                       | **Link**                                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------ |
+| Python Virtual Environment Docs | [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html) |
+| Pip Documentation               | [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/)                           |
