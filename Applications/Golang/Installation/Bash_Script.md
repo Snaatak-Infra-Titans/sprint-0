@@ -1,5 +1,9 @@
 # Common Stack | Applications | Golang | Installation via Bash Script
 
+<p align="center">
+  <img src="https://softwebsolutions.b-cdn.net/wp-content/uploads/2020/10/golang-Programing.jpg" alt="GoLang" width="250"/>
+</p>
+
 ---
 
 ## Author Table
