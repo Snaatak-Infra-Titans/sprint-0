@@ -67,7 +67,11 @@ React solves this by:
 React simplifies building scalable and maintainable frontend applications.
 
 
+##  Contact Information
 
+| Name | Contact |
+|------|--------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
 ##  References
 
@@ -76,9 +80,5 @@ React simplifies building scalable and maintainable frontend applications.
 | Official React documentation | [React Docs](https://react.dev) |
 | React Router documentation | [React Router](https://reactrouter.com) |
 
-##  Contact Information
 
-| Name | Contact |
-|------|--------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
