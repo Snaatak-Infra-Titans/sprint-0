@@ -1,188 +1,121 @@
-# SOP for Cron in Ubuntu
+# Java Introduction Documentation
+
+<img width="1980" height="1168" alt="image" src="https://github.com/user-attachments/assets/657bb849-78a3-4d35-ba1c-fb79bc9ebfad" />
+
+---
+
+## Author Details
 
 | Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
 |------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
-| Shivam Uniyal    | 14-04-2026 | v1.0    | Shivam Uniyal   | 22-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
+| Shivam Uniyal    | 15-04-2026 | v1.0    | Shivam Uniyal   | 22-04-2026     | Team         | Anuj Jain   | Prashant    | Piyush Upadhyay  |
 
 ---
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [Purpose](#2-purpose)
-3. [Prerequisites](#3-prerequisites)
-4. [Check Cron Service](#4-check-cron-service)
-   - 4.1 [Check Status](#41-check-status)
-   - 4.2 [Start Service](#42-start-service)
-   - 4.3 [Enable at Boot](#43-enable-at-boot)
-5. [Create a Cron Job](#5-create-a-cron-job)
-   - 5.1 [Open Crontab](#51-open-crontab)
-   - 5.2 [Cron Syntax](#52-cron-syntax)
-   - 5.3 [Example](#53-example)
-6. [Manage Cron Jobs](#6-manage-cron-jobs)
-   - 6.1 [List Jobs](#61-list-jobs)
-   - 6.2 [Edit Jobs](#62-edit-jobs)
-   - 6.3 [Remove Jobs](#63-remove-jobs)
-7. [Verify and Logs](#7-verify-and-logs)
-   - 7.1 [Check Cron Logs](#71-check-cron-logs)
-   - 7.2 [Check Output File](#72-check-output-file)
-8. [Troubleshooting](#8-troubleshooting)
-9. [FAQs](#9-faqs)
-10. [Contact Information](#10-contact-information)
-11. [References](#11-references)
-12. [Conclusion](#12-conclusion)
+1. [Introduction](#1-introduction)  
+2. [History of Java](#2-history-of-java)  
+3. [Features of Java](#3-features-of-java)  
+4. [Java Architecture Overview](#4-java-architecture-overview)  
+5. [Use Cases of Java](#5-use-cases-of-java)  
+6. [Advantages & Disadvantages of Java](#6-advantages--disadvantages-of-java)  
+7. [FAQs](#7-faqs)  
+8. [Conclusion](#8-conclusion)  
+9. [Contact Information](#9-contact-information)  
+10. [References](#10-references)  
 
 ---
 
 ## 1. Introduction
 
-Cron is a time-based job scheduler in Linux that allows users to automate repetitive and routine tasks such as running scripts, taking backups, clearing logs, and performing system maintenance activities at predefined intervals.  
-It runs in the background and executes commands based on defined time patterns (minute, hour, day, etc.), ensuring consistency, saving time, and reducing manual effort.
+Java is a high-level, object-oriented, and platform-independent programming language used for building web, mobile, and enterprise applications. It runs on the Java Virtual Machine (JVM), allowing the same code to work across different operating systems. Java is widely used due to its reliability, security, and scalability.
 
 ---
 
-## 2. Purpose
+## 2. History of Java
 
-This SOP provides a step-by-step guide to:
+Java was developed by James Gosling and his team at Sun Microsystems in the early 1990s.
 
-- Create cron jobs  
-- Edit and manage cron jobs  
-- Monitor execution using logs  
-- Troubleshoot common issues  
-
----
-
-## 3. Prerequisites
-
-Before proceeding, ensure the following:
-
-- Ubuntu system installed  
-- Basic knowledge of Linux commands  
-- Terminal access 
+- **1991** – Development started as "Oak"  
+- **1995** – Java officially released  
+- **2009** – Oracle acquired Sun Microsystems  
+- **2014+** – Java 8 introduced modern features  
 
 ---
 
-## 4. Check Cron Service
+## 3. Features of Java
 
-### 4.1 Check Status
-```bash
-systemctl status cron
-```
-
-### 4.2 Start Service
-```bash
-sudo systemctl start cron
-```
-
-### 4.3 Enable at Boot
-```bash
-sudo systemctl enable cron
-```
-
-<img width="1232" height="508" src="https://github.com/user-attachments/assets/ff0ec827-1810-4e86-8354-8540cde13635" />
+| Feature | Description |
+|--------|------------|
+| Platform Independent | Runs on JVM (Write Once Run Anywhere) |
+| Object-Oriented | Supports Encapsulation, Inheritance, Polymorphism, Abstraction |
+| Simple | Easy and clean syntax |
+| Secure | No pointers, sandbox execution |
+| Robust | Garbage collection, exception handling |
+| Multithreading | Supports parallel execution |
+| High Performance | Uses JIT compilation |
+| Distributed | Supports RMI for communication |
 
 ---
 
-## 5. Create a Cron Job
+## 4. Java Architecture Overview
 
-### 5.1 Open Crontab
-```bash
-crontab -e
-```
-
-### 5.2 Cron Syntax
-```bash
-* * * * * command
-| | | | |
-| | | | └── Day of week (0-7)
-| | | └──── Month (1-12)
-| | └────── Day of month (1-31)
-| └──────── Hour (0-23)
-└────────── Minute (0-59)
-```
-
-### 5.3 Example
-```bash
-* * * * * echo "Hello Cron" >> /home/shivam/cron.log
-```
-
-<img width="1232" height="646" src="https://github.com/user-attachments/assets/90963e31-1721-42cc-b53f-59424d767940" />
+<img width="632" height="502" alt="image" src="https://github.com/user-attachments/assets/d7017a4e-0b36-4901-9c18-72c17ee91809" />
 
 ---
 
-## 6. Manage Cron Jobs
+## 5. Use Cases of Java
 
-### 6.1 List Jobs
-```bash
-crontab -l
-```
-
-### 6.2 Edit Jobs
-```bash
-crontab -e
-```
-
-<img width="1232" height="677" src="https://github.com/user-attachments/assets/14b926e6-c9d4-4e85-a185-4742b528d993" />
-
-### 6.3 Remove Jobs
-```bash
-crontab -r
-```
-
-<img width="779" height="272" src="https://github.com/user-attachments/assets/28e19248-1fcb-44b2-b73b-337b4b797871" />
+| Use Case | Description |
+|---------|------------|
+| Web Applications | Backend development using Spring Boot, Hibernate |
+| Mobile Applications | Android app development |
+| Enterprise Applications | Banking, insurance systems |
+| Big Data | Used in Hadoop, Spark |
+| Cloud Applications | Scalable cloud-native systems |
+| Desktop Applications | GUI apps using JavaFX, Swing |
 
 ---
 
-## 7. Verify and Logs
+## 6. Advantages & Disadvantages of Java
 
-### 7.1 Check Cron Logs
-```bash
-grep CRON /var/log/syslog
-```
-
-<img width="1436" height="776" src="https://github.com/user-attachments/assets/ffb21fa7-200f-48fb-a380-f6c133b599bb" />
-
-### 7.2 Check Output File
-```bash
-cat /home/shivam/cron.log
-```
-
-<img width="779" height="272" src="https://github.com/user-attachments/assets/bb8cf79c-1169-4375-9d9b-17c1be926d2d" />
+| Advantages | Disadvantages |
+|------------|--------------|
+| Platform independence | Slower than low-level languages |
+| Strong community support | Higher memory consumption |
+| High security and reliability | Verbose syntax |
+| Scalable for enterprise applications | Not suitable for low-level programming |
+| Extensive libraries and frameworks | Requires JVM to run |
 
 ---
 
-## 8. Troubleshooting
+## 7. FAQs
 
-| Issue                 | Possible Cause      | Solution                          |
-|----------------------|-------------------|-----------------------------------|
-| Cron not running     | Service stopped    | Start using `systemctl start cron` |
-| Command not executing| Wrong syntax       | Verify cron format                |
-| Permission denied    | Lack of privileges | Use sudo or correct permissions   |
-| Logs not visible     | Wrong log path     | Check `/var/log/syslog`           |
+**Q1. What is Java?**  
+Java is a high-level, object-oriented programming language.
 
----
+**Q2. Why is Java platform independent?**  
+Because it runs on the JVM.
 
-## 9. FAQs
+**Q3. What is JVM?**  
+JVM executes Java bytecode.
 
-**Q1. What is cron used for?**  
-Cron is used to automate repetitive tasks like backups, scripts, and system maintenance.
+**Q4. Where is Java used?**  
+Web, mobile, enterprise, and cloud applications.
 
-**Q2. How do I edit an existing cron job?**  
-```bash
-crontab -e
-```
-
-**Q3. How can I check if my cron job is running?**  
-```bash
-grep CRON /var/log/syslog
-```
-
-**Q4. What happens if cron syntax is incorrect?**  
-The job will not run, so always verify syntax before saving.
+**Q5. Is Java still relevant?**  
+Yes, it is widely used in industry.
 
 ---
 
-## 10. Contact Information
+## 8. Conclusion
+
+Java is a reliable and widely used programming language. It provides platform independence and strong ecosystem support for scalable application development.
+
+---
+
+## 9. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -190,17 +123,10 @@ The job will not run, so always verify syntax before saving.
 
 ---
 
-## 11. References
+## 10. References
 
 | Link | Description |
 |------|------------|
-| https://man7.org/linux/man-pages/man5/crontab.5.html | Official cron documentation |
-| https://ubuntu.com | Ubuntu official documentation |
-
----
-
-## 12. Conclusion
-
-This SOP provides a clear and structured approach to managing cron jobs in Ubuntu. It enables automation of repetitive tasks, reducing manual effort and improving overall efficiency. By following the defined steps for creation, management, and monitoring, users can ensure reliable execution of scheduled jobs.
-
-Proper verification and troubleshooting practices help maintain system stability and prevent failures.
+| https://www.oracle.com/java/ | Official Java documentation |
+| https://docs.oracle.com/javase/ | Java SE documentation |
+| https://en.wikipedia.org/wiki/Java_(programming_language) | General overview |
