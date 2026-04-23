@@ -1,4 +1,4 @@
-# Ansible Playbook CD Workflow Documentation
+# Ansible Playbook CD Workflow
 
 | Author           | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer      |
 |------------------|------------|---------|-----------------|----------------|--------------|-------------|-------------|------------------|
