@@ -1,4 +1,8 @@
-# Common Stack | Ansible | Role | Jinja Templating
+# Common Stack | Ansible | Inventory | Static
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo" width="120"/>
+</p>
 
 ---
 
@@ -7,22 +11,21 @@
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
 | Ankita     | 17-04-2026     | v1.0        | Ankita              | 23-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
-
 ---
 
 ## Table of Contents
 
-* Introduction
-* Purpose
-* Prerequisites
-* What is Static Inventory
-* Inventory File Structure
-* Step-by-Step Implementation
-* Verification
-* Best Practices
-* Troubleshooting
-* Contact Information
-* References
+* [Introduction](#introduction)
+* [Purpose](#purpose)
+* [Prerequisites](#prerequisites)
+* [What is Static Inventory](#what-is-static-inventory)
+* [Inventory File Structure](#inventory-file-structure)
+* [Step-by-Step Implementation](#step-by-step-implementation)
+* [Verification](#verification)
+* [Best Practices](#best-practices)
+* [Troubleshooting](#troubleshooting)
+* [Contact Information](#contact-information)
+* [References](#references)
 
 ---
 
