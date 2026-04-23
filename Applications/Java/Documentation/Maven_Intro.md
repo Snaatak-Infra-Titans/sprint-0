@@ -102,14 +102,6 @@ Maven simplifies Java builds by automating dependencies and standardizing projec
 
 
 
-## 7. References
-
-| Description | Link |
-|-------------|------|
-| Official Maven documentation | [Maven Docs](https://maven.apache.org) |
-| Maven Central repository | [Maven Central](https://search.maven.org) |
-| Maven lifecycle guide | [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) |
-
 
 ## Contact Information
 
@@ -118,3 +110,12 @@ Maven simplifies Java builds by automating dependencies and standardizing projec
 |--------|------------------------------------------|
 | Deepak | deepak.nagar.snaatak@mygurukulam.co      |
 
+
+
+## References
+
+| Description | Link |
+|-------------|------|
+| Official Maven documentation | [Maven Docs](https://maven.apache.org) |
+| Maven Central repository | [Maven Central](https://search.maven.org) |
+| Maven lifecycle guide | [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) |
