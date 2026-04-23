@@ -31,8 +31,8 @@
 7. [Workflow](#7-workflow)
 8. [Installation Guide](#8-installation-guide)
 9. [Migration Commands (Common)](#9-migration-commands-common)
-10. [DB Schema Evolution Diagram](#10-db-schema-evolution-diagram)
-11. [Migration Tool Comparison](#11-migration-tool-comparison)
+10. [Migration Tool Comparison](#10-migration-tool-comparison)
+11. [DB Schema Evolution Diagram](#11-db-schema-evolution-diagram)
 12. [Example (Flask-Migrate)](#12-example-flask-migrate)
 13. [Validation](#13-validation)
 14. [Troubleshooting](#14-troubleshooting)
@@ -40,7 +40,6 @@
 16. [Conclusion](#16-conclusion)
 17. [Contact Information](#17-contact-information)
 18. [References](#18-references)
-
 ---
 
 ## 1. Introduction
@@ -149,6 +148,9 @@ pip install flask flask-sqlalchemy flask-migrate
 python -c "import flask, flask_sqlalchemy, flask_migrate; print('Installation successful')"
 ```
 
+<img width="1431" height="402" alt="image" src="https://github.com/user-attachments/assets/f0882f1c-f81f-4bff-abba-6ccf7cc568e2" />
+
+
 ---
 
 ## 9. Migration Commands (Common)
@@ -159,7 +161,8 @@ python -c "import flask, flask_sqlalchemy, flask_migrate; print('Installation su
 flask db init
 ```
 
-**Image Placeholder:** Insert screenshot of terminal after running `flask db init`, showing that the `migrations/` folder was created.
+<img width="1722" height="265" alt="image" src="https://github.com/user-attachments/assets/3b8ff3ae-0d27-440e-abfe-b01c7c519c17" />
+
 
 ### Generate Migration
 
@@ -167,7 +170,7 @@ flask db init
 flask db migrate -m "create user table"
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing migration script generation.
+<img width="1486" height="387" alt="image" src="https://github.com/user-attachments/assets/25a44807-ae0f-4d50-967f-7ebc9f7e2e0f" />
 
 ### Apply Migration
 
@@ -175,7 +178,7 @@ flask db migrate -m "create user table"
 flask db upgrade
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing successful upgrade execution.
+<img width="1486" height="387" alt="image" src="https://github.com/user-attachments/assets/25a44807-ae0f-4d50-967f-7ebc9f7e2e0f" />
 
 ### Rollback Migration
 
@@ -183,13 +186,25 @@ flask db upgrade
 flask db downgrade
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing rollback execution.
+<img width="1285" height="265" alt="image" src="https://github.com/user-attachments/assets/a10e42dc-0b9b-419d-896d-9a488d78408c" />
 
 > Note: Other migration tools such as golang-migrate and Liquibase also exist. This SOP demonstrates migration using Flask-Migrate for simplicity.
 
 ---
 
-## 10. DB Schema Evolution Diagram
+## 10. Migration Tool Comparison
+
+Migration is a concept, and multiple tools can implement it.
+
+| Tool           | Type                                | Best Use Case                          |
+| -------------- | ----------------------------------- | -------------------------------------- |
+| Flask-Migrate  | Framework-integrated migration tool | Flask applications                     |
+| golang-migrate | CLI migration tool                  | SQL-based migrations and microservices |
+| Liquibase      | Enterprise migration tool           | Complex multi-environment systems      |
+
+---
+
+## 11. DB Schema Evolution Diagram
 
 Version 1 → Version 2 → Version 3
 
@@ -201,22 +216,6 @@ Suggested flow:
 * **Version 2:** `user` table with `id` and `name`
 * **Version 3:** `user` table with `id`, `name`, and `email`
 
----
-
-## 11. Migration Tool Comparison
-
-Migration is a concept, and multiple tools can implement it.
-
-| Tool           | Type                                | Best Use Case                          |
-| -------------- | ----------------------------------- | -------------------------------------- |
-| Flask-Migrate  | Framework-integrated migration tool | Flask applications                     |
-| golang-migrate | CLI migration tool                  | SQL-based migrations and microservices |
-| Liquibase      | Enterprise migration tool           | Complex multi-environment systems      |
-
-------|------|---------------|
-| Flask-Migrate | Framework-integrated migration tool | Flask applications |
-| golang-migrate | CLI migration tool | SQL-based migrations and microservices |
-| Liquibase | Enterprise migration tool | Complex multi-environment systems |
 
 ---
 
@@ -297,7 +296,7 @@ set FLASK_APP=app.py
 #### Step 3: Initialize Migration Repository
 
 ```bash
-flask db init   ---Creates migration/ folder
+flask db init  ##Creates migration/ folder
 ```
 
 <img width="1722" height="265" alt="image" src="https://github.com/user-attachments/assets/3b8ff3ae-0d27-440e-abfe-b01c7c519c17" />
