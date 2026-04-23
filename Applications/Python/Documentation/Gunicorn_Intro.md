@@ -89,10 +89,4 @@ Gunicorn makes Python applications production-ready by improving performance and
 | Gunicorn configuration guide | [Gunicorn Docs](https://docs.gunicorn.org/en/stable/settings.html) |
 
 
-##  Contact Information
-
-| Name |  | Contact |
-|------|------|--------|
-| Deepak |  | deepak.nagar.snaatak@mygurukulam.co |
-
 
