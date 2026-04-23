@@ -209,11 +209,6 @@ Compile the Maven project:
 mvn compile
 ```
 
-Expected result:
-
-* Source files should compile successfully.
-* Maven should show `BUILD SUCCESS` if compilation completes correctly.
-
 <img width="1112" height="518" alt="image" src="https://github.com/user-attachments/assets/66a477f0-03f8-45ad-b9e2-ad2a965e805b" />
 
 
@@ -226,11 +221,6 @@ Package the application into a JAR file:
 ```bash
 mvn package
 ```
-
-Expected result:
-
-* Maven should create a packaged `.jar` file inside the `target/` directory.
-* Example output file: `target/demo-app-1.0-SNAPSHOT.jar`
 
 <img width="1913" height="777" alt="image" src="https://github.com/user-attachments/assets/7ab49583-04cd-4369-af5a-823feb4f9eb5" />
 
@@ -245,9 +235,6 @@ After packaging, confirm that the build artifact exists:
 ls target/
 ```
 
-Expected result:
-
-* A `.jar` file should be visible in the `target/` folder.
 
 | Validation Check  | Expected Result                  |
 | ----------------- | -------------------------------- |
