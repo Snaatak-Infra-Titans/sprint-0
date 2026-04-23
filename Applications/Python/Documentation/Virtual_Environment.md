@@ -130,11 +130,13 @@ project/
 
 ## 7. Best Practices
 
-* Create a separate virtual environment for each project
-* Do not commit `venv/` to Git
-* Maintain `requirements.txt`
-* Use fixed versions of packages
-* Always activate environment before use
+| **Practice** | **Description** |
+|--------------|------------------|
+| Separate Environment per Project | Create a dedicated virtual environment for each project to avoid dependency conflicts |
+| Avoid Committing venv/ | Do not push the virtual environment folder to Git; add it to `.gitignore` |
+| Maintain requirements.txt | Keep an updated list of dependencies for easy setup and reproducibility |
+| Use Fixed Versions | Specify exact package versions to ensure consistency across environments |
+| Activate Before Use | Always activate the virtual environment before installing or running dependencies |
 
 ---
 
