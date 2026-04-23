@@ -21,8 +21,9 @@
 10. [Pipes & Redirection](#10-pipes--redirection)
 11. [sudo](#11-sudo)
 12. [Shortcuts](#12-shortcuts)
-13. [Conclusion](#13-conclusion)
-14. [References](#14-references)
+13. [Ubuntu Command Best Practices](#13-ubuntu-command-best-practices)
+14. [Conclusion](#13-conclusion)
+15. [References](#14-references)
 
 
 ## 1. Purpose
@@ -194,13 +195,25 @@ sudo command
 | ↑ ↓ | History |
 | !! | Repeat last |
 
+## 13. Ubuntu Command Best Practices
 
-## 13. Conclusion
+| Practice | Example | Why |
+|----------|---------|-----|
+| Verify location | pwd, ls -lah | Avoid wrong operations |
+| Safe deletion | rm -i, avoid rm -rf | Prevent data loss |
+| Use shortcuts | TAB, history | Save time, reduce errors |
+| Care with sudo | sudo apt update | Avoid system damage |
+| Use help | man, --help | Correct usage |
+| Test before run | --dry-run | Prevent failures |
+| Monitor & logs | top, tail -f log | Debug issues |
+
+
+## 14. Conclusion
 
 Essential Linux commands for daily usage.
 
 
-## 14. References
+## 15. References
 
 | Description | Link |
 |-------------|------|
