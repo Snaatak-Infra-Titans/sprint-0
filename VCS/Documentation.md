@@ -98,8 +98,6 @@ It helps in:
 
 ## 6. Workflow
 
-![Workflow Diagram Placeholder](vcs-workflow.png)
-
 ```
 Code Changes
    ↓
