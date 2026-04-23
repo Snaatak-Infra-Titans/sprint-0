@@ -18,147 +18,113 @@
 | ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
 | Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
 
-
 ---
 
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [Purpose](#2-Purpose)
-3. [Prerequisites](#3-Prerequisites)
-4. [What is Migrate](#4-what-is-migrate)  
-5. [Why Migrate](#5-why-migrate)  
-6. [Key Features](#6-key-features)  
-7. [Workflow](#7-workflow)  
-8. [Installation Guide](#8-installation-guide)  
-9. [Migration Commands (Common)](#9-migration-commands-common)  
-10. [DB Schema Evolution Diagram](#10-db-schema-evolution-diagram)  
-11. [Liquibase and Migration Concept](#11-liquibase-and-migration-concept)  
-12. [Liquibase Example](#12-liquibase-example)  
-13. [Validation](#13-validation)  
-14. [Troubleshooting](#14-troubleshooting)  
-15. [Best Practices](#15-best-practices)  
-16. [Conclusion](#16-conclusion)  
-17. [Contact Information](#17-contact-information)  
-18. [References](#18-references)  
+2. [Purpose](#2-purpose)
+3. [Prerequisites](#3-prerequisites)
+4. [What is Migrate](#4-what-is-migrate)
+5. [Why Migrate](#5-why-migrate)
+6. [Key Features](#6-key-features)
+7. [Workflow](#7-workflow)
+8. [Installation Guide](#8-installation-guide)
+9. [Migration Commands (Common)](#9-migration-commands-common)
+10. [DB Schema Evolution Diagram](#10-db-schema-evolution-diagram)
+11. [Migration Tool Comparison](#11-migration-tool-comparison)
+12. [Example (Flask-Migrate)](#12-example-flask-migrate)
+13. [Validation](#13-validation)
+14. [Troubleshooting](#14-troubleshooting)
+15. [Best Practices](#15-best-practices)
+16. [Conclusion](#16-conclusion)
+17. [Contact Information](#17-contact-information)
+18. [References](#18-references)
 
 ---
 
 ## 1. Introduction
 
-When working on applications, the database structure keeps changing as new features are added. Managing these changes manually can quickly become confusing and error-prone.
+Database schema changes are frequent during application development. Managing these changes manually leads to inconsistency and errors.
 
-Migration tools help handle this in a structured way. Instead of making direct changes in the database, we define changes as scripts and apply them in a controlled manner.
-
-This ensures all environments (development, testing, production) remain consistent.
+Migration tools solve this by allowing schema changes to be written as version-controlled scripts and applied in a structured way.
 
 ---
 
 ## 2. Purpose
 
-The purpose of this SOP is to define a standardized approach for managing database schema changes using migration tools. It ensures consistency, traceability, and reliability across all environments.
+To standardize database schema changes using migration tools, ensuring consistency, traceability, and reliability.
 
 ---
 
 ## 3. Prerequisites
 
-Before starting, ensure the following:
-
-* Basic understanding of databases
-* Access to database
-* Linux/Unix environment (or compatible)
-* Required permissions to install and run commands
+* Basic database knowledge
+* Linux/Unix environment
+* Terminal access
+* Permission to install tools
 
 ---
 
 ## 4. What is Migrate
 
-Migrate is a way to manage database changes using version-controlled scripts.
+Migration is the process of managing database schema changes in a controlled and versioned way.
 
-* Database changes are written as code
-* Each change is stored as a migration file
-* Changes can be applied or rolled back safely
+This can be implemented using different tools, such as:
 
-Example:
+* **Flask-Migrate** for Flask-based applications
+* **golang-migrate** for CLI-based SQL migrations
+* **Liquibase** for enterprise database change management
 
-```bash
-make run-migrations
-```
+In this SOP, **Flask-Migrate** is used for demonstration because it is simple to understand and easy to integrate with a sample Flask project.
 
 ---
 
 ## 5. Why Migrate
 
-Migration helps avoid manual mistakes and keeps databases consistent.
-
-### Key Reasons
-
-* **Consistency Across Environments** → Same schema everywhere
-* **Version Control** → DB changes tracked like code
-* **Safe Updates** → Controlled execution
-* **Rollback Support** → Easy revert
-* **Automation** → Works with CI/CD
+* Consistency across environments
+* Version control for DB
+* Safe updates
+* Rollback support
+* CI/CD integration
 
 ---
 
 ## 6. Key Features
 
-| Feature              | Description                |
-| -------------------- | -------------------------- |
-| Versioned Migrations | Tracks schema changes      |
-| Rollback Support     | Safe revert capability     |
-| Environment Sync     | Keeps environments aligned |
-| CI/CD Integration    | Automates deployment       |
+| Feature    | Description       |
+| ---------- | ----------------- |
+| Versioning | Tracks DB changes |
+| Rollback   | Revert changes    |
+| Automation | CI/CD compatible  |
 
 ---
 
 ## 7. Workflow
 
-```
-Update Schema
-      ↓
-Generate Migration
-      ↓
-Review Script
-      ↓
-Apply Migration
-      ↓
-Database Updated
-```
+Code Change → Create Migration → Review → Apply → DB Updated
 
 ---
 
 ## 8. Installation Guide
 
-### Step 1: Download Migrate
+### Step 1: Install Required Packages
 
 ```bash
-wget https://github.com/golang-migrate/migrate/releases/latest/download/migrate.linux-amd64.tar.gz
+pip install flask flask-sqlalchemy flask-migrate
 ```
 
-### Step 2: Extract
+### Step 2: Verify Installation
 
 ```bash
-tar -xvf migrate.linux-amd64.tar.gz
-```
-
-### Step 3: Move Binary
-
-```bash
-sudo mv migrate /usr/local/bin/
-```
-
-### Step 4: Verify
-
-```bash
-migrate -version
+python -c "import flask, flask_sqlalchemy, flask_migrate; print('Installation successful')"
 ```
 
 ---
 
 ## 9. Migration Commands (Common)
 
-### Initialize (Flask Example)
+### Initialize Migration Repository
 
 ```bash
 flask db init
@@ -167,7 +133,7 @@ flask db init
 ### Generate Migration
 
 ```bash
-flask db migrate -m "add user table"
+flask db migrate -m "create user table"
 ```
 
 ### Apply Migration
@@ -176,92 +142,64 @@ flask db migrate -m "add user table"
 flask db upgrade
 ```
 
-### Rollback
+### Rollback Migration
 
 ```bash
 flask db downgrade
 ```
 
+> Note: Other migration tools such as **golang-migrate** and **Liquibase** also exist. This SOP demonstrates migration using **Flask-Migrate** for simplicity.
+
 ---
 
 ## 10. DB Schema Evolution Diagram
 
-```
-Version 1
-   ↓
-Migration
-   ↓
-Version 2
-   ↓
-Migration
-   ↓
-Version 3
-```
+Version 1 → Version 2 → Version 3
 
 ---
 
-## 11. Liquibase and Migration Concept
+## 11. Migration Tool Comparison
 
-* **Migration = Concept** (process of managing DB changes)
-* **Liquibase = Tool** (implements migration)
+Migration is a concept, and multiple tools can implement it.
 
-### Comparison
-
-| Tool      | Type            | Usage                |
-| --------- | --------------- | -------------------- |
-| Migrate   | CLI Tool        | Simple microservices |
-| Liquibase | Enterprise Tool | Complex systems      |
+| Tool           | Type                                | Best Use Case                          |
+| -------------- | ----------------------------------- | -------------------------------------- |
+| Flask-Migrate  | Framework-integrated migration tool | Flask applications                     |
+| golang-migrate | CLI migration tool                  | SQL-based migrations and microservices |
+| Liquibase      | Enterprise migration tool           | Complex multi-environment systems      |
 
 ---
 
-## 12. Liquibase Example
+## 12. Example (Flask-Migrate)
 
-```xml
-<databaseChangeLog>
+This SOP demonstrates migration using Flask-Migrate.
 
-    <changeSet id="1" author="user">
-        <createTable tableName="users">
-            <column name="id" type="INT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="VARCHAR(100)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="2" author="user">
-        <addColumn tableName="users">
-            <column name="email" type="VARCHAR(150)"/>
-        </addColumn>
-    </changeSet>
-
-</databaseChangeLog>
-```
-
-Run:
+Typical workflow:
 
 ```bash
-liquibase update
+flask db init
+flask db migrate -m "create user table"
+flask db upgrade
+flask db downgrade
 ```
 
 ---
 
 ## 13. Validation
 
-After applying migrations, validate:
-
-* Tables/columns are created as expected
-* No errors in migration logs
-* Application works with updated schema
+* Tables created correctly
+* No errors in logs
+* DB structure matches expected output
 
 ---
 
 ## 14. Troubleshooting
 
-| Issue                | Solution                      |
-| -------------------- | ----------------------------- |
-| Migration fails      | Check syntax & DB connection  |
-| Version mismatch     | Sync migration history        |
-| Rollback not working | Ensure rollback scripts exist |
+| Issue           | Solution               |
+| --------------- | ---------------------- |
+| Migration fails | Check DB path          |
+| Syntax error    | Fix SQL                |
+| Rollback fails  | Ensure down.sql exists |
 
 ---
 
@@ -270,9 +208,9 @@ After applying migrations, validate:
 | Practice                     | Description                                    |
 | ---------------------------- | ---------------------------------------------- |
 | Review Before Execution      | Always review migration scripts before running |
-| Use Descriptive Names        | Clearly describe purpose of migration          |
+| Use Descriptive Names        | Clearly describe the purpose of migration      |
 | Avoid Editing Old Migrations | Never modify already applied migrations        |
-| Backup Before Deployment     | Take DB backup before production changes       |
+| Backup Before Deployment     | Take database backup before production changes |
 | Test in Lower Environments   | Validate in dev/staging before production      |
 | Keep Migrations Small        | Prefer small, incremental changes              |
 | Maintain Rollback Scripts    | Ensure rollback is always possible             |
@@ -281,7 +219,7 @@ After applying migrations, validate:
 
 ## 16. Conclusion
 
-Database migration ensures controlled and reliable schema changes. Using tools like Migrate or Liquibase improves consistency, reduces manual errors, and supports automated deployments.
+Database migration ensures controlled and reliable schema updates. While multiple tools exist, this SOP demonstrates the concept using Flask-Migrate for simplicity and ease of understanding.
 
 ---
 
@@ -295,10 +233,12 @@ Database migration ensures controlled and reliable schema changes. Using tools l
 
 ## 18. References
 
-| Resource                | Link                                                                               |
-| ----------------------- | ---------------------------------------------------------------------------------- |
-| Liquibase Documentation | [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation) |
-| Flask-Migrate Docs      | [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)     |
-| Alembic Docs            | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                 |
+| Resource                     | Link                                                                                   |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| Flask-Migrate Documentation  | [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)         |
+| Alembic Documentation        | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                     |
+| golang-migrate Documentation | [https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate) |
+| Liquibase Documentation      | [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)     |
+
 
 
