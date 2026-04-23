@@ -74,7 +74,11 @@ It is one of the best languages for beginners and professionals.
 
 
 
+## Author
 
+| Name | Role | Contact |
+|------|------|--------|
+| Deepak | DevOps Engineer | deepak.nagar.snaatak@mygurukulam.co |
 
 
 
@@ -87,10 +91,6 @@ It is one of the best languages for beginners and professionals.
 | Python style guide (PEP 8) | [PEP 8](https://peps.python.org/pep-0008/) |
 
 
-##  Contact Information
 
-| Name || Contact |
-|------|------|--------|
-| Deepak | | deepak.nagar.snaatak@mygurukulam.co |<img width="167" height="148" alt="download" src="https://github.com/user-attachments/assets/6748dbd8-ad9e-4dbe-95b0-e66be7436a8f" />
 
 
