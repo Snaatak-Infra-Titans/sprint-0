@@ -19,8 +19,7 @@
 7. [Required Structure](#7-required-structure)  
 8. [Best Practices](#8-best-practices)  
 9. [FAQs](#9-faqs)  
-10. [Conclusion](#10-conclusion)  
-11. [References](#12-references)  
+10. [Conclusion](#10-conclusion)   
 
 
 ## 1. Introduction
@@ -91,7 +90,7 @@ CI ensures that the role is correct and safe to use.
 | Dry Run| ansible-playbook  | Simulate execution   |
 | Result | CI System         | Show pass/fail       |
 
-<img width="1774" height="887" alt="ChatGPT Image Apr 22, 2026, 09_59_49 PM" src="https://github.com/user-attachments/assets/36567682-a125-4178-a34b-8d97b26714ba" />
+<img width="1500" height="607" alt="ChatGPT Image Apr 22, 2026, 09_59_49 PM" src="https://github.com/user-attachments/assets/36567682-a125-4178-a34b-8d97b26714ba" />
 
 
 
@@ -171,11 +170,16 @@ CI ensures your Ansible roles are validated, safe, and reliable before deploymen
 Always test and validate before merging changes.
 
 
+##  Contact Information
+
+| Name   | Contact |
+|--------|---------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
 
 
 
-## 11. References
+## References
 
 | Description | Link |
 |-------------|------|
@@ -184,8 +188,3 @@ Always test and validate before merging changes.
 | Documentation for Jenkins CI/CD pipelines | [Jenkins Pipeline](https://www.jenkins.io/doc/book/pipeline/) |
 
 
-##  Contact Information
-
-| Name   | Contact |
-|--------|---------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co |
