@@ -66,7 +66,11 @@ Make simplifies task execution and improves consistency across teams.
 
 
 
+##  Contact Information
 
+| Name | Contact |
+|------|--------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
 
 ##  References
@@ -77,9 +81,5 @@ Make simplifies task execution and improves consistency across teams.
 | Makefile tutorial | [Makefile Tutorial](https://makefiletutorial.com) |
 
 
-##  Contact Information
 
-| Name | Contact |
-|------|--------|
-| Deepak | deepak.nagar.snaatak@mygurukulam.co |
 
