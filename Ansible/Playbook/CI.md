@@ -1,3 +1,18 @@
+<p align="center">
+  <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/da23836f-f029-4ae9-95a4-953bc80b6d24" />
+ />
+  <br/>
+</p>
+
+
+<h1 align="center">Common Stack | Ansible | Playbook | CI Workflow Documentation</h1>
+
+<p align="center">
+  Step by step installation guide
+</p>
+
+
+
 # Common Stack | Ansible | Playbook | CI Workflow Documentation
 
 ---
