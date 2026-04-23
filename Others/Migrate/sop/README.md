@@ -159,8 +159,6 @@ flask db downgrade
 
 ## 8. DB Schema Evolution Diagram
 
-![Schema Evolution Diagram Placeholder](schema-evolution.png)
-
 ```
 Version 1
    ↓
@@ -270,6 +268,11 @@ Database migration ensures controlled and reliable schema changes. Using tools l
 
 ## 16. References
 
-* Liquibase Docs: [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)
-* Flask-Migrate Docs: [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)
-* Alembic Docs: [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)
+| Resource                | Link                                                                               |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| Liquibase Documentation | [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation) |
+| Flask-Migrate Docs      | [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)     |
+| Alembic Docs            | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                 |
+
+
+
