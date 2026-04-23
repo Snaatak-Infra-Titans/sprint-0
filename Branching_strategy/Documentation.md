@@ -29,9 +29,7 @@
 
 ## 1. Introduction
 
-In modern software development, multiple developers work on the same codebase simultaneously. To manage this efficiently, version control systems like Git use branching strategies.
-
-A branching strategy defines how teams organize their work using branches, ensuring smooth collaboration, better code management, and stable releases.
+Version control systems like Git use branching strategies to manage multiple developers working on the same codebase. These strategies help organize work, improve collaboration, and ensure stable releases.
 
 ---
 
@@ -44,7 +42,7 @@ It defines:
 - How code is merged  
 - How releases are managed  
 
-The main goal is to allow parallel development without affecting production code. :contentReference[oaicite:0]{index=0}
+The main goal is to allow parallel development without affecting production code.
 
 ---
 
@@ -56,13 +54,10 @@ The main goal is to allow parallel development without affecting production code
 - Supports CI/CD pipelines  
 - Improves collaboration and productivity  
 
-Without a proper branching strategy, development becomes unstructured and error-prone.
-
 ---
 
 ## 4. Types of Branching Strategies
-
----
+<br>
 
 ### 4.1 Git Flow
 
@@ -81,15 +76,13 @@ Git Flow is a structured branching strategy used in large projects with defined 
 | release/*    | Release preparation |
 | hotfix/*     | Production fixes |
 
-### Advantages:
-- Clear separation of branches  
-- Supports parallel development  
-- Good for release-based projects  
+### Advantages & Disadvantages
 
-### Disadvantages:
-- Complex to manage  
-- Not ideal for continuous delivery  
-- Requires strict discipline
+| Advantages                     | Disadvantages                 |
+|--------------------------------|-------------------------------|
+| Clear separation of branches  | Complex to manage             |
+| Supports parallel development | Not ideal for continuous delivery |
+| Good for release-based projects | Requires strict discipline   |
 
 ---
 
@@ -100,20 +93,23 @@ GitHub Flow is a simple and lightweight branching strategy.
 ### Diagram
 <img width="800" height="323" alt="image" src="https://github.com/user-attachments/assets/c522a226-d75c-4006-bf1b-d234946149b6" />
 
-### Workflow:
+### Workflow
 
-- Single `main` branch  
-- Feature branches created from main  
-- Pull Request → Merge → Deploy  
+| Step              | Description                          |
+|------------------|--------------------------------------|
+| main branch      | Single primary branch for all code   |
+| feature branches | Created from main for new features   |
+| Pull Request     | Code review before merging           |
+| Merge            | Changes merged into main             |
+| Deploy           | Application is deployed              |
 
-### Advantages:
-- Simple and easy to use  
-- Fast releases and deployments  
-- Ideal for CI/CD pipelines  
+### Advantages & Disadvantages
 
-### Disadvantages:
-- Less structured for large projects  
-- Risk of unstable production if not tested properly 
+| Advantages                     | Disadvantages                              |
+|--------------------------------|--------------------------------------------|
+| Simple and easy to use        | Less structured for large projects         |
+| Fast releases and deployments | Risk of unstable production if not tested properly |
+| Ideal for CI/CD pipelines     |                                            |
 
 ---
 
@@ -132,14 +128,13 @@ GitLab Flow combines Git Flow and GitHub Flow with environment-based branching.
 | staging              | Pre-production testing environment |
 | production           | Live production environment |
 
-### Advantages:
-- Flexible approach  
-- Supports both CD and release management  
-- Suitable for multi-environment deployments  
+### Advantages & Disadvantages
 
-### Disadvantages:
-- Can become complex  
-- Requires proper branch management 
+| Advantages                          | Disadvantages                         |
+|------------------------------------|---------------------------------------|
+| Flexible approach                  | Can become complex                    |
+| Supports both CD and release management | Requires proper branch management     |
+| Suitable for multi-environment deployments | Risk of merge conflicts              |
 
 ---
 
@@ -150,21 +145,21 @@ Trunk-Based Development focuses on a single main branch.
 ### Diagram
 <img width="800" height="420" alt="image" src="https://github.com/user-attachments/assets/c6c626a5-2e22-461e-bba1-6c83e4d17cf7" />
 
-### Workflow:
+### Workflow
 
-- Developers commit directly to main (or short-lived branches)  
-- Frequent integration  
-- Continuous deployment  
+| Step                     | Description                              |
+|--------------------------|------------------------------------------|
+| Direct commits           | Developers commit to main or short-lived branches |
+| Frequent integration     | Code is merged frequently                |
+| Continuous deployment    | Changes are deployed automatically       |
 
-### Advantages:
-- Fast development cycle  
-- Supports CI/CD  
-- Reduced merge conflicts  
+### Advantages & Disadvantages
 
-### Disadvantages:
-- Requires strong testing  
-- Risky without discipline  
-- Not ideal for large unstructured teams 
+| Advantages                  | Disadvantages                         |
+|----------------------------|---------------------------------------|
+| Fast development cycle     | Requires strong testing               |
+| Supports CI/CD             | Risky without discipline              |
+| Reduced merge conflicts    | Not ideal for large unstructured teams |
 
 ---
 
