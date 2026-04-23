@@ -59,236 +59,39 @@ To standardize database schema changes using migration tools, ensuring consisten
 
 ## 3. Prerequisites
 
-* Basic database knowledge
-* Linux/Unix environment
-* Terminal access
-* Permission to install tools
+Before starting, ensure the following:
 
----
+* Basic understanding of databases
+* Linux/Unix environment (or compatible)
+* Required permissions to install and run commands
+* Python installed (recommended: Python 3.8+)
 
-## 4. What is Migrate
+### Virtual Environment Setup (Recommended)
 
-Migration is the process of managing database schema changes in a controlled and versioned way.
+Modern Linux systems restrict global Python package installation (PEP 668). To safely install dependencies without affecting system Python, a virtual environment is used.
 
-This can be implemented using different tools, such as:
+### Why Virtual Environment?
 
-* **Flask-Migrate** for Flask-based applications
-* **golang-migrate** for CLI-based SQL migrations
-* **Liquibase** for enterprise database change management
+* Prevents breaking system Python
+* Keeps project dependencies isolated
+* Ensures consistent environment across systems
+* Recommended industry best practice
 
-In this SOP, **Flask-Migrate** is used for demonstration because it is simple to understand and easy to integrate with a sample Flask project.
-
----
-
-## 5. Why Migrate
-
-* Consistency across environments
-* Version control for DB
-* Safe updates
-* Rollback support
-* CI/CD integration
-
----
-
-## 6. Key Features
-
-| Feature    | Description       |
-| ---------- | ----------------- |
-| Versioning | Tracks DB changes |
-| Rollback   | Revert changes    |
-| Automation | CI/CD compatible  |
-
----
-
-## 7. Workflow
-
-Code Change → Create Migration → Review → Apply → DB Updated
-
----
-
-## 8. Installation Guide
-
-### Step 1: Install Required Packages
+### Create Virtual Environment
 
 ```bash
-pip install flask flask-sqlalchemy flask-migrate
+python3 -m venv venv
 ```
 
-### Step 2: Verify Installation
+### Activate Virtual Environment
 
 ```bash
-python -c "import flask, flask_sqlalchemy, flask_migrate; print('Installation successful')"
+source venv/bin/activate
 ```
 
----
+After activation, your terminal will show `(venv)` prefix.
 
-## 9. Migration Commands (Common)
-
-### Initialize Migration Repository
-
-```bash
-flask db init
-```
-
-### Generate Migration
-
-```bash
-flask db migrate -m "create user table"
-```
-
-### Apply Migration
-
-```bash
-flask db upgrade
-```
-
-### Rollback Migration
-
-```bash
-flask db downgrade
-```
-
-> Note: Other migration tools such as **golang-migrate** and **Liquibase** also exist. This SOP demonstrates migration using **Flask-Migrate** for simplicity.
-
----
-
-## 10. DB Schema Evolution Diagram
-
-Version 1 → Version 2 → Version 3
-
----
-
-## 11. Migration Tool Comparison
-
-Migration is a concept, and multiple tools can implement it.
-
-| Tool           | Type                                | Best Use Case                          |
-| -------------- | ----------------------------------- | -------------------------------------- |
-| Flask-Migrate  | Framework-integrated migration tool | Flask applications                     |
-| golang-migrate | CLI migration tool                  | SQL-based migrations and microservices |
-| Liquibase      | Enterprise migration tool           | Complex multi-environment systems      |
-
----
-
-## 12. Example (Flask-Migrate)
-
-This SOP demonstrates migration using Flask-Migrate.
-
-Typical workflow:
-
-```bash
-flask db init
-flask db migrate -m "create user table"
-flask db upgrade
-flask db downgrade
-```
-
----
-
-## 13. Validation
-
-* Tables created correctly
-* No errors in logs
-* DB structure matches expected output
-
----
-
-## 14. Troubleshooting
-
-| Issue           | Solution               |
-| --------------- | ---------------------- |
-| Migration fails | Check DB path          |
-| Syntax error    | Fix SQL                |
-| Rollback fails  | Ensure down.sql exists |
-
----
-
-## 15. Best Practices
-
-| Practice                     | Description                                    |
-| ---------------------------- | ---------------------------------------------- |
-| Review Before Execution      | Always review migration scripts before running |
-| Use Descriptive Names        | Clearly describe the purpose of migration      |
-| Avoid Editing Old Migrations | Never modify already applied migrations        |
-| Backup Before Deployment     | Take database backup before production changes |
-| Test in Lower Environments   | Validate in dev/staging before production      |
-| Keep Migrations Small        | Prefer small, incremental changes              |
-| Maintain Rollback Scripts    | Ensure rollback is always possible             |
-
----
-
-## 16. Conclusion
-
-Database migration ensures controlled and reliable schema updates. While multiple tools exist, this SOP demonstrates the concept using Flask-Migrate for simplicity and ease of understanding.
-
----
-
-## 17. Contact Information
-
-| Name        | Email                                                                           |
-| ----------- | ------------------------------------------------------------------------------- |
-| Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
-
----
-
-## 18. References
-
-| Resource                     | Link                                                                                   |
-| ---------------------------- | -------------------------------------------------------------------------------------- |
-| Flask-Migrate Documentation  | [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)         |
-| Alembic Documentation        | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                     |
-| golang-migrate Documentation | [https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate) |
-| Liquibase Documentation      | [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)     |
-
-
-
-
-
----
-
-## Table of Contents
-
-1. [Introduction](#1-introduction)
-2. [Purpose](#2-purpose)
-3. [Prerequisites](#3-prerequisites)
-4. [What is Migrate](#4-what-is-migrate)
-5. [Why Migrate](#5-why-migrate)
-6. [Key Features](#6-key-features)
-7. [Workflow](#7-workflow)
-8. [Installation Guide](#8-installation-guide)
-9. [Migration Commands (Common)](#9-migration-commands-common)
-10. [DB Schema Evolution Diagram](#10-db-schema-evolution-diagram)
-11. [Migration Tool Comparison](#11-migration-tool-comparison)
-12. [Example (Flask-Migrate)](#12-example-flask-migrate)
-13. [Validation](#13-validation)
-14. [Troubleshooting](#14-troubleshooting)
-15. [Best Practices](#15-best-practices)
-16. [Conclusion](#16-conclusion)
-17. [Contact Information](#17-contact-information)
-18. [References](#18-references)
-
----
-
-## 1. Introduction
-
-Database schema changes are frequent during application development. Managing these changes manually leads to inconsistency and errors.
-
-Migration tools solve this by allowing schema changes to be written as version-controlled scripts and applied in a structured way.
-
----
-
-## 2. Purpose
-
-To standardize database schema changes using migration tools, ensuring consistency, traceability, and reliability.
-
----
-
-## 3. Prerequisites
-
-* Basic database knowledge
-* Linux/Unix environment
-* Terminal access
-* Permission to install tools
+<img width="962" height="101" alt="image" src="https://github.com/user-attachments/assets/4585afbf-b41b-4033-87fc-77ab6cd3e0a4" />
 
 ---
 
@@ -445,6 +248,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
+<img width="848" height="412" alt="image" src="https://github.com/user-attachments/assets/5cbc2c34-7677-480a-ac3c-ad065baaba08" />
+
+
 #### `models.py` (Version 1)
 
 ```python
@@ -457,6 +263,9 @@ class User(db.Model):
     name = db.Column(db.String(100), nullable=False)
 ```
 
+<img width="877" height="222" alt="image" src="https://github.com/user-attachments/assets/e0b1077d-131d-4b76-b072-59d36f106e6a" />
+
+
 ### Typical Workflow
 
 #### Step 1: Install Dependencies
@@ -465,7 +274,8 @@ class User(db.Model):
 pip install flask flask-sqlalchemy flask-migrate
 ```
 
-**Image Placeholder:** Insert screenshot of dependency installation output.
+<img width="1605" height="697" alt="image" src="https://github.com/user-attachments/assets/07662eb5-80cf-450b-a500-90d150c6af16" />
+
 
 #### Step 2: Set Flask App
 
@@ -481,15 +291,17 @@ export FLASK_APP=app.py
 set FLASK_APP=app.py
 ```
 
-**Image Placeholder:** Insert screenshot showing environment variable setup.
+<img width="1032" height="62" alt="image" src="https://github.com/user-attachments/assets/4f84ae98-93da-497a-8964-cbf308e114c7" />
+
 
 #### Step 3: Initialize Migration Repository
 
 ```bash
-flask db init
+flask db init   ---Creates migration/ folder
 ```
 
-**Image Placeholder:** Insert screenshot of created `migrations/` folder.
+<img width="1722" height="265" alt="image" src="https://github.com/user-attachments/assets/3b8ff3ae-0d27-440e-abfe-b01c7c519c17" />
+
 
 #### Step 4: Create Initial Migration
 
@@ -498,7 +310,8 @@ flask db migrate -m "create user table"
 flask db upgrade
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing migration and upgrade output.
+<img width="1486" height="387" alt="image" src="https://github.com/user-attachments/assets/25a44807-ae0f-4d50-967f-7ebc9f7e2e0f" />
+
 
 #### Step 5: Verify Database
 
@@ -511,7 +324,8 @@ Expected structure:
   * `id`
   * `name`
 
-**Image Placeholder:** Insert screenshot of database structure after first migration.
+<img width="1043" height="266" alt="image" src="https://github.com/user-attachments/assets/f3fecc52-6789-43e4-a348-348d8fba3016" />
+
 
 #### Step 6: Update Model (`models.py` Version 2)
 
@@ -526,7 +340,8 @@ class User(db.Model):
     email = db.Column(db.String(120), nullable=True)
 ```
 
-**Image Placeholder:** Insert screenshot of updated model code showing the new `email` column.
+<img width="927" height="243" alt="image" src="https://github.com/user-attachments/assets/c8a9d7d6-ecb2-4425-8772-2ba539ed8819" />
+
 
 #### Step 7: Generate and Apply Second Migration
 
@@ -535,7 +350,8 @@ flask db migrate -m "add email column"
 flask db upgrade
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing second migration applied successfully.
+<img width="1422" height="381" alt="image" src="https://github.com/user-attachments/assets/8f0c4d38-17d9-430f-97b9-6c6b8de3fd2b" />
+
 
 #### Step 8: Verify Updated Database
 
@@ -547,7 +363,8 @@ Expected structure:
   * `name`
   * `email`
 
-**Image Placeholder:** Insert screenshot of database structure after second migration.
+<img width="1091" height="243" alt="image" src="https://github.com/user-attachments/assets/0f2b2871-a83d-45a1-9f06-beb3850698f0" />
+
 
 #### Step 9: Rollback Migration
 
@@ -555,7 +372,7 @@ Expected structure:
 flask db downgrade
 ```
 
-**Image Placeholder:** Insert screenshot of terminal showing rollback output.
+<img width="1285" height="265" alt="image" src="https://github.com/user-attachments/assets/a10e42dc-0b9b-419d-896d-9a488d78408c" />
 
 ---
 
@@ -624,6 +441,5 @@ Saransh Rai
 | Alembic Documentation        | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                     |
 | golang-migrate Documentation | [https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate) |
 | Liquibase Documentation      | [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)     |
-
 
 
