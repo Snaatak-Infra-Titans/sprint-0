@@ -1,12 +1,50 @@
-# Common Stack | VCS | Documentation
+<p align="center">
+  <img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/1110751e-0c09-4de6-8091-00680c65aa0b" />
+  <br/>
+</p>
 
-## 1. Introduction
+<h1 align="center">Common Stack | VCS | Documentation</h1>
 
-Version Control System (VCS) is a tool that helps developers track changes in code, collaborate with teams, and manage different versions of a project efficiently.
+<p align="center">
+  Step by step installation guide
+</p>
 
 ---
 
-## 2. What is VCS?
+## Author Table
+
+| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+| ----------- | ---------- | ------- | --------------- | -------------- | ----------- | ----------- | ----------- |
+| Saransh Rai | 23-04-2026 | 1.0     | Saransh Rai     | 23-04-2026     | -           | -           | -           |
+
+---
+
+## Table of Contents
+
+* [1. Introduction](#1-introduction)
+* [2. What is VCS](#2-what-is-vcs)
+* [3. Why VCS](#3-why-vcs)
+* [4. Types of VCS](#4-types-of-vcs)
+* [5. Advantages of VCS](#5-advantages-of-vcs)
+* [6. Disadvantages of VCS](#6-disadvantages-of-vcs)
+* [7. Workflow](#7-workflow)
+* [8. Common Commands](#8-common-commands)
+* [9. Validation](#9-validation)
+* [10. Troubleshooting](#10-troubleshooting)
+* [11. Best Practices](#11-best-practices)
+* [12. Conclusion](#12-conclusion)
+* [13. Contact Information](#13-contact-information)
+* [14. References](#14-references)
+
+---
+
+## 1. Introduction
+
+A Version Control System (VCS) is a tool that helps developers track changes in code, collaborate with teams, and manage different versions of a project efficiently.
+
+---
+
+## 2. What is VCS
 
 A Version Control System records changes to files over time so that you can recall specific versions later.
 
@@ -18,7 +56,7 @@ It helps in:
 
 ---
 
-## 3. Why VCS?
+## 3. Why VCS
 
 * Enables team collaboration
 * Maintains code history
@@ -30,53 +68,54 @@ It helps in:
 
 ## 4. Types of VCS
 
-### 1. Local VCS
+### 4.1 Local VCS
 
 * Stores versions locally on a system
 * Example: RCS
 
-### 2. Centralized VCS (CVCS)
+### 4.2 Centralized VCS (CVCS)
 
 * Single central server stores all versions
 * Example: SVN
 
-### 3. Distributed VCS (DVCS)
+### 4.3 Distributed VCS (DVCS)
 
 * Every developer has a full copy of repository
 * Example: Git
 
 ---
 
-## 5. Advantages of VCS
+## 5. Advantages & Disadvantages of VCS
 
-* Better collaboration
-* Complete version history
-* Easy rollback
-* Branching support
-* Backup and recovery
-
----
-
-## 6. Disadvantages of VCS
-
-* Learning curve for beginners
-* Merge conflicts
-* Requires proper management
+| Advantages               | Disadvantages                |
+| ------------------------ | ---------------------------- |
+| Better collaboration     | Learning curve for beginners |
+| Complete version history | Merge conflicts              |
+| Easy rollback            | Requires proper management   |
+| Branching support        |                              |
+| Backup and recovery      |                              |
 
 ---
 
-## 7. VCS Workflow
+## 6. Workflow
 
-1. Developer creates/updates code
-2. Changes are added (staging)
-3. Code is committed with message
-4. Changes are pushed to repository
-5. Other developers pull latest changes
-6. Code review and merge happens
+![Workflow Diagram Placeholder](vcs-workflow.png)
+
+```
+Code Changes
+   ↓
+Stage Changes
+   ↓
+Commit Changes
+   ↓
+Push to Repository
+   ↓
+Pull & Merge
+```
 
 ---
 
-## 8. Common Commands (Git Example)
+## 8. Common Commands
 
 | Command    | Description           |
 | ---------- | --------------------- |
@@ -89,23 +128,45 @@ It helps in:
 
 ---
 
-## 9. Best Practices
+## 9. Validation
 
-* Write meaningful commit messages
-* Use branching strategy (feature, dev, main)
-* Commit small and frequent changes
-* Pull latest changes before pushing
-* Avoid committing sensitive data
+After performing VCS operations, validate:
+
+* Code is committed successfully
+* Repository reflects latest changes
+* No conflicts in merge
 
 ---
 
-## 10. Conclusion
+## 10. Troubleshooting
+
+| Issue           | Solution                       |
+| --------------- | ------------------------------ |
+| Merge conflicts | Resolve conflicts manually     |
+| Push rejected   | Pull latest changes and retry  |
+| Wrong commit    | Use revert/reset appropriately |
+
+---
+
+## 11. Best Practices
+
+| Practice                   | Description                          |
+| -------------------------- | ------------------------------------ |
+| Meaningful Commit Messages | Write clear and descriptive commits  |
+| Use Branching Strategy     | Follow feature/dev/main branching    |
+| Small Commits              | Commit small and frequent changes    |
+| Sync Before Push           | Pull latest changes before pushing   |
+| Avoid Sensitive Data       | Do not commit secrets or credentials |
+
+---
+
+## 12. Conclusion
 
 VCS is a critical tool in software development that ensures efficient collaboration, version tracking, and safe code management.
 
 ---
 
-## 11. Contact Information
+## 13. Contact Information
 
 | Name        | Email                                                                           |
 | ----------- | ------------------------------------------------------------------------------- |
@@ -113,10 +174,12 @@ VCS is a critical tool in software development that ensures efficient collaborat
 
 ---
 
-## 12. References
+## 14. References
 
-* Git Official Documentation: [https://git-scm.com/docs](https://git-scm.com/docs)
-* GitHub Docs: [https://docs.github.com/en](https://docs.github.com/en)
-* GitLab Docs: [https://docs.gitlab.com](https://docs.gitlab.com)
-* Apache Subversion (SVN): [https://subversion.apache.org/docs/](https://subversion.apache.org/docs/)
-* Atlassian Git Tutorials: [https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials)
+| Resource                   | Link                                                                               |
+| -------------------------- | ---------------------------------------------------------------------------------- |
+| Git Official Documentation | [https://git-scm.com/docs](https://git-scm.com/docs)                               |
+| GitHub Docs                | [https://docs.github.com/en](https://docs.github.com/en)                           |
+| GitLab Docs                | [https://docs.gitlab.com](https://docs.gitlab.com)                                 |
+| Apache Subversion (SVN)    | [https://subversion.apache.org/docs/](https://subversion.apache.org/docs/)         |
+| Atlassian Git Tutorials    | [https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials) |
