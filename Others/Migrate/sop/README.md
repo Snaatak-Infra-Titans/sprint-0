@@ -10,26 +10,27 @@ Step by step installation guide
 | ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
 | Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
 
+
 ---
 
 ## Table of Contents
 
-[1. Introduction](#1-introduction)
-[2. What is Migrate](#2-what-is-migrate)
-[3. Why Migrate](#3-why-migrate)
-[4. Key Features](#4-key-features)
-[5. Workflow](#5-workflow)
-[6. Installation Guide](#6-installation-guide)
-[7. Migration Commands (Common)](#7-migration-commands-common)
-[8. DB Schema Evolution Diagram](#8-db-schema-evolution-diagram)
-[9. Liquibase and Migration Concept](#9-liquibase-and-migration-concept)
-[10. Liquibase Example](#10-liquibase-example)
-[11. Validation](#11-validation)
-[12. Troubleshooting](#12-troubleshooting)
-[13. Best Practices](#13-best-practices)
-[14. Conclusion](#14-conclusion)
-[15. Contact Information](#15-contact-information)
-[16. References](#16-references)
+1. [Introduction](#1-introduction)  
+2. [What is Migrate](#2-what-is-migrate)  
+3. [Why Migrate](#3-why-migrate)  
+4. [Key Features](#4-key-features)  
+5. [Workflow](#5-workflow)  
+6. [Installation Guide](#6-installation-guide)  
+7. [Migration Commands (Common)](#7-migration-commands-common)  
+8. [DB Schema Evolution Diagram](#8-db-schema-evolution-diagram)  
+9. [Liquibase and Migration Concept](#9-liquibase-and-migration-concept)  
+10. [Liquibase Example](#10-liquibase-example)  
+11. [Validation](#11-validation)  
+12. [Troubleshooting](#12-troubleshooting)  
+13. [Best Practices](#13-best-practices)  
+14. [Conclusion](#14-conclusion)  
+15. [Contact Information](#15-contact-information)  
+16. [References](#16-references)  
 
 ---
 
