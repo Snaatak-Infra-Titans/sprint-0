@@ -21,21 +21,20 @@
 
 ## Table of Contents
 
-* [1. Introduction](#1-introduction)
-* [2. What is VCS](#2-what-is-vcs)
-* [3. Why VCS](#3-why-vcs)
-* [4. Types of VCS](#4-types-of-vcs)
-* [5. Advantages of VCS](#5-advantages-of-vcs)
-* [6. Disadvantages of VCS](#6-disadvantages-of-vcs)
-* [7. Workflow](#7-workflow)
-* [8. Common Commands](#8-common-commands)
-* [9. Validation](#9-validation)
-* [10. Troubleshooting](#10-troubleshooting)
-* [11. Best Practices](#11-best-practices)
-* [12. Conclusion](#12-conclusion)
-* [13. Contact Information](#13-contact-information)
-* [14. References](#14-references)
-
+1. [Introduction](#1-introduction)  
+2. [What is VCS](#2-what-is-vcs)  
+3. [Why VCS](#3-why-vcs)  
+4. [Types of VCS](#4-types-of-vcs)  
+5. [Advantages of VCS](#5-advantages-of-vcs)  
+6. [Disadvantages of VCS](#6-disadvantages-of-vcs)  
+7. [Workflow](#7-workflow)  
+8. [Common Commands](#8-common-commands)  
+9. [Validation](#9-validation)  
+10. [Troubleshooting](#10-troubleshooting)  
+11. [Best Practices](#11-best-practices)  
+12. [Conclusion](#12-conclusion)  
+13. [Contact Information](#13-contact-information)  
+14. [References](#14-references)
 ---
 
 ## 1. Introduction
