@@ -89,7 +89,7 @@ Git Flow is a structured branching strategy used in large projects with defined 
 ### Disadvantages:
 - Complex to manage  
 - Not ideal for continuous delivery  
-- Requires strict discipline :contentReference[oaicite:1]{index=1}  
+- Requires strict discipline
 
 ---
 
@@ -113,7 +113,7 @@ GitHub Flow is a simple and lightweight branching strategy.
 
 ### Disadvantages:
 - Less structured for large projects  
-- Risk of unstable production if not tested properly :contentReference[oaicite:2]{index=2}  
+- Risk of unstable production if not tested properly 
 
 ---
 
@@ -139,7 +139,7 @@ GitLab Flow combines Git Flow and GitHub Flow with environment-based branching.
 
 ### Disadvantages:
 - Can become complex  
-- Requires proper branch management :contentReference[oaicite:3]{index=3}  
+- Requires proper branch management 
 
 ---
 
@@ -164,7 +164,7 @@ Trunk-Based Development focuses on a single main branch.
 ### Disadvantages:
 - Requires strong testing  
 - Risky without discipline  
-- Not ideal for large unstructured teams :contentReference[oaicite:4]{index=4}  
+- Not ideal for large unstructured teams 
 
 ---
 
