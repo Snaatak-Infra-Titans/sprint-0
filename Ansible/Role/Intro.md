@@ -12,154 +12,143 @@
 2. [What is an Ansible Role?](#2-what-is-an-ansible-role)  
 3. [Why Use Ansible Roles?](#3-why-use-ansible-roles)  
 4. [Key Features of Ansible Roles](#4-key-features-of-ansible-roles)  
-   - [4.1 Standardized Structure](#41-standardized-structure)  
-   - [4.2 Reusability](#42-reusability)  
-   - [4.3 Separation of Concerns](#43-separation-of-concerns)  
-   - [4.4 Easy Integration](#44-easy-integration)  
-   - [4.5 Variable Management](#45-variable-management)  
-   - [4.6 Idempotency](#46-idempotency)  
 5. [Structure of an Ansible Role](#5-structure-of-an-ansible-role)  
-6. [Advantages of Using Roles](#6-advantages-of-using-roles)  
-7. [Use Cases](#7-use-cases)  
-8. [Conclusion](#8-conclusion)  
-9. [FAQs](#9-faqs)  
-10. [Contact Information](#10-contact-information)  
-11. [References](#11-references)  
+6. [Use Cases](#6-use-cases)  
+7. [CD Workflow using Ansible Role](#7-cd-workflow-using-ansible-playbook-and-role)  
+8. [Demo (Playbook Execution)](#8-demo-playbook-execution)  
+9. [Conclusion](#9-conclusion)  
+10. [FAQs](#10-faqs)  
+11. [Contact Information](#11-contact-information)  
+12. [References](#12-references)
 
 ---
 
 ## 1. Introduction
 
-Ansible is an open-source automation tool used for configuration management, application deployment, and infrastructure provisioning. It simplifies complex IT tasks by using simple YAML-based playbooks.
-
-As projects grow in size and complexity, managing large playbooks becomes difficult. To solve this problem, Ansible provides a concept called **Roles**, which helps organize automation code into reusable and structured components.
+Ansible is an automation tool used for configuration management and deployment.  
+Roles help organize large playbooks into reusable and structured components.
 
 ---
 
 ## 2. What is an Ansible Role?
 
-An Ansible Role is a way of organizing tasks, variables, files, and templates into a structured format. It allows developers to break down large playbooks into smaller, reusable, and manageable units.
+An Ansible Role is a structured way to organize tasks, variables, files, and templates into reusable units.
 
-A role contains predefined directories such as:
+Common directories include:
 
-- `tasks/` – Contains main tasks to execute  
-- `handlers/` – Handles actions like restarting services  
-- `files/` – Static files to be copied  
-- `templates/` – Dynamic configuration files  
-- `vars/` – Variables used in the role  
-- `defaults/` – Default variables  
-
-Roles help maintain a clean and modular project structure.
+- `tasks/` – Main execution steps  
+- `handlers/` – Triggered actions  
+- `files/` – Static files  
+- `templates/` – Dynamic configs  
+- `vars/` – Variables  
+- `defaults/` – Default values  
 
 ---
 
 ## 3. Why Use Ansible Roles?
 
-Using roles provides several benefits in real-world DevOps environments:
-
-- **Modularity** – Break large playbooks into smaller parts  
-- **Reusability** – Use the same role across multiple projects  
-- **Maintainability** – Easier to update and manage code  
-- **Scalability** – Suitable for large infrastructure setups  
-- **Team Collaboration** – Standard structure improves teamwork  
-
-Roles make automation code more organized and professional.
+- Modularity  
+- Reusability  
+- Maintainability  
+- Scalability  
+- Better collaboration  
 
 ---
 
 ## 4. Key Features of Ansible Roles
 
-### 4.1 Standardized Structure
-
-Roles follow a predefined directory structure, ensuring consistency across projects.
-
-### 4.2 Reusability
-
-Roles can be reused in multiple playbooks and environments.
-
-### 4.3 Separation of Concerns
-
-Each role handles a specific function (e.g., web server setup, database configuration).
-
-### 4.4 Easy Integration
-
-Roles can be easily integrated into playbooks using a simple syntax.
-
-### 4.5 Variable Management
-
-Roles support default and custom variables for flexibility.
-
-### 4.6 Idempotency
-
-Ansible ensures that running the same role multiple times does not change the system unnecessarily.
+| Feature | Description |
+|--------|------------|
+| Standardized Structure | Predefined directory layout |
+| Reusability | Can be reused across projects |
+| Separation of Concerns | Each role handles one task |
+| Easy Integration | Simple to include in playbooks |
+| Variable Management | Supports flexible variables |
+| Idempotency | Safe repeated execution |
 
 ---
 
 ## 5. Structure of an Ansible Role
 
-A typical Ansible role follows this directory structure:
-
 ```bash
 my-role/
 ├── tasks/
-│   └── main.yml
 ├── handlers/
-│   └── main.yml
 ├── files/
 ├── templates/
 ├── vars/
-│   └── main.yml
 ├── defaults/
-│   └── main.yml
 ├── meta/
-│   └── main.yml
 ```
 
 ---
 
-## 6. Advantages of Using Roles
+## 6. Use Cases
 
-- Improved code organization  
-- Better readability  
-- Easy debugging  
-- Reusable across environments  
-- Standard DevOps practice  
-- Supports scalable infrastructure  
-
----
-
-## 7. Use Cases
-
-Ansible roles are commonly used in:
-
-- Web server setup (Nginx, Apache)  
-- Database configuration (MySQL, PostgreSQL)  
+- Web server setup  
+- Database configuration  
 - Application deployment  
 - Infrastructure provisioning  
 - CI/CD automation  
 
 ---
 
-## 8. Conclusion
+## 7. CD Workflow using Ansible Playbook and Role
 
-Ansible Roles are a powerful feature that helps structure automation code in a clean, reusable, and scalable way. They are essential for managing complex DevOps environments and improving collaboration among teams.
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/d9ccb64a-2a0d-40c4-8067-e56ff37ddba0" />
+
+<br>
+
+1. Developer pushes code to Git repository  
+2. CI/CD pipeline is triggered (Jenkins/GitLab)  
+3. Ansible playbook is executed by pipeline  
+4. Playbook targets defined inventory hosts  
+5. Playbook invokes the Ansible Role  
+6. Role executes tasks on target servers  
+7. Application/configuration is deployed  
+8. Deployment is verified  
 
 ---
 
-## 9. FAQs
+## 8. Demo (Playbook Execution)
+
+### Example Playbook
+
+```yaml
+- hosts: web
+  become: yes
+  roles:
+    - nginx-role
+```
+
+### Run Command
+
+```bash
+ansible-playbook -i inventory.ini playbook.yml
+```
+
+---
+
+## 9. Conclusion
+
+Ansible Roles simplify automation by making code modular, reusable, and scalable. They are essential for managing complex DevOps workflows.
+
+---
+
+## 10. FAQs
 
 **Q1. What is an Ansible Role?**  
-A role is a structured way to organize automation tasks in Ansible.
+A structured way to organize automation tasks.
 
-**Q2. Why are roles important?**  
-They improve reusability, scalability, and maintainability.
+**Q2. Why use roles?**  
+For better reusability and maintainability.
 
 **Q3. Can roles be reused?**  
-Yes, roles can be reused across multiple projects.
+Yes, across multiple projects.
 
 ---
 
-## 10. Contact Information
+## 11. Contact Information
 
 | Name           | Email ID |
 |----------------|----------|
@@ -167,7 +156,7 @@ Yes, roles can be reused across multiple projects.
 
 ---
 
-## 11. References
+## 12. References
 
 | Link | Description |
 |------|------------|
