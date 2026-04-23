@@ -49,11 +49,15 @@ Before installing Java, make sure your system is ready:
   ```bash
   lsb_release -a
   ```
+<img width="465" height="152" alt="image" src="https://github.com/user-attachments/assets/72cc4819-207d-4bfa-aadf-7f4bf287d5d6" />
+
+  
 * Update system packages:
 
   ```bash
   sudo apt update && sudo apt upgrade -y
   ```
+<img width="1855" height="810" alt="image" src="https://github.com/user-attachments/assets/b6c6985c-033e-4598-9e54-16278e26aa3b" />
 
 
 ---
