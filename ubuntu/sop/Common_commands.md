@@ -224,6 +224,7 @@ Essential Linux commands for daily usage.
 
 ## Author
 
-| Name | Role | Contact |
-|------|------|--------|
-| Deepak | DevOps Engineer | deepak.nagar.snaatak@mygurukulam.co |
+
+| Name   | Contact                                  |
+|--------|------------------------------------------|
+| Deepak | deepak.nagar.snaatak@mygurukulam.co      |
