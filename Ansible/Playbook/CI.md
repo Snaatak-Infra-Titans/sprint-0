@@ -2,9 +2,9 @@
 
 ## Author Table
 
-| **Author**  | **Email**                                                                       |
-| ----------- | ------------------------------------------------------------------------------- |
-| Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
+| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer | L1 Reviewer     | L2 Reviewer     |
+| ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
+| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
 
 ---
 
