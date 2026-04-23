@@ -6,29 +6,34 @@ Step by step installation guide
 
 ## Author Table
 
-| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer  | L1 Reviewer     | L2 Reviewer     |
-| ----------- | ---------- | ------- | --------------- | -------------- | ------------ | ----------------| --------------- |
-| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain    | Prashant Sharma | Piyush Upadhyay |
+| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer | L1 Reviewer     | L2 Reviewer     |
+| ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
+| Saransh Rai | 19-04-2026 | 1.1     | Saransh Rai     | 19-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
 
 ---
 
 ## Table of Contents
 
-* Introduction
-* What is Migrate
-* Why Migrate
-* Key Features
-* Workflow
-* Installation Guide
-* Migration Commands (Common)
-* DB Schema Evolution Diagram
-* Liquibase and Migration Concept
-* Liquibase Example
-* Summary
+[1. Introduction](#1-introduction)
+[2. What is Migrate](#2-what-is-migrate)
+[3. Why Migrate](#3-why-migrate)
+[4. Key Features](#4-key-features)
+[5. Workflow](#5-workflow)
+[6. Installation Guide](#6-installation-guide)
+[7. Migration Commands (Common)](#7-migration-commands-common)
+[8. DB Schema Evolution Diagram](#8-db-schema-evolution-diagram)
+[9. Liquibase and Migration Concept](#9-liquibase-and-migration-concept)
+[10. Liquibase Example](#10-liquibase-example)
+[11. Validation](#11-validation)
+[12. Troubleshooting](#12-troubleshooting)
+[13. Best Practices](#13-best-practices)
+[14. Conclusion](#14-conclusion)
+[15. Contact Information](#15-contact-information)
+[16. References](#16-references)
 
 ---
 
-## Introduction
+## 1. Introduction
 
 When working on applications, the database structure keeps changing as new features are added. Managing these changes manually can quickly become confusing and error-prone.
 
@@ -38,7 +43,7 @@ This ensures all environments (development, testing, production) remain consiste
 
 ---
 
-## What is Migrate
+## 2. What is Migrate
 
 Migrate is a way to manage database changes using version-controlled scripts.
 
@@ -54,7 +59,7 @@ make run-migrations
 
 ---
 
-## Why Migrate
+## 3. Why Migrate
 
 Migration helps avoid manual mistakes and keeps databases consistent.
 
@@ -68,7 +73,7 @@ Migration helps avoid manual mistakes and keeps databases consistent.
 
 ---
 
-## Key Features
+## 4. Key Features
 
 | Feature              | Description                |
 | -------------------- | -------------------------- |
@@ -79,7 +84,9 @@ Migration helps avoid manual mistakes and keeps databases consistent.
 
 ---
 
-## Workflow
+## 5. Workflow
+
+![Workflow Diagram Placeholder](workflow-diagram.png)
 
 ```
 Update Schema
@@ -95,7 +102,7 @@ Database Updated
 
 ---
 
-## Installation Guide
+## 6. Installation Guide
 
 ### Step 1: Download Migrate
 
@@ -123,7 +130,7 @@ migrate -version
 
 ---
 
-## Migration Commands (Common)
+## 7. Migration Commands (Common)
 
 ### Initialize (Flask Example)
 
@@ -151,7 +158,9 @@ flask db downgrade
 
 ---
 
-## DB Schema Evolution Diagram
+## 8. DB Schema Evolution Diagram
+
+![Schema Evolution Diagram Placeholder](schema-evolution.png)
 
 ```
 Version 1
@@ -167,7 +176,7 @@ Version 3
 
 ---
 
-## Liquibase and Migration Concept
+## 9. Liquibase and Migration Concept
 
 * **Migration = Concept** (process of managing DB changes)
 * **Liquibase = Tool** (implements migration)
@@ -181,7 +190,7 @@ Version 3
 
 ---
 
-## Liquibase Example
+## 10. Liquibase Example
 
 ```xml
 <databaseChangeLog>
@@ -212,16 +221,55 @@ liquibase update
 
 ---
 
-## Summary
+## 11. Validation
 
-* Migration manages database changes in structured way
-* Keeps environments consistent
-* Supports rollback and automation
-* Tools like Liquibase and Migrate implement it
+After applying migrations, validate:
+
+* Tables/columns are created as expected
+* No errors in migration logs
+* Application works with updated schema
 
 ---
 
-## References
+## 12. Troubleshooting
+
+| Issue                | Solution                      |
+| -------------------- | ----------------------------- |
+| Migration fails      | Check syntax & DB connection  |
+| Version mismatch     | Sync migration history        |
+| Rollback not working | Ensure rollback scripts exist |
+
+---
+
+## 13. Best Practices
+
+| Practice                     | Description                                    |
+| ---------------------------- | ---------------------------------------------- |
+| Review Before Execution      | Always review migration scripts before running |
+| Use Descriptive Names        | Clearly describe purpose of migration          |
+| Avoid Editing Old Migrations | Never modify already applied migrations        |
+| Backup Before Deployment     | Take DB backup before production changes       |
+| Test in Lower Environments   | Validate in dev/staging before production      |
+| Keep Migrations Small        | Prefer small, incremental changes              |
+| Maintain Rollback Scripts    | Ensure rollback is always possible             |
+
+---
+
+## 14. Conclusion
+
+Database migration ensures controlled and reliable schema changes. Using tools like Migrate or Liquibase improves consistency, reduces manual errors, and supports automated deployments.
+
+---
+
+## 15. Contact Information
+
+| Name        | Email                                                                           |
+| ----------- | ------------------------------------------------------------------------------- |
+| Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
+
+---
+
+## 16. References
 
 * Liquibase Docs: [https://www.liquibase.com/documentation](https://www.liquibase.com/documentation)
 * Flask-Migrate Docs: [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)
