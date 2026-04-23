@@ -428,7 +428,9 @@ Database migration ensures controlled and reliable schema updates. While multipl
 
 ## 17. Contact Information
 
-Saransh Rai
+| Name        | Email                                                                           |
+| ----------- | ------------------------------------------------------------------------------- |
+| Saransh Rai | [saransh.rai.snaatak@mygurukulam.co](mailto:saransh.rai.snaatak@mygurukulam.co) |
 
 ---
 
