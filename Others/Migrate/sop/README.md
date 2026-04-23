@@ -87,8 +87,6 @@ Migration helps avoid manual mistakes and keeps databases consistent.
 
 ## 5. Workflow
 
-![Workflow Diagram Placeholder](workflow-diagram.png)
-
 ```
 Update Schema
       ↓
