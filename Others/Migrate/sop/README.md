@@ -23,22 +23,24 @@
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)  
-2. [What is Migrate](#2-what-is-migrate)  
-3. [Why Migrate](#3-why-migrate)  
-4. [Key Features](#4-key-features)  
-5. [Workflow](#5-workflow)  
-6. [Installation Guide](#6-installation-guide)  
-7. [Migration Commands (Common)](#7-migration-commands-common)  
-8. [DB Schema Evolution Diagram](#8-db-schema-evolution-diagram)  
-9. [Liquibase and Migration Concept](#9-liquibase-and-migration-concept)  
-10. [Liquibase Example](#10-liquibase-example)  
-11. [Validation](#11-validation)  
-12. [Troubleshooting](#12-troubleshooting)  
-13. [Best Practices](#13-best-practices)  
-14. [Conclusion](#14-conclusion)  
-15. [Contact Information](#15-contact-information)  
-16. [References](#16-references)  
+1. [Introduction](#1-introduction)
+2. [Purpose](#2-Purpose)
+3. [Prerequisites](#3-Prerequisites)
+4. [What is Migrate](#4-what-is-migrate)  
+5. [Why Migrate](#5-why-migrate)  
+6. [Key Features](#6-key-features)  
+7. [Workflow](#7-workflow)  
+8. [Installation Guide](#8-installation-guide)  
+9. [Migration Commands (Common)](#9-migration-commands-common)  
+10. [DB Schema Evolution Diagram](#10-db-schema-evolution-diagram)  
+11. [Liquibase and Migration Concept](#11-liquibase-and-migration-concept)  
+12. [Liquibase Example](#12-liquibase-example)  
+13. [Validation](#13-validation)  
+14. [Troubleshooting](#14-troubleshooting)  
+15. [Best Practices](#15-best-practices)  
+16. [Conclusion](#16-conclusion)  
+17. [Contact Information](#17-contact-information)  
+18. [References](#18-references)  
 
 ---
 
@@ -52,7 +54,24 @@ This ensures all environments (development, testing, production) remain consiste
 
 ---
 
-## 2. What is Migrate
+## 2. Purpose
+
+The purpose of this SOP is to define a standardized approach for managing database schema changes using migration tools. It ensures consistency, traceability, and reliability across all environments.
+
+---
+
+## 3. Prerequisites
+
+Before starting, ensure the following:
+
+* Basic understanding of databases
+* Access to database
+* Linux/Unix environment (or compatible)
+* Required permissions to install and run commands
+
+---
+
+## 4. What is Migrate
 
 Migrate is a way to manage database changes using version-controlled scripts.
 
@@ -68,7 +87,7 @@ make run-migrations
 
 ---
 
-## 3. Why Migrate
+## 5. Why Migrate
 
 Migration helps avoid manual mistakes and keeps databases consistent.
 
@@ -82,7 +101,7 @@ Migration helps avoid manual mistakes and keeps databases consistent.
 
 ---
 
-## 4. Key Features
+## 6. Key Features
 
 | Feature              | Description                |
 | -------------------- | -------------------------- |
@@ -93,7 +112,7 @@ Migration helps avoid manual mistakes and keeps databases consistent.
 
 ---
 
-## 5. Workflow
+## 7. Workflow
 
 ```
 Update Schema
@@ -109,7 +128,7 @@ Database Updated
 
 ---
 
-## 6. Installation Guide
+## 8. Installation Guide
 
 ### Step 1: Download Migrate
 
@@ -137,7 +156,7 @@ migrate -version
 
 ---
 
-## 7. Migration Commands (Common)
+## 9. Migration Commands (Common)
 
 ### Initialize (Flask Example)
 
@@ -165,7 +184,7 @@ flask db downgrade
 
 ---
 
-## 8. DB Schema Evolution Diagram
+## 10. DB Schema Evolution Diagram
 
 ```
 Version 1
@@ -181,7 +200,7 @@ Version 3
 
 ---
 
-## 9. Liquibase and Migration Concept
+## 11. Liquibase and Migration Concept
 
 * **Migration = Concept** (process of managing DB changes)
 * **Liquibase = Tool** (implements migration)
@@ -195,7 +214,7 @@ Version 3
 
 ---
 
-## 10. Liquibase Example
+## 12. Liquibase Example
 
 ```xml
 <databaseChangeLog>
@@ -226,7 +245,7 @@ liquibase update
 
 ---
 
-## 11. Validation
+## 13. Validation
 
 After applying migrations, validate:
 
@@ -236,7 +255,7 @@ After applying migrations, validate:
 
 ---
 
-## 12. Troubleshooting
+## 14. Troubleshooting
 
 | Issue                | Solution                      |
 | -------------------- | ----------------------------- |
@@ -246,7 +265,7 @@ After applying migrations, validate:
 
 ---
 
-## 13. Best Practices
+## 15. Best Practices
 
 | Practice                     | Description                                    |
 | ---------------------------- | ---------------------------------------------- |
@@ -260,13 +279,13 @@ After applying migrations, validate:
 
 ---
 
-## 14. Conclusion
+## 16. Conclusion
 
 Database migration ensures controlled and reliable schema changes. Using tools like Migrate or Liquibase improves consistency, reduces manual errors, and supports automated deployments.
 
 ---
 
-## 15. Contact Information
+## 17. Contact Information
 
 | Name        | Email                                                                           |
 | ----------- | ------------------------------------------------------------------------------- |
@@ -274,7 +293,7 @@ Database migration ensures controlled and reliable schema changes. Using tools l
 
 ---
 
-## 16. References
+## 18. References
 
 | Resource                | Link                                                                               |
 | ----------------------- | ---------------------------------------------------------------------------------- |
@@ -282,5 +301,57 @@ Database migration ensures controlled and reliable schema changes. Using tools l
 | Flask-Migrate Docs      | [https://flask-migrate.readthedocs.io/](https://flask-migrate.readthedocs.io/)     |
 | Alembic Docs            | [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)                 |
 
+
+
+
+
+<div align="center">
+
+# Common Stack | Others | Migrate | SOP for Migrate
+
+Step by step installation guide
+
+</div>
+
+---
+
+## Author Table
+
+| Author      | Created on | Version | Last updated by | Last Edited On | L0 Reviewer | L1 Reviewer     | L2 Reviewer     |
+| ----------- | ---------- | ------- | --------------- | -------------- | ----------- | --------------- | --------------- |
+| Saransh Rai | 19-04-2026 | 1.2     | Saransh Rai     | 23-04-2026     | Anuj Jain   | Prashant Sharma | Piyush Upadhyay |
+
+---
+
+## Table of Contents
+
+1. Introduction
+2. Purpose
+3. Prerequisites
+4. What is Migrate
+5. Why Migrate
+6. Key Features
+7. Workflow
+8. Installation Guide
+9. Migration Commands (Common)
+10. DB Schema Evolution Diagram
+11. Liquibase and Migration Concept
+12. Liquibase Example
+13. Validation
+14. Troubleshooting
+15. Best Practices
+16. Conclusion
+17. Contact Information
+18. References
+
+---
+
+## 1. Introduction
+
+When working on applications, the database structure keeps changing as new features are added. Managing these changes manually can quickly become confusing and error-prone.
+
+Migration tools help handle this in a structured way. Instead of making direct changes in the database, we define changes as scripts and apply them in a controlled manner.
+
+This ensures all environments (development, testing, production) remain consistent.
 
 
