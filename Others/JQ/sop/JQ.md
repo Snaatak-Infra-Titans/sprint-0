@@ -1,5 +1,9 @@
 # SOP: Common Stack | Others | JQ | SOP for JQ
 
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Jtlsm1mxvvI1K5fWG_VxxQ.png" alt="Json Query" width="250"/>
+</p>
+
 ---
 
 ## Author Table
