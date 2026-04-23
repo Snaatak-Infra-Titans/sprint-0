@@ -5,10 +5,6 @@
 
 <h1 align="center">Common Stack | VCS | Documentation</h1>
 
-<p align="center">
-  Step by step installation guide
-</p>
-
 ---
 
 ## Author Table
