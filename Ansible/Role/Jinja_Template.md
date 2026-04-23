@@ -1,12 +1,16 @@
 # Common Stack | Ansible | Role | Jinja Templating
 
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo" width="120"/>
+</p>
+
 ---
 
 ## Author Table
 
 | **Author** | **Created on** | **Version** | **Last updated by** | **Last Edited On** | **Pre Reviewer** | **L0 Reviewer** | **L1 Reviewer** | **L2 Reviewer** |
 | ---------- | -------------- | ----------- | ------------------- | ------------------ | ---------------- | --------------- | --------------- | --------------- |
-| Ankita     | 17-04-2026     | v1.0        | Ankita              | 17-04-2026         | Team             |                 |                 |                 |
+| Ankita     | 17-04-2026     | v1.0        | Ankita              | 23-04-2026         | Team             | Komal Jaiswal   | Akshit Kapil    | Mahesh Kumar    |
 
 ---
 
@@ -16,14 +20,15 @@
 2. [Purpose](#purpose)
 3. [What is Jinja Templating?](#what-is-jinja-templating)
 4. [Why Jinja in Ansible Roles](#why-jinja-in-ansible-roles)
-5. [Key Concepts](#key-concepts)
-6. [Jinja Syntax Basics](#jinja-syntax-basics)
-7. [Using Jinja in Ansible Roles](#using-jinja-in-ansible-roles)
-8. [Common Use Cases](#common-use-cases)
-9. [Best Practices](#best-practices)
-10. [Troubleshooting](#troubleshooting)
-11. [Contact Information](#contact-information)
-12. [References](#references)
+5. [Jinja Template Workflow](#jinja-template-workflow)
+6. [Key Concepts](#key-concepts)
+7. [Jinja Syntax Basics](#jinja-syntax-basics)
+8. [Using Jinja in Ansible Roles](#using-jinja-in-ansible-roles)
+9. [Common Use Cases](#common-use-cases)
+10. [Best Practices](#best-practices)
+11. [Troubleshooting](#troubleshooting)
+12. [Contact Information](#contact-information)
+13. [References](#references)
 
 ---
 
@@ -60,13 +65,22 @@ Jinja templating is used because:
 
 ---
 
+## Jinja Template Workflow
+
+The Jinja workflow involves taking a template file (`.j2`) and combining it with dynamic data (variables) through the Jinja rendering engine to generate the final output configuration file.
+
+**Flow:**
+Template + Data → Jinja Engine → Rendered Output
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d650afd9-e684-4549-baa3-7759c0e7c96f" />
+
+---
+
 ## Key Concepts
 
 ### 1. Variables
 
 Variables are used to replace values dynamically.
-
-Example:
 
 ```jinja
 {{ app_port }}
@@ -197,7 +211,7 @@ server {
 
 ## References
 
-| Topic                   | Link                                                                                                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Jinja Docs              | [https://jinja.palletsprojects.com/](https://jinja.palletsprojects.com/)                                                                                                             |
-| Ansible Template Module | [https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) |
+| Topic                   | Link                                                                                     |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| Jinja Docs              | https://jinja.palletsprojects.com/                                                       |
+| Ansible Template Module | https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html |
