@@ -1,0 +1,290 @@
+<h1 align="center">Installation via Bash Script: React Js</h1>
+
+<p align="center">
+  <img width="150" height="150" alt="react-dark" src="https://github.com/user-attachments/assets/4d0832e5-0488-4db3-8e1d-e8d545105df2" />
+</p>
+
+<p align="center">
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/Tool-ReactJS-blue?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Front-end_web_development">
+    <img src="https://img.shields.io/badge/Category-Frontend-green?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/DevOps">
+    <img src="https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Software_architecture">
+    <img src="https://img.shields.io/badge/Architecture-Reference--Example-purple?style=for-the-badge" />
+  </a>
+</p>
+
+| Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
+| ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
+| Mukesh Kharb | 16/04/2026 | 1.0     | Mukesh Kharb    | 16/04/2026     | Team         | Mohit Kumar| Faisal Khan |  Mahesh Kumar|
+
+---
+
+## Table of Contents
+
+* [Introduction](#introduction)
+* [Understanding React Setup](#understanding-react-setup)
+* [Architecture](#architecture)
+* [React Installation Script](#react-installation-script)
+* [React Upgrade Script](#react-upgrade-script)
+* [How to Run Scripts](#how-to-run-scripts)
+* [Important Notes](#important-notes)
+* [Best Practices](#best-practices)
+* [Common Errors](#common-errors)
+* [FAQs](#faqs)
+* [Conclusion](#conclusion)
+* [Contact Information](#contact-information)
+* [References](#references)
+
+---
+
+<a id="introduction"></a>
+
+## Introduction
+
+ReactJS is a popular JavaScript library used to build modern, interactive user interfaces. It enables developers to create **Single Page Applications (SPA)** where the UI dynamically updates without reloading the page.
+
+From a DevOps perspective, a React application is treated differently from backend services. It is:
+
+* Built into static files
+* Deployed as frontend assets
+* Served via web servers like Nginx
+
+In this document, we will focus on **React setup, execution, and upgrade lifecycle**, using OT-Microservices only as a reference example where needed.
+
+---
+
+<a id="understanding-react-setup"></a>
+
+## Understanding React Setup
+
+| Component      | Description                                                  |
+|----------------|--------------------------------------------------------------|
+| Node.js        | Runtime environment to execute JavaScript outside the browser |
+| npm            | Package manager used to install and manage dependencies      |
+| package.json   | Contains project metadata and dependency definitions         |
+| node_modules/  | Directory that stores all installed dependencies             |
+
+When you run a React project, npm installs all required libraries defined in `package.json`.
+
+---
+
+<a id="architecture"></a>
+
+## Architecture
+
+A generic React project structure looks like this:
+
+><img width="500" height="auto" alt="ChatGPT Image Apr 22, 2026, 10_21_14 PM" src="https://github.com/user-attachments/assets/687167b7-f1f6-4dda-9e17-07d77c0e669c" />
+
+
+### Key Concepts
+
+* React follows a **component-based architecture**
+* UI is divided into reusable components
+* Data flows using props and state
+* Build process converts source code into optimized static files
+
+---
+
+<a id="react-installation-script"></a>
+
+## React Installation Script
+
+This script installs dependencies and runs the application.
+
+```bash
+#!/bin/bash
+
+echo "▶ Updating system"
+sudo apt update && sudo apt upgrade -y
+
+echo "▶ Installing Node.js"
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
+
+echo "▶ Verifying installation"
+node -v
+npm -v
+
+echo "▶ Navigating to project"
+cd OT-Micro/frontend || exit
+
+echo "▶ Installing dependencies"
+npm install
+
+echo "▶ Starting React app"
+npm start
+```
+><img width="1000" height="auto" alt="image" src="https://github.com/user-attachments/assets/7cb097a2-4714-4cd7-a595-073888f0dc5b" />
+
+---
+
+<a id="react-upgrade-script"></a>
+
+## React Upgrade Script
+
+This script updates dependencies and rebuilds the application.
+
+```bash
+#!/bin/bash
+
+echo "▶ Pulling latest code"
+git pull origin main
+
+echo "▶ Navigating to project"
+cd OT-Micro/frontend || exit
+
+echo "▶ Installing updated dependencies"
+npm install
+
+echo "▶ Backup current build"
+mv build build_backup_$(date +%F_%T) 2>/dev/null
+
+echo "▶ Building new version"
+npm run build
+
+echo "▶ Reloading Nginx"
+sudo systemctl reload nginx
+
+echo "✅ Upgrade completed"
+```
+><img width="1397" height="auto" alt="image" src="https://github.com/user-attachments/assets/5b33ebc1-c27e-4a58-8dcc-bd9a12a25c04" />
+><img width="1407" height="676" alt="image" src="https://github.com/user-attachments/assets/cf7fecee-b497-4a3d-b4a4-737fb71c929e" />
+
+---
+
+<a id="how-to-run-scripts"></a>
+
+## How to Run Scripts
+
+```bash
+chmod +x script.sh
+./script.sh
+```
+
+---
+
+<a id="important-notes"></a>
+
+> [!IMPORTANT]
+> - Always run scripts from project root  
+> - Ensure Node.js is installed before execution  
+> - Do not manually modify node_modules  
+> - Always test after build or upgrade  
+---
+
+<a id="best-practices"></a>
+
+## Best Practices
+
+* Use `.env` files for configuration
+* Avoid hardcoding API URLs
+* Use consistent Node.js version
+* Maintain clean dependency versions
+* Integrate with CI/CD pipelines
+
+---
+
+<a id="common-errors"></a>
+
+## Common Errors
+
+| Error               | Cause               | Solution                        |
+| ------------------- | ------------------- | ------------------------------- |
+| npm not found       | Node missing        | Install Node.js                 |
+| build fails         | dependency conflict | Delete node_modules & reinstall |
+| blank UI            | incorrect build     | rebuild project                 |
+| port already in use | conflict            | kill process                    |
+
+---
+
+<a id="faqs"></a>
+
+## FAQs
+
+### 1. What is ReactJS?
+
+ReactJS is a JavaScript library used for building user interfaces, especially single-page applications where UI updates dynamically.
+
+---
+
+### 2. What is npm and why is it important?
+
+npm is the package manager that installs all required dependencies for the React application.
+
+---
+
+### 3. What does `npm install` do?
+
+It reads the `package.json` file and installs all required dependencies into `node_modules`.
+
+---
+
+### 4. What is the difference between `npm start` and `npm run build`?
+
+* `npm start` runs development server
+* `npm run build` creates optimized production files
+
+---
+
+### 5. Why do we need Node.js for React?
+
+Node.js is required to run build tools and manage dependencies during development.
+
+---
+
+### 6. What is the build folder?
+
+It contains optimized static files (HTML, CSS, JS) used for production deployment.
+
+---
+
+### 7. Why should we not edit node_modules?
+
+Because it is auto-generated and managed by npm. Manual changes can break dependencies.
+
+---
+
+### 8. How do upgrades work in React?
+
+Upgrades involve updating dependencies and rebuilding the application.
+
+---
+
+### 9. What happens if build fails?
+
+Usually due to dependency conflicts or code issues. Fix errors and rebuild.
+
+---
+
+<a id="conclusion"></a>
+
+## Conclusion
+
+React applications are built once and deployed as static assets. Proper setup and upgrade practices ensure consistency, reliability, and smooth deployments in any environment.
+
+---
+
+## Contact Information
+
+| Name         | Email                                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
+| Mukesh Kharb | [mukesh.Kharb.snaatak@mygurukulam.co](mailto:mukesh.Kharb.snaatak@mygurukulam.co) |
+
+---
+
+<a id="references"></a>
+
+## References
+
+* [https://react.dev](https://react.dev)
+* [https://vitejs.dev](https://vitejs.dev)
+* [https://nodejs.org](https://nodejs.org)
+
+---
