@@ -1,12 +1,26 @@
 # SOP: Software Management using APT (Ubuntu)
-
----
-
+<p align="center">
+  <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" width="120" alt="Ubuntu Logo"/>
+</p>
+<p align="center">
+<a href="https://docs.ubuntu.com/">
+  <img src="https://img.shields.io/badge/Ubuntu-Official%20Docs-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
+</a>
+<a href="https://manpages.ubuntu.com/">
+  <img src="https://img.shields.io/badge/Manuals-APT%20%7C%20DPKG-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
+</a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Package%20Manager-APT-informational?style=flat&logo=ubuntu" />
+  <img src="https://img.shields.io/badge/Low%20Level-DPKG-important?style=flat&logo=ubuntu" />
+  <img src="https://img.shields.io/badge/Format-.deb-blue?style=flat&logo=ubuntu" />
+</p>
 ## Document Control
 
-| Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
-| ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
-| Mukesh Kharb | 14/04/2026 | 1.0     | Mukesh Kharb    | 15/04/2026     | Team         | Mohit Kumar |Faisal Khan  | Mahesh Kumar|   
+| Author       | Created On | Version | Last Updated By | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer  |
+| ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ------------ |
+| Mukesh Kharb | 14/04/2026 | 1.0     | Mukesh Kharb    | 14/04/2026     | Team         | Mohit Kumar | Faisal Khan | Mahesh Kumar |
+| Mukesh Kharb | 22/04/2026 | 1.1     | Mukesh Kharb    | 22/04/2026     | Team         | Mohit Kumar | Faisal Khan | Mahesh Kumar |  
 
 ---
 
