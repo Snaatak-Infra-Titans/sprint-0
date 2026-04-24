@@ -138,22 +138,7 @@ jq -r    # raw
 
 ---
 
-## Built-in Functions (Quick View)
 
-| Function     | Purpose           |
-| :----------- | :---------------- |
-| `length`     | Count items       |
-| `keys`       | Get object keys   |
-| `map()`      | Modify arrays     |
-| `select()`   | Filter data       |
-| `sort_by()`  | Sort values       |
-| `unique`     | Remove duplicates |
-| `has("key")` | Check key exists  |
-| `type`       | Show data type    |
-| `add`        | Sum values        |
-| `del()`      | Remove fields     |
-
----
 
 
 ## Conclusion
