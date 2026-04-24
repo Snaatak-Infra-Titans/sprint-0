@@ -1,4 +1,4 @@
-# requirements.txt - Documentation
+<h1 align="center">requirements.txt - Documentation</h1>
 
 <p align="center">
   <a href="https://docs.python.org/3/">
@@ -13,8 +13,6 @@
 </p>
 
 ---
-
-## Metadata
 
 | Author       | Created On | Version | Last Updated By | Last Edited On | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer  |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ------------ |
