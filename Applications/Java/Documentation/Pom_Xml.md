@@ -1,4 +1,4 @@
-# pom.xml - Documentation
+<h1 align="center">Documentation: pom.xml (Apache Maven)</h1>
 <p align="center">
 <img width="340" height="86" alt="maven-logo-white-on-black" src="https://github.com/user-attachments/assets/2f9e6668-7f9f-4a2d-a13b-a19f1b3bc63e" />
 </p>
