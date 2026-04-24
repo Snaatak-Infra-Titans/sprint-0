@@ -18,7 +18,6 @@
     <img src="https://img.shields.io/badge/CI%2FCD-Integrated-purple?style=for-the-badge" />
   </a>
 </p>
----
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
 | ------------ | ---------- | ------- | --------------- | -------------- | ------------ | ----------- | ----------- | ----------- |
