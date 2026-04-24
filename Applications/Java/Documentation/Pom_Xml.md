@@ -1,8 +1,17 @@
 # pom.xml - Documentation
 <p align="center">
-  <img src="https://img.shields.io/badge/maven-build--tool-blue" />
-  <img src="https://img.shields.io/badge/java-configuration-green" />
-  <img src="https://img.shields.io/badge/type-project--descriptor-orange" />
+<img width="340" height="86" alt="maven-logo-white-on-black" src="https://github.com/user-attachments/assets/2f9e6668-7f9f-4a2d-a13b-a19f1b3bc63e" />
+</p>
+<p align="center">
+  <a href="https://maven.apache.org/">
+    <img src="https://img.shields.io/badge/maven-build--tool-blue" />
+  </a>
+  <a href="https://www.oracle.com/java/">
+    <img src="https://img.shields.io/badge/java-configuration-green" />
+  </a>
+  <a href="https://maven.apache.org/pom.html">
+    <img src="https://img.shields.io/badge/type-project--descriptor-orange" />
+  </a>
 </p>
 
 ---
