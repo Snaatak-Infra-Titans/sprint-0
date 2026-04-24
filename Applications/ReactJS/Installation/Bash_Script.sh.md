@@ -1,14 +1,22 @@
 # ReactJS Bash Script
 
 <p align="center">
-  <img width="120" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
+  <img width="150" height="150" alt="react-dark" src="https://github.com/user-attachments/assets/4d0832e5-0488-4db3-8e1d-e8d545105df2" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Tool-ReactJS-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Category-Frontend-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Architecture-Reference--Example-purple?style=for-the-badge" />
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/Tool-ReactJS-blue?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Front-end_web_development">
+    <img src="https://img.shields.io/badge/Category-Frontend-green?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/DevOps">
+    <img src="https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Software_architecture">
+    <img src="https://img.shields.io/badge/Architecture-Reference--Example-purple?style=for-the-badge" />
+  </a>
 </p>
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
