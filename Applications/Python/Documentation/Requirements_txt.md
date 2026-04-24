@@ -1,9 +1,15 @@
 # requirements.txt - Documentation
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-dependency--management-blue" />
-  <img src="https://img.shields.io/badge/usecase-devops%20%7C%20backend-green" />
-  <img src="https://img.shields.io/badge/type-configuration-orange" />
+  <a href="https://docs.python.org/3/">
+    <img src="https://img.shields.io/badge/python-dependency--management-blue" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/DevOps">
+    <img src="https://img.shields.io/badge/usecase-devops%20%7C%20backend-green" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Configuration_file">
+    <img src="https://img.shields.io/badge/type-configuration-orange" />
+  </a>
 </p>
 
 ---
@@ -77,7 +83,7 @@ redis==4.5.0
 
 ## Workflow
 
-><img width="900" height="auto" alt="ChatGPT Image Apr 22, 2026, 09_27_47 PM" src="https://github.com/user-attachments/assets/17a0f064-9f47-4c73-a1de-9e9c49c883e8" />
+><img width="1200" height="800" alt="ChatGPT Image Apr 22, 2026, 09_27_47 PM" src="https://github.com/user-attachments/assets/17a0f064-9f47-4c73-a1de-9e9c49c883e8" />
 
 
 ---
