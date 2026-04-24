@@ -1,4 +1,4 @@
-# ReactJS Bash Script
+<h1 align="center">Installation via Bash Script: React Js</h1>
 
 <p align="center">
   <img width="150" height="150" alt="react-dark" src="https://github.com/user-attachments/assets/4d0832e5-0488-4db3-8e1d-e8d545105df2" />
