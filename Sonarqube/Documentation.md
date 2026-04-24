@@ -1,4 +1,4 @@
-# SonarQube Documentation
+<h1 align="center">Documentation: SonarQube</h1>
 
 <p align="center">
   <img width="499" height="148" alt="Sonarqube-Logo-Vector" src="https://github.com/user-attachments/assets/4e93fb6f-d9fb-4d40-bb8a-96e1bc19058c" />
