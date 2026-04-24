@@ -7,7 +7,7 @@
 <a href="https://docs.ubuntu.com/">
   <img src="https://img.shields.io/badge/Ubuntu-Official%20Docs-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
 </a>
-<a href="https://manpages.ubuntu.com/">
+  <a href="https://manpages.ubuntu.com/">
   <img src="https://img.shields.io/badge/Manuals-APT%20%7C%20DPKG-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
 </a>
 </p>
@@ -15,10 +15,10 @@
 <a href="https://manpages.ubuntu.com/manpages/latest/en/man8/apt.8.html">
   <img src="https://img.shields.io/badge/Package%20Manager-APT-informational?style=flat&logo=ubuntu" />
 </a>
-<a href="https://manpages.ubuntu.com/manpages/latest/en/man1/dpkg.1.html">
+  <a href="https://manpages.ubuntu.com/manpages/latest/en/man1/dpkg.1.html">
   <img src="https://img.shields.io/badge/Low%20Level-DPKG-important?style=flat&logo=ubuntu" />
 </a>
-<a href="https://ubuntu.com/server/docs/package-management">
+  <a href="https://ubuntu.com/server/docs/package-management">
   <img src="https://img.shields.io/badge/Format-.deb-blue?style=flat&logo=ubuntu" />
 </a>
 </p>
