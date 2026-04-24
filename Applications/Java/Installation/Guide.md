@@ -1,13 +1,5 @@
 # Java JDK 21 Installation Guide (Ubuntu 24.04)
 
-
-
-## Introduction
-
-This guide provides a step-by-step approach to installing Java JDK 21 on Ubuntu 24.04. It is designed for beginners as well as developers who want a clean and reliable setup. The document focuses on using Ubuntu’s built-in package manager (APT), which is the simplest and most recommended method for installing Java. By following this guide, you will be able to install Java, configure environment variables, verify the installation, and manage different Java versions if required.
-
----
-
 ## Document Information
 
 | Author          | Created On | Version | L0 Reviewer  | L1 Reviewer  | L2 Reviewer     |
@@ -15,6 +7,14 @@ This guide provides a step-by-step approach to installing Java JDK 21 on Ubuntu 
 | Versha Tripathi | 13-04-2026 | v1.0    | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
+
+## Introduction
+
+This guide provides a step-by-step approach to installing Java JDK 21 on Ubuntu 24.04. It is designed for beginners as well as developers who want a clean and reliable setup. The document focuses on using Ubuntu’s built-in package manager (APT), which is the simplest and most recommended method for installing Java. By following this guide, you will be able to install Java, configure environment variables, verify the installation, and manage different Java versions if required.
+
+---
+
+
 
 ## Table of Contents
 
