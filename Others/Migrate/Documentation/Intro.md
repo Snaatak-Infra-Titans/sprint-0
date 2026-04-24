@@ -1,4 +1,4 @@
-# Migrate Introduction Documentation
+<h1 align="center">Documentation: Migrate Introduction</h1>
 <p align="center">
   <a href="https://www.liquibase.com/documentation">
     <img src="https://img.shields.io/badge/Liquibase-Documentation-blue?style=for-the-badge" />
