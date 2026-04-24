@@ -5,11 +5,21 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/automation-ansible-red" />
-  <img src="https://img.shields.io/badge/configuration-management-blue" />
-  <img src="https://img.shields.io/badge/type-infrastructure--as--code-green" />
-  <img src="https://img.shields.io/badge/platform-linux-lightgrey" />
-  <img src="https://img.shields.io/badge/status-production--ready-brightgreen" />
+  <a href="https://www.ansible.com/">
+    <img src="https://img.shields.io/badge/automation-ansible-red" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Configuration_management">
+    <img src="https://img.shields.io/badge/configuration-management-blue" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">
+    <img src="https://img.shields.io/badge/type-infrastructure--as--code-green" />
+  </a>
+  <a href="https://www.kernel.org/">
+    <img src="https://img.shields.io/badge/platform-linux-lightgrey" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Software_release_life_cycle">
+    <img src="https://img.shields.io/badge/status-production--ready-brightgreen" />
+  </a>
 </p>
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
