@@ -1,16 +1,17 @@
 # Common Stack | Applications | Golang | Installation Guide
 
-## Introduction
-
-This guide provides a simple and structured approach to installing Golang on Ubuntu 24.04. It is designed for beginners and developers who want a clean and reliable setup using the system package manager. By following this guide, you will be able to install Go, configure the environment, and verify that everything is working correctly.
-
----
 
 ## Document Information
 
 | Author          | Created On | Version | L0 Reviewer  | L1 Reviewer  | L2 Reviewer     |
 | --------------- | ---------- | ------- | ------------ | ------------ | --------------- |
 | Versha Tripathi | 13-04-2026 | v1.0    | Prince Batra | Nikita Joshi | Piyush Upadhyay |
+
+---
+
+## Introduction
+
+This guide provides a simple and structured approach to installing Golang on Ubuntu 24.04. It is designed for beginners and developers who want a clean and reliable setup using the system package manager. By following this guide, you will be able to install Go, configure the environment, and verify that everything is working correctly.
 
 ---
 
@@ -23,8 +24,6 @@ This guide provides a simple and structured approach to installing Golang on Ubu
 * [Step 4 — Configure Environment Variables](#step-4--configure-environment-variables)
 * [Step 5 — Apply the Environment Changes](#step-5--apply-the-environment-changes)
 * [Step 6 — Set Up Your Go Workspace](#step-6--set-up-your-go-workspace)
-* [Uninstallation](#uninstallation)
-* [Troubleshooting](#troubleshooting)
 * [Conclusion](#conclusion)
 * [Contact Information](#contact-information)
 * [References](#references)
@@ -35,7 +34,6 @@ This guide provides a simple and structured approach to installing Golang on Ubu
 
 | Requirement | Detail                          |
 | ----------- | ------------------------------- |
-| OS          | Ubuntu 24.04 LTS (Noble Numbat) |
 | Tools       | `curl` or `wget`                |
 
 ---
@@ -45,7 +43,6 @@ This guide provides a simple and structured approach to installing Golang on Ubu
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-<img width="1852" height="752" alt="image" src="https://github.com/user-attachments/assets/67fd540c-8f5e-4ef5-8b72-fe8ed77dc937" />
 
 ---
 
@@ -97,23 +94,7 @@ mkdir -p ~/go/{bin,src,pkg}
 
 ---
 
-## Uninstallation
 
-```bash
-sudo apt remove -y golang-go
-rm -rf ~/go
-```
-
----
-
-## Troubleshooting
-
-| Issue                   | Cause              | Fix                    |
-| ----------------------- | ------------------ | ---------------------- |
-| `go: command not found` | PATH not updated   | Run `source ~/.bashrc` |
-| Wrong version shown     | Old version cached | Restart terminal       |
-
----
 
 ## Conclusion
 
