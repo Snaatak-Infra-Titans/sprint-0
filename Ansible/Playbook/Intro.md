@@ -1,4 +1,4 @@
-# Ansible Playbook SOP
+<h1 align="center">Ansible Playbook - SOP</h1>
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo" width="100"/>
