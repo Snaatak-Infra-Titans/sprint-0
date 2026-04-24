@@ -147,30 +147,7 @@ sudo update-alternatives --config javac
 
 ---
 
-## Common Issues & Fixes
 
-| Issue                          | Fix                                                        |
-| ------------------------------ | ---------------------------------------------------------- |
-| `java: command not found`      | `export PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH` |
-| `javac: command not found`     | `sudo apt install -y openjdk-21-jdk`                       |
-| Wrong Java version active      | `sudo update-alternatives --config java`                   |
-| `UnsupportedClassVersionError` | `javac --release 17 HelloWorld.java`                       |
-
----
-
-## Quick Command Reference
-
-| Task                   | Command                                               |
-| ---------------------- | ----------------------------------------------------- |
-| Install Java 21        | `sudo apt install -y openjdk-21-jdk`                  |
-| Check Java version     | `java -version`                                       |
-| Check compiler version | `javac -version`                                      |
-| Compile a file         | `javac HelloWorld.java`                               |
-| Run a program          | `java HelloWorld`                                     |
-| Set JAVA_HOME          | `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64` |
-| Switch Java version    | `sudo update-alternatives --config java`              |
-
----
 
 ## Conclusion
 
