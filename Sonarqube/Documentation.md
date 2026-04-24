@@ -5,12 +5,19 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Tool-SonarQube-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Category-Code%20Quality-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/CI%2FCD-Integrated-purple?style=for-the-badge" />
+  <a href="https://www.sonarsource.com/products/sonarqube/">
+    <img src="https://img.shields.io/badge/Tool-SonarQube-blue?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Code_quality">
+    <img src="https://img.shields.io/badge/Category-Code%20Quality-green?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/DevOps">
+    <img src="https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge" />
+  </a>
+  <a href="https://en.wikipedia.org/wiki/CI/CD">
+    <img src="https://img.shields.io/badge/CI%2FCD-Integrated-purple?style=for-the-badge" />
+  </a>
 </p>
-
 ---
 
 | Author       | Created on | Version | Last updated by | Last edited on | Pre Reviewer | L0 Reviewer | L1 Reviewer | L2 Reviewer |
