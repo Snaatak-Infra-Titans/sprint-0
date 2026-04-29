@@ -130,20 +130,7 @@ End
 
 ---
 
-## Quick Reference
 
-| Task                                  |   Directory  | Command / Module               |
-| :------------------------------------ | :----------: | :----------------------------- |
-| Install, configure, start a service   |   `tasks/`   | Any Ansible module             |
-| Deploy a config file with variables   | `templates/` | `ansible.builtin.template`     |
-| Copy a static file or certificate     |   `files/`   | `ansible.builtin.copy`         |
-| Restart a service after config change |  `handlers/` | `ansible.builtin.service`      |
-| Set a user-overridable default        |  `defaults/` | —                              |
-| Set an internal constant              |    `vars/`   | —                              |
-| Declare a role dependency             |    `meta/`   | —                              |
-| Test the role locally                 |   `tests/`   | `ansible-playbook` or Molecule |
-
----
 
 ## Conclusion
 
@@ -151,7 +138,7 @@ Ansible roles provide a clean and standardized way to organize automation code. 
 
 For beginners, focusing on `tasks/`, `templates/`, and `handlers/` is a great starting point. As you grow, mastering variable precedence and role dependencies will help you design more scalable and production-ready automation.
 
-> A well-structured role not only simplifies automation but also improves collaboration across teams.
+A well-structured role not only simplifies automation but also improves collaboration across teams.
 
 ---
 
