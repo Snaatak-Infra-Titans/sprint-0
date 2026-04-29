@@ -9,15 +9,7 @@
 
 ---
 
-## Introduction
 
-If you’ve ever worked with APIs, logs, or tools like `kubectl`, `aws`, or `docker`, you’ve probably seen **JSON data everywhere**. But reading or extracting useful information from raw JSON can be messy.
-
-That’s where **jq** helps.
-
-It lets you quickly **pick, filter, and reshape JSON data directly in your terminal**, without writing long scripts. Even simple commands can save a lot of time and effort.
-
----
 
 
 
@@ -42,13 +34,6 @@ It works like a pipeline:
 * Takes JSON as input
 * Applies a filter
 * Outputs the result
-
-> Think of jq as the **`grep` or `awk` for JSON**.
-
-```bash
-curl -s https://api.example.com/users/1 | jq '.name'
-```
-
 * Written in C
 * Single binary (no dependencies)
 * Works on Linux, macOS, and Windows
