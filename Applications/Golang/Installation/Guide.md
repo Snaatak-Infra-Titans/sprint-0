@@ -1,4 +1,4 @@
-# Common Stack | Applications | Golang | Installation Guide
+# Golang - Installation Guide
 
 
 ## Document Information
@@ -9,14 +9,11 @@
 
 ---
 
-## Introduction
 
-This guide provides a simple and structured approach to installing Golang on Ubuntu 24.04. It is designed for beginners and developers who want a clean and reliable setup using the system package manager. By following this guide, you will be able to install Go, configure the environment, and verify that everything is working correctly.
-
----
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Prerequisites](#prerequisites)
 * [Step 1 — Update System Packages](#step-1--update-system-packages)
 * [Step 2 — Install Golang using APT](#step-2--install-golang-using-apt)
@@ -29,7 +26,11 @@ This guide provides a simple and structured approach to installing Golang on Ubu
 * [References](#references)
 
 ---
+## Introduction
 
+This guide provides a simple and structured approach to installing Golang on Ubuntu 24.04. It is designed for beginners and developers who want a clean and reliable setup using the system package manager. By following this guide, you will be able to install Go, configure the environment, and verify that everything is working correctly.
+
+---
 ## Prerequisites
 
 | Requirement | Detail                          |
