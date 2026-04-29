@@ -1,4 +1,4 @@
-# Poetry — Python Dependency Management & Packaging
+# Poetry Documentation
 
 
 
