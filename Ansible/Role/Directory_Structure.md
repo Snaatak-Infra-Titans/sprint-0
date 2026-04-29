@@ -136,7 +136,7 @@ End
 
 Ansible roles provide a clean and standardized way to organize automation code. By understanding each directory and its purpose, you can build roles that are **modular, reusable, and easy to maintain**.
 
-For beginners, focusing on `tasks/`, `templates/`, and `handlers/` is a great starting point. As you grow, mastering variable precedence and role dependencies will help you design more scalable and production-ready automation.
+You need to focus more on `tasks/`, `templates/`, and `handlers/` if you are a beginner. As you grow, mastering variable precedence and role dependencies will help you design more scalable and production-ready automation.
 
 A well-structured role not only simplifies automation but also improves collaboration across teams.
 
