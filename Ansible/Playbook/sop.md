@@ -79,7 +79,6 @@ Before executing any playbook, it is important to clearly define and verify all 
 ### Step 1 — Verify Environment
 
 ```bash
-ansible --version
 ansible all -m ping -i inventory/<env>/
 ```
 
@@ -125,16 +124,7 @@ Important:
 * Monitor execution
 * Do not leave unattended
 
-### Step 6 — Review Output
 
-```bash
-grep "PLAY RECAP" logs/*.log
-```
-
-Expected:
-
-* failed=0
-* unreachable=0
 
 ---
 
