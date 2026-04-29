@@ -1,4 +1,4 @@
-# JQ — Command-Line JSON Processor
+# JQ Intro Documentation
 
 ## Document Information
 
