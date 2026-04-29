@@ -1,12 +1,8 @@
-# Standard Operating Procedure — Ansible Playbook Execution
+# SOP Ansible Playbook
 
 
 
-Ansible playbooks are widely used to automate configuration management, deployments, and operational tasks across infrastructure. However, without a standard execution approach, playbook runs can lead to inconsistent results, unexpected failures, or production risks.
 
-This document provides a clear and practical guide to executing Ansible playbooks in a controlled manner. It focuses on ensuring that every run follows a consistent process, uses the correct inputs, and includes proper validation and rollback mechanisms to maintain system stability.
-
----
 
 ## Document Information
 
