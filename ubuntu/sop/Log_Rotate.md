@@ -1,9 +1,6 @@
 # SOP For Logrotate
 
 ---
-Log rotation is a critical system administration practice that ensures log files do not consume unlimited disk space over time. **Logrotate** is a standard Linux utility that automates this process — it periodically rotates, compresses, and removes old log files based on configurable rules. This SOP provides step-by-step guidance for setting up and managing logrotate across system and application services.
-
----
 ## Document Information
 
 | Author | Created On | Version | L0 Reviewer | L1 Reviewer | L2 Reviewer |
@@ -11,6 +8,11 @@ Log rotation is a critical system administration practice that ensures log files
 | Versha Tripathi | 13-04-2026 | v1.0 | Prince Batra | Nikita Joshi | Piyush Upadhyay |
 
 ---
+
+Log rotation is a critical system administration practice that ensures log files do not consume unlimited disk space over time. **Logrotate** is a standard Linux utility that automates this process — it periodically rotates, compresses, and removes old log files based on configurable rules. This SOP provides step-by-step guidance for setting up and managing logrotate across system and application services.
+This SOP explains how to manage logs using **logrotate** to prevent disk space issues, improve system performance, and maintain clean, manageable log files.
+---
+
 
 ## Table of Contents
 
@@ -26,11 +28,8 @@ Log rotation is a critical system administration practice that ensures log files
 10. [Monitoring & Troubleshooting](#10-monitoring--troubleshooting)
 11. [Conclusion](#11-conclusion)
 
----
 
-## 1. Purpose
 
-This SOP explains how to manage logs using **logrotate** to prevent disk space issues, improve system performance, and maintain clean, manageable log files.
 
 ---
 
